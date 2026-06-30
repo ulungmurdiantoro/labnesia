@@ -725,7 +725,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
           <div class="ladder-body" style="border-color:var(--teal);background:var(--teal-pale);margin-left:20px">
             <div class="ladder-row">
               <span class="ladder-name" style="color:var(--teal)">Annual Partnership</span>
-              <span class="ladder-price">78–134 jt/tahun</span>
+              <span class="ladder-price">36–70 jt/tahun</span>
             </div>
             <div class="ladder-desc" style="margin-bottom:8px">Pastikan tetap terakreditasi tahun depan, tahun depannya lagi, dan seterusnya — tanpa perlu memulai dari awal.</div>
             <div style="display:flex;gap:6px;flex-wrap:wrap">
@@ -808,7 +808,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
           <div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.2);border-radius:5px;padding:3px 9px;font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,0.85)">Sudah Terakreditasi</div>
           <div class="product-card-eyebrow">Recurring · Tahunan</div>
           <div class="product-card-name">Annual Partnership</div>
-          <div class="product-card-price" style="color:#4DD9A8">Rp 78 jt <span class="product-card-unit">/tahun</span></div>
+          <div class="product-card-price" style="color:#4DD9A8">Rp 36 jt <span class="product-card-unit">/tahun</span></div>
         </div>
         <div class="product-card-body" style="background:var(--teal-pale)">
           <div style="background:rgba(26,158,117,0.12);border:1px solid rgba(26,158,117,0.2);border-radius:8px;padding:10px 12px;margin-bottom:14px">

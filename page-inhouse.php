@@ -354,6 +354,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="indiv-price">Rp 7 jt <span>/tahun</span></div>
         <div class="annual-feature"><span class="annual-check">✓</span>Akses webinar &amp; bootcamp sepanjang tahun</div>
         <div class="annual-feature"><span class="annual-check">✓</span><strong>1 pelatihan</strong> + akses uji kompetensi (1 skema)</div>
+        <div class="annual-feature"><span class="annual-check">✓</span><strong>3 pelatihan premium</strong></div>
         <div class="annual-feature"><span class="annual-check">✓</span>Template dokumen dasar</div>
         <div class="annual-feature"><span class="annual-check">✓</span>Forum diskusi VIP</div>
       </div>
@@ -361,8 +362,12 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="indiv-tier-name">🥇 Gold</div>
         <div class="indiv-price">Rp 13 jt <span>/tahun</span></div>
         <div class="annual-feature"><span class="annual-check">✓</span>Semua benefit Silver</div>
+        <div class="annual-feature"><span class="annual-check">✓</span>Akses webinar & bootcamp sepanjang tahun</div>
         <div class="annual-feature"><span class="annual-check">✓</span><strong>2 pelatihan</strong> + akses uji kompetensi (2 skema)</div>
-        <div class="annual-feature"><span class="annual-check">✓</span>1 sesi konsultasi privat dengan pakar</div>
+        <div class="annual-feature"><span class="annual-check">✓</span>5 pelatihan premium</div>
+        <div class="annual-feature"><span class="annual-check">✓</span>Template dokumen dasar</div>
+        <div class="annual-feature"><span class="annual-check">✓</span>Forum diskusi VIP</div>
+        <div class="annual-feature"><span class="annual-check">✓</span>2 sesi konsultasi privat dengan pakar</div>
       </div>
     </div>
   </div>

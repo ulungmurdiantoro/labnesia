@@ -245,7 +245,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
             <td class="col-featured"><span class="price-tag">Rp 14–35 jt</span><span class="price-sub">1–3 peserta/lab</span></td>
             <td><span class="price-tag">Rp 36 jt</span><span class="price-sub">Per lab</span></td>
             <td><span class="price-tag">Rp 150–200 jt</span><span class="price-sub">Per lab</span></td>
-            <td style="background:rgba(8,80,65,0.05)"><span class="price-tag" style="color:#085041">Rp 78–134 jt</span><span class="price-sub">Per tahun · recurring</span></td>
+            <td style="background:rgba(8,80,65,0.05)"><span class="price-tag" style="color:#085041">Rp 36–70 jt</span><span class="price-sub">Per tahun · recurring</span></td>
           </tr>
           <tr>
             <td>Nilai benefit gratis</td>
