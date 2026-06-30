@@ -29,7 +29,7 @@ get_header(); ?>
 
             <div class="hero-actions">
                 <a href="#give" class="btn-primary">Mulai dari yang Gratis →</a>
-                <a href="#produk" class="btn-ghost">Lihat Program Pendampingan</a>
+                <a href="<?php echo esc_url( home_url( '/kelas-pendampingan/' ) ); ?>" class="btn-ghost">Lihat Program Pendampingan</a>
             </div>
 
             <div class="hero-stats">
