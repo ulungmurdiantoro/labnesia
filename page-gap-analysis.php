@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*
 Template Name: Gap Analysis
 */
@@ -147,7 +147,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 <?php wp_body_open(); ?>
 
 <!-- NAV -->
-<nav>
+<nav class="site-header">
   <a class="nav-logo" href="<?php echo $url_home; ?>">
     <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;">
   </a>
@@ -651,3 +651,4 @@ function showResult() {
 <?php wp_footer(); ?>
 </body>
 </html>
+

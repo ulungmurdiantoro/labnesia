@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 if ( ! defined( 'ABSPATH' ) ) exit;
 $url_home      = esc_url( home_url( '/' ) );
 $url_kelas     = esc_url( home_url( '/kelas-pendampingan/' ) );
@@ -365,7 +365,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 <?php wp_body_open(); ?>
 
 <!-- NAV -->
-<nav>
+<nav class="site-header">
   <div class="nav-logo">
     <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;">
   </div>
@@ -915,7 +915,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer class="site-footer">
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="nav-logo" style="margin-bottom:16px">
@@ -991,3 +991,4 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 <?php wp_footer(); ?>
 </body>
 </html>
+

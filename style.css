@@ -56,7 +56,7 @@ a { text-decoration: none; }
 /* =====================================================================
    NAVIGATION
    ===================================================================== */
-nav, .site-header {
+.site-header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   background: rgba(11,31,58,0.97);
   backdrop-filter: blur(8px);
@@ -516,7 +516,7 @@ nav, .site-header {
 /* =====================================================================
    FOOTER
    ===================================================================== */
-footer, .site-footer {
+.site-footer {
   background: var(--navy); color: rgba(255,255,255,0.5);
   padding: 64px 48px 32px;
   border-top: 1px solid rgba(255,255,255,0.08);

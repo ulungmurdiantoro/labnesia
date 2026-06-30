@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*
 Template Name: Optimasi Alat Laboratorium
 */
@@ -199,7 +199,7 @@ details.lab-card[open] .chevron { transform: rotate(180deg); color: var(--teal);
 <body <?php body_class( 'page-optimasi-alat' ); ?>>
 <?php wp_body_open(); ?>
 
-<nav>
+<nav class="site-header">
   <div class="nav-logo">
     <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;">
   </div>
@@ -514,7 +514,7 @@ details.lab-card[open] .chevron { transform: rotate(180deg); color: var(--teal);
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer class="site-footer">
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="nav-logo" style="margin-bottom:16px">
@@ -564,3 +564,4 @@ details.lab-card[open] .chevron { transform: rotate(180deg); color: var(--teal);
 <?php wp_footer(); ?>
 </body>
 </html>
+

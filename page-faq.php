@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*
 Template Name: FAQ dan Perbandingan
 */
@@ -159,7 +159,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 <body <?php body_class( 'page-faq' ); ?>>
 <?php wp_body_open(); ?>
 
-<nav>
+<nav class="site-header">
   <div class="nav-logo">
     <a href="<?php echo $url_home; ?>">
       <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;">
@@ -567,7 +567,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
   </div>
 </div>
 
-<footer>
+<footer class="site-footer">
     <div class="footer-bottom">
     <span>&copy; <?php echo date('Y'); ?> Labnesia &middot; Padma Global Nusatama</span>
     <span><a href="https://labnesia.id">labnesia.id</a></span>
@@ -599,3 +599,4 @@ document.querySelectorAll('.jump-btn').forEach(btn=>{
 <?php wp_footer(); ?>
 </body>
 </html>
+
