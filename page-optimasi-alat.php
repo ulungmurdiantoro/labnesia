@@ -269,7 +269,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
 
 <nav>
   <div class="nav-logo">
-    <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="width:36px;height:36px;object-fit:contain;">
+    <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;">
   </div>
   <div class="nav-links">
     <a href="<?php echo $url_home; ?>">Beranda</a>
@@ -585,7 +585,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="nav-logo" style="margin-bottom:16px">
-        <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="width:36px;height:36px;object-fit:contain;">
+        <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;">
       </div>
       <p>Membangun SDM Kompeten, Menguatkan Laboratorium Indonesia. Terakreditasi Komite Akreditasi Nasional (KAN).</p>
       <p style="margin-top:16px;font-size:13px;line-height:1.8;">📧 info@labnesia.id<br>📞 +62 821-7222-1567 (Endang)<br>📞 +62 851-8500-0367 (Berryl)<br>📞 +62 811-399-523 (Kintan)<br>📍 labnesia.id</p>

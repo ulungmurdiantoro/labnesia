@@ -223,7 +223,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <div class="nav-logo-mark"><img src="<?php echo $logo_url; ?>" alt="Labnesia" style="width:36px;height:36px;object-fit:contain;"></div>
+    <div class="nav-logo-mark"><img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;"></div>
   </div>
   <div class="nav-links">
     <a href="<?php echo $url_home; ?>" class="nav-back">← Kembali ke beranda</a>
