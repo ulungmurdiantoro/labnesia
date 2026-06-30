@@ -161,6 +161,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
     </a>
   </div>
     <div class="nav-links">
+    <a href="<?php echo $url_home; ?>">Beranda</a>
     <a href="<?php echo $url_kelas; ?>">Kelas Pendampingan</a>
     <a href="<?php echo $url_inhouse; ?>">Inhouse Training</a>
     <a href="<?php echo $url_pelatihan; ?>">Pelatihan Sertifikasi</a>

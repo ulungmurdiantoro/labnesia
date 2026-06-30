@@ -272,6 +272,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
     <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;">
   </div>
     <div class="nav-links">
+    <a href="<?php echo $url_home; ?>">Beranda</a>
     <a href="<?php echo $url_kelas; ?>">Kelas Pendampingan</a>
     <a href="<?php echo $url_inhouse; ?>">Inhouse Training</a>
     <a href="<?php echo $url_pelatihan; ?>">Pelatihan Sertifikasi</a>

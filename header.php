@@ -16,9 +16,10 @@
     </a>
 
     <nav class="nav-links" id="primary-nav" aria-label="<?php esc_attr_e('Menu Utama','labnesia'); ?>">
+        <a href="<?php echo esc_url( home_url('/') ); ?>"><?php _e('Beranda','labnesia'); ?></a>
         <a href="<?php echo esc_url( home_url('/kelas-pendampingan/') ); ?>"><?php _e('Kelas Pendampingan','labnesia'); ?></a>
-        <a href="<?php echo esc_url( home_url('/inhouse/') ); ?>"><?php _e('Inhouse','labnesia'); ?></a>
-        <a href="<?php echo esc_url( home_url('/pelatihan-sertifikasi/') ); ?>"><?php _e('Pelatihan','labnesia'); ?></a>
+        <a href="<?php echo esc_url( home_url('/inhouse/') ); ?>"><?php _e('Inhouse Training','labnesia'); ?></a>
+        <a href="<?php echo esc_url( home_url('/pelatihan-sertifikasi/') ); ?>"><?php _e('Pelatihan Sertifikasi','labnesia'); ?></a>
         <a href="<?php echo esc_url( home_url('/optimasi-alat/') ); ?>"><?php _e('Optimasi Alat','labnesia'); ?></a>
         <a href="<?php echo esc_url( home_url('/faq/') ); ?>"><?php _e('FAQ','labnesia'); ?></a>
         <a href="<?php echo esc_url( home_url('/mulai-gratis/') ); ?>" class="nav-cta">
