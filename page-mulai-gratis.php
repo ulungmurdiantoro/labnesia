@@ -388,7 +388,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="dl-icon">📘</div>
         <div class="dl-title">Panduan SNI ISO/IEC 17025:2017</div>
         <div class="dl-desc">Ringkasan klausul &amp; persyaratan standar yang mudah dipahami</div>
-        <a href="#" class="dl-btn">↓ Unduh PDF</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhQfpt4a1KsUHVKBlJQks0ml5KCyu15jF4LvJDsRQ5QH2FLg/viewform" class="dl-btn">↓ Unduh PDF</a>
         <div class="dl-format">PDF · 24 halaman</div>
       </div>
       <div class="dl-card">
@@ -402,7 +402,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="dl-icon">📚</div>
         <div class="dl-title">Silabus Lengkap Kelas Pendampingan</div>
         <div class="dl-desc">Outline 13 sesi, output per sesi, dan timeline 6 bulan program</div>
-        <a href="#" class="dl-btn">↓ Unduh PDF</a>
+        <a href="<?php echo $url_kelas; ?>" class="dl-btn">↓ Unduh PDF</a>
         <div class="dl-format">PDF · 16 halaman</div>
       </div>
       <div class="dl-card">
