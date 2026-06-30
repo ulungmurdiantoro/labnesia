@@ -308,7 +308,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
           <div class="annual-tier-desc">Untuk lab dengan kebutuhan dasar</div>
         </div>
         <div class="annual-tier-price-row">
-          <div class="annual-tier-final">Rp 78 jt</div>
+          <div class="annual-tier-final">Rp 36 jt</div>
           <div class="annual-tier-unit">per tahun</div>
         </div>
         <div class="annual-tier-body">
@@ -326,7 +326,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
           <div class="annual-tier-desc">Untuk lab dengan kebutuhan lebih intensif</div>
         </div>
         <div class="annual-tier-price-row">
-          <div class="annual-tier-final">Rp 134 jt</div>
+          <div class="annual-tier-final">Rp 70 jt</div>
           <div class="annual-tier-unit">per tahun</div>
         </div>
         <div class="annual-tier-body">
@@ -339,7 +339,11 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
       </div>
     </div>
 
-    <p style="font-size:13px;color:var(--gray-600);margin-top:20px;text-align:center">Butuh skema institusional untuk kebutuhan lebih besar (multi-lab, multi-kampus)? <a href="#kontak" style="color:var(--teal-dark);font-weight:600">Hubungi tim kami untuk paket on-demand →</a></p>
+    <p style="font-size:13px;color:var(--gray-600);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px;padding:12px 16px;margin-top:16px;line-height:1.6">
+      ⓘ Biaya menyesuaikan dengan besaran ruang lingkup laboratorium dan rekomendasi terbaik untuk penyelesaian temuan dan optimalisasi sistem mutu laboratorium.
+    </p>
+
+    <p style="font-size:13px;color:var(--gray-600);margin-top:16px;text-align:center">Butuh skema institusional untuk kebutuhan lebih besar (multi-lab, multi-kampus)? <a href="#kontak" style="color:var(--teal-dark);font-weight:600">Hubungi tim kami untuk paket on-demand →</a></p>
 
     <!-- INDIVIDUAL -->
     <h3 style="font-size:20px;font-weight:800;color:var(--navy);margin-top:48px;margin-bottom:8px">Kemitraan Individu</h3>
