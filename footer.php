@@ -3,7 +3,7 @@
     <div class="footer-grid">
         <div class="footer-brand">
             <a class="nav-logo" href="<?php echo esc_url( home_url('/') ); ?>" style="margin-bottom:16px;display:flex;align-items:center;gap:10px;">
-                <div class="nav-logo-mark">Lab</div>
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/logo/logo-labnesia.gif' ); ?>" alt="<?php bloginfo('name'); ?>" style="width:36px;height:36px;object-fit:contain;">
                 <div>
                     <span class="nav-logo-text"><?php bloginfo('name'); ?></span>
                     <span class="nav-logo-sub"><?php echo esc_html( get_theme_mod('labnesia_tagline','Pusat Kompetensi ISO/IEC 17025') ); ?></span>
@@ -31,10 +31,10 @@
         <div class="footer-col">
             <h4><?php _e('Program','labnesia'); ?></h4>
             <a href="<?php echo esc_url( home_url('/kelas-pendampingan/') ); ?>">Kelas Pendampingan</a>
-            <a href="<?php echo esc_url( home_url('/kelas-pendampingan/') ); ?>#daftar">Daftar Program</a>
-            <a href="<?php echo esc_url( home_url('/faq/') ); ?>#perbandingan">Perbandingan Program</a>
-            <a href="<?php echo esc_url( home_url('/faq/') ); ?>#panduan">Panduan Memilih</a>
-            <a href="<?php echo esc_url( home_url('/faq/') ); ?>#kontak">Hubungi Tim</a>
+            <a href="<?php echo esc_url( home_url('/inhouse/') ); ?>">Inhouse Training</a>
+            <a href="<?php echo esc_url( home_url('/pelatihan-sertifikasi/') ); ?>">Pelatihan &amp; Sertifikasi</a>
+            <a href="<?php echo esc_url( home_url('/optimasi-alat/') ); ?>">Optimasi Alat Lab</a>
+            <a href="<?php echo esc_url( home_url('/faq/') ); ?>">FAQ &amp; Perbandingan</a>
         </div>
 
         <div class="footer-col">

@@ -16,12 +16,13 @@
     </a>
 
     <nav class="nav-links" id="primary-nav" aria-label="<?php esc_attr_e('Menu Utama','labnesia'); ?>">
-        <a href="#give"><?php _e('Mulai Gratis','labnesia'); ?></a>
-        <a href="#produk"><?php _e('Program','labnesia'); ?></a>
-        <a href="#alumni"><?php _e('Alumni','labnesia'); ?></a>
-        <a href="#mulai"><?php _e('Kontak','labnesia'); ?></a>
-        <a href="<?php echo esc_url( get_theme_mod('labnesia_cta_url','#konsultasi') ); ?>" class="nav-cta">
-            <?php _e('Konsultasi Gratis','labnesia'); ?>
+        <a href="<?php echo esc_url( home_url('/kelas-pendampingan/') ); ?>"><?php _e('Kelas Pendampingan','labnesia'); ?></a>
+        <a href="<?php echo esc_url( home_url('/inhouse/') ); ?>"><?php _e('Inhouse','labnesia'); ?></a>
+        <a href="<?php echo esc_url( home_url('/pelatihan-sertifikasi/') ); ?>"><?php _e('Pelatihan','labnesia'); ?></a>
+        <a href="<?php echo esc_url( home_url('/optimasi-alat/') ); ?>"><?php _e('Optimasi Alat','labnesia'); ?></a>
+        <a href="<?php echo esc_url( home_url('/faq/') ); ?>"><?php _e('FAQ','labnesia'); ?></a>
+        <a href="<?php echo esc_url( home_url('/mulai-gratis/') ); ?>" class="nav-cta">
+            <?php _e('Mulai Gratis','labnesia'); ?>
         </a>
     </nav>
 
