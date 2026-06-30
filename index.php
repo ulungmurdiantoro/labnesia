@@ -64,14 +64,14 @@ get_header(); ?>
                 <span class="journey-badge badge-free">Gratis</span>
             </div>
 
-            <div class="journey-step active">
+            <a href="<?php echo esc_url( home_url( '/kelas-pendampingan/' ) ); ?>" class="journey-step active" style="text-decoration:none;color:inherit;">
                 <div class="journey-dot dot-active" aria-label="Aktif">★</div>
                 <div class="journey-info">
                     <div class="journey-label">Kelas Pendampingan Akreditasi</div>
                     <div class="journey-sub">4 tahap, online/hybrid, bersama pakar</div>
                 </div>
                 <span class="journey-badge badge-core">Core</span>
-            </div>
+            </a>
 
             <div class="journey-step">
                 <div class="journey-dot dot-locked" aria-label="Belum dimulai">4</div>
@@ -205,7 +205,7 @@ get_header(); ?>
                 $ladder = [
                     [ 'name'=>'Webinar &amp; Bootcamp',        'price'=>'Gratis – 500rb',    'desc'=>'Awareness, orientasi, dan pemahaman dasar ISO 17025',                              'active'=>false, 'badge'=>'' ],
                     [ 'name'=>'Pelatihan &amp; Sertifikasi KAN','price'=>'2–7 jt/orang',     'desc'=>'Pelatihan 40 JP + sertifikat kompetensi KAN (Lead Implementer / AI)',             'active'=>false, 'badge'=>'' ],
-                    [ 'name'=>'★ Kelas Pendampingan',           'price'=>'14–35 jt/lab',      'desc'=>'4 tahap, output terstandarisasi, 6 bulan, siap audit internal',                    'active'=>true,  'badge'=>'Produk Unggulan 2026' ],
+                    [ 'name'=>'★ Kelas Pendampingan',           'price'=>'14–35 jt/lab',      'desc'=>'4 tahap, output terstandarisasi, 6 bulan, siap audit internal',                    'active'=>true,  'badge'=>'Produk Unggulan 2026', 'url'=>'/kelas-pendampingan/' ],
                     [ 'name'=>'Kelas Lanjutan (Privat)',         'price'=>'36 jt/lab',         'desc'=>'Fokus Tahap 5: pendaftaran KAN, audit kelayakan, simulasi asesmen',                'active'=>false, 'badge'=>'' ],
                     [ 'name'=>'Full Pendampingan (In House)',    'price'=>'150–200 jt/lab',    'desc'=>'Pendampingan privat penuh Tahap 1–5, dari nol hingga akreditasi',                 'active'=>false, 'badge'=>'' ],
                     [ 'name'=>'Host Laboratory Program',         'price'=>'MoU / Kemitraan',   'desc'=>'Lab Anda jadi pusat pelatihan &amp; income generator nasional',                   'active'=>false, 'badge'=>'' ],
@@ -223,6 +223,9 @@ get_header(); ?>
                         <div class="ladder-desc"><?php echo $step['desc']; ?></div>
                         <?php if ( $step['badge'] ) : ?>
                         <div class="ladder-badge"><?php echo esc_html($step['badge']); ?></div>
+                        <?php endif; ?>
+                        <?php if ( ! empty($step['url']) ) : ?>
+                        <a href="<?php echo esc_url( home_url( $step['url'] ) ); ?>" class="ladder-link">Lihat detail →</a>
                         <?php endif; ?>
                     </div>
                 </div>
