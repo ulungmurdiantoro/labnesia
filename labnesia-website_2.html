@@ -1,21 +1,12 @@
-<?php
-if ( ! defined( 'ABSPATH' ) ) exit;
-$url_home      = esc_url( home_url( '/' ) );
-$url_kelas     = esc_url( home_url( '/kelas-pendampingan/' ) );
-$url_gratis    = esc_url( home_url( '/mulai-gratis/' ) );
-$url_faq       = esc_url( home_url( '/faq/' ) );
-$url_inhouse   = esc_url( home_url( '/inhouse/' ) );
-$url_pelatihan = esc_url( home_url( '/pelatihan-sertifikasi/' ) );
-$url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
-$logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABNESIA-004.gif' );
-?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html lang="id">
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<?php wp_head(); ?>
+<title>Labnesia.id — Pusat Kompetensi ISO/IEC 17025</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
   :root {
     --navy: #0B1F3A;
     --navy-mid: #122845;
@@ -428,21 +419,24 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
   .text-center { text-align: center; }
 </style>
 </head>
-<body <?php body_class( 'page-home' ); ?>>
-<?php wp_body_open(); ?>
+<body>
 
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;">
+    <div class="nav-logo-mark">Lab</div>
+    <div>
+      <span class="nav-logo-text">Labnesia</span>
+      <span class="nav-logo-sub">Pusat Kompetensi ISO/IEC 17025</span>
+    </div>
   </div>
-    <div class="nav-links">
-    <a href="<?php echo $url_kelas; ?>">Kelas Pendampingan</a>
-    <a href="<?php echo $url_inhouse; ?>">Inhouse Training</a>
-    <a href="<?php echo $url_pelatihan; ?>">Pelatihan Sertifikasi</a>
-    <a href="<?php echo $url_optimasi; ?>">Optimasi Alat</a>
-    <a href="<?php echo $url_faq; ?>">FAQ</a>
-    <a href="<?php echo $url_gratis; ?>" class="nav-cta">Mulai Gratis</a>
+  <div class="nav-links">
+    <a href="labnesia-give-value.html">Mulai Gratis</a>
+    <a href="labnesia-pelatihan-sertifikasi.html">Pelatihan & Sertifikasi</a>
+    <a href="labnesia-kelas-pendampingan.html">Kelas Pendampingan</a>
+    <a href="labnesia-inhouse.html">In House Training</a>
+    <a href="labnesia-faq.html">FAQ</a>
+    <a href="#konsultasi" class="nav-cta">Konsultasi Gratis</a>
   </div>
 </nav>
 
@@ -604,7 +598,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="give-card-icon">📋</div>
         <div class="give-card-title">Gap Analysis Gratis</div>
         <div class="give-card-desc">Kami analisis kondisi lab Anda saat ini: gap dokumen, gap teknis, dan kesiapan sistem mutu. Hasilnya Anda dapatkan: Laporan GAP, Penetapan Ruang Lingkup, Struktur Organisasi, dan Roadmap Implementasi.</div>
-        <a href="<?php echo $url_gratis; ?>" class="give-card-cta">Daftar Gap Analysis →</a>
+        <a href="#" class="give-card-cta">Daftar Gap Analysis →</a>
       </div>
 
       <div class="give-card">
@@ -612,7 +606,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="give-card-icon">🎓</div>
         <div class="give-card-title">Webinar Lab Talk</div>
         <div class="give-card-desc">Sesi edukasi mingguan tentang ISO 17025, tips akreditasi, studi kasus lab, dan sharing dari pakar. Cocok untuk awareness & orientasi tim lab Anda.</div>
-        <a href="<?php echo $url_gratis; ?>" class="give-card-cta">Lihat jadwal webinar →</a>
+        <a href="#" class="give-card-cta">Lihat jadwal webinar →</a>
       </div>
 
       <div class="give-card">
@@ -620,7 +614,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="give-card-icon">📥</div>
         <div class="give-card-title">Download Panduan & Template</div>
         <div class="give-card-desc">Panduan SNI ISO 17025, checklist persiapan akreditasi, silabus pelatihan, dan contoh dokumen audit kecukupan. Langsung bisa digunakan oleh tim Anda.</div>
-        <a href="<?php echo $url_gratis; ?>" class="give-card-cta">Download sekarang →</a>
+        <a href="#" class="give-card-cta">Download sekarang →</a>
       </div>
 
       <div class="give-card">
@@ -628,7 +622,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="give-card-icon">⚡</div>
         <div class="give-card-title">Bootcamp 1 Hari</div>
         <div class="give-card-desc">Program intensif 1 hari (online) untuk memahami alur akreditasi secara menyeluruh. Dari struktur dokumen hingga cara daftar di KANMIS 2.0. Biaya sangat terjangkau.</div>
-        <a href="<?php echo $url_gratis; ?>" class="give-card-cta">Lihat jadwal bootcamp →</a>
+        <a href="#" class="give-card-cta">Lihat jadwal bootcamp →</a>
       </div>
 
       <div class="give-card">
@@ -636,7 +630,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="give-card-icon">🎓</div>
         <div class="give-card-title">Program Kuliah Praktisi</div>
         <div class="give-card-desc">Sesi tatap muka di kampus: mahasiswa tingkat akhir mendapatkan pemahaman nyata tentang sistem mutu lab & karir di bidang ini. Gratis untuk kampus mitra Labnesia.</div>
-        <a href="<?php echo $url_gratis; ?>" class="give-card-cta">Undang Labnesia ke kampus →</a>
+        <a href="#" class="give-card-cta">Undang Labnesia ke kampus →</a>
       </div>
 
       <div class="give-card">
@@ -644,7 +638,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="give-card-icon">💬</div>
         <div class="give-card-title">Komunitas Lab Kompeten</div>
         <div class="give-card-desc">Forum diskusi eksklusif nasional antar manajer lab, analis, dan auditor internal. Tanya jawab dengan pakar, sharing pengalaman asesmen, dan update regulasi terbaru dari KAN.</div>
-        <a href="<?php echo $url_gratis; ?>" class="give-card-cta">Bergabung ke komunitas →</a>
+        <a href="#" class="give-card-cta">Bergabung ke komunitas →</a>
       </div>
     </div>
   </div>
@@ -742,8 +736,8 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="give-banner-sub">Gap Analysis gratis + komunitas + webinar mingguan tersedia tanpa biaya. Ketika lab Anda sudah siap, kami ada di sini.</div>
       </div>
       <div class="give-banner-actions">
-        <a href="<?php echo $url_gratis; ?>" class="btn-teal">Daftar Gap Analysis Gratis</a>
-        <a href="<?php echo $url_gratis; ?>" class="btn-primary">Konsultasi dengan Tim Kami</a>
+        <a href="#" class="btn-teal">Daftar Gap Analysis Gratis</a>
+        <a href="#" class="btn-primary">Konsultasi dengan Tim Kami</a>
       </div>
     </div>
 
@@ -762,7 +756,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
           <div class="product-feature"><div class="feature-check">✓</div><div class="feature-text">Materi Lead Implementer atau Auditor Internal ISO/IEC 17025</div></div>
           <div class="product-feature"><div class="feature-check">✓</div><div class="feature-text">Modul pembelajaran terstandarisasi oleh para pakar</div></div>
           <div class="product-feature"><div class="feature-check">✓</div><div class="feature-text">Cocok untuk individu & fresh graduate</div></div>
-          <a href="<?php echo $url_pelatihan; ?>" class="product-card-cta cta-outline">Lihat jadwal pelatihan</a>
+          <a href="labnesia-pelatihan-sertifikasi.html" class="product-card-cta cta-outline">Lihat jadwal pelatihan</a>
         </div>
       </div>
 
@@ -780,7 +774,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
           <div class="product-feature"><div class="feature-check">✓</div><div class="feature-text">GRATIS konsultasi privat 1-on-1 dengan pakar (Rp 3 jt)</div></div>
           <div class="product-feature"><div class="feature-check">✓</div><div class="feature-text">Akses webinar & bootcamp 1 tahun penuh</div></div>
           <div class="product-feature"><div class="feature-check">✓</div><div class="feature-text">Hemat hingga Rp 20 juta dibanding harga satuan</div></div>
-          <a href="<?php echo $url_kelas; ?>" class="product-card-cta cta-primary">Daftar Kelas Pendampingan</a>
+          <a href="#" class="product-card-cta cta-primary">Daftar Kelas Pendampingan</a>
         </div>
       </div>
 
@@ -795,7 +789,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
           <div class="product-feature"><div class="feature-check">✓</div><div class="feature-text">Pendampingan audit kelayakan & simulasi asesmen intensif</div></div>
           <div class="product-feature"><div class="feature-check">✓</div><div class="feature-text">Full pendampingan 150–200 jt tersedia untuk yang ingin nol hingga akreditasi</div></div>
           <div class="product-feature"><div class="feature-check">✓</div><div class="feature-text">Host Laboratory Program untuk menjadi mitra & income generator</div></div>
-          <a href="<?php echo $url_inhouse; ?>" class="product-card-cta cta-outline">Konsultasi kebutuhan lab</a>
+          <a href="labnesia-inhouse.html" class="product-card-cta cta-outline">Konsultasi kebutuhan lab</a>
         </div>
       </div>
 
@@ -821,7 +815,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
               <span style="font-size:10px;padding:2px 7px;border-radius:3px;background:rgba(26,158,117,0.15);color:var(--teal);font-weight:600">Surveillance Lite · Surveillance Pro</span>
             </div>
           </div>
-          <a href="<?php echo $url_inhouse; ?>#jaga" class="product-card-cta" style="background:var(--teal);color:white;margin-top:16px">Lihat paket tahunan</a>
+          <a href="labnesia-inhouse.html#jaga" class="product-card-cta" style="background:var(--teal);color:white;margin-top:16px">Lihat paket tahunan</a>
         </div>
       </div>
     </div>
@@ -903,7 +897,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);font-size:12px;padding:6px 14px;border-radius:100px">Lab Sipil</span>
         <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);font-size:12px;padding:6px 14px;border-radius:100px">+6 bidang lainnya</span>
       </div>
-      <a href="<?php echo $url_optimasi; ?>" class="btn-primary">Pelajari Optimalisasi Lab Anda →</a>
+      <a href="#" class="btn-primary">Pelajari Optimalisasi Lab Anda →</a>
     </div>
     <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:28px">
       <p style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.4);letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px">Alur optimalisasi yang kami bahas</p>
@@ -952,25 +946,25 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
     </div>
 
     <div class="start-options" style="grid-template-columns:repeat(4,1fr)">
-      <a href="<?php echo $url_gratis; ?>" class="start-option">
+      <a href="#" class="start-option">
         <div class="start-option-tag">Mulai Hari Ini · Gratis</div>
         <div class="start-option-title">Daftar Gap Analysis Lab Saya</div>
         <div class="start-option-desc">Dapatkan laporan gap dokumen & teknis, penetapan ruang lingkup, dan roadmap implementasi. 100% gratis.</div>
         <div class="start-option-arrow">→</div>
       </a>
-      <a href="<?php echo $url_gratis; ?>" class="start-option">
+      <a href="#" class="start-option">
         <div class="start-option-tag">Butuh Informasi Dulu</div>
         <div class="start-option-title">Konsultasi 30 Menit Bersama Tim Kami</div>
         <div class="start-option-desc">Ceritakan kondisi lab Anda. Kami bantu petakan jalur terbaik tanpa komitmen apapun dari Anda.</div>
         <div class="start-option-arrow">→</div>
       </a>
-      <a href="<?php echo $url_kelas; ?>" class="start-option">
+      <a href="#" class="start-option">
         <div class="start-option-tag">Sudah Siap · Daftar Sekarang</div>
         <div class="start-option-title">Masuk ke Kelas Pendampingan</div>
         <div class="start-option-desc">Batch berikutnya dimulai bulan depan. Tempat terbatas — maks. 10 instansi per batch.</div>
         <div class="start-option-arrow">→</div>
       </a>
-      <a href="<?php echo $url_inhouse; ?>" class="start-option" style="border-color:rgba(26,158,117,0.4);background:rgba(26,158,117,0.08)">
+      <a href="#" class="start-option" style="border-color:rgba(26,158,117,0.4);background:rgba(26,158,117,0.08)">
         <div class="start-option-tag" style="color:#4DD9A8">Sudah Terakreditasi KAN</div>
         <div class="start-option-title">Jaga Akreditasi dengan Annual Partnership</div>
         <div class="start-option-desc">Program tahunan untuk lab yang ingin tetap terakreditasi — tanpa memulai dari nol setiap tahun.</div>
@@ -985,44 +979,48 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="nav-logo" style="margin-bottom:16px">
-        <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;">
+        <div class="nav-logo-mark">Lab</div>
+        <div>
+          <span class="nav-logo-text">Labnesia</span>
+          <span class="nav-logo-sub">Pusat Kompetensi ISO/IEC 17025</span>
+        </div>
       </div>
       <p>Membangun SDM Kompeten, Menguatkan Laboratorium Indonesia. Terakreditasi Komite Akreditasi Nasional (KAN).</p>
       <p style="margin-top:16px;font-size:13px;line-height:1.8;">📧 info@labnesia.id<br>📞 +62 821-7222-1567 (Endang)<br>📞 +62 851-8500-0367 (Berryl)<br>📞 +62 811-399-523 (Kintan)<br>📍 labnesia.id</p>
     </div>
     <div class="footer-col">
       <h4>Mulai Gratis</h4>
-      <a href="<?php echo $url_gratis; ?>">Gap Analysis Gratis</a>
-      <a href="<?php echo $url_gratis; ?>">Webinar Lab Talk</a>
-      <a href="<?php echo $url_gratis; ?>">Download Panduan</a>
-      <a href="<?php echo $url_gratis; ?>">Komunitas Lab</a>
-      <a href="<?php echo $url_gratis; ?>">Kuliah Praktisi</a>
+      <a href="#">Gap Analysis Gratis</a>
+      <a href="#">Webinar Lab Talk</a>
+      <a href="#">Download Panduan</a>
+      <a href="#">Komunitas Lab</a>
+      <a href="#">Kuliah Praktisi</a>
     </div>
     <div class="footer-col">
       <h4>Program</h4>
-      <a href="<?php echo $url_pelatihan; ?>">Pelatihan &amp; Sertifikasi</a>
-      <a href="<?php echo $url_kelas; ?>">Kelas Pendampingan</a>
-      <a href="<?php echo $url_inhouse; ?>">Kelas Lanjutan Privat</a>
-      <a href="<?php echo $url_inhouse; ?>">Full Pendampingan</a>
-      <a href="<?php echo $url_inhouse; ?>">Host Lab Program</a>
+      <a href="#">Pelatihan & Sertifikasi</a>
+      <a href="#">Kelas Pendampingan</a>
+      <a href="#">Kelas Lanjutan Privat</a>
+      <a href="#">Full Pendampingan</a>
+      <a href="#">Host Lab Program</a>
     </div>
     <div class="footer-col">
       <h4>Tentang</h4>
-      <a href="<?php echo $url_home; ?>">Tentang Labnesia</a>
-      <a href="<?php echo $url_home; ?>">Para Pakar</a>
-      <a href="<?php echo $url_home; ?>">Alumni &amp; Testimoni</a>
-      <a href="<?php echo $url_home; ?>">Blog &amp; Artikel</a>
-      <a href="<?php echo $url_home; ?>">Hubungi Kami</a>
+      <a href="#">Tentang Labnesia</a>
+      <a href="#">Para Pakar</a>
+      <a href="#">Alumni & Testimoni</a>
+      <a href="#">Blog & Artikel</a>
+      <a href="#">Hubungi Kami</a>
     </div>
   </div>
-    <div class="footer-bottom">
-    <span>&copy; <?php echo date('Y'); ?> Labnesia &middot; Padma Global Nusatama</span>
-    <span><a href="https://labnesia.id">labnesia.id</a></span>
+  <div class="footer-bottom">
+    <span>© 2026 Labnesia · Padma Global Nusatama</span>
+    <span>Mitra Pengembangan Laboratorium Indonesia · <a href="#">labnesia.id</a></span>
   </div>
 </footer>
 
 <!-- FLOATING CTA -->
-<a href="<?php echo $url_gratis; ?>" class="float-cta" id="konsultasi">
+<a href="#" class="float-cta" id="konsultasi">
   💬 Konsultasi Gratis
 </a>
 
@@ -1053,7 +1051,5 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
     });
   });
 </script>
-
-<?php wp_footer(); ?>
 </body>
 </html>

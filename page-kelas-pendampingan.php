@@ -225,13 +225,13 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
   <div class="nav-logo">
     <div class="nav-logo-mark"><img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;"></div>
   </div>
-  <div class="nav-links">
-    <a href="<?php echo $url_home; ?>" class="nav-back">← Kembali ke beranda</a>
-    <a href="<?php echo $url_gratis; ?>">Mulai Gratis</a>
-    <a href="<?php echo $url_pelatihan; ?>">Pelatihan & Sertifikasi</a>
-    <a href="<?php echo $url_inhouse; ?>">In House Training</a>
-    <a href="<?php echo $url_faq; ?>">FAQ & Perbandingan</a>
-    <a href="#daftar" class="nav-cta">Daftar Sekarang</a>
+    <div class="nav-links">
+    <a href="<?php echo $url_kelas; ?>">Kelas Pendampingan</a>
+    <a href="<?php echo $url_inhouse; ?>">Inhouse Training</a>
+    <a href="<?php echo $url_pelatihan; ?>">Pelatihan Sertifikasi</a>
+    <a href="<?php echo $url_optimasi; ?>">Optimasi Alat</a>
+    <a href="<?php echo $url_faq; ?>">FAQ</a>
+    <a href="<?php echo $url_gratis; ?>" class="nav-cta">Mulai Gratis</a>
   </div>
 </nav>
 
@@ -868,9 +868,9 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 </div>
 
 <footer>
-  <div class="footer-bottom">
-    <span style="color:rgba(255,255,255,0.4)">© <?php echo date('Y'); ?> Labnesia · Padma Global Nusatama · Mitra Pengembangan Laboratorium Indonesia</span>
-    <span><a href="<?php echo $url_home; ?>">Beranda</a> · <a href="<?php echo $url_gratis; ?>">Mulai Gratis</a> · <a href="<?php echo $url_faq; ?>">FAQ</a></span>
+    <div class="footer-bottom">
+    <span>&copy; <?php echo date('Y'); ?> Labnesia &middot; Padma Global Nusatama</span>
+    <span><a href="https://labnesia.id">labnesia.id</a></span>
   </div>
 </footer>
 
