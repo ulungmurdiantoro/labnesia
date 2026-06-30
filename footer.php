@@ -21,29 +21,28 @@
 
         <div class="footer-col">
             <h4><?php _e('Mulai Gratis','labnesia'); ?></h4>
-            <a href="#">Gap Analysis Gratis</a>
-            <a href="#">Webinar Lab Talk</a>
-            <a href="#">Download Panduan</a>
-            <a href="#">Komunitas Lab</a>
-            <a href="#">Kuliah Praktisi</a>
+            <a href="<?php echo esc_url( home_url('/mulai-gratis/') ); ?>">Gap Analysis Gratis</a>
+            <a href="<?php echo esc_url( home_url('/mulai-gratis/') ); ?>#webinar">Webinar Lab Talk</a>
+            <a href="<?php echo esc_url( home_url('/mulai-gratis/') ); ?>#download">Download Panduan</a>
+            <a href="<?php echo esc_url( home_url('/mulai-gratis/') ); ?>">Komunitas Lab</a>
+            <a href="<?php echo esc_url( home_url('/mulai-gratis/') ); ?>#praktisi">Kuliah Praktisi</a>
         </div>
 
         <div class="footer-col">
             <h4><?php _e('Program','labnesia'); ?></h4>
-            <a href="#">Pelatihan &amp; Sertifikasi</a>
-            <a href="#">Kelas Pendampingan</a>
-            <a href="#">Kelas Lanjutan Privat</a>
-            <a href="#">Full Pendampingan</a>
-            <a href="#">Host Lab Program</a>
+            <a href="<?php echo esc_url( home_url('/kelas-pendampingan/') ); ?>">Kelas Pendampingan</a>
+            <a href="<?php echo esc_url( home_url('/kelas-pendampingan/') ); ?>#daftar">Daftar Program</a>
+            <a href="<?php echo esc_url( home_url('/faq/') ); ?>#perbandingan">Perbandingan Program</a>
+            <a href="<?php echo esc_url( home_url('/faq/') ); ?>#panduan">Panduan Memilih</a>
+            <a href="<?php echo esc_url( home_url('/faq/') ); ?>#kontak">Hubungi Tim</a>
         </div>
 
         <div class="footer-col">
-            <h4><?php _e('Tentang','labnesia'); ?></h4>
-            <a href="#">Tentang Labnesia</a>
-            <a href="#">Para Pakar</a>
-            <a href="#">Alumni &amp; Testimoni</a>
-            <a href="#">Blog &amp; Artikel</a>
-            <a href="#">Hubungi Kami</a>
+            <h4><?php _e('Informasi','labnesia'); ?></h4>
+            <a href="<?php echo esc_url( home_url('/faq/') ); ?>">FAQ &amp; Perbandingan</a>
+            <a href="<?php echo esc_url( home_url('/kelas-pendampingan/') ); ?>#para-pakar">Para Pakar</a>
+            <a href="<?php echo esc_url( home_url('/kelas-pendampingan/') ); ?>#alumni">Alumni &amp; Testimoni</a>
+            <a href="<?php echo esc_url( home_url('/faq/') ); ?>#kontak">Hubungi Kami</a>
         </div>
     </div>
 
