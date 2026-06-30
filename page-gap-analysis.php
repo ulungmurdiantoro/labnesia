@@ -20,19 +20,6 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 <title>Gap Analysis ISO/IEC 17025 — Labnesia</title>
 <?php wp_head(); ?>
 <style>
-:root{--navy:#0B1F3A;--navy-mid:#122845;--teal:#1A9E75;--teal-light:#22C28F;--teal-pale:#E8F7F2;--amber:#F5A623;--amber-pale:#FEF3DC;--white:#FFFFFF;--gray-50:#F8F9FA;--gray-100:#F1F3F5;--gray-200:#E9ECEF;--gray-400:#ADB5BD;--gray-600:#6C757D;--gray-800:#343A40;--font:'Plus Jakarta Sans',sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--font);color:var(--gray-800);background:var(--white);line-height:1.6}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,31,58,0.97);backdrop-filter:blur(8px);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.08)}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.nav-links{display:flex;align-items:center;gap:24px}
-.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s}
-.nav-links a:hover{color:white}
-.nav-cta{background:var(--amber);color:var(--navy)!important;padding:8px 18px;border-radius:8px;font-weight:700}
-
 /* HERO */
 .hero{background:var(--navy);padding:104px 48px 56px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle at 1px 1px,white 1px,transparent 0);background-size:40px 40px}
@@ -139,13 +126,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,31,58,0.9
 .btn-hitung{background:var(--teal);color:white;border:none;padding:16px 48px;border-radius:10px;font-size:16px;font-weight:800;cursor:pointer;font-family:var(--font);transition:all .2s;letter-spacing:-.2px}
 .btn-hitung:hover{background:#158a65;transform:translateY(-2px)}
 .submit-note{font-size:13px;color:var(--gray-400);margin-top:12px}
-
-/* FOOTER */
-.site-footer{background:var(--navy);color:white;padding:40px 48px}
-.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-.footer-contact{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.8}
-.footer-bottom-bar{border-top:1px solid rgba(255,255,255,0.08);margin-top:24px;padding-top:20px;display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.35)}
-.footer-bottom-bar a{color:rgba(255,255,255,0.35);text-decoration:none}
 
 @media(max-width:768px){
   nav{padding:0 20px}

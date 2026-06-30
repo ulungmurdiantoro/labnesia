@@ -19,21 +19,6 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php wp_head(); ?>
 <style>
-  :root{--navy:#0B1F3A;--teal:#1A9E75;--teal-light:#22C28F;--teal-pale:#E8F7F2;--amber:#F5A623;--amber-pale:#FEF3DC;--white:#FFFFFF;--gray-50:#F8F9FA;--gray-200:#E9ECEF;--gray-400:#ADB5BD;--gray-600:#6C757D;--gray-800:#343A40;--font-display:'Plus Jakarta Sans',sans-serif;--font-serif:'Lora',serif}
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--font-display);color:var(--gray-800);background:var(--white);line-height:1.6}
-
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,31,58,0.97);backdrop-filter:blur(8px);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.08)}
-  .nav-logo{display:flex;align-items:center;gap:10px}
-  .nav-logo-mark{width:36px;height:36px;background:var(--teal);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:14px}
-  .nav-logo-text{color:white;font-weight:700;font-size:18px}
-  .nav-logo-sub{color:rgba(255,255,255,0.45);font-size:11px;display:block;margin-top:-2px}
-  .nav-links{display:flex;align-items:center;gap:28px}
-  .nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
-  .nav-links a:hover{color:white}
-  .nav-cta{background:var(--amber);color:var(--navy);padding:8px 20px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none}
-
   /* PAGE HERO */
   .page-hero{background:var(--navy);padding:104px 48px 72px;text-align:center;position:relative;overflow:hidden}
   .page-hero::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle at 1px 1px,white 1px,transparent 0);background-size:40px 40px}
@@ -91,7 +76,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
   .faq-nav-item{display:block;padding:10px 14px;border-radius:8px;font-size:14px;font-weight:500;color:var(--gray-600);text-decoration:none;transition:all .2s;cursor:pointer;border:none;background:none;width:100%;text-align:left;margin-bottom:2px}
   .faq-nav-item:hover{background:white;color:var(--navy)}
   .faq-nav-item.active{background:var(--navy);color:white;font-weight:600}
-  .faq-content-area{}
+  .faq-content-area{ display: block; }
   .faq-group{margin-bottom:48px}
   .faq-group-title{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--teal);display:flex;align-items:center;gap:10px}
   .faq-group-icon{font-size:22px}
@@ -169,10 +154,6 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
   .btn-chat{width:100%;padding:13px;background:var(--teal);color:white;border:none;border-radius:9px;font-weight:700;font-size:15px;font-family:var(--font-display);cursor:pointer;transition:all .2s}
   .btn-chat:hover{background:#158a65}
 
-  /* FOOTER */
-  footer{background:var(--navy);padding:48px;border-top:1px solid rgba(255,255,255,0.08)}
-  .footer-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:rgba(255,255,255,0.4)}
-  .footer-bottom a{color:rgba(255,255,255,0.35);text-decoration:none}
 </style>
 </head>
 <body <?php body_class( 'page-faq' ); ?>>

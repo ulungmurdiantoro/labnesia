@@ -20,62 +20,8 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 <?php wp_head(); ?>
 <style>
 
-:root {
-  --navy: #0B1F3A;
-  --navy-mid: #122845;
-  --navy-light: #1C3A60;
-  --teal: #1A9E75;
-  --teal-light: #22C28F;
-  --teal-pale: #E8F7F2;
-  --amber: #F5A623;
-  --amber-pale: #FEF3DC;
-  --white: #FFFFFF;
-  --gray-50: #F8F9FA;
-  --gray-100: #F1F3F5;
-  --gray-200: #E9ECEF;
-  --gray-400: #ADB5BD;
-  --gray-600: #6C757D;
-  --gray-800: #343A40;
-  --red-pale: #FEF0F0;
-  --red: #E53935;
-  --font-display: 'Plus Jakarta Sans', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
-  --font-serif: 'Lora', serif;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: var(--font-body); color: var(--gray-800); background: var(--white); line-height: 1.6; }
-a { color: inherit; }
 section { padding: 88px 48px; }
 .wrap { max-width: 1160px; margin: 0 auto; }
-
-/* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(11,31,58,0.97); backdrop-filter: blur(8px);
-  padding: 0 48px; height: 64px;
-  display: flex; align-items: center; justify-content: space-between;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-.nav-logo { display: flex; align-items: center; gap: 10px; }
-.nav-logo-mark {
-  width: 36px; height: 36px; background: var(--teal);
-  border-radius: 8px; display: flex; align-items: center; justify-content: center;
-  font-weight: 800; color: white; font-size: 14px; letter-spacing: -0.5px;
-}
-.nav-logo-text { color: white; font-weight: 700; font-size: 18px; letter-spacing: -0.3px; }
-.nav-logo-sub { color: rgba(255,255,255,0.45); font-size: 11px; font-weight: 400; display: block; margin-top: -2px; }
-.nav-links { display: flex; align-items: center; gap: 32px; }
-.nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
-.nav-links a:hover { color: white; }
-.nav-links a.current { color: var(--teal-light); }
-.nav-cta {
-  background: var(--amber); color: var(--navy); padding: 8px 20px;
-  border-radius: 8px; font-weight: 700; font-size: 14px;
-  text-decoration: none; transition: all .2s;
-}
-.nav-cta:hover { background: #e09620; }
-@media (max-width: 980px){ .nav-links{ display:none; } }
 
 /* HERO */
 .hero {
@@ -235,20 +181,6 @@ details.lab-card[open] .chevron { transform: rotate(180deg); color: var(--teal);
 .cta-card h4 { color: var(--navy); font-size: 16px; margin-top: 12px; font-weight: 700; }
 .cta-card p { color: var(--gray-600); font-size: 14px; margin-top: 8px; }
 .cta-card a.link { display: inline-block; margin-top: 14px; color: var(--teal); font-weight: 700; font-size: 14px; text-decoration: none; }
-
-/* FOOTER */
-footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64px 48px 24px; }
-.footer-grid { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; }
-.footer-brand p { font-size: 13.5px; line-height: 1.7; margin-top: 14px; }
-.footer-col h4 { color: white; font-size: 13.5px; margin-bottom: 14px; }
-.footer-col a { display: block; color: rgba(255,255,255,0.55); text-decoration: none; font-size: 13.5px; margin-bottom: 10px; }
-.footer-col a:hover { color: white; }
-.footer-bottom {
-  max-width: 1160px; margin: 48px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);
-  display: flex; justify-content: space-between; font-size: 12.5px; flex-wrap: wrap; gap: 10px;
-}
-.footer-bottom a { color: rgba(255,255,255,0.6); }
-@media (max-width: 860px){ .footer-grid{ grid-template-columns: 1fr 1fr; } }
 
 .float-cta {
   position: fixed; bottom: 22px; right: 22px; background: var(--amber); color: var(--navy);
