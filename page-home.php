@@ -10,7 +10,7 @@ $url_faq       = esc_url( home_url( '/faq/' ) );
 $url_inhouse   = esc_url( home_url( '/inhouse/' ) );
 $url_pelatihan = esc_url( home_url( '/pelatihan-sertifikasi/' ) );
 $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
-$logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABNESIA-003.gif' );
+$logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABNESIA-004.gif' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

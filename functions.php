@@ -79,7 +79,7 @@ function labnesia_logo() {
     if ( has_custom_logo() ) {
         the_custom_logo();
     } else { ?>
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABNESIA-003.gif' ); ?>" alt="<?php bloginfo('name'); ?>" style="height:44px;width:auto;display:block;">
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABNESIA-004.gif' ); ?>" alt="<?php bloginfo('name'); ?>" style="height:44px;width:auto;display:block;">
     <?php }
 }
 

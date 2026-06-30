@@ -3,7 +3,7 @@
     <div class="footer-grid">
         <div class="footer-brand">
             <a class="nav-logo" href="<?php echo esc_url( home_url('/') ); ?>" style="margin-bottom:16px;display:flex;align-items:center;gap:10px;">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABNESIA-003.gif' ); ?>" alt="<?php bloginfo('name'); ?>" style="height:44px;width:auto;display:block;">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABNESIA-004.gif' ); ?>" alt="<?php bloginfo('name'); ?>" style="height:44px;width:auto;display:block;">
             </a>
             <p>Membangun SDM Kompeten, Menguatkan Laboratorium Indonesia. Terakreditasi Komite Akreditasi Nasional (KAN).</p>
             <p style="margin-top:16px;font-size:13px;">
