@@ -10,7 +10,7 @@ $url_faq       = esc_url( home_url( '/faq/' ) );
 $url_inhouse   = esc_url( home_url( '/inhouse/' ) );
 $url_pelatihan = esc_url( home_url( '/pelatihan-sertifikasi/' ) );
 $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
-$logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/logo-labnesia.gif' );
+$logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABNESIA-003.gif' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -438,10 +438,6 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/logo-labn
 <nav>
   <div class="nav-logo">
     <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="width:36px;height:36px;object-fit:contain;">
-    <div>
-      <span class="nav-logo-text">Labnesia</span>
-      <span class="nav-logo-sub">Pusat Kompetensi ISO/IEC 17025</span>
-    </div>
   </div>
   <div class="nav-links">
     <a href="<?php echo $url_gratis; ?>">Mulai Gratis</a>
@@ -993,10 +989,6 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/logo-labn
     <div class="footer-brand">
       <div class="nav-logo" style="margin-bottom:16px">
         <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="width:36px;height:36px;object-fit:contain;">
-        <div>
-          <span class="nav-logo-text">Labnesia</span>
-          <span class="nav-logo-sub">Pusat Kompetensi ISO/IEC 17025</span>
-        </div>
       </div>
       <p>Membangun SDM Kompeten, Menguatkan Laboratorium Indonesia. Terakreditasi Komite Akreditasi Nasional (KAN).</p>
       <p style="margin-top:16px;font-size:13px;line-height:1.8;">📧 info@labnesia.id<br>📞 +62 821-7222-1567 (Endang)<br>📞 +62 851-8500-0367 (Berryl)<br>📞 +62 811-399-523 (Kintan)<br>📍 labnesia.id</p>

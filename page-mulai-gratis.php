@@ -9,7 +9,7 @@ $url_gratis    = esc_url( home_url( '/mulai-gratis/' ) );
 $url_faq       = esc_url( home_url( '/faq/' ) );
 $url_inhouse   = esc_url( home_url( '/inhouse/' ) );
 $url_pelatihan = esc_url( home_url( '/pelatihan-sertifikasi/' ) );
-$logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/logo-labnesia.gif' );
+$logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABNESIA-003.gif' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -205,10 +205,6 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/logo-labn
   <div class="nav-logo">
     <a href="<?php echo $url_home; ?>" style="display:flex;align-items:center;gap:10px;text-decoration:none">
       <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="width:36px;height:36px;object-fit:contain;">
-      <div>
-        <span class="nav-logo-text">Labnesia</span>
-        <span class="nav-logo-sub">Pusat Kompetensi ISO/IEC 17025</span>
-      </div>
     </a>
   </div>
   <div class="nav-links">

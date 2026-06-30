@@ -79,11 +79,7 @@ function labnesia_logo() {
     if ( has_custom_logo() ) {
         the_custom_logo();
     } else { ?>
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/logo/logo-labnesia.gif' ); ?>" alt="<?php bloginfo('name'); ?>" style="width:36px;height:36px;object-fit:contain;">
-        <div>
-            <span class="nav-logo-text"><?php bloginfo('name'); ?></span>
-            <span class="nav-logo-sub"><?php echo esc_html( get_theme_mod( 'labnesia_tagline', 'Pusat Kompetensi ISO/IEC 17025' ) ); ?></span>
-        </div>
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABNESIA-003.gif' ); ?>" alt="<?php bloginfo('name'); ?>" style="width:36px;height:36px;object-fit:contain;">
     <?php }
 }
 
