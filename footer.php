@@ -48,7 +48,7 @@
 
     <div class="footer-bottom">
         <span>© <?php echo date('Y'); ?> Labnesia · Padma Global Nusatama</span>
-        <span>Terakreditasi KAN · LSP-033-IDN · <a href="https://labnesia.id">labnesia.id</a></span>
+        <span><a href="https://labnesia.id">labnesia.id</a></span>
     </div>
 </footer>
 

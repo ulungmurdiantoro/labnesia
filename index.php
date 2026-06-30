@@ -15,11 +15,6 @@ get_header(); ?>
     <div class="hero-inner">
         <!-- LEFT: Headline & CTAs -->
         <div>
-            <div class="hero-eyebrow">
-                <div class="hero-eyebrow-dot" aria-hidden="true"></div>
-                Terakreditasi KAN · LSP-033-IDN
-            </div>
-
             <h1>Lab Anda Layak<br>Jadi <span class="accent">Laboratorium Unggul</span></h1>
 
             <p class="hero-belief">
