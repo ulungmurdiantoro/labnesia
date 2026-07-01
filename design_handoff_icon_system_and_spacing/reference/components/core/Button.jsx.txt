@@ -1,0 +1,49 @@
+import React from 'react';
+import { Icon } from './Icon.jsx';
+
+const VARIANT_STYLES = {
+  primary:  { background: 'var(--action-primary)', color: 'var(--action-primary-text)', border: 'none' },
+  teal:     { background: 'var(--action-secondary)', color: '#fff', border: 'none' },
+  ghost:    { background: 'rgba(255,255,255,0.08)', color: '#fff', border: '1px solid rgba(255,255,255,0.15)' },
+  outline:  { background: 'transparent', color: 'var(--action-secondary)', border: '1.5px solid var(--action-secondary)' },
+};
+
+const SIZE_STYLES = {
+  md: { padding: '13px 24px', fontSize: '15px', borderRadius: 'var(--radius-lg)' },
+  sm: { padding: '10px 18px', fontSize: '14px', borderRadius: 'var(--radius-md)' },
+};
+
+export function Button({ variant = 'primary', size = 'md', disabled = false, icon, iconPosition = 'right', children, onClick, style }) {
+  const v = VARIANT_STYLES[variant] || VARIANT_STYLES.primary;
+  const s = SIZE_STYLES[size] || SIZE_STYLES.md;
+  const base = {
+    fontFamily: 'var(--font-display)',
+    fontWeight: 700,
+    display: 'inline-block',
+    cursor: disabled ? 'not-allowed' : 'pointer',
+    transition: 'background var(--duration-base), transform var(--duration-base)',
+    opacity: disabled ? 0.5 : 1,
+    ...v,
+    ...s,
+    ...style,
+  };
+  const [hover, setHover] = React.useState(false);
+  const hoverBg = variant === 'primary' ? 'var(--action-primary-hover)'
+    : variant === 'teal' ? 'var(--action-secondary-hover)'
+    : variant === 'ghost' ? 'rgba(255,255,255,0.14)'
+    : 'var(--teal-pale)';
+  const iconColor = variant === 'primary' ? 'var(--action-primary-text)' : variant === 'outline' ? 'var(--action-secondary)' : '#fff';
+  return (
+    <button
+      disabled={disabled}
+      onClick={onClick}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={{ ...base, display: 'inline-flex', alignItems: 'center', gap: 8, justifyContent: 'center', background: hover && !disabled ? hoverBg : base.background, transform: hover && !disabled && variant === 'primary' ? 'translateY(-1px)' : 'none' }}
+    >
+      {icon && iconPosition === 'left' && <Icon name={icon} size={16} color={iconColor} />}
+      {children}
+      {icon && iconPosition === 'right' && <Icon name={icon} size={16} color={iconColor} />}
+    </button>
+  );
+}

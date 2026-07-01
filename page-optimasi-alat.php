@@ -166,6 +166,7 @@ details.lab-card summary::-webkit-details-marker { display: none; }
 .lab-tagline { color: var(--gray-600); font-size: 13px; margin-top: 2px; }
 .chevron { color: var(--gray-400); font-size: 14px; transition: transform .2s; flex-shrink: 0; }
 details.lab-card[open] .chevron { transform: rotate(180deg); color: var(--teal); }
+details.lab-card[open] .chevron .icon { background-color: var(--teal); }
 
 .lab-body { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--gray-100); }
 .lab-row { margin-bottom: 14px; }
@@ -296,10 +297,10 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
     </div>
 
     <div class="funnel">
-      <div class="funnel-step">Punya Alat</div><div class="funnel-arrow">→</div>
-      <div class="funnel-step">Parameter Uji</div><div class="funnel-arrow">→</div>
-      <div class="funnel-step">Produk</div><div class="funnel-arrow">→</div>
-      <div class="funnel-step">Layanan</div><div class="funnel-arrow">→</div>
+      <div class="funnel-step">Punya Alat</div><div class="funnel-arrow"><?php labnesia_icon( 'arrow-right', 'rgba(255,255,255,0.35)', 16 ); ?></div>
+      <div class="funnel-step">Parameter Uji</div><div class="funnel-arrow"><?php labnesia_icon( 'arrow-right', 'rgba(255,255,255,0.35)', 16 ); ?></div>
+      <div class="funnel-step">Produk</div><div class="funnel-arrow"><?php labnesia_icon( 'arrow-right', 'rgba(255,255,255,0.35)', 16 ); ?></div>
+      <div class="funnel-step">Layanan</div><div class="funnel-arrow"><?php labnesia_icon( 'arrow-right', 'rgba(255,255,255,0.35)', 16 ); ?></div>
       <div class="funnel-step">Income</div>
       <div class="funnel-note">Alur ini sama untuk semua jenis lab — yang berbeda hanya alat, parameter, dan pasarnya. Detail tiap bidang dibahas tuntas di rangkaian Webinar Nasional Labnesia 2026.</div>
     </div>
@@ -316,8 +317,8 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
     </div>
     <div class="principle-card">
       <div class="row"><div class="ico">⚙️</div><div><b>Instrumen = Aset</b><span>Bukan sekadar barang inventaris, tapi modal layanan.</span></div></div>
-      <div class="row"><div class="ico">📋</div><div><b>Parameter = Produk</b><span>Tiap parameter uji yang bisa dijual ke pelanggan.</span></div></div>
-      <div class="row"><div class="ico">🏢</div><div><b>Lab = Unit Layanan</b><span>Dikelola dengan sistem mutu, bukan sekadar ruang praktikum.</span></div></div>
+      <div class="row"><div class="ico"><?php labnesia_icon( 'clipboard-list', 'var(--teal)', 20 ); ?></div><div><b>Parameter = Produk</b><span>Tiap parameter uji yang bisa dijual ke pelanggan.</span></div></div>
+      <div class="row"><div class="ico"><?php labnesia_icon( 'building-2', 'var(--teal)', 20 ); ?></div><div><b>Lab = Unit Layanan</b><span>Dikelola dengan sistem mutu, bukan sekadar ruang praktikum.</span></div></div>
       <div class="row"><div class="ico">🧭</div><div><b>Demand = Penentu Jalur</b><span>Jenis lab Anda menentukan parameter, pasar, dan kebutuhan optimasinya.</span></div></div>
     </div>
   </div>
@@ -340,7 +341,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
             <div class="lab-icon">🌱</div>
             <div><div class="lab-title">Lab Lingkungan</div><div class="lab-tagline">Air, udara, tanah & limbah</div></div>
           </div>
-          <div class="chevron">▾</div>
+          <div class="chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 14 ); ?></div>
         </summary>
         <div class="lab-body">
           <div class="lab-row"><b>Ruang Lingkup</b><div class="tag-list">
@@ -360,7 +361,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
             <div class="lab-icon">🏗️</div>
             <div><div class="lab-title">Lab Sipil</div><div class="lab-tagline">Material & struktur konstruksi</div></div>
           </div>
-          <div class="chevron">▾</div>
+          <div class="chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 14 ); ?></div>
         </summary>
         <div class="lab-body">
           <div class="lab-row"><b>Ruang Lingkup</b><div class="tag-list">
@@ -380,7 +381,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
             <div class="lab-icon">🍱</div>
             <div><div class="lab-title">Lab Pangan, Gizi & Halal</div><div class="lab-tagline">Mutu, gizi & kehalalan produk</div></div>
           </div>
-          <div class="chevron">▾</div>
+          <div class="chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 14 ); ?></div>
         </summary>
         <div class="lab-body">
           <div class="lab-row"><b>Ruang Lingkup</b><div class="tag-list">
@@ -400,7 +401,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
             <div class="lab-icon">🌾</div>
             <div><div class="lab-title">Lab Pertanian & Pascapanen</div><div class="lab-tagline">Mutu hasil panen & alsintan</div></div>
           </div>
-          <div class="chevron">▾</div>
+          <div class="chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 14 ); ?></div>
         </summary>
         <div class="lab-body">
           <div class="lab-row"><b>Ruang Lingkup</b><div class="tag-list">
@@ -420,7 +421,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
             <div class="lab-icon">💊</div>
             <div><div class="lab-title">Lab Farmasi</div><div class="lab-tagline">Mutu & keamanan obat</div></div>
           </div>
-          <div class="chevron">▾</div>
+          <div class="chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 14 ); ?></div>
         </summary>
         <div class="lab-body">
           <div class="lab-row"><b>Ruang Lingkup</b><div class="tag-list">
@@ -440,7 +441,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
             <div class="lab-icon">🧪</div>
             <div><div class="lab-title">Lab Kimia</div><div class="lab-tagline">Riset, sintesis & QC industri</div></div>
           </div>
-          <div class="chevron">▾</div>
+          <div class="chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 14 ); ?></div>
         </summary>
         <div class="lab-body">
           <div class="lab-row"><b>Ruang Lingkup</b><div class="tag-list">
@@ -460,7 +461,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
             <div class="lab-icon">🐄</div>
             <div><div class="lab-title">Lab Peternakan</div><div class="lab-tagline">Mutu pakan & kesehatan ternak</div></div>
           </div>
-          <div class="chevron">▾</div>
+          <div class="chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 14 ); ?></div>
         </summary>
         <div class="lab-body">
           <div class="lab-row"><b>Ruang Lingkup</b><div class="tag-list">
@@ -480,7 +481,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
             <div class="lab-icon">🐟</div>
             <div><div class="lab-title">Lab Perikanan</div><div class="lab-tagline">Mutu, ekspor & genetik produk laut</div></div>
           </div>
-          <div class="chevron">▾</div>
+          <div class="chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 14 ); ?></div>
         </summary>
         <div class="lab-body">
           <div class="lab-row"><b>Ruang Lingkup</b><div class="tag-list">
@@ -560,22 +561,22 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
     </div>
     <div class="steps-grid">
       <div class="cta-card">
-        <div class="ico">🎯</div>
+        <div class="ico"><?php labnesia_icon( 'target', 'var(--teal)', 24 ); ?></div>
         <h4>1. Pilih jenis lab Anda</h4>
         <p>Lihat ruang lingkup & alat khas bidang Anda di daftar di atas, lalu kenali demand optimasinya.</p>
-        <a href="#jenis-lab" class="link">Lihat daftar jenis lab →</a>
+        <a href="#jenis-lab" class="link">Lihat daftar jenis lab <?php labnesia_icon( 'arrow-right', 'var(--teal)', 14 ); ?></a>
       </div>
       <div class="cta-card">
-        <div class="ico">📋</div>
+        <div class="ico"><?php labnesia_icon( 'clipboard-list', 'var(--teal)', 24 ); ?></div>
         <h4>2. Daftar Gap Analysis Gratis</h4>
         <p>Dapatkan laporan gap dokumen & teknis, penetapan ruang lingkup, dan roadmap implementasi.</p>
-        <a href="<?php echo $url_gratis; ?>" class="link">Daftar Gap Analysis →</a>
+        <a href="<?php echo $url_gratis; ?>" class="link">Daftar Gap Analysis <?php labnesia_icon( 'arrow-right', 'var(--teal)', 14 ); ?></a>
       </div>
       <div class="cta-card">
-        <div class="ico">🤝</div>
+        <div class="ico"><?php labnesia_icon( 'handshake', 'var(--teal)', 24 ); ?></div>
         <h4>3. Lanjut sesuai roadmap</h4>
         <p>Masuk ke Kelas Pendampingan atau konsultasikan dulu kebutuhan lab Anda bersama tim kami.</p>
-        <a href="<?php echo $url_kelas; ?>" class="link">Lihat Kelas Pendampingan →</a>
+        <a href="<?php echo $url_kelas; ?>" class="link">Lihat Kelas Pendampingan <?php labnesia_icon( 'arrow-right', 'var(--teal)', 14 ); ?></a>
       </div>
     </div>
   </div>
@@ -589,7 +590,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
         <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;">
       </div>
       <p>Membangun SDM Kompeten, Menguatkan Laboratorium Indonesia. Terakreditasi Komite Akreditasi Nasional (KAN).</p>
-      <p style="margin-top:16px;font-size:13px;line-height:1.8;">📧 info@labnesia.id<br>📞 +62 821-7222-1567 (Endang)<br>📞 +62 851-8500-0367 (Berryl)<br>📞 +62 811-399-523 (Kintan)<br>📍 labnesia.id</p>
+      <p style="margin-top:16px;font-size:13px;line-height:1.8;"><?php labnesia_icon( 'mail', 'rgba(255,255,255,.9)', 13 ); ?> info@labnesia.id<br><?php labnesia_icon( 'phone', 'rgba(255,255,255,.9)', 13 ); ?> +62 821-7222-1567 (Endang)<br><?php labnesia_icon( 'phone', 'rgba(255,255,255,.9)', 13 ); ?> +62 851-8500-0367 (Berryl)<br><?php labnesia_icon( 'phone', 'rgba(255,255,255,.9)', 13 ); ?> +62 811-399-523 (Kintan)<br><?php labnesia_icon( 'map-pin', 'rgba(255,255,255,.9)', 13 ); ?> labnesia.id</p>
     </div>
     <div class="footer-col">
       <h4>Mulai Gratis</h4>
@@ -619,7 +620,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
   </div>
 </footer>
 
-<a href="#konsultasi" class="float-cta">💬 Konsultasi Gratis</a>
+<a href="#konsultasi" class="float-cta"><?php labnesia_icon( 'message-circle', 'var(--navy)', 15 ); ?> Konsultasi Gratis</a>
 
 <script>
   window.addEventListener('scroll', () => {

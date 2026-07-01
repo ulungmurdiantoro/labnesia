@@ -1,0 +1,147 @@
+const PROBLEMS = [
+  { icon: 'banknote', title: 'Biaya konsultan terlalu mahal', desc: 'Pendampingan in-house konvensional bisa mencapai 150–200 juta rupiah. Kebanyakan laboratorium tidak punya anggaran sebesar itu.', answer: 'Kelas publik mulai dari Rp 14 juta/peserta' },
+  { icon: 'compass', title: 'Tidak tahu harus mulai dari mana', desc: 'Dokumen ISO 17025 terasa rumit. Mana yang harus dibuat dulu? Tim tidak ada yang paham alurnya.', answer: 'Gap Analysis gratis + roadmap implementasi' },
+  { icon: 'hourglass', title: 'Proses terlalu lama & tidak jelas', desc: 'Banyak lab mencoba sendiri bertahun-tahun tanpa hasil. Tidak ada timeline yang jelas.', answer: 'Timeline 6 bulan dengan output terstandarisasi' },
+  { icon: 'user', title: 'Bergantung pada satu orang saja', desc: 'Jika Manajer Mutu resign, sistem mutu ikut runtuh. Implementasi tidak berkelanjutan.', answer: 'Rekomendasi 3 peserta per lab' },
+  { icon: 'building-2', title: 'Proses pengadaan instansi yang panjang', desc: 'In-house training membutuhkan proposal, tender, dan persetujuan hingga 6–12 bulan.', answer: 'Daftar sebagai individu, langsung mulai bulan ini' },
+  { icon: 'search', title: 'Belum yakin dengan kualitas program', desc: 'Banyak program pelatihan bagus di marketing tapi tidak menghasilkan lab yang siap akreditasi.', answer: '30+ lab yang sudah terakreditasi KAN bersama kami' },
+];
+
+const GIVE_ITEMS = [
+  { tag: 'gratis', tagText: '100% Gratis', icon: 'clipboard-list', title: 'Gap Analysis Gratis', desc: 'Analisis kondisi lab Anda: gap dokumen, gap teknis, dan kesiapan sistem mutu. Termasuk roadmap implementasi.', featured: true },
+  { tag: 'gratis', tagText: '100% Gratis', icon: 'graduation-cap', title: 'Webinar Lab Talk', desc: 'Sesi edukasi mingguan tentang ISO 17025, tips akreditasi, dan studi kasus lab.' },
+  { tag: 'gratis', tagText: '100% Gratis', icon: 'download', title: 'Download Panduan & Template', desc: 'Panduan SNI ISO 17025, checklist persiapan akreditasi, dan contoh dokumen audit.' },
+  { tag: 'terbuka', tagText: 'Terbuka Umum', icon: 'zap', title: 'Bootcamp 1 Hari', desc: 'Program intensif 1 hari untuk memahami alur akreditasi secara menyeluruh.' },
+  { tag: 'terbuka', tagText: 'Untuk Mahasiswa', icon: 'graduation-cap', title: 'Program Kuliah Praktisi', desc: 'Sesi tatap muka di kampus tentang sistem mutu lab & karir di bidang ini.' },
+  { tag: 'eksklusif', tagText: 'Eksklusif Member', icon: 'message-circle', title: 'Komunitas Lab Kompeten', desc: 'Forum diskusi nasional antar manajer lab, analis, dan auditor internal.' },
+];
+
+function HomeScreen({ D, onNavigate }) {
+  const { NavBar, Footer, Icon, IconTile, Card, Badge, StatCard, JourneyStep, ProductCard, Testimonial, Button } = D;
+  const [activeJourney, setActiveJourney] = React.useState(3);
+  const goGratis = () => onNavigate && onNavigate('gratis');
+
+  return (
+    <div style={{ fontFamily: 'var(--font-display)', background: '#fff' }}>
+      <NavBar logoSrc="../../assets/logo/LOGO-LABNESIA-004.gif" onCta={goGratis} />
+
+      {/* HERO */}
+      <section style={{ background: 'var(--navy)', padding: '56px 48px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, opacity: 0.04, backgroundImage: 'radial-gradient(circle at 1px 1px, #fff 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div style={{ position: 'absolute', top: -100, right: -100, width: 600, height: 600, borderRadius: '50%', background: 'radial-gradient(circle, rgba(26,158,117,0.15) 0%, transparent 70%)' }} />
+        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 44, alignItems: 'center', position: 'relative' }}>
+          <div>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(26,158,117,0.15)', border: '1px solid rgba(26,158,117,0.3)', color: 'var(--teal-light)', padding: '6px 14px', borderRadius: 100, fontSize: 12, fontWeight: 600, letterSpacing: '.06em', textTransform: 'uppercase', marginBottom: 18 }}>
+              <div style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--teal-light)' }} />
+              Mitra Pengembangan Laboratorium Indonesia
+            </div>
+            <h1 style={{ fontSize: 44, fontWeight: 800, color: '#fff', lineHeight: 1.1, letterSpacing: '-1.5px', margin: '0 0 18px' }}>
+              Lab Anda Layak<br />Jadi <span style={{ color: 'var(--teal-light)' }}>Laboratorium Unggul</span>
+            </h1>
+            <p style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'rgba(255,255,255,0.6)', fontSize: 16, lineHeight: 1.6, borderLeft: '3px solid var(--teal)', paddingLeft: 18, marginBottom: 24 }}>
+              "Laboratorium berkualitas dimulai dari SDM yang kompeten. Akreditasi adalah hasil — bukan tujuan akhir."
+            </p>
+            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 26 }}>
+              <Button variant="primary" icon="arrow-right" onClick={goGratis}>Mulai dari yang Gratis</Button>
+              <Button variant="ghost" icon="book-open" onClick={() => onNavigate && onNavigate('home')}>Lihat Program Pendampingan</Button>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+              <StatCard number="30" unit="+" label="Lab berhasil terakreditasi KAN" dark />
+              <StatCard number="15" label="Pakar berpengalaman" dark />
+              <StatCard number="9" label="Jenis laboratorium dilayani" dark />
+              <StatCard number="6 bln" label="Rata-rata waktu siap asesmen" dark />
+            </div>
+          </div>
+          <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 20, padding: 20 }}>
+            <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 11, fontWeight: 600, letterSpacing: '.1em', textTransform: 'uppercase', marginBottom: 12 }}>Peta perjalanan akreditasi lab Anda</p>
+            <JourneyStep state="done" marker={<Icon name="check" size={15} color="#fff" />} label="Awareness & Pemahaman Dasar" sub="ISO 17025, struktur dokumen, KANMIS" badge="Gratis" active={activeJourney === 0} onClick={() => setActiveJourney(0)} />
+            <JourneyStep state="done" marker={<Icon name="check" size={15} color="#fff" />} label="GAP Analysis & Roadmap" sub="Identifikasi gap dokumen & teknis" badge="Gratis" active={activeJourney === 1} onClick={() => setActiveJourney(1)} />
+            <JourneyStep state="active" marker={<Icon name="graduation-cap" size={15} color="var(--navy)" />} label="Pelatihan & Sertifikasi Kompetensi" sub="Untuk individu" badge="Individu" active={activeJourney === 2} onClick={() => setActiveJourney(2)} />
+            <JourneyStep state="active" marker={<Icon name="star" size={15} color="var(--navy)" />} label="Kelas Pendampingan Akreditasi" sub="4 tahap, online/hybrid, bersama pakar" badge="Core" active={activeJourney === 3} onClick={() => setActiveJourney(3)} />
+            <JourneyStep state="locked" marker="4" label="Persiapan & Simulasi Asesmen" sub="Audit kelayakan, CAPA, pendaftaran KAN" badge="Lanjutan" active={activeJourney === 4} onClick={() => setActiveJourney(4)} />
+            <JourneyStep state="locked" marker={<Icon name="trophy" size={15} color="rgba(255,255,255,0.4)" />} label="Laboratorium Terakreditasi" sub="Siap jadi profit center" badge="Goal" active={activeJourney === 5} onClick={() => setActiveJourney(5)} />
+          </div>
+        </div>
+      </section>
+
+      {/* PROBLEM SECTION */}
+      <section style={{ background: 'var(--gray-50)', padding: '56px 48px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 10 }}>Kenapa banyak lab belum terakreditasi?</p>
+          <h2 style={{ fontSize: 32, fontWeight: 800, color: 'var(--navy)', lineHeight: 1.15, letterSpacing: '-0.8px', margin: '0 0 28px' }}>Kami tahu hambatannya. Kami sudah siapkan jawabannya.</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16 }}>
+            {PROBLEMS.map((p) => (
+              <Card key={p.title} style={{ borderTop: '3px solid var(--red)' }}>
+                <IconTile icon={p.icon} shape="rounded" size={40} style={{ marginBottom: 12 }} />
+                <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--navy)', marginBottom: 6 }}>{p.title}</div>
+                <div style={{ fontSize: 13, color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 12 }}>{p.desc}</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: 'var(--teal)', fontWeight: 600, borderTop: '1px solid var(--gray-200)', paddingTop: 10 }}>
+                  <Icon name="arrow-right" size={13} color="var(--teal)" />{p.answer}
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* GIVE VALUE SECTION */}
+      <section style={{ background: 'var(--navy)', padding: '56px 48px', position: 'relative' }}>
+        <div style={{ position: 'absolute', inset: 0, opacity: 0.03, backgroundImage: 'radial-gradient(circle at 1px 1px, #fff 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative' }}>
+          <div style={{ textAlign: 'center', marginBottom: 32 }}>
+            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--teal-light)', marginBottom: 10 }}>Give Value First</p>
+            <h2 style={{ fontSize: 32, fontWeight: 800, color: '#fff', lineHeight: 1.15, letterSpacing: '-0.8px', margin: '0 0 12px' }}>Kami berikan dulu, baru Anda putuskan.</h2>
+            <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.55)', maxWidth: 560, margin: '0 auto' }}>Laboratorium yang sudah merasakan manfaatnya akan tahu sendiri langkah selanjutnya.</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16 }}>
+            {GIVE_ITEMS.map((g) => (
+              <div key={g.title} onClick={goGratis} style={{ cursor: 'pointer', background: g.featured ? 'rgba(26,158,117,0.12)' : 'rgba(255,255,255,0.05)', border: `1px solid ${g.featured ? 'rgba(26,158,117,0.4)' : 'rgba(255,255,255,0.1)'}`, borderRadius: 16, padding: 22, display: 'flex', flexDirection: 'column' }}>
+                <Badge tone={g.tag} icon={g.featured ? 'sparkles' : undefined} style={{ marginBottom: 14, width: 'fit-content' }}>{g.tagText}</Badge>
+                <IconTile icon={g.icon} tone="dark" size={38} style={{ marginBottom: 12, background: 'transparent', border: 'none', justifyContent: 'flex-start' }} />
+                <div style={{ fontSize: 16, fontWeight: 700, color: '#fff', marginBottom: 6 }}>{g.title}</div>
+                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, flex: 1 }}>{g.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PRODUCT / PRICING SECTION */}
+      <section style={{ background: '#fff', padding: '56px 48px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 10 }}>Program & Layanan</p>
+          <h2 style={{ fontSize: 32, fontWeight: 800, color: 'var(--navy)', lineHeight: 1.15, letterSpacing: '-0.8px', margin: '0 0 24px' }}>Program yang paling banyak dipilih.</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16 }}>
+            <ProductCard eyebrow="Entry · Individu" name="Pelatihan & Sertifikasi" price="Rp 2–7 jt" unit="/orang" ctaLabel="Lihat jadwal pelatihan" ctaVariant="outline" onCtaClick={goGratis}
+              features={['Pelatihan 40 JP online/offline', 'Sertifikat kompetensi KAN', 'Cocok untuk fresh graduate']} />
+            <ProductCard eyebrow="Core Program · Laboratorium" name="Kelas Pendampingan" price="Rp 14 jt" unit="/peserta" featured badgeLabel="Terpopuler" ctaLabel="Daftar Kelas Pendampingan" ctaVariant="primary" onCtaClick={goGratis}
+              features={['4 tahap sistematis, 6 bulan', 'Output nyata di setiap sesi', 'GRATIS konsultasi privat 1-on-1', 'Hemat hingga Rp 20 juta']} />
+            <ProductCard eyebrow="Advanced · Privat" name="Kelas Lanjutan & Full Pendampingan" price="Rp 36 jt+" unit="/lab" ctaLabel="Konsultasi kebutuhan lab" ctaVariant="outline" onCtaClick={goGratis}
+              features={['Untuk lab yang siap daftar akreditasi', 'Audit kelayakan & simulasi asesmen', 'Full pendampingan 150–200 jt tersedia']} />
+          </div>
+        </div>
+      </section>
+
+      {/* ALUMNI SECTION */}
+      <section style={{ background: 'var(--gray-50)', padding: '56px 48px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 10 }}>Bukti Nyata</p>
+          <h2 style={{ fontSize: 32, fontWeight: 800, color: 'var(--navy)', lineHeight: 1.15, letterSpacing: '-0.8px', margin: '0 0 24px' }}>30+ Laboratorium sudah membuktikannya.</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 14, marginBottom: 28 }}>
+            <StatCard number="30" unit="+" label="Lab terakreditasi KAN" />
+            <StatCard number="15" unit="+" label="Pakar aktif" />
+            <StatCard number="9" label="Jenis lab dilayani" />
+            <StatCard number="2x" label="Lebih cepat dari mandiri" />
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <Testimonial quote="Pendampingan yang dilakukan sangat baik dan menyenangkan, kami merasakan atmosfer kekeluargaan." initials="WS" name="Wawan Abdullah Setiawan, S.Si., M.Si." role="Ketua Divisi Biomolekuler · UPT Lab Terpadu Universitas Lampung" />
+            <Testimonial quote="Dengan program Kelas Pendampingan, tim kami kini bisa menyusun seluruh dokumen mutu secara mandiri." initials="RP" name="Manajer Mutu Laboratorium" role="Laboratorium Pangan & Gizi · Universitas Negeri" />
+          </div>
+        </div>
+      </section>
+
+      <Footer logoSrc="../../assets/logo/LOGO-LABNESIA-004.gif" />
+    </div>
+  );
+}
+window.HomeScreen = HomeScreen;

@@ -177,6 +177,29 @@ add_filter( 'excerpt_length', 'labnesia_excerpt_length' );
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
+// ── Icon helpers (Lucide icons via CSS mask, replaces emoji-as-icon) ─────────
+// Bare inline glyph — buttons, badges, checklists, comparison-table cells.
+function labnesia_icon( $name, $color = 'currentColor', $size = 20 ) {
+    printf(
+        '<span class="icon" style="--icon-url:url(\'https://unpkg.com/lucide-static@latest/icons/%1$s.svg\');--icon-color:%2$s;--icon-size:%3$dpx;" aria-hidden="true"></span>',
+        esc_attr( $name ),
+        esc_attr( $color ),
+        (int) $size
+    );
+}
+
+// Tiled icon — circular/rounded-square tile with a centered icon (~46% of tile size).
+function labnesia_icon_tile( $name, $color = 'var(--teal)', $tile_size = 64, $tone = 'light', $round = false ) {
+    printf(
+        '<span class="icon-tile icon-tile-%1$s%2$s" style="--tile-size:%3$dpx;">',
+        esc_attr( $tone ),
+        $round ? ' icon-tile-round' : '',
+        (int) $tile_size
+    );
+    labnesia_icon( $name, $color, (int) round( $tile_size * 0.46 ) );
+    echo '</span>';
+}
+
 // ── Add body classes ──────────────────────────────────────────────────────────
 function labnesia_body_classes( $classes ) {
     if ( ! is_singular() ) $classes[] = 'hfeed';

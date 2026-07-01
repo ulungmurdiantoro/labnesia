@@ -1,0 +1,44 @@
+import React from 'react';
+
+/** Circular or rounded-square tile hosting a single recolorable Lucide icon —
+ * Labnesia's professional icon system (replaces the earlier emoji-tile approach). */
+export function IconTile({ icon, shape = 'circle', size = 64, tone = 'light', tint, style }) {
+  const bg = tone === 'dark' ? 'rgba(255,255,255,0.06)' : '#fff';
+  const border = tone === 'dark' ? '1px solid rgba(255,255,255,0.15)' : '1px solid var(--border-default)';
+  const resolvedTint = tint || (tone === 'dark' ? '#ffffff' : 'var(--teal)');
+  const iconSize = size * 0.46;
+  const url = `https://unpkg.com/lucide-static@latest/icons/${icon}.svg`;
+  return (
+    <div
+      style={{
+        width: size,
+        height: size,
+        borderRadius: shape === 'circle' ? '50%' : 'var(--radius-lg)',
+        background: bg,
+        border,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0,
+        ...style,
+      }}
+      aria-hidden="true"
+    >
+      <div
+        style={{
+          width: iconSize,
+          height: iconSize,
+          backgroundColor: resolvedTint,
+          WebkitMaskImage: `url(${url})`,
+          maskImage: `url(${url})`,
+          WebkitMaskSize: 'contain',
+          maskSize: 'contain',
+          WebkitMaskRepeat: 'no-repeat',
+          maskRepeat: 'no-repeat',
+          WebkitMaskPosition: 'center',
+          maskPosition: 'center',
+        }}
+      />
+    </div>
+  );
+}

@@ -1,0 +1,29 @@
+import React from 'react';
+
+/** Raw inline Lucide icon (no tile/background) — for use inside buttons, badges, checklists,
+ * and comparison tables where a bare glyph is needed instead of a circular IconTile. */
+export function Icon({ name, size = 16, color = 'currentColor', strokeWidth = 2.25, style }) {
+  const url = `https://unpkg.com/lucide-static@latest/icons/${name}.svg`;
+  return (
+    <span
+      aria-hidden="true"
+      style={{
+        display: 'inline-block',
+        width: size,
+        height: size,
+        flexShrink: 0,
+        backgroundColor: color,
+        WebkitMaskImage: `url(${url})`,
+        maskImage: `url(${url})`,
+        WebkitMaskSize: 'contain',
+        maskSize: 'contain',
+        WebkitMaskRepeat: 'no-repeat',
+        maskRepeat: 'no-repeat',
+        WebkitMaskPosition: 'center',
+        maskPosition: 'center',
+        verticalAlign: 'middle',
+        ...style,
+      }}
+    />
+  );
+}

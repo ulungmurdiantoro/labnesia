@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Labnesia — Typography Tokens
+   Fonts loaded via Google Fonts (theme enqueues these — no local webfont
+   binaries were found in the attached codebase; see readme.md Caveats).
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body:    'Plus Jakarta Sans', sans-serif;
+  --font-serif:   'Lora', serif; /* used only for italic "belief statement" quotes */
+
+  /* Type scale (as used across front-page.php / page-*.php) */
+  --text-hero:     52px; /* hero h1 */
+  --text-page-h1:  44px; /* sub-page hero h1 */
+  --text-h2:       40px; /* section-title */
+  --text-h2-sub:   36px; /* .h2 on sub-pages */
+  --text-h3:       24px; /* section-sub-title */
+  --text-card-title: 17px;
+  --text-lede:     18px; /* section-sub */
+  --text-body:     15px;
+  --text-small:    13px;
+  --text-micro:    11px; /* eyebrow / uppercase labels */
+
+  --leading-tight: 1.1;
+  --leading-snug:  1.15;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.7;
+
+  --tracking-tight: -1.5px;  /* big display headlines */
+  --tracking-snug:  -0.8px;
+  --tracking-wide:  0.06em;  /* uppercase eyebrows */
+  --tracking-wider: 0.12em;
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semibold: 600;
+  --weight-bold:    700;
+  --weight-black:   800;
+}

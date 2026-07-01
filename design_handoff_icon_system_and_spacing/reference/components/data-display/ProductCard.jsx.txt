@@ -1,0 +1,38 @@
+import React from 'react';
+import { Icon } from '../core/Icon.jsx';
+
+/** Pricing/product tier card — navy or teal header block, checklist body, single CTA. */
+export function ProductCard({ eyebrow, name, price, unit, featured = false, badgeLabel, features = [], ctaLabel, ctaVariant = 'outline', headerBg, onCtaClick }) {
+  return (
+    <div style={{ border: `1px solid ${featured ? 'var(--teal)' : 'var(--border-default)'}`, borderRadius: 'var(--radius-2xl)', overflow: 'hidden', boxShadow: featured ? 'var(--shadow-card-hover)' : 'none' }}>
+      <div style={{ padding: 20, background: headerBg || (featured ? 'var(--teal)' : 'var(--navy)'), color: '#fff', position: 'relative' }}>
+        {badgeLabel && (
+          <div style={{ position: 'absolute', top: 16, right: 16, background: 'var(--amber)', color: 'var(--navy)', fontSize: 10, fontWeight: 800, letterSpacing: '.06em', textTransform: 'uppercase', padding: '4px 10px', borderRadius: 'var(--radius-sm)' }}>
+            {badgeLabel}
+          </div>
+        )}
+        <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', opacity: 0.6, marginBottom: 8 }}>{eyebrow}</div>
+        <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 4 }}>{name}</div>
+        <div style={{ fontSize: 26, fontWeight: 800, color: 'var(--amber)' }}>{price} <span style={{ fontSize: 13, opacity: 0.6, fontWeight: 400 }}>{unit}</span></div>
+      </div>
+      <div style={{ padding: 20 }}>
+        {features.map((f, i) => (
+          <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 9, marginBottom: 10 }}>
+            <Icon name="check" size={15} color="var(--teal)" style={{ marginTop: 3 }} />
+            <div style={{ fontSize: 14, color: 'var(--gray-600)', lineHeight: 1.5 }}>{f}</div>
+          </div>
+        ))}
+        <button onClick={onCtaClick} style={{
+          display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, width: '100%', padding: 12, textAlign: 'center', borderRadius: 'var(--radius-md)', fontWeight: 700, fontSize: 14,
+          marginTop: 16, cursor: 'pointer', border: ctaVariant === 'outline' ? '1.5px solid var(--teal)' : 'none',
+          background: ctaVariant === 'outline' ? 'transparent' : 'var(--teal)',
+          color: ctaVariant === 'outline' ? 'var(--teal)' : '#fff',
+          fontFamily: 'var(--font-display)',
+        }}>
+          {ctaLabel}
+          <Icon name="arrow-right" size={15} color={ctaVariant === 'outline' ? 'var(--teal)' : '#fff'} />
+        </button>
+      </div>
+    </div>
+  );
+}

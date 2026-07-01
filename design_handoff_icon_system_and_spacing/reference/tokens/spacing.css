@@ -1,0 +1,50 @@
+/* ==========================================================================
+   Labnesia — Spacing, Radius & Shadow Tokens
+   ========================================================================== */
+:root {
+  /* Spacing scale (px, as observed in source) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Page/section rhythm */
+  --section-padding-y: 96px;
+  --section-padding-x: 48px;
+  --section-padding-y-mobile: 64px;
+  --section-padding-x-mobile: 24px;
+  --content-max: 1200px;
+  --nav-height: 64px;
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 20px;
+  --radius-4xl: 24px;
+  --radius-pill: 100px;
+  --radius-circle: 50%;
+
+  /* Shadows (subtle — cards mostly rely on border + color tint, not shadow) */
+  --shadow-card-hover: 0 8px 32px rgba(26,158,117,0.1);
+  --shadow-card-hover-navy: 0 8px 28px rgba(11,31,58,0.1);
+  --shadow-cta-amber: 0 4px 20px rgba(245,166,35,0.4);
+  --shadow-cta-amber-hover: 0 8px 28px rgba(245,166,35,0.5);
+
+  /* Motion */
+  --ease-default: ease; /* @kind other */
+  --duration-fast: .15s; /* @kind other */
+  --duration-base: .2s; /* @kind other */
+  --duration-slow: .5s; /* @kind other */
+}

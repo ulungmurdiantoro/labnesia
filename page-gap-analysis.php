@@ -62,7 +62,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,31,58,0.9
 .guide-section{background:var(--navy-mid, #122845);padding:36px 48px}
 .guide-inner{max-width:1100px;margin:0 auto}
 .guide-title{font-size:14px;font-weight:800;color:white;letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px}
-.guide-title::before{content:'📋';font-size:18px}
 .guide-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 .guide-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:14px 12px;text-align:center}
 .guide-card.s0{border-color:rgba(231,76,60,0.4);background:rgba(231,76,60,0.1)}
@@ -93,6 +92,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,31,58,0.9
 .item-row:hover{background:var(--gray-50)}
 .item-num{font-size:12px;font-weight:700;color:var(--gray-400);padding-top:2px;text-align:right}
 .item-text{font-size:13.5px;color:var(--gray-800);line-height:1.55}
+.item-details{margin:8px 0 0 18px;color:var(--gray-600);font-size:12.5px;line-height:1.5}
+.item-details li + li{margin-top:4px}
 .score-radios{display:flex;gap:6px;flex-shrink:0}
 .score-radios label{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer}
 .score-radios label input{display:none}
@@ -132,7 +133,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,31,58,0.9
 .result-interpretation.high{background:rgba(26,158,117,0.15);border:1px solid rgba(26,158,117,0.3);color:var(--teal-light)}
 .result-actions{display:flex;gap:12px;flex-wrap:wrap}
 .btn-wa{background:#25D366;color:white;padding:13px 24px;border-radius:9px;font-weight:700;font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
-.btn-konsul{background:var(--amber);color:var(--navy);padding:13px 24px;border-radius:9px;font-weight:700;font-size:14px;text-decoration:none}
+.btn-konsul{background:var(--amber);color:var(--navy);padding:13px 24px;border-radius:9px;font-weight:700;font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
 
 /* SUBMIT AREA */
 .submit-area{text-align:center;padding:32px 0}
@@ -187,9 +188,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,31,58,0.9
   <div class="hero-inner">
     <div class="hero-badge"><div class="hero-badge-dot"></div> Audit Internal ISO/IEC 17025</div>
     <h1>Gap Analysis <span>Laboratorium</span><br>ISO/IEC 17025 : 2017</h1>
-    <p class="hero-sub">Nilai kesiapan laboratorium Anda secara mandiri. Checklist 138 indikator berdasarkan persyaratan ISO/IEC 17025 — lengkap, terstruktur, dan langsung terkalkulasi.</p>
+    <p class="hero-sub">Nilai kesiapan laboratorium Anda secara mandiri. Checklist 32 indikator berdasarkan persyaratan ISO/IEC 17025 — lengkap, terstruktur, dan langsung terkalkulasi.</p>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num">138</div><div class="hero-stat-label">Indikator Penilaian</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">32</div><div class="hero-stat-label">Indikator Penilaian</div></div>
       <div class="hero-stat"><div class="hero-stat-num">5</div><div class="hero-stat-label">Klausul ISO 17025</div></div>
       <div class="hero-stat"><div class="hero-stat-num">0–4</div><div class="hero-stat-label">Skala Skor</div></div>
     </div>
@@ -201,16 +202,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,31,58,0.9
   <div>
     <div class="sticky-score-label">Total Skor</div>
     <span class="sticky-score-val" id="totalDisplay">0</span>
-    <span class="sticky-score-pct">/ 552 (<span id="pctDisplay">0</span>%)</span>
+    <span class="sticky-score-pct">/ 128 (<span id="pctDisplay">0</span>%)</span>
   </div>
   <div class="sticky-progress"><div class="sticky-progress-bar" id="totalBar"></div></div>
-  <button class="sticky-score-btn" onclick="showResult()">Lihat Hasil →</button>
+  <button class="sticky-score-btn" onclick="showResult()">Lihat Hasil <?php labnesia_icon( 'arrow-right', 'currentColor', 14 ); ?></button>
 </div>
 
 <!-- PANDUAN SKOR -->
 <div class="guide-section">
   <div class="guide-inner">
-    <div class="guide-title">Panduan Skor Penilaian</div>
+    <div class="guide-title"><?php labnesia_icon( 'clipboard-list', '#ffffff', 18 ); ?>Panduan Skor Penilaian</div>
     <div class="guide-cards">
       <div class="guide-card s0">
         <div class="guide-score">0</div>
@@ -477,10 +478,7 @@ $klausuls = [
 ];
 
 $klausuls = array_map(function ($k) {
-  $k['max'] = 0;
-  foreach ($k['subs'] as $sub) {
-    $k['max'] += count($sub['items']) * 4;
-  }
+  $k['max'] = count($k['subs']) * 4;
   return $k;
 }, $klausuls);
 
@@ -496,13 +494,19 @@ foreach ($klausuls as $k) :
     <div class="klausul-badge">Klausul <?php echo $k['num']; ?></div>
   </div>
 
-  <?php foreach ($k['subs'] as $sub) : ?>
+  <?php foreach ($k['subs'] as $sub) : $qId = $k['id'] . '_q' . $qNum; ?>
   <div class="sub-klausul">
     <div class="sub-header"><?php echo $sub['title']; ?></div>
-    <?php foreach ($sub['items'] as $item) : $qId = $k['id'] . '_q' . $qNum; ?>
     <div class="item-row">
       <div class="item-num"><?php echo $qNum; ?></div>
-      <div class="item-text"><?php echo htmlspecialchars($item); ?></div>
+      <div>
+        <div class="item-text"><?php echo htmlspecialchars($sub['title']); ?></div>
+        <ul class="item-details">
+          <?php foreach ($sub['items'] as $item) : ?>
+          <li><?php echo htmlspecialchars($item); ?></li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
       <div class="score-radios">
         <?php for ($s = 0; $s <= 4; $s++) : ?>
         <label>
@@ -512,9 +516,8 @@ foreach ($klausuls as $k) :
         <?php endfor; ?>
       </div>
     </div>
-    <?php $qNum++; endforeach; ?>
   </div>
-  <?php endforeach; ?>
+  <?php $qNum++; endforeach; ?>
 
   <div class="klausul-footer">
     <span class="kf-label">Skor Klausul <?php echo $k['num']; ?></span>
@@ -531,47 +534,47 @@ foreach ($klausuls as $k) :
   <div class="result-grid">
     <div class="result-card">
       <div class="result-card-label">Klausul 4 — Persyaratan Umum</div>
-      <div><span class="result-card-score" id="r_k4">0</span><span class="result-card-max"> / 16</span></div>
+      <div><span class="result-card-score" id="r_k4">0</span><span class="result-card-max"> / 8</span></div>
       <div class="result-card-bar"><div class="result-card-fill" id="rb_k4" style="max-width:100%;width:0%"></div></div>
     </div>
     <div class="result-card">
       <div class="result-card-label">Klausul 5 — Persyaratan Struktur</div>
-      <div><span class="result-card-score" id="r_k5">0</span><span class="result-card-max"> / 76</span></div>
+      <div><span class="result-card-score" id="r_k5">0</span><span class="result-card-max"> / 24</span></div>
       <div class="result-card-bar"><div class="result-card-fill" id="rb_k5" style="max-width:100%;width:0%"></div></div>
     </div>
     <div class="result-card">
       <div class="result-card-label">Klausul 6 — Persyaratan Sumber Daya</div>
-      <div><span class="result-card-score" id="r_k6">0</span><span class="result-card-max"> / 136</span></div>
+      <div><span class="result-card-score" id="r_k6">0</span><span class="result-card-max"> / 20</span></div>
       <div class="result-card-bar"><div class="result-card-fill" id="rb_k6" style="max-width:100%;width:0%"></div></div>
     </div>
     <div class="result-card">
       <div class="result-card-label">Klausul 7 — Persyaratan Proses</div>
-      <div><span class="result-card-score" id="r_k7">0</span><span class="result-card-max"> / 216</span></div>
+      <div><span class="result-card-score" id="r_k7">0</span><span class="result-card-max"> / 44</span></div>
       <div class="result-card-bar"><div class="result-card-fill" id="rb_k7" style="max-width:100%;width:0%"></div></div>
     </div>
     <div class="result-card">
       <div class="result-card-label">Klausul 8 — Persyaratan Sistem Manajemen</div>
-      <div><span class="result-card-score" id="r_k8">0</span><span class="result-card-max"> / 124</span></div>
+      <div><span class="result-card-score" id="r_k8">0</span><span class="result-card-max"> / 32</span></div>
       <div class="result-card-bar"><div class="result-card-fill" id="rb_k8" style="max-width:100%;width:0%"></div></div>
     </div>
   </div>
   <div class="result-total">
-    <div class="result-total-num"><span id="r_total">0</span> / 552</div>
+    <div class="result-total-num"><span id="r_total">0</span> / 128</div>
     <div class="result-total-label">Grand Total · <span id="r_pct">0</span>% Kesiapan Laboratorium</div>
   </div>
   <div class="result-interpretation" id="r_interp"></div>
   <div class="result-actions">
     <a href="#" class="btn-wa" id="wa_link" target="_blank" rel="noopener">
-      💬 Konsultasi via WhatsApp
+      <?php labnesia_icon( 'message-circle', '#ffffff', 16 ); ?> Konsultasi via WhatsApp
     </a>
-    <a href="<?php echo $url_kelas; ?>" class="btn-konsul">📋 Lihat Program Pendampingan →</a>
+    <a href="<?php echo $url_kelas; ?>" class="btn-konsul"><?php labnesia_icon( 'clipboard-list', 'var(--navy)', 16 ); ?> Lihat Program Pendampingan <?php labnesia_icon( 'arrow-right', 'var(--navy)', 16 ); ?></a>
   </div>
 </div>
 
 <!-- SUBMIT -->
 <div class="submit-area">
-  <button type="button" class="btn-hitung" onclick="showResult()">Hitung Skor & Lihat Hasil →</button>
-  <div class="submit-note">Isi semua item untuk hasil yang akurat. Tidak perlu membuat akun.</div>
+  <button type="button" class="btn-hitung" onclick="showResult()">Hitung Skor &amp; Lihat Hasil <?php labnesia_icon( 'arrow-right', '#ffffff', 16 ); ?></button>
+  <div class="submit-note">Isi semua sub-klausul untuk hasil yang akurat. Tidak perlu membuat akun.</div>
 </div>
 
 </form>
@@ -585,10 +588,10 @@ foreach ($klausuls as $k) :
       <p style="font-size:14px;color:rgba(255,255,255,0.6);max-width:320px;line-height:1.7;">Membangun SDM Kompeten, Menguatkan Laboratorium Indonesia. Terakreditasi KAN.</p>
     </div>
     <div class="footer-contact">
-      📧 info@labnesia.id<br>
-      📞 +62 821-7222-1567 (Endang)<br>
-      📞 +62 851-8500-0367 (Berryl)<br>
-      📍 labnesia.id
+      <?php labnesia_icon( 'mail', 'rgba(255,255,255,0.5)', 14 ); ?> info@labnesia.id<br>
+      <?php labnesia_icon( 'phone', 'rgba(255,255,255,0.5)', 14 ); ?> +62 821-7222-1567 (Endang)<br>
+      <?php labnesia_icon( 'phone', 'rgba(255,255,255,0.5)', 14 ); ?> +62 851-8500-0367 (Berryl)<br>
+      <?php labnesia_icon( 'map-pin', 'rgba(255,255,255,0.5)', 14 ); ?> labnesia.id
     </div>
   </div>
   <div class="footer-inner footer-bottom-bar">
@@ -598,8 +601,8 @@ foreach ($klausuls as $k) :
 </footer>
 
 <script>
-const MAX = {k4:16, k5:76, k6:136, k7:216, k8:124};
-const GRAND_MAX = 552;
+const MAX = {k4:8, k5:24, k6:20, k7:44, k8:32};
+const GRAND_MAX = 128;
 
 function getKlausulScore(kid) {
   var total = 0;
@@ -660,12 +663,12 @@ function showResult() {
   var msg = encodeURIComponent(
     'Halo Labnesia, saya telah mengisi Gap Analysis ISO/IEC 17025.\n\n'+
     'Hasil skor:\n'+
-    '• Klausul 4: '+getKlausulScore('k4')+'/16\n'+
-    '• Klausul 5: '+getKlausulScore('k5')+'/76\n'+
-    '• Klausul 6: '+getKlausulScore('k6')+'/136\n'+
-    '• Klausul 7: '+getKlausulScore('k7')+'/216\n'+
-    '• Klausul 8: '+getKlausulScore('k8')+'/124\n'+
-    '• Grand Total: '+grand+'/552 ('+pct+'%)\n\n'+
+    '• Klausul 4: '+getKlausulScore('k4')+'/8\n'+
+    '• Klausul 5: '+getKlausulScore('k5')+'/24\n'+
+    '• Klausul 6: '+getKlausulScore('k6')+'/20\n'+
+    '• Klausul 7: '+getKlausulScore('k7')+'/44\n'+
+    '• Klausul 8: '+getKlausulScore('k8')+'/32\n'+
+    '• Grand Total: '+grand+'/128 ('+pct+'%)\n\n'+
     'Saya ingin berkonsultasi lebih lanjut tentang program pendampingan akreditasi.'
   );
   document.getElementById('wa_link').href = 'https://wa.me/6282172221567?text='+msg;

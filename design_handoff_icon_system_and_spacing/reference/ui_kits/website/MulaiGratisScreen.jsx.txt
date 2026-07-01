@@ -1,0 +1,96 @@
+function MulaiGratisScreen({ D, onNavigate }) {
+  const { NavBar, Footer, Card, IconTile, Badge, Input, Select, Button, Icon } = D;
+  const [submitted, setSubmitted] = React.useState(false);
+  const goHome = () => onNavigate && onNavigate('home');
+
+  return (
+    <div style={{ fontFamily: 'var(--font-display)', background: '#fff' }}>
+      <NavBar logoSrc="../../assets/logo/LOGO-LABNESIA-004.gif" onCta={() => {}} />
+
+      <div style={{ background: 'var(--navy)', padding: '52px 48px 36px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, opacity: 0.04, backgroundImage: 'radial-gradient(circle at 1px 1px, #fff 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div style={{ maxWidth: 700, margin: '0 auto', position: 'relative' }}>
+          <Badge tone="gratis" icon="sparkles" style={{ marginBottom: 16 }}>Give Value First</Badge>
+          <h1 style={{ fontSize: 36, fontWeight: 800, color: '#fff', lineHeight: 1.1, letterSpacing: '-1.2px', margin: '0 0 12px' }}>
+            Rasakan manfaatnya<br /><span style={{ color: 'var(--teal-light)' }}>sebelum memutuskan.</span>
+          </h1>
+          <p style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'rgba(255,255,255,0.6)', fontSize: 15, lineHeight: 1.6 }}>Kami percaya laboratorium yang sudah merasakan nilai nyata akan tahu sendiri langkah selanjutnya.</p>
+        </div>
+      </div>
+
+      <div style={{ background: 'var(--teal-pale)', borderBottom: '1px solid rgba(26,158,117,0.2)', padding: '14px 48px' }}>
+        <div style={{ maxWidth: 1000, margin: '0 auto', display: 'flex', justifyContent: 'center', gap: 28, flexWrap: 'wrap' }}>
+          {['Tidak perlu kartu kredit', 'Tidak ada komitmen apapun', 'Tidak ada spam email'].map((t) => (
+            <div key={t} style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: 13, fontWeight: 600, color: '#085041' }}>
+              <div style={{ width: 18, height: 18, background: 'var(--teal)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <Icon name="check" size={11} color="#fff" />
+              </div>
+              {t}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <section style={{ padding: '48px 48px' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 8 }}>Give Value #1 · Paling Berdampak</p>
+          <h2 style={{ fontSize: 28, fontWeight: 800, color: 'var(--navy)', margin: '0 0 24px', letterSpacing: '-0.7px' }}>Mulai dari GAP Analysis — 100% Gratis.</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, alignItems: 'center', background: 'var(--navy)', borderRadius: 24, padding: 32, position: 'relative', overflow: 'hidden' }}>
+            <div style={{ position: 'absolute', inset: 0, opacity: 0.04, backgroundImage: 'radial-gradient(circle at 1px 1px, #fff 1px, transparent 0)', backgroundSize: '32px 32px' }} />
+            <div style={{ position: 'relative' }}>
+              <Badge tone="gratis" style={{ marginBottom: 14 }}>100% Gratis · Nilai setara Rp 3–5 jt</Badge>
+              <h3 style={{ fontSize: 24, fontWeight: 800, color: '#fff', lineHeight: 1.15, marginBottom: 12 }}>Laporan GAP Analysis <span style={{ color: 'var(--teal-light)' }}>Lab Anda</span></h3>
+              {['Laporan GAP Analysis', 'Penetapan Ruang Lingkup', 'Struktur Organisasi Mutu', 'Roadmap Implementasi'].map((o) => (
+                <div key={o} style={{ display: 'flex', alignItems: 'center', gap: 9, color: 'rgba(255,255,255,0.8)', fontSize: 14, marginBottom: 9 }}>
+                  <div style={{ width: 18, height: 18, background: 'var(--teal)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <Icon name="check" size={11} color="#fff" />
+                  </div>
+                  {o}
+                </div>
+              ))}
+            </div>
+            <div style={{ background: '#fff', borderRadius: 16, padding: 22, position: 'relative' }}>
+              <div style={{ fontSize: 17, fontWeight: 800, color: 'var(--navy)', marginBottom: 3 }}>Daftar GAP Analysis Gratis</div>
+              <div style={{ fontSize: 13, color: 'var(--gray-600)', marginBottom: 16 }}>Tim kami merespons maks. 3 hari kerja.</div>
+              {submitted ? (
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, padding: '20px 0', textAlign: 'center' }}>
+                  <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'var(--teal-pale)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Icon name="check-circle-2" size={22} color="var(--teal)" />
+                  </div>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--navy)' }}>Pendaftaran terkirim!</div>
+                  <div style={{ fontSize: 12, color: 'var(--gray-600)' }}>Tim kami akan menghubungi Anda dalam 3 hari kerja.</div>
+                </div>
+              ) : (
+                <React.Fragment>
+                  <Input label="Nama lengkap *" placeholder="Nama Anda" />
+                  <Select label="Jabatan / posisi *" placeholder="Pilih jabatan Anda" options={['Kepala Laboratorium', 'Manajer Mutu', 'Manajer Teknis', 'Analis / Laboran']} />
+                  <Input label="Nomor WhatsApp *" placeholder="08xx-xxxx-xxxx" type="tel" />
+                  <Button variant="teal" icon="arrow-right" style={{ width: '100%', marginTop: 2 }} onClick={() => setSubmitted(true)}>Daftar Gap Analysis Gratis</Button>
+                </React.Fragment>
+              )}
+            </div>
+          </div>
+
+          <h3 style={{ fontSize: 20, fontWeight: 800, color: 'var(--navy)', marginTop: 40, marginBottom: 18 }}>Masih banyak lagi yang gratis.</h3>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 14 }}>
+            {[
+              { icon: 'mic', tag: 'gratis', tagText: 'Gratis', title: 'Webinar Lab Talk', desc: 'Sesi edukasi mingguan — insight, tips, dan studi kasus dari pakar Labnesia.' },
+              { icon: 'zap', tag: 'terbuka', tagText: 'Terbuka Umum', title: 'Bootcamp 1 Hari', desc: 'Intensif online 7 jam — alur akreditasi dari awal hingga cara daftar KANMIS.' },
+              { icon: 'graduation-cap', tag: 'gratis', tagText: 'Gratis untuk kampus', title: 'Kuliah Praktisi', desc: 'Labnesia hadir ke kampus untuk mahasiswa tingkat akhir & fresh graduate.' },
+            ].map((c) => (
+              <Card key={c.title} onClick={goHome}>
+                <IconTile icon={c.icon} shape="rounded" size={44} style={{ marginBottom: 12 }} />
+                <Badge tone={c.tag} style={{ marginBottom: 10 }}>{c.tagText}</Badge>
+                <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--navy)', marginBottom: 6 }}>{c.title}</div>
+                <div style={{ fontSize: 13, color: 'var(--gray-600)', lineHeight: 1.6 }}>{c.desc}</div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Footer logoSrc="../../assets/logo/LOGO-LABNESIA-004.gif" />
+    </div>
+  );
+}
+window.MulaiGratisScreen = MulaiGratisScreen;

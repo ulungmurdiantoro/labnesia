@@ -251,28 +251,28 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
     <p class="page-hero-sub">Program publik 6 bulan yang membawa lab Anda dari kondisi saat ini hingga siap menghadapi asesmen KAN — dengan output nyata di setiap tahap, bukan hanya materi seminar.</p>
     <div class="hero-meta">
       <div class="hero-meta-item">
-        <div class="hero-meta-icon">📅</div>
+        <div class="hero-meta-icon"><?php labnesia_icon( 'calendar', 'rgba(255,255,255,.9)', 15 ); ?></div>
         <div>
           <div class="hero-meta-label">Durasi program</div>
           <div class="hero-meta-val">3–6 bulan</div>
         </div>
       </div>
       <div class="hero-meta-item">
-        <div class="hero-meta-icon">🌐</div>
+        <div class="hero-meta-icon"><?php labnesia_icon( 'globe', 'rgba(255,255,255,.9)', 15 ); ?></div>
         <div>
           <div class="hero-meta-label">Format</div>
           <div class="hero-meta-val">Online / Hybrid</div>
         </div>
       </div>
       <div class="hero-meta-item">
-        <div class="hero-meta-icon">👥</div>
+        <div class="hero-meta-icon"><?php labnesia_icon( 'users', 'rgba(255,255,255,.9)', 15 ); ?></div>
         <div>
           <div class="hero-meta-label">Kapasitas</div>
           <div class="hero-meta-val">Maks. 10 instansi/batch</div>
         </div>
       </div>
       <div class="hero-meta-item">
-        <div class="hero-meta-icon">🏆</div>
+        <div class="hero-meta-icon"><?php labnesia_icon( 'trophy', 'rgba(255,255,255,.9)', 15 ); ?></div>
         <div>
           <div class="hero-meta-label">Track record</div>
           <div class="hero-meta-val">30+ lab berhasil membangun sistem mutu & meraih akreditasi</div>
@@ -289,7 +289,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
       <span class="sticky-price">Rp 14 jt</span>
       <span class="sticky-unit">/peserta · mulai dari</span>
     </div>
-    <span class="sticky-promo">⚡ Hemat s.d. Rp 20 juta</span>
+    <span class="sticky-promo"><?php labnesia_icon( 'zap', '#8B6000', 12 ); ?> Hemat s.d. Rp 20 juta</span>
     <span style="font-size:13px;color:var(--gray-600)">Batch dibuka tiap 1–2 bulan — kuota terbatas</span>
   </div>
   <div class="sticky-actions">
@@ -311,27 +311,27 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
       <p class="body" style="margin-bottom:24px">Program ini tepat untuk Anda jika laboratorium sedang menghadapi situasi berikut:</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
         <div style="display:flex;gap:10px;padding:14px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(26,158,117,0.2)">
-          <span style="font-size:18px;flex-shrink:0">✓</span>
+          <span style="flex-shrink:0"><?php labnesia_icon( 'check', 'var(--teal)', 18 ); ?></span>
           <p style="font-size:14px;color:#085041;line-height:1.5">Lab belum punya sistem mutu sama sekali dan tidak tahu harus mulai dari mana</p>
         </div>
         <div style="display:flex;gap:10px;padding:14px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(26,158,117,0.2)">
-          <span style="font-size:18px;flex-shrink:0">✓</span>
+          <span style="flex-shrink:0"><?php labnesia_icon( 'check', 'var(--teal)', 18 ); ?></span>
           <p style="font-size:14px;color:#085041;line-height:1.5">Punya dokumen tapi tidak yakin apakah sudah sesuai persyaratan KAN</p>
         </div>
         <div style="display:flex;gap:10px;padding:14px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(26,158,117,0.2)">
-          <span style="font-size:18px;flex-shrink:0">✓</span>
+          <span style="flex-shrink:0"><?php labnesia_icon( 'check', 'var(--teal)', 18 ); ?></span>
           <p style="font-size:14px;color:#085041;line-height:1.5">Anggaran terbatas — tidak mampu konsultan in-house yang 150–200 juta</p>
         </div>
         <div style="display:flex;gap:10px;padding:14px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(26,158,117,0.2)">
-          <span style="font-size:18px;flex-shrink:0">✓</span>
+          <span style="flex-shrink:0"><?php labnesia_icon( 'check', 'var(--teal)', 18 ); ?></span>
           <p style="font-size:14px;color:#085041;line-height:1.5">Proses pengadaan instansi panjang — perlu mulai sebagai individu dulu</p>
         </div>
         <div style="display:flex;gap:10px;padding:14px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(26,158,117,0.2)">
-          <span style="font-size:18px;flex-shrink:0">✓</span>
+          <span style="flex-shrink:0"><?php labnesia_icon( 'check', 'var(--teal)', 18 ); ?></span>
           <p style="font-size:14px;color:#085041;line-height:1.5">Tim lab bergantung pada satu orang saja yang paham sistem mutu</p>
         </div>
         <div style="display:flex;gap:10px;padding:14px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(26,158,117,0.2)">
-          <span style="font-size:18px;flex-shrink:0">✓</span>
+          <span style="flex-shrink:0"><?php labnesia_icon( 'check', 'var(--teal)', 18 ); ?></span>
           <p style="font-size:14px;color:#085041;line-height:1.5">Lab ingin menjadi profit center & income generator untuk institusi</p>
         </div>
       </div>
@@ -351,7 +351,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
             <div class="outline-title-sub">Memahami standar, sistem KANMIS, dan peta jalan lab Anda</div>
           </div>
           <span class="outline-badge">12 JP · 3 sesi</span>
-          <span style="font-size:18px;color:var(--gray-400);margin-left:8px">▾</span>
+          <span style="margin-left:8px"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 18 ); ?></span>
         </div>
         <div class="outline-body open">
           <div class="seri-list">
@@ -382,7 +382,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
             <div class="outline-title-sub">Panduan Mutu, SOP, Instruksi Kerja, dan Formulir siap pakai</div>
           </div>
           <span class="outline-badge">4 JP · 1 sesi</span>
-          <span style="font-size:18px;color:var(--gray-400);margin-left:8px">▾</span>
+          <span style="margin-left:8px"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 18 ); ?></span>
         </div>
         <div class="outline-body">
           <div class="seri-list">
@@ -403,7 +403,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
             <div class="outline-title-sub">Uji Profisiensi, Verifikasi Metode, Ketidakpastian, Jaminan Mutu Internal</div>
           </div>
           <span class="outline-badge">28 JP · 4 sesi</span>
-          <span style="font-size:18px;color:var(--gray-400);margin-left:8px">▾</span>
+          <span style="margin-left:8px"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 18 ); ?></span>
         </div>
         <div class="outline-body">
           <div class="seri-list">
@@ -439,7 +439,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
             <div class="outline-title-sub">Audit Internal dan Kaji Ulang Manajemen — siap diverifikasi KAN</div>
           </div>
           <span class="outline-badge">20 JP · 2 sesi</span>
-          <span style="font-size:18px;color:var(--gray-400);margin-left:8px">▾</span>
+          <span style="margin-left:8px"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 18 ); ?></span>
         </div>
         <div class="outline-body">
           <div class="seri-list">
@@ -458,7 +458,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
       </div>
 
       <div style="background:var(--amber-pale);border:1px solid rgba(245,166,35,0.3);border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start;margin-top:16px">
-        <span style="font-size:24px;flex-shrink:0">🎯</span>
+        <span style="flex-shrink:0"><?php labnesia_icon( 'target', '#6B4400', 24 ); ?></span>
         <div>
           <p style="font-size:14px;font-weight:700;color:#6B4400;margin-bottom:4px">Setelah Tahap 4, lab Anda siap Audit Internal</p>
           <p style="font-size:13px;color:#8B5800;line-height:1.5">Untuk lanjut ke Tahap 5 (pendaftaran KAN, audit kelayakan, simulasi asesmen), tersedia <strong>Kelas Lanjutan Privat</strong> seharga Rp 36 jt/lab — atau langsung Full Pendampingan Rp 150–200 jt untuk jalur nol hingga akreditasi.</p>
@@ -469,7 +469,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <span style="font-size:20px;flex-shrink:0">🔄</span>
         <div>
           <p style="font-size:13px;font-weight:700;color:#085041;margin-bottom:3px">Setelah terakreditasi, jangan berhenti di sini.</p>
-          <p style="font-size:13px;color:#0F6E56;line-height:1.5">Lab yang sudah terakreditasi perlu mempertahankan statusnya setiap tahun menghadapi surveillance dan menjaga kompetensi SDM yang terus berganti. <strong>Annual Partnership Labnesia</strong> hadir sebagai solusi — mulai Rp 36 jt/tahun, sudah include pelatihan premium untuk SDM, update dokumen, dan pendampingan audit internal. <a href="<?php echo $url_inhouse; ?>" style="color:var(--teal);font-weight:600">Pelajari Annual Partnership →</a></p>
+          <p style="font-size:13px;color:#0F6E56;line-height:1.5">Lab yang sudah terakreditasi perlu mempertahankan statusnya setiap tahun menghadapi surveillance dan menjaga kompetensi SDM yang terus berganti. <strong>Annual Partnership Labnesia</strong> hadir sebagai solusi — mulai Rp 36 jt/tahun, sudah include pelatihan premium untuk SDM, update dokumen, dan pendampingan audit internal. <a href="<?php echo $url_inhouse; ?>" style="color:var(--teal);font-weight:600">Pelajari Annual Partnership <?php labnesia_icon( 'arrow-right', 'var(--teal)', 13 ); ?></a></p>
         </div>
       </div>
     </div>
@@ -491,7 +491,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-month">Bulan 4 · W1</div><div class="tl-label">Jaminan Mutu Internal</div><div class="tl-sub">Control chart, replika, antar analis</div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-month">Bulan 4 · W3</div><div class="tl-label">Audit Internal</div><div class="tl-sub">Simulasi AI + laporan lengkap</div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-month">Bulan 5 · W2</div><div class="tl-label">Kaji Ulang Manajemen</div><div class="tl-sub">Rapat KUM + matriks tindak lanjut</div></div>
-          <div class="tl-item"><div class="tl-dot" style="background:var(--amber)"></div><div class="tl-month">Bulan 5 · W4</div><div class="tl-label">✓ Siap Audit Internal</div><div class="tl-sub">Lab selesai Tahap 1–4</div></div>
+          <div class="tl-item"><div class="tl-dot" style="background:var(--amber)"></div><div class="tl-month">Bulan 5 · W4</div><div class="tl-label"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?> Siap Audit Internal</div><div class="tl-sub">Lab selesai Tahap 1–4</div></div>
           <div class="tl-item"><div class="tl-dot" style="background:var(--gray-400)"></div><div class="tl-month">Bulan 6 (opsional)</div><div class="tl-label">Kelas Lanjutan (opsional)</div><div class="tl-sub">Pendaftaran akreditasi & simulasi asesmen</div></div>
         </div>
       </div>
@@ -503,14 +503,14 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
       <h2 class="h2">7 benefit, hemat hingga<br>Rp 20 juta.</h2>
       <div>
         <div class="benefit-item">
-          <div class="benefit-icon">👨‍🏫</div>
+          <div class="benefit-icon"><?php labnesia_icon( 'user-check', 'var(--teal)', 20 ); ?></div>
           <div class="benefit-content">
             <div class="benefit-title">Pendampingan langsung oleh Pakar berpengalaman</div>
             <div class="benefit-desc">Dipandu oleh 15+ pakar aktif dengan rekam jejak akreditasi lab nyata di seluruh Indonesia — bukan hanya akademisi atau trainer teori.</div>
           </div>
         </div>
         <div class="benefit-item">
-          <div class="benefit-icon">🎓</div>
+          <div class="benefit-icon"><?php labnesia_icon( 'graduation-cap', 'var(--teal)', 20 ); ?></div>
           <div class="benefit-content">
             <div class="benefit-title">GRATIS Pelatihan Tambahan 40 JP</div>
             <div class="benefit-desc">Materi: Lead Implementer atau Auditor Internal ISO/IEC 17025 — bertujuan meningkatkan kompetensi peserta dalam menerapkan standar. Pelatihan ini terpisah dan independen dari proses uji kompetensi di LSP Edukia.</div>
@@ -521,7 +521,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
           </div>
         </div>
         <div class="benefit-item">
-          <div class="benefit-icon">📋</div>
+          <div class="benefit-icon"><?php labnesia_icon( 'clipboard-list', 'var(--teal)', 20 ); ?></div>
           <div class="benefit-content">
             <div class="benefit-title">GRATIS Template Dokumen ISO/IEC 17025 Lengkap</div>
             <div class="benefit-desc">Panduan Mutu (PM), SOP, Instruksi Kerja (IK), dan Formulir (FM) — sudah terstandarisasi dan bisa langsung diadaptasi untuk lab Anda.</div>
@@ -532,7 +532,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
           </div>
         </div>
         <div class="benefit-item">
-          <div class="benefit-icon">💬</div>
+          <div class="benefit-icon"><?php labnesia_icon( 'message-circle', 'var(--teal)', 20 ); ?></div>
           <div class="benefit-content">
             <div class="benefit-title">GRATIS 1 Sesi Konsultasi Privat 1-on-1</div>
             <div class="benefit-desc">Setiap peserta mendapat satu sesi konsultasi personal dengan pakar pilihan untuk membahas kondisi spesifik lab Anda.</div>
@@ -550,7 +550,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         </div>
 
         <div class="benefit-item">
-          <div class="benefit-icon">🎤</div>
+          <div class="benefit-icon"><?php labnesia_icon( 'mic', 'var(--teal)', 20 ); ?></div>
           <div class="benefit-content">
             <div class="benefit-title">GRATIS Akses Webinar, Bootcamp & Workshop 1 Tahun</div>
             <div class="benefit-desc">Semua event publik Labnesia selama satu tahun penuh bisa diikuti tanpa biaya tambahan — termasuk webinar tematik per bidang lab.</div>
@@ -561,14 +561,14 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
           </div>
         </div>
         <div class="benefit-item">
-          <div class="benefit-icon">🏅</div>
+          <div class="benefit-icon"><?php labnesia_icon( 'award', 'var(--teal)', 20 ); ?></div>
           <div class="benefit-content">
             <div class="benefit-title">Sertifikat Pelatihan di Setiap Sesi</div>
             <div class="benefit-desc">Akumulasi jam pelatihan (JP) yang bisa digunakan untuk keperluan rekognisi kompetensi di institusi Anda.</div>
           </div>
         </div>
         <div class="benefit-item">
-          <div class="benefit-icon">🌐</div>
+          <div class="benefit-icon"><?php labnesia_icon( 'globe', 'var(--teal)', 20 ); ?></div>
           <div class="benefit-content">
             <div class="benefit-title">Akses Grup Diskusi Eksklusif Nasional</div>
             <div class="benefit-desc">Forum antar Manajer Mutu, Manajer Teknis, dan analis lab dari seluruh Indonesia — konsultasi, sharing temuan asesmen, dan update regulasi KAN terbaru.</div>
@@ -632,7 +632,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
             <tr>
               <th>Aspek</th>
               <th>Mandiri</th>
-              <th class="highlight-col">Kelas Pendampingan ★</th>
+              <th class="highlight-col">Kelas Pendampingan <?php labnesia_icon( 'star', '#ffffff', 14 ); ?></th>
               <th>Full In-House</th>
             </tr>
           </thead>
@@ -652,26 +652,26 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
             <tr>
               <td class="col-feat">Panduan pakar</td>
               <td><span class="comp-cross">—</span></td>
-              <td class="highlight-col"><span class="comp-check">✓</span> 15+ pakar aktif</td>
-              <td><span class="comp-check">✓</span> 1–2 konsultan</td>
+              <td class="highlight-col"><span class="comp-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span> 15+ pakar aktif</td>
+              <td><span class="comp-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span> 1–2 konsultan</td>
             </tr>
             <tr>
               <td class="col-feat">Output per sesi</td>
               <td><span class="comp-cross">—</span></td>
-              <td class="highlight-col"><span class="comp-check">✓</span> Dokumen siap pakai</td>
-              <td><span class="comp-check">✓</span></td>
+              <td class="highlight-col"><span class="comp-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span> Dokumen siap pakai</td>
+              <td><span class="comp-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span></td>
             </tr>
             <tr>
               <td class="col-feat">Pelatihan tambahan terkait uji kompetensi*</td>
               <td><span class="comp-cross">—</span></td>
-              <td class="highlight-col"><span class="comp-check">✓</span> Gratis (Rp 6,5 jt)</td>
+              <td class="highlight-col"><span class="comp-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span> Gratis (Rp 6,5 jt)</td>
               <td><span class="comp-cross">Tambahan biaya</span></td>
             </tr>
             <tr>
               <td class="col-feat">Template dokumen</td>
               <td><span class="comp-cross">Cari sendiri</span></td>
-              <td class="highlight-col"><span class="comp-check">✓</span> Gratis (Rp 3,5 jt)</td>
-              <td><span class="comp-check">✓</span></td>
+              <td class="highlight-col"><span class="comp-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span> Gratis (Rp 3,5 jt)</td>
+              <td><span class="comp-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span></td>
             </tr>
             <tr>
               <td class="col-feat">Peserta per batch</td>
@@ -682,7 +682,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
             <tr>
               <td class="col-feat">Networking antar lab</td>
               <td><span class="comp-cross">—</span></td>
-              <td class="highlight-col"><span class="comp-check">✓</span> Grup eksklusif nasional</td>
+              <td class="highlight-col"><span class="comp-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span> Grup eksklusif nasional</td>
               <td><span class="comp-cross">—</span></td>
             </tr>
           </tbody>
@@ -727,7 +727,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <span style="font-size:12px;background:white;border:1px solid var(--gray-200);padding:4px 12px;border-radius:6px;color:var(--gray-600)">Univ. Jambi · LP-1774-IDN</span>
         <span style="font-size:12px;background:white;border:1px solid var(--gray-200);padding:4px 12px;border-radius:6px;color:var(--gray-600)">Univ. Lampung · LP-1130-IDN</span>
         <span style="font-size:12px;background:white;border:1px solid var(--gray-200);padding:4px 12px;border-radius:6px;color:var(--gray-600)">USU · LP-1779-IDN</span>
-        <span style="font-size:12px;color:var(--teal);font-weight:600">+26 lainnya →</span>
+        <span style="font-size:12px;color:var(--teal);font-weight:600">+26 lainnya <?php labnesia_icon( 'arrow-right', 'var(--teal)', 12 ); ?></span>
       </div>
     </div>
 
@@ -764,27 +764,27 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 
       <div class="price-card-body">
         <div class="price-feature">
-          <div class="pf-check">✓</div>
+          <div class="pf-check"><?php labnesia_icon( 'check', 'var(--teal)', 15 ); ?></div>
           <div class="pf-text">4 tahap, 13 sesi, 64 JP pendampingan<span class="pf-free">Durasi program: 3–6 bulan</span></div>
         </div>
         <div class="price-feature">
-          <div class="pf-check">✓</div>
+          <div class="pf-check"><?php labnesia_icon( 'check', 'var(--teal)', 15 ); ?></div>
           <div class="pf-text">Pelatihan tambahan 40 JP — Lead Implementer atau Auditor Internal ISO/IEC 17025*<span class="pf-free">GRATIS · termasuk dalam paket pelatihan</span></div>
         </div>
         <div class="price-feature">
-          <div class="pf-check">✓</div>
+          <div class="pf-check"><?php labnesia_icon( 'check', 'var(--teal)', 15 ); ?></div>
           <div class="pf-text">Template Dokumen ISO/IEC 17025 lengkap<span class="pf-free">GRATIS · senilai Rp 3.500.000</span></div>
         </div>
         <div class="price-feature">
-          <div class="pf-check">✓</div>
+          <div class="pf-check"><?php labnesia_icon( 'check', 'var(--teal)', 15 ); ?></div>
           <div class="pf-text">1 sesi konsultasi privat 1-on-1 per peserta<span class="pf-free">GRATIS · senilai Rp 3.000.000</span></div>
         </div>
         <div class="price-feature">
-          <div class="pf-check">✓</div>
+          <div class="pf-check"><?php labnesia_icon( 'check', 'var(--teal)', 15 ); ?></div>
           <div class="pf-text">Akses webinar & bootcamp 1 tahun penuh<span class="pf-free">GRATIS · senilai Rp 5.000.000</span></div>
         </div>
         <div class="price-feature">
-          <div class="pf-check">✓</div>
+          <div class="pf-check"><?php labnesia_icon( 'check', 'var(--teal)', 15 ); ?></div>
           <div class="pf-text">Grup diskusi eksklusif nasional (permanen)</div>
         </div>
         <div style="background:var(--teal-pale);border-radius:8px;padding:12px;margin-top:8px;text-align:center">
@@ -794,16 +794,16 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
       </div>
 
       <div class="urgency">
-        <p class="urgency-text">⏳ Batch dibuka tiap 1–2 bulan — <strong>maks. 10 instansi/batch</strong></p>
+        <p class="urgency-text"><?php labnesia_icon( 'hourglass', '#8B6000', 12 ); ?> Batch dibuka tiap 1–2 bulan — <strong>maks. 10 instansi/batch</strong></p>
       </div>
 
       <div class="price-cta">
         <a href="#form-daftar" class="btn-amber">Daftar Batch Berikutnya</a>
-        <a href="<?php echo $url_gratis; ?>" class="btn-ghost">Konsultasi gratis dulu →</a>
+        <a href="<?php echo $url_gratis; ?>" class="btn-ghost">Konsultasi gratis dulu <?php labnesia_icon( 'arrow-right', 'var(--navy)', 14 ); ?></a>
       </div>
 
       <div class="guarantee">
-        <div class="guarantee-icon">🛡️</div>
+        <div class="guarantee-icon"><?php labnesia_icon( 'shield-check', 'var(--teal)', 22 ); ?></div>
         <div class="guarantee-text">Jika output per sesi belum memenuhi standar yang disepakati, kami sediakan sesi konsultasi tambahan tanpa biaya. Track record kami: 30+ lab yang kami dampingi berhasil membangun sistem mutu yang solid.</div>
       </div>
     </div>
@@ -847,7 +847,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
             <option>Lainnya</option>
           </select>
         </div>
-        <button onclick="submitForm()" style="background:var(--teal);color:white;padding:13px;border-radius:9px;font-weight:700;font-size:15px;border:none;cursor:pointer;width:100%;font-family:var(--font-display);transition:all .2s" onmouseover="this.style.background='#158a65'" onmouseout="this.style.background='var(--teal)'">Daftar Sekarang →</button>
+        <button onclick="submitForm()" style="background:var(--teal);color:white;padding:13px;border-radius:9px;font-weight:700;font-size:15px;border:none;cursor:pointer;width:100%;font-family:var(--font-display);transition:all .2s" onmouseover="this.style.background='#158a65'" onmouseout="this.style.background='var(--teal)'">Daftar Sekarang <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></button>
         <p style="font-size:11px;color:var(--gray-400);text-align:center;line-height:1.5">Dengan mendaftar, Anda menyetujui syarat & ketentuan program. Tidak ada biaya di tahap ini — tim kami akan menghubungi Anda terlebih dahulu.</p>
       </div>
     </div>
@@ -857,11 +857,11 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 <!-- CTA SECTION -->
 <div class="cta-section">
   <div class="cta-inner">
-    <div class="tag-batch" style="margin-bottom:24px">⏳ Batch baru dibuka tiap 1–2 bulan</div>
+    <div class="tag-batch" style="margin-bottom:24px"><?php labnesia_icon( 'hourglass', '#8B5800', 12 ); ?> Batch baru dibuka tiap 1–2 bulan</div>
     <h2 class="cta-title">Belum yakin? Mulai dari<br>yang gratis dulu.</h2>
     <p class="cta-sub">Gap Analysis gratis, webinar, dan panduan sudah menunggu — tanpa perlu keputusan apapun dari Anda saat ini.</p>
     <div class="cta-actions">
-      <a href="<?php echo $url_gratis; ?>" class="btn-primary" style="font-size:15px;padding:14px 28px">Akses semua yang gratis →</a>
+      <a href="<?php echo $url_gratis; ?>" class="btn-primary" style="font-size:15px;padding:14px 28px">Akses semua yang gratis <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></a>
       <a href="#form-daftar" class="btn-amber" style="font-size:15px;padding:14px 28px">Daftar Kelas Pendampingan</a>
     </div>
     <p class="cta-note">Atau hubungi tim: +62 821-7222-1567 (Endang) · +62 851-8500-0367 (Berryl) · +62 811-399-523 (Kintan)</p>

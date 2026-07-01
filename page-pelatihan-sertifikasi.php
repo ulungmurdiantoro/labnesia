@@ -207,7 +207,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div><div class="hero-meta-label">Format</div><div class="hero-meta-val">Online / Onsite</div></div>
       </div>
       <div class="hero-meta-item">
-        <div class="hero-meta-icon">👤</div>
+        <div class="hero-meta-icon"><?php labnesia_icon( 'user', '#ffffff', 15 ); ?></div>
         <div><div class="hero-meta-label">Untuk</div><div class="hero-meta-val">Individu & profesional lab</div></div>
       </div>
       <div class="hero-meta-item">
@@ -222,7 +222,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 <div class="firewall-banner">
   <div class="firewall-banner-inner">
     <span class="firewall-icon">ℹ️</span>
-    <p class="firewall-text"><strong>Pelatihan dan uji kompetensi adalah dua kegiatan yang independen.</strong> Labnesia menyelenggarakan pelatihan untuk meningkatkan kompetensi peserta. Uji kompetensi (jika diperlukan) diselenggarakan secara independen oleh Lembaga Sertifikasi Profesi/Person (LSP) terkait, dengan pendaftaran mandiri oleh peserta. <a href="<?php echo $url_faq; ?>#faq-umum" style="color:var(--teal);font-weight:600">Pelajari lebih lanjut →</a></p>
+    <p class="firewall-text"><strong>Pelatihan dan uji kompetensi adalah dua kegiatan yang independen.</strong> Labnesia menyelenggarakan pelatihan untuk meningkatkan kompetensi peserta. Uji kompetensi (jika diperlukan) diselenggarakan secara independen oleh Lembaga Sertifikasi Profesi/Person (LSP) terkait, dengan pendaftaran mandiri oleh peserta. <a href="<?php echo $url_faq; ?>#faq-umum" style="color:var(--teal);font-weight:600">Pelajari lebih lanjut <?php labnesia_icon( 'arrow-right', 'var(--teal)', 12 ); ?></a></p>
   </div>
 </div>
 
@@ -244,21 +244,21 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
           <div class="scheme-block">
             <div class="scheme-block-title">Tujuan Pelatihan</div>
             <div class="scheme-list">
-              <div class="scheme-item"><span class="scheme-check">✓</span>Membekali peserta merancang, menerapkan, dan mengelola sistem manajemen mutu laboratorium</div>
-              <div class="scheme-item"><span class="scheme-check">✓</span>Fokus pada pengembangan sistem yang efektif dan keberlanjutan implementasi</div>
+              <div class="scheme-item"><span class="scheme-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Membekali peserta merancang, menerapkan, dan mengelola sistem manajemen mutu laboratorium</div>
+              <div class="scheme-item"><span class="scheme-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Fokus pada pengembangan sistem yang efektif dan keberlanjutan implementasi</div>
             </div>
           </div>
           <div class="scheme-block">
             <div class="scheme-block-title">Peran Utama</div>
             <div class="scheme-list">
-              <div class="scheme-item"><span class="scheme-check">✓</span>Mengembangkan sistem manajemen mutu dari awal hingga berjalan efektif</div>
-              <div class="scheme-item"><span class="scheme-check">✓</span>Menyusun prosedur, dokumentasi, dan kontrol operasional</div>
+              <div class="scheme-item"><span class="scheme-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Mengembangkan sistem manajemen mutu dari awal hingga berjalan efektif</div>
+              <div class="scheme-item"><span class="scheme-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Menyusun prosedur, dokumentasi, dan kontrol operasional</div>
             </div>
           </div>
           <div class="scheme-block">
             <div class="scheme-block-title">Cocok untuk</div>
             <div class="scheme-list">
-              <div class="scheme-item"><span class="scheme-check">✓</span>Kepala laboratorium, Koordinator mutu, Pimpinan institusi lab</div>
+              <div class="scheme-item"><span class="scheme-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Kepala laboratorium, Koordinator mutu, Pimpinan institusi lab</div>
             </div>
           </div>
         </div>
@@ -274,21 +274,21 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
           <div class="scheme-block">
             <div class="scheme-block-title">Tujuan Pelatihan</div>
             <div class="scheme-list">
-              <div class="scheme-item"><span class="scheme-check">✓</span>Membekali peserta melakukan audit internal terhadap sistem yang sudah diimplementasikan</div>
-              <div class="scheme-item"><span class="scheme-check">✓</span>Fokus pada evaluasi kepatuhan, identifikasi ketidaksesuaian, dan tindak korektif</div>
+              <div class="scheme-item"><span class="scheme-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Membekali peserta melakukan audit internal terhadap sistem yang sudah diimplementasikan</div>
+              <div class="scheme-item"><span class="scheme-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Fokus pada evaluasi kepatuhan, identifikasi ketidaksesuaian, dan tindak korektif</div>
             </div>
           </div>
           <div class="scheme-block">
             <div class="scheme-block-title">Peran Utama</div>
             <div class="scheme-list">
-              <div class="scheme-item"><span class="scheme-check">✓</span>Melakukan audit terhadap sistem yang sudah berjalan</div>
-              <div class="scheme-item"><span class="scheme-check">✓</span>Menyusun laporan audit dan rekomendasi perbaikan</div>
+              <div class="scheme-item"><span class="scheme-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Melakukan audit terhadap sistem yang sudah berjalan</div>
+              <div class="scheme-item"><span class="scheme-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Menyusun laporan audit dan rekomendasi perbaikan</div>
             </div>
           </div>
           <div class="scheme-block">
             <div class="scheme-block-title">Cocok untuk</div>
             <div class="scheme-list">
-              <div class="scheme-item"><span class="scheme-check">✓</span>Auditor mutu internal, Personel laboratorium, Pengawas teknis/manajer mutu</div>
+              <div class="scheme-item"><span class="scheme-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Auditor mutu internal, Personel laboratorium, Pengawas teknis/manajer mutu</div>
             </div>
           </div>
         </div>
@@ -312,69 +312,69 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
       <div class="curr-header active" onclick="toggleCurr(this)">
         <div class="curr-num">1</div>
         <div class="curr-title">Pengenalan ISO/IEC 17025:2017</div>
-        <span class="curr-chevron">▾</span>
+        <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
       </div>
       <div class="curr-body open">
-        <div class="curr-sub-item"><span class="curr-sub-check">✓</span>Kerangka standar dan regulasi yang relevan</div>
-        <div class="curr-sub-item"><span class="curr-sub-check">✓</span>Prinsip Sistem Manajemen Laboratorium dan Plan-Do-Check-Act (PDCA)</div>
+        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Kerangka standar dan regulasi yang relevan</div>
+        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Prinsip Sistem Manajemen Laboratorium dan Plan-Do-Check-Act (PDCA)</div>
       </div>
     </div>
     <div class="curr-step">
       <div class="curr-header" onclick="toggleCurr(this)">
         <div class="curr-num">2</div>
         <div class="curr-title">Perencanaan Implementasi ISO/IEC 17025:2017</div>
-        <span class="curr-chevron">▾</span>
+        <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
       </div>
       <div class="curr-body">
-        <div class="curr-sub-item"><span class="curr-sub-check">✓</span>Ketidakberpihakan, kerahasiaan, dan kode etik</div>
-        <div class="curr-sub-item"><span class="curr-sub-check">✓</span>Kepemimpinan, struktur organisasi, dan personel</div>
-        <div class="curr-sub-item"><span class="curr-sub-check">✓</span>Pengelolaan sistem dokumentasi dan informasi</div>
-        <div class="curr-sub-item"><span class="curr-sub-check">✓</span>Pengelolaan fasilitas, kondisi lingkungan, dan peralatan</div>
-        <div class="curr-sub-item"><span class="curr-sub-check">✓</span>Perencanaan penyedia eksternal laboratorium</div>
+        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Ketidakberpihakan, kerahasiaan, dan kode etik</div>
+        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Kepemimpinan, struktur organisasi, dan personel</div>
+        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Pengelolaan sistem dokumentasi dan informasi</div>
+        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Pengelolaan fasilitas, kondisi lingkungan, dan peralatan</div>
+        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Perencanaan penyedia eksternal laboratorium</div>
       </div>
     </div>
     <div class="curr-step">
       <div class="curr-header" onclick="toggleCurr(this)">
         <div class="curr-num">3</div>
         <div class="curr-title">Implementasi ISO/IEC 17025:2017</div>
-        <span class="curr-chevron">▾</span>
+        <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
       </div>
       <div class="curr-body">
-        <div class="curr-sub-item"><span class="curr-sub-check">✓</span>Pelayanan pelanggan, pengelolaan sampel, dan sampling</div>
-        <div class="curr-sub-item"><span class="curr-sub-check">✓</span>Pemilihan, verifikasi, dan validasi metode</div>
-        <div class="curr-sub-item"><span class="curr-sub-check">✓</span>Ketertelusuran dan ketidakpastian pengukuran</div>
-        <div class="curr-sub-item"><span class="curr-sub-check">✓</span>Jaminan mutu, pengendalian mutu, dan uji profisiensi</div>
-        <div class="curr-sub-item"><span class="curr-sub-check">✓</span>Penerbitan laporan hasil pengukuran</div>
+        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Pelayanan pelanggan, pengelolaan sampel, dan sampling</div>
+        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Pemilihan, verifikasi, dan validasi metode</div>
+        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Ketertelusuran dan ketidakpastian pengukuran</div>
+        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Jaminan mutu, pengendalian mutu, dan uji profisiensi</div>
+        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Penerbitan laporan hasil pengukuran</div>
       </div>
     </div>
     <div class="curr-step">
       <div class="curr-header" onclick="toggleCurr(this)">
         <div class="curr-num">4</div>
         <div class="curr-title">Pemantauan, Evaluasi & Continual Improvement</div>
-        <span class="curr-chevron">▾</span>
+        <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
       </div>
       <div class="curr-body">
-        <div class="curr-sub-item"><span class="curr-sub-check">✓</span>Pengelolaan pengaduan dan manajemen risiko</div>
-        <div class="curr-sub-item"><span class="curr-sub-check">✓</span>Identifikasi ketidaksesuaian dan tindakan perbaikan</div>
-        <div class="curr-sub-item"><span class="curr-sub-check">✓</span>Audit internal dan kaji ulang manajemen</div>
+        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Pengelolaan pengaduan dan manajemen risiko</div>
+        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Identifikasi ketidaksesuaian dan tindakan perbaikan</div>
+        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Audit internal dan kaji ulang manajemen</div>
       </div>
     </div>
 
     <!-- SYARAT & BENEFIT -->
     <div class="info-grid">
       <div class="info-card">
-        <div class="info-card-title">📋 Syarat Mengikuti Pelatihan</div>
+        <div class="info-card-title"><?php labnesia_icon( 'clipboard-list', 'var(--teal)', 18 ); ?> Syarat Mengikuti Pelatihan</div>
         <div class="info-item"><div class="info-num">1</div>Pendidikan minimal D3</div>
         <div class="info-item"><div class="info-num">2</div>Pengalaman bekerja (termasuk praktik/riset) di laboratorium</div>
         <div class="info-item"><div class="info-num">3</div>Memiliki sertifikat pelatihan pemahaman dan penerapan ISO/IEC 17025:2017 (untuk skema lanjutan)</div>
       </div>
       <div class="info-card">
         <div class="info-card-title">🎁 Benefit Pelatihan</div>
-        <div class="info-item"><span class="info-check">✓</span>Sertifikat Pelatihan 40 JP</div>
-        <div class="info-item"><span class="info-check">✓</span>Soft copy materi pelatihan lengkap</div>
-        <div class="info-item"><span class="info-check">✓</span>Kunjungan ke laboratorium (bagi peserta onsite)</div>
-        <div class="info-item"><span class="info-check">✓</span>Forum WhatsApp bersama pakar</div>
-        <div class="info-item"><span class="info-check">✓</span>Gratis template dokumen ISO/IEC 17025:2017</div>
+        <div class="info-item"><span class="info-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Sertifikat Pelatihan 40 JP</div>
+        <div class="info-item"><span class="info-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Soft copy materi pelatihan lengkap</div>
+        <div class="info-item"><span class="info-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Kunjungan ke laboratorium (bagi peserta onsite)</div>
+        <div class="info-item"><span class="info-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Forum WhatsApp bersama pakar</div>
+        <div class="info-item"><span class="info-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Gratis template dokumen ISO/IEC 17025:2017</div>
       </div>
     </div>
 
@@ -536,7 +536,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
           </select>
         </div>
       </div>
-      <button class="btn-submit-cta" onclick="alert('Pendaftaran diterima! Tim kami akan menghubungi Anda untuk konfirmasi jadwal.')">Daftar Pelatihan →</button>
+      <button class="btn-submit-cta" onclick="alert('Pendaftaran diterima! Tim kami akan menghubungi Anda untuk konfirmasi jadwal.')">Daftar Pelatihan <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></button>
       <p style="font-size:11px;color:var(--gray-400);text-align:center;margin-top:10px">Tidak ada biaya di tahap ini — tim kami akan menghubungi Anda terlebih dahulu.</p>
     </div>
   </div>

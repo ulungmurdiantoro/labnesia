@@ -1,0 +1,107 @@
+const JUMP_ITEMS = ['Perbandingan Program', 'Panduan Memilih', 'FAQ Umum', 'FAQ Harga', 'Tanya Langsung'];
+
+const FAQS = {
+  Umum: [
+    { q: 'Apa itu ISO/IEC 17025?', a: 'Standar internasional yang menetapkan persyaratan kompetensi laboratorium pengujian dan kalibrasi, termasuk sistem manajemen mutu dan kompetensi teknis.' },
+    { q: 'Apa bedanya Kelas Pendampingan dengan Pelatihan & Sertifikasi?', a: 'Pelatihan & Sertifikasi adalah program individu (40 JP) untuk kompetensi personal. Kelas Pendampingan adalah program 6 bulan untuk laboratorium secara keseluruhan, menghasilkan dokumen mutu siap audit.' },
+  ],
+  Harga: [
+    { q: 'Kenapa harga Kelas Pendampingan terlihat lebih mahal dari pelatihan biasa?', a: 'Karena mencakup 4 tahap lengkap (bukan 1–5 hari), pendampingan pakar selama 6 bulan, dan lebih dari Rp 20 juta benefit gratis (sertifikasi, template dokumen, konsultasi privat).' },
+    { q: 'Apakah ada opsi cicilan?', a: 'Ya, tim kami dapat mengatur skema pembayaran bertahap untuk instansi — hubungi tim melalui form konsultasi.' },
+  ],
+};
+
+function FaqScreen({ D, onNavigate }) {
+  const { NavBar, Footer, JumpNav, ComparisonTable, FaqAccordion, Input, Button, Icon } = D;
+  const [active, setActive] = React.useState(JUMP_ITEMS[0]);
+  const [openKey, setOpenKey] = React.useState('Umum-0');
+  const [sent, setSent] = React.useState(false);
+  const goGratis = () => onNavigate && onNavigate('gratis');
+
+  return (
+    <div style={{ fontFamily: 'var(--font-display)', background: '#fff' }}>
+      <NavBar logoSrc="../../assets/logo/LOGO-LABNESIA-004.gif" onCta={goGratis} />
+
+      <div style={{ background: 'var(--navy)', padding: '52px 48px 40px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, opacity: 0.04, backgroundImage: 'radial-gradient(circle at 1px 1px, #fff 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div style={{ maxWidth: 680, margin: '0 auto', position: 'relative' }}>
+          <div style={{ display: 'inline-block', background: 'rgba(26,158,117,0.15)', border: '1px solid rgba(26,158,117,0.3)', color: 'var(--teal-light)', padding: '5px 16px', borderRadius: 100, fontSize: 11, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', marginBottom: 16 }}>
+            Pusat Informasi Lengkap
+          </div>
+          <h1 style={{ fontSize: 36, fontWeight: 800, color: '#fff', lineHeight: 1.1, letterSpacing: '-1.2px', margin: '0 0 12px' }}>
+            Semua jawaban <span style={{ color: 'var(--teal-light)' }}>yang Anda butuhkan.</span>
+          </h1>
+          <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>Perbandingan program, harga transparan, dan jawaban FAQ. Tidak ada yang disembunyikan.</p>
+        </div>
+      </div>
+
+      <JumpNav items={JUMP_ITEMS} active={active} onSelect={setActive} />
+
+      <section style={{ padding: '48px 48px', background: '#fff' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 8 }}>Perbandingan Lengkap</p>
+          <h2 style={{ fontSize: 28, fontWeight: 800, color: 'var(--navy)', margin: '0 0 20px', letterSpacing: '-0.7px' }}>Semua program, semua harga, semua yang termasuk.</h2>
+          <ComparisonTable
+            columns={['Aspek', 'Mandiri', 'Pelatihan & Sertifikasi', 'Kelas Pendampingan ★', 'Full Pendampingan']}
+            featuredIndex={3}
+            rowGroups={[
+              { title: 'Biaya & Investasi', rows: [
+                ['Investasi', 'Rp 0', 'Rp 2–7 jt', 'Rp 14–35 jt', 'Rp 150–200 jt'],
+                ['Nilai benefit gratis', '—', '—', 's.d. Rp 20 jt', '—'],
+              ] },
+              { title: 'Durasi & Struktur', rows: [
+                ['Durasi program', '2–4 tahun', '1–5 hari', '6 bulan terstruktur', '6–12 bulan'],
+                ['Format pelaksanaan', 'Mandiri', 'Online/Offline', 'Online + Hybrid', 'In-house onsite'],
+              ] },
+              { title: 'Pendampingan & Pakar', rows: [
+                ['Pendampingan pakar aktif', <Icon name="x" size={15} color="var(--gray-400)" />, 'Selama pelatihan', '15+ pakar, 6 bln', <Icon name="check" size={15} color="var(--teal)" />],
+                ['Konsultasi privat 1-on-1', <Icon name="x" size={15} color="var(--gray-400)" />, <Icon name="x" size={15} color="var(--gray-400)" />, <Icon name="check" size={15} color="var(--teal)" />, <Icon name="check" size={15} color="var(--teal)" />],
+              ] },
+            ]}
+          />
+        </div>
+      </section>
+
+      <section style={{ padding: '48px 48px', background: 'var(--gray-50)' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr', gap: 24 }}>
+          <div>
+            <h2 style={{ fontSize: 20, fontWeight: 800, color: 'var(--navy)', marginBottom: 14, paddingBottom: 8, borderBottom: '2px solid var(--teal)' }}>FAQ Umum</h2>
+            {FAQS.Umum.map((f, i) => (
+              <FaqAccordion key={i} q={f.q} a={f.a} open={openKey === `Umum-${i}`} onToggle={() => setOpenKey(openKey === `Umum-${i}` ? '' : `Umum-${i}`)} />
+            ))}
+          </div>
+          <div>
+            <h2 style={{ fontSize: 20, fontWeight: 800, color: 'var(--navy)', marginBottom: 14, paddingBottom: 8, borderBottom: '2px solid var(--teal)' }}>FAQ Harga</h2>
+            {FAQS.Harga.map((f, i) => (
+              <FaqAccordion key={i} q={f.q} a={f.a} open={openKey === `Harga-${i}`} onToggle={() => setOpenKey(openKey === `Harga-${i}` ? '' : `Harga-${i}`)} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ background: 'var(--navy)', padding: '44px 48px', position: 'relative' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 44, alignItems: 'center' }}>
+          <div>
+            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--teal-light)', marginBottom: 8 }}>Tanya Langsung</p>
+            <h2 style={{ fontSize: 24, fontWeight: 800, color: '#fff', marginBottom: 10, letterSpacing: '-0.6px' }}>Masih ada pertanyaan?</h2>
+            <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>Tim kami siap membantu — tanpa komitmen apapun.</p>
+          </div>
+          <div style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 16, padding: 20 }}>
+            <Input label="Nama" placeholder="Nama Anda" dark />
+            <Input label="Pertanyaan" placeholder="Tulis pertanyaan Anda..." dark />
+            {sent ? (
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--teal-light)', fontSize: 14, fontWeight: 600, marginTop: 4 }}>
+                <Icon name="check-circle-2" size={18} color="var(--teal-light)" /> Terkirim — tim kami akan menghubungi Anda.
+              </div>
+            ) : (
+              <Button variant="teal" icon="send" style={{ width: '100%', marginTop: 4 }} onClick={() => setSent(true)}>Kirim Pertanyaan</Button>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <Footer logoSrc="../../assets/logo/LOGO-LABNESIA-004.gif" />
+    </div>
+  );
+}
+window.FaqScreen = FaqScreen;

@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Labnesia — Color Tokens
+   Source: labnesia/style.css :root (WordPress theme, ground truth)
+   ========================================================================== */
+:root {
+  /* Base palette */
+  --navy:        #0B1F3A;
+  --navy-mid:    #122845;
+  --navy-light:  #1C3A60;
+  --teal-dark:   #085041;
+  --teal:        #1A9E75;
+  --teal-light:  #22C28F;
+  --teal-pale:   #E8F7F2;
+  --amber:       #F5A623;
+  --amber-hover: #E09620;
+  --amber-pale:  #FEF3DC;
+  --white:       #FFFFFF;
+
+  --gray-50:  #F8F9FA;
+  --gray-100: #F1F3F5;
+  --gray-200: #E9ECEF;
+  --gray-400: #ADB5BD;
+  --gray-600: #6C757D;
+  --gray-800: #343A40;
+
+  --red-pale: #FEF0F0;
+  --red:      #E53935;
+
+  /* Semantic aliases */
+  --surface-page:      var(--white);
+  --surface-sunken:     var(--gray-50);
+  --surface-dark:       var(--navy);
+  --surface-dark-alt:   var(--navy-light);
+  --surface-card:       var(--white);
+  --surface-accent-pale: var(--teal-pale);
+  --surface-warn-pale:   var(--amber-pale);
+
+  --border-default: var(--gray-200);
+  --border-dark:    rgba(255,255,255,0.1);
+  --border-accent:  var(--teal);
+
+  --text-heading:     var(--navy);
+  --text-body:        var(--gray-800);
+  --text-muted:       var(--gray-600);
+  --text-on-dark:     rgba(255,255,255,0.85);
+  --text-on-dark-muted: rgba(255,255,255,0.5);
+  --text-on-dark-faint: rgba(255,255,255,0.35);
+
+  --action-primary:      var(--amber);
+  --action-primary-hover: var(--amber-hover);
+  --action-primary-text:  var(--navy);
+  --action-secondary:     var(--teal);
+  --action-secondary-hover: #158A65;
+
+  --focus-ring: var(--teal);
+}

@@ -1,0 +1,26 @@
+import React from 'react';
+import { Icon } from '../core/Icon.jsx';
+
+/** Single collapsible FAQ row — question always visible, answer toggles, chevron rotates. */
+export function FaqAccordion({ q, a, open, onToggle }) {
+  return (
+    <div style={{ background: '#fff', border: '1px solid var(--border-default)', borderRadius: 'var(--radius-xl)', marginBottom: 8, overflow: 'hidden' }}>
+      <div
+        onClick={onToggle}
+        style={{
+          padding: '15px 20px', fontSize: 15, fontWeight: 700, color: 'var(--navy)', cursor: 'pointer',
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16,
+          background: open ? 'var(--teal-pale)' : 'transparent',
+        }}
+      >
+        <span>{q}</span>
+        <Icon name="chevron-down" size={16} color="var(--gray-400)" style={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform var(--duration-base)' }} />
+      </div>
+      {open && (
+        <div style={{ padding: '0 20px 16px', fontSize: 15, color: 'var(--gray-600)', lineHeight: 1.7 }}>
+          {a}
+        </div>
+      )}
+    </div>
+  );
+}
