@@ -22,11 +22,11 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 <body <?php body_class( 'page-pelatihan-sertifikasi' ); ?>>
 <?php wp_body_open(); ?>
 
-<nav class="site-header">
-  <div class="nav-logo">
+<header class="site-header" id="site-header">
+  <a class="nav-logo" href="<?php echo $url_home; ?>">
     <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;">
-  </div>
-    <div class="nav-links">
+  </a>
+  <nav class="nav-links" id="primary-nav">
     <a href="<?php echo $url_home; ?>">Beranda</a>
     <a href="<?php echo $url_kelas; ?>">Kelas Pendampingan</a>
     <a href="<?php echo $url_inhouse; ?>">Inhouse Training</a>
@@ -34,8 +34,11 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
     <a href="<?php echo $url_optimasi; ?>">Optimasi Alat</a>
     <a href="<?php echo $url_faq; ?>">FAQ</a>
     <a href="<?php echo $url_gratis; ?>" class="nav-cta">Mulai Gratis</a>
-  </div>
-</nav>
+  </nav>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+    <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+</header>
 
 <div class="page-hero">
   <div class="page-hero-inner">
@@ -393,9 +396,34 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 </section>
 
 <footer class="site-footer">
-    <div class="footer-bottom">
+  <div class="footer-inner" style="max-width:1100px;margin:0 auto;padding:40px 48px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px">
+    <div>
+      <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;margin-bottom:16px;">
+      <p style="color:rgba(255,255,255,0.5);font-size:14px;line-height:1.7;max-width:300px;">Membangun SDM Kompeten, Menguatkan Laboratorium Indonesia. Terakreditasi KAN.</p>
+    </div>
+    <div>
+      <div style="color:rgba(255,255,255,0.3);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;">Program</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <a href="<?php echo $url_kelas; ?>" style="color:rgba(255,255,255,0.6);font-size:14px;">Kelas Pendampingan</a>
+        <a href="<?php echo $url_inhouse; ?>" style="color:rgba(255,255,255,0.6);font-size:14px;">Inhouse Training</a>
+        <a href="<?php echo $url_pelatihan; ?>" style="color:rgba(255,255,255,0.6);font-size:14px;">Pelatihan &amp; Sertifikasi</a>
+        <a href="<?php echo $url_optimasi; ?>" style="color:rgba(255,255,255,0.6);font-size:14px;">Optimasi Alat Lab</a>
+        <a href="<?php echo $url_faq; ?>" style="color:rgba(255,255,255,0.6);font-size:14px;">FAQ &amp; Perbandingan</a>
+      </div>
+    </div>
+    <div>
+      <div style="color:rgba(255,255,255,0.3);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;">Kontak</div>
+      <div style="color:rgba(255,255,255,0.6);font-size:14px;line-height:2;">
+        📧 info@labnesia.id<br>
+        📞 +62 821-7222-1567<br>
+        📞 +62 851-8500-0367<br>
+        📍 labnesia.id
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.08);padding:20px 48px;max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.3);">
     <span>&copy; <?php echo date('Y'); ?> Labnesia &middot; Padma Global Nusatama</span>
-    <span><a href="https://labnesia.id">labnesia.id</a></span>
+    <a href="https://labnesia.id" style="color:rgba(255,255,255,0.3);">labnesia.id</a>
   </div>
 </footer>
 
