@@ -439,7 +439,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
   <a class="nav-logo" href="<?php echo $url_home; ?>">
     <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;">
   </a>
-  <nav class="nav-links" id="primary-nav">
+  <div class="nav-links" id="primary-nav">
     <a href="<?php echo $url_home; ?>">Beranda</a>
     <a href="<?php echo $url_kelas; ?>">Kelas Pendampingan</a>
     <a href="<?php echo $url_inhouse; ?>">Inhouse Training</a>
@@ -447,7 +447,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
     <a href="<?php echo $url_optimasi; ?>">Optimasi Alat</a>
     <a href="<?php echo $url_faq; ?>">FAQ</a>
     <a href="<?php echo $url_gratis; ?>" class="nav-cta">Mulai Gratis</a>
-  </nav>
+  </div>
   <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
     <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
   </button>
@@ -989,7 +989,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <div class="footer-inner" style="max-width:1100px;margin:0 auto;padding:40px 48px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px">
+  <div class="footer-inner" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px">
     <div>
       <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;margin-bottom:16px;">
       <p style="color:rgba(255,255,255,0.5);font-size:14px;line-height:1.7;max-width:300px;">Membangun SDM Kompeten, Menguatkan Laboratorium Indonesia. Terakreditasi KAN.</p>
