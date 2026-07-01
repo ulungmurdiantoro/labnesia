@@ -313,7 +313,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
             <option>Sudah terakreditasi, ingin re-akreditasi</option>
           </select>
         </div>
-        <a href="<?php echo esc_url( home_url('/gap-analysis/') ); ?>" class="btn-submit" style="display:block;text-align:center;text-decoration:none;">Daftar GAP Analysis Gratis →</a>
+        <a href="<?php echo esc_url( home_url('/gap-analisis/') ); ?>" class="btn-submit" style="display:block;text-align:center;text-decoration:none;">Daftar GAP Analysis Gratis →</a>
         <p class="form-note">Data Anda aman. Kami tidak akan membagikan informasi Anda kepada pihak manapun.</p>
       </div>
     </div>
