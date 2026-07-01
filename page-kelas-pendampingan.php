@@ -23,11 +23,11 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 <?php wp_body_open(); ?>
 
 <!-- NAV -->
-<nav class="site-header">
-  <div class="nav-logo">
+<header class="site-header" id="site-header">
+  <a class="nav-logo" href="<?php echo $url_home; ?>">
     <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;">
-  </div>
-    <div class="nav-links">
+  </a>
+  <nav class="nav-links" id="primary-nav">
     <a href="<?php echo $url_home; ?>">Beranda</a>
     <a href="<?php echo $url_kelas; ?>">Kelas Pendampingan</a>
     <a href="<?php echo $url_inhouse; ?>">Inhouse Training</a>
@@ -35,8 +35,11 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
     <a href="<?php echo $url_optimasi; ?>">Optimasi Alat</a>
     <a href="<?php echo $url_faq; ?>">FAQ</a>
     <a href="<?php echo $url_gratis; ?>" class="nav-cta">Mulai Gratis</a>
-  </div>
-</nav>
+  </nav>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+    <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+</header>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
