@@ -248,7 +248,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,31,58,0.9
 <?php
 $klausuls = [
   [
-    'id' => 'k4', 'num' => '4', 'title' => 'Persyaratan Umum', 'max' => 16,
+    'id' => 'k4', 'num' => '4', 'title' => 'Persyaratan Umum',
     'subs' => [
       ['title' => '4.1 Ketidakberpihakan', 'items' => [
         'Laboratorium mengidentifikasi ketidakberpihakan yang dapat mengurangi kepercayaan',
@@ -261,7 +261,7 @@ $klausuls = [
     ]
   ],
   [
-    'id' => 'k5', 'num' => '5', 'title' => 'Persyaratan Struktur', 'max' => 76,
+    'id' => 'k5', 'num' => '5', 'title' => 'Persyaratan Struktur',
     'subs' => [
       ['title' => '5.1 Legalitas Hukum Laboratorium', 'items' => [
         'Laboratorium dapat dipertanggungjawabkan secara legal',
@@ -293,7 +293,7 @@ $klausuls = [
     ]
   ],
   [
-    'id' => 'k6', 'num' => '6', 'title' => 'Persyaratan Sumber Daya', 'max' => 136,
+    'id' => 'k6', 'num' => '6', 'title' => 'Persyaratan Sumber Daya',
     'subs' => [
       ['title' => '6.2 Personel', 'items' => [
         'Laboratorium menetapkan persyaratan kompetensi personel sesuai pendidikan, pelatihan, keterampilan dan pengalaman',
@@ -342,7 +342,7 @@ $klausuls = [
     ]
   ],
   [
-    'id' => 'k7', 'num' => '7', 'title' => 'Persyaratan Proses', 'max' => 216,
+    'id' => 'k7', 'num' => '7', 'title' => 'Persyaratan Proses',
     'subs' => [
       ['title' => '7.1 Kaji Ulang Permintaan, Tender dan Kontrak', 'items' => [
         'Laboratorium mempunyai prosedur kaji ulang permintaan, tender dan kontrak',
@@ -423,7 +423,7 @@ $klausuls = [
     ]
   ],
   [
-    'id' => 'k8', 'num' => '8', 'title' => 'Persyaratan Sistem Manajemen', 'max' => 124,
+    'id' => 'k8', 'num' => '8', 'title' => 'Persyaratan Sistem Manajemen',
     'subs' => [
       ['title' => '8.2 Dokumentasi Sistem Manajemen', 'items' => [
         'Laboratorium menetapkan dan mensosialisasikan kebijakan mutu dan sasaran mutu laboratorium',
@@ -476,6 +476,14 @@ $klausuls = [
   ],
 ];
 
+$klausuls = array_map(function ($k) {
+  $k['max'] = 0;
+  foreach ($k['subs'] as $sub) {
+    $k['max'] += count($sub['items']) * 4;
+  }
+  return $k;
+}, $klausuls);
+
 $qNum = 1;
 foreach ($klausuls as $k) :
 ?>
@@ -491,7 +499,7 @@ foreach ($klausuls as $k) :
   <?php foreach ($k['subs'] as $sub) : ?>
   <div class="sub-klausul">
     <div class="sub-header"><?php echo $sub['title']; ?></div>
-    <?php foreach ($sub['items'] as $item) : $qId = 'q' . $qNum; ?>
+    <?php foreach ($sub['items'] as $item) : $qId = $k['id'] . '_q' . $qNum; ?>
     <div class="item-row">
       <div class="item-num"><?php echo $qNum; ?></div>
       <div class="item-text"><?php echo htmlspecialchars($item); ?></div>
