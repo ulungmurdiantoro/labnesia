@@ -336,7 +336,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
 
     <div class="lab-grid">
 
-      <details class="lab-card" open>
+      <details class="lab-card" name="lab-jenis" open>
         <summary>
           <div class="lab-summary-left">
             <div class="lab-icon"><?php labnesia_icon( 'seedling', 'var(--teal)', 22 ); ?></div>
@@ -356,7 +356,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
         </div>
       </details>
 
-      <details class="lab-card">
+      <details class="lab-card" name="lab-jenis">
         <summary>
           <div class="lab-summary-left">
             <div class="lab-icon"><?php labnesia_icon( 'construction', 'var(--teal)', 22 ); ?></div>
@@ -376,7 +376,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
         </div>
       </details>
 
-      <details class="lab-card">
+      <details class="lab-card" name="lab-jenis">
         <summary>
           <div class="lab-summary-left">
             <div class="lab-icon"><?php labnesia_icon( 'utensils', 'var(--teal)', 22 ); ?></div>
@@ -396,7 +396,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
         </div>
       </details>
 
-      <details class="lab-card">
+      <details class="lab-card" name="lab-jenis">
         <summary>
           <div class="lab-summary-left">
             <div class="lab-icon"><?php labnesia_icon( 'wheat', 'var(--teal)', 22 ); ?></div>
@@ -416,7 +416,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
         </div>
       </details>
 
-      <details class="lab-card">
+      <details class="lab-card" name="lab-jenis">
         <summary>
           <div class="lab-summary-left">
             <div class="lab-icon"><?php labnesia_icon( 'pills', 'var(--teal)', 22 ); ?></div>
@@ -436,7 +436,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
         </div>
       </details>
 
-      <details class="lab-card">
+      <details class="lab-card" name="lab-jenis">
         <summary>
           <div class="lab-summary-left">
             <div class="lab-icon"><?php labnesia_icon( 'flask', 'var(--teal)', 22 ); ?></div>
@@ -456,7 +456,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
         </div>
       </details>
 
-      <details class="lab-card">
+      <details class="lab-card" name="lab-jenis">
         <summary>
           <div class="lab-summary-left">
             <div class="lab-icon"><?php labnesia_icon( 'cow', 'var(--teal)', 22 ); ?></div>
@@ -476,7 +476,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
         </div>
       </details>
 
-      <details class="lab-card">
+      <details class="lab-card" name="lab-jenis">
         <summary>
           <div class="lab-summary-left">
             <div class="lab-icon"><?php labnesia_icon( 'fish', 'var(--teal)', 22 ); ?></div>
