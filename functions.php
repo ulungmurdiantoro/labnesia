@@ -165,16 +165,28 @@ function labnesia_customizer( $wp_customize ) {
         'type'    => 'email',
     ]);
 
-    // Google Apps Script URL — form "Daftar Sekarang" di page-pelatihan-sertifikasi.php
-    $wp_customize->add_setting( 'labnesia_pelatihan_gas_url', [
+    // Google Apps Script URL — shared handler for all site forms (pelatihan-sertifikasi,
+    // gap-analysis, komunitas). See google-apps-script/labnesia-forms.gs.
+    $wp_customize->add_setting( 'labnesia_gas_url', [
         'default'           => 'https://script.google.com/macros/s/AKfycbwt5E_b9XfUbNPm2mViJerOLcUtOxrenwHneGG1u_uJsL0wB-6m5UQ_n9f8UgE70_vmOg/exec',
         'sanitize_callback' => 'esc_url_raw',
     ]);
-    $wp_customize->add_control( 'labnesia_pelatihan_gas_url', [
-        'label'       => __( 'Google Apps Script Web App URL (form Daftar Pelatihan & Sertifikasi)', 'labnesia' ),
-        'description' => __( 'Deploy script di google-apps-script/pelatihan-sertifikasi-form.gs sebagai Web App, lalu tempel URL /exec di sini.', 'labnesia' ),
+    $wp_customize->add_control( 'labnesia_gas_url', [
+        'label'       => __( 'Google Apps Script Web App URL (semua form: Pelatihan, GAP Analysis, Komunitas)', 'labnesia' ),
+        'description' => __( 'Deploy script di google-apps-script/labnesia-forms.gs sebagai Web App, lalu tempel URL /exec di sini.', 'labnesia' ),
         'section'     => 'labnesia_options',
         'type'        => 'url',
+    ]);
+
+    // WhatsApp Channel link — form "Bergabung ke Komunitas" di page-mulai-gratis.php
+    $wp_customize->add_setting( 'labnesia_wa_channel_url', [
+        'default'           => 'https://whatsapp.com/channel/0029VbBteTG5fM5a4WMflu0S',
+        'sanitize_callback' => 'esc_url_raw',
+    ]);
+    $wp_customize->add_control( 'labnesia_wa_channel_url', [
+        'label'   => __( 'Link WhatsApp Channel (form Bergabung ke Komunitas)', 'labnesia' ),
+        'section' => 'labnesia_options',
+        'type'    => 'url',
     ]);
 }
 add_action( 'customize_register', 'labnesia_customizer' );

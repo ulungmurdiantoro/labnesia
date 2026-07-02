@@ -10,6 +10,7 @@ $url_faq       = esc_url( home_url( '/faq/' ) );
 $url_inhouse   = esc_url( home_url( '/inhouse/' ) );
 $url_pelatihan = esc_url( home_url( '/pelatihan-sertifikasi/' ) );
 $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
+$url_gap       = esc_url( home_url( '/gap-analisis/' ) );
 $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABNESIA-004.gif' );
 ?>
 <!DOCTYPE html>
@@ -259,16 +260,16 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         </div>
       </div>
 
-      <div class="gap-form">
+      <form class="gap-form" id="gap-form" onsubmit="return submitGapForm(event)">
         <div class="form-title">Daftar GAP Analysis Gratis</div>
         <div class="form-sub">Tim kami akan merespons dalam maksimal 3 hari kerja untuk menjadwalkan sesi — online maupun onsite sesuai kebutuhan Anda.</div>
         <div class="form-field">
           <label class="form-label">Nama lengkap *</label>
-          <input class="form-input" type="text" placeholder="Nama Anda">
+          <input class="form-input" type="text" id="gap-nama" placeholder="Nama Anda" required>
         </div>
         <div class="form-field">
           <label class="form-label">Jabatan / posisi *</label>
-          <select class="form-select">
+          <select class="form-select" id="gap-jabatan" required>
             <option value="">Pilih jabatan Anda</option>
             <option>Kepala Laboratorium</option>
             <option>Manajer Mutu</option>
@@ -281,11 +282,11 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         </div>
         <div class="form-field">
           <label class="form-label">Nama laboratorium &amp; institusi *</label>
-          <input class="form-input" type="text" placeholder="Mis: Lab Pangan FTP UGM">
+          <input class="form-input" type="text" id="gap-institusi" placeholder="Mis: Lab Pangan FTP UGM" required>
         </div>
         <div class="form-field">
           <label class="form-label">Bidang laboratorium *</label>
-          <select class="form-select">
+          <select class="form-select" id="gap-bidang" required>
             <option value="">Pilih bidang lab</option>
             <option>Lab Lingkungan</option>
             <option>Lab Pangan / Gizi / Halal</option>
@@ -301,11 +302,11 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         </div>
         <div class="form-field">
           <label class="form-label">Nomor WhatsApp *</label>
-          <input class="form-input" type="tel" placeholder="08xx-xxxx-xxxx">
+          <input class="form-input" type="tel" id="gap-whatsapp" placeholder="08xx-xxxx-xxxx" required>
         </div>
         <div class="form-field">
           <label class="form-label">Kondisi lab saat ini</label>
-          <select class="form-select">
+          <select class="form-select" id="gap-kondisi">
             <option>Belum punya dokumen mutu sama sekali</option>
             <option>Punya sebagian dokumen, belum lengkap</option>
             <option>Dokumen sudah ada tapi belum yakin apakah sesuai KAN</option>
@@ -313,9 +314,9 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
             <option>Sudah terakreditasi, ingin re-akreditasi</option>
           </select>
         </div>
-        <a href="<?php echo esc_url( home_url('/gap-analisis/') ); ?>" class="btn-submit" style="display:block;text-align:center;text-decoration:none;">Daftar GAP Analysis Gratis <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></a>
+        <button type="submit" class="btn-submit" id="gap-submit-btn" style="display:block;width:100%;text-align:center;">Daftar GAP Analysis Gratis <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></button>
         <p class="form-note">Data Anda aman. Kami tidak akan membagikan informasi Anda kepada pihak manapun.</p>
-      </div>
+      </form>
     </div>
 
     <!-- OTHER GIVES -->
@@ -517,20 +518,20 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         </div>
       </div>
     </div>
-    <div class="community-form">
+    <form class="community-form" id="community-form" onsubmit="return joinCommunity(event)">
       <div class="community-form-title">Bergabung ke Komunitas</div>
       <div class="community-form-sub">Pilih grup yang paling sesuai dengan peran dan institusi Anda.</div>
-      <input class="form-input-dark" type="text" placeholder="Nama lengkap Anda">
-      <input class="form-input-dark" type="email" placeholder="Email aktif">
-      <input class="form-input-dark" type="tel" placeholder="Nomor WhatsApp">
-      <select style="width:100%;padding:11px 14px;border:1px solid rgba(255,255,255,0.15);border-radius:9px;font-size:14px;font-family:var(--font-display);outline:none;background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);margin-bottom:12px">
+      <input class="form-input-dark" type="text" id="comm-nama" placeholder="Nama lengkap Anda" required>
+      <input class="form-input-dark" type="email" id="comm-email" placeholder="Email aktif" required>
+      <input class="form-input-dark" type="tel" id="comm-whatsapp" placeholder="Nomor WhatsApp" required>
+      <select id="comm-grup" required style="width:100%;padding:11px 14px;border:1px solid rgba(255,255,255,0.15);border-radius:9px;font-size:14px;font-family:var(--font-display);outline:none;background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);margin-bottom:12px">
         <option value="">Pilih grup yang ingin diikuti</option>
         <option>Forum Kompeten ISO/IEC 17025 (Umum)</option>
         <option>Labnesia Expert Network (LEN) — Perguruan Tinggi</option>
         <option>Labnesia Expert Network (LEN) — Industri &amp; Lembaga Pemerintah</option>
         <option>VIP Member — Alumni Program</option>
       </select>
-      <button class="btn-teal-solid" onclick="joinCommunity()">Bergabung ke Komunitas <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></button>
+      <button class="btn-teal-solid" type="submit" id="comm-submit-btn">Bergabung ke Komunitas <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></button>
       <div class="community-privacy">Gratis selamanya. Data Anda tidak akan dibagikan.</div>
       <div class="existing-members">
         <div class="avatar-stack">
@@ -541,7 +542,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         </div>
         <div class="member-count">+4.700 profesional lab Indonesia sudah bergabung</div>
       </div>
-    </div>
+    </form>
   </div>
 </section>
 
@@ -623,8 +624,104 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 </footer>
 
 <script>
-function submitGap(){alert('Pendaftaran GAP Analysis diterima! Tim kami akan merespons dalam maksimal 3 hari kerja.')}
-function joinCommunity(){alert('Terima kasih! Link grup WhatsApp akan kami kirimkan ke nomor Anda dalam beberapa menit.')}
+const MG_GAS_URL        = <?php echo wp_json_encode( get_theme_mod( 'labnesia_gas_url', '' ) ); ?>;
+const MG_WA_CHANNEL_URL = <?php echo wp_json_encode( get_theme_mod( 'labnesia_wa_channel_url', 'https://whatsapp.com/channel/0029VbBteTG5fM5a4WMflu0S' ) ); ?>;
+const MG_GAP_URL        = <?php echo wp_json_encode( $url_gap ); ?>;
+
+function submitGapForm(event){
+  event.preventDefault();
+
+  const nama      = document.getElementById('gap-nama').value.trim();
+  const jabatan   = document.getElementById('gap-jabatan').value;
+  const institusi = document.getElementById('gap-institusi').value.trim();
+  const bidang    = document.getElementById('gap-bidang').value;
+  const whatsapp  = document.getElementById('gap-whatsapp').value.trim();
+  const kondisi   = document.getElementById('gap-kondisi').value;
+
+  if(!nama || !jabatan || !institusi || !bidang || !whatsapp){
+    alert('Mohon lengkapi semua kolom bertanda *.');
+    return false;
+  }
+
+  const btn = document.getElementById('gap-submit-btn');
+  btn.disabled = true;
+  const originalLabel = btn.innerHTML;
+  btn.innerHTML = 'Mengirim...';
+
+  function goToGapAnalysis(){
+    window.location.href = MG_GAP_URL;
+  }
+
+  if(!MG_GAS_URL){
+    goToGapAnalysis();
+    return false;
+  }
+
+  const formData = new FormData();
+  formData.append('form', 'gap-analysis');
+  formData.append('nama', nama);
+  formData.append('jabatan', jabatan);
+  formData.append('institusi', institusi);
+  formData.append('bidang', bidang);
+  formData.append('whatsapp', whatsapp);
+  formData.append('kondisi', kondisi);
+
+  fetch(MG_GAS_URL, { method: 'POST', mode: 'no-cors', body: formData })
+    .catch(function(){ /* no-cors gives an opaque response either way — still proceed */ })
+    .finally(function(){
+      btn.disabled = false;
+      btn.innerHTML = originalLabel;
+      goToGapAnalysis();
+    });
+
+  return false;
+}
+
+function joinCommunity(event){
+  event.preventDefault();
+
+  const nama     = document.getElementById('comm-nama').value.trim();
+  const email    = document.getElementById('comm-email').value.trim();
+  const whatsapp = document.getElementById('comm-whatsapp').value.trim();
+  const grup     = document.getElementById('comm-grup').value;
+
+  if(!nama || !email || !whatsapp || !grup){
+    alert('Mohon lengkapi semua kolom.');
+    return false;
+  }
+
+  const btn = document.getElementById('comm-submit-btn');
+  btn.disabled = true;
+  const originalLabel = btn.innerHTML;
+  btn.innerHTML = 'Mengirim...';
+
+  function goToWaChannel(){
+    window.location.href = MG_WA_CHANNEL_URL;
+  }
+
+  if(!MG_GAS_URL){
+    goToWaChannel();
+    return false;
+  }
+
+  const formData = new FormData();
+  formData.append('form', 'komunitas');
+  formData.append('nama', nama);
+  formData.append('email', email);
+  formData.append('whatsapp', whatsapp);
+  formData.append('grup', grup);
+
+  fetch(MG_GAS_URL, { method: 'POST', mode: 'no-cors', body: formData })
+    .catch(function(){ /* no-cors gives an opaque response either way — still proceed */ })
+    .finally(function(){
+      btn.disabled = false;
+      btn.innerHTML = originalLabel;
+      goToWaChannel();
+    });
+
+  return false;
+}
+
 function toggleFaqMini(el){
   const a=el.querySelector('.faq-mini-a');
   const isOpen=a.classList.contains('open');

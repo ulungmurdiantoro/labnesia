@@ -558,7 +558,7 @@ function toggleCurr(el){
   if(!isOpen){body.classList.add('open');el.classList.add('active')}
 }
 
-const PF_GAS_URL  = <?php echo wp_json_encode( get_theme_mod( 'labnesia_pelatihan_gas_url', '' ) ); ?>;
+const PF_GAS_URL  = <?php echo wp_json_encode( get_theme_mod( 'labnesia_gas_url', '' ) ); ?>;
 const PF_WA_NUMBER = <?php echo wp_json_encode( get_theme_mod( 'labnesia_whatsapp', '6282172221567' ) ); ?>;
 
 function submitPelatihanForm(event){
@@ -597,6 +597,7 @@ function submitPelatihanForm(event){
   }
 
   const formData = new FormData();
+  formData.append('form', 'pelatihan-sertifikasi');
   formData.append('nama', nama);
   formData.append('whatsapp', whatsapp);
   formData.append('institusi', institusi);
