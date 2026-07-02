@@ -150,7 +150,7 @@ nav {
 .section-head h2 { font-size: 32px; color: var(--navy); font-weight: 800; margin-top: 10px; letter-spacing: -0.3px; }
 .section-head p { color: var(--gray-600); font-size: 15.5px; margin-top: 12px; }
 
-.lab-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.lab-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; align-items: start; }
 @media (max-width: 860px){ .lab-grid{ grid-template-columns: 1fr; } }
 
 details.lab-card {
