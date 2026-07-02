@@ -33,20 +33,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,31,58,0.9
 .nav-links a:hover{color:white}
 .nav-cta{background:var(--amber);color:var(--navy)!important;padding:8px 18px;border-radius:8px;font-weight:700}
 
-/* HERO */
-.hero{background:var(--navy);padding:104px 48px 56px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle at 1px 1px,white 1px,transparent 0);background-size:40px 40px}
-.hero-inner{max-width:860px;margin:0 auto;position:relative;text-align:center}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(26,158,117,0.15);border:1px solid rgba(26,158,117,0.3);color:var(--teal-light);padding:6px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
-.hero-badge-dot{width:5px;height:5px;border-radius:50%;background:var(--teal-light);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.hero h1{font-size:42px;font-weight:800;color:white;line-height:1.15;letter-spacing:-1.2px;margin-bottom:16px}
-.hero h1 span{color:var(--teal-light)}
-.hero-sub{font-size:16px;color:rgba(255,255,255,0.6);line-height:1.7;max-width:620px;margin:0 auto 28px}
-.hero-stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
-.hero-stat{text-align:center}
-.hero-stat-num{font-size:28px;font-weight:800;color:var(--teal-light)}
-.hero-stat-label{font-size:12px;color:rgba(255,255,255,0.5);margin-top:2px}
+/* HERO — matches page-faq.php's compact page-hero pattern */
+.page-hero{background:var(--navy);padding:104px 48px 72px;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle at 1px 1px,white 1px,transparent 0);background-size:40px 40px}
+.page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(26,158,117,0.15) 0%,transparent 60%)}
+.page-hero-inner{max-width:680px;margin:0 auto;position:relative;z-index:1}
+.eyebrow-tag{display:inline-block;background:rgba(26,158,117,0.15);border:1px solid rgba(26,158,117,0.3);color:var(--teal-light);padding:5px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+.page-hero h1{font-size:48px;font-weight:800;color:white;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px}
+.page-hero h1 .accent{color:var(--teal-light)}
+.page-hero-sub{font-size:17px;color:rgba(255,255,255,0.55);line-height:1.65;margin-bottom:0}
 
 /* STICKY SCORE BAR */
 .sticky-score{position:sticky;top:64px;z-index:80;background:white;border-bottom:2px solid var(--teal);padding:10px 48px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 2px 12px rgba(0,0,0,0.08)}
@@ -184,18 +179,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,31,58,0.9
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-badge"><div class="hero-badge-dot"></div> Audit Internal ISO/IEC 17025</div>
-    <h1>Gap Analysis <span>Laboratorium</span><br>ISO/IEC 17025 : 2017</h1>
-    <p class="hero-sub">Nilai kesiapan laboratorium Anda secara mandiri. Checklist 32 indikator berdasarkan persyaratan ISO/IEC 17025 — lengkap, terstruktur, dan langsung terkalkulasi.</p>
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num">32</div><div class="hero-stat-label">Indikator Penilaian</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">5</div><div class="hero-stat-label">Klausul ISO 17025</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">0–4</div><div class="hero-stat-label">Skala Skor</div></div>
-    </div>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow-tag">Audit Internal ISO/IEC 17025</div>
+    <h1>Gap Analysis <span class="accent">Laboratorium</span><br>ISO/IEC 17025 : 2017</h1>
+    <p class="page-hero-sub">Nilai kesiapan laboratorium Anda secara mandiri. Checklist 32 indikator berdasarkan persyaratan ISO/IEC 17025 — lengkap, terstruktur, dan langsung terkalkulasi.</p>
   </div>
-</section>
+</div>
 
 <!-- STICKY SCORE BAR -->
 <div class="sticky-score" id="stickyBar">
