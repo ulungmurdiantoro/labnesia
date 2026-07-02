@@ -164,6 +164,18 @@ function labnesia_customizer( $wp_customize ) {
         'section' => 'labnesia_options',
         'type'    => 'email',
     ]);
+
+    // Google Apps Script URL — form "Daftar Sekarang" di page-pelatihan-sertifikasi.php
+    $wp_customize->add_setting( 'labnesia_pelatihan_gas_url', [
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ]);
+    $wp_customize->add_control( 'labnesia_pelatihan_gas_url', [
+        'label'       => __( 'Google Apps Script Web App URL (form Daftar Pelatihan & Sertifikasi)', 'labnesia' ),
+        'description' => __( 'Deploy script di google-apps-script/pelatihan-sertifikasi-form.gs sebagai Web App, lalu tempel URL /exec di sini.', 'labnesia' ),
+        'section'     => 'labnesia_options',
+        'type'        => 'url',
+    ]);
 }
 add_action( 'customize_register', 'labnesia_customizer' );
 

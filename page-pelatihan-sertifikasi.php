@@ -502,25 +502,25 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
     <p class="eyebrow" style="color:var(--teal-light)">Daftar Sekarang</p>
     <h2 class="cta-form-title">Tingkatkan kompetensi Anda<br>mulai hari ini.</h2>
     <p class="cta-form-sub">Tim kami akan menghubungi Anda untuk konfirmasi jadwal dan detail pembayaran.</p>
-    <div class="form-card">
+    <form class="form-card" id="pf-form" onsubmit="return submitPelatihanForm(event)">
       <div class="form-row">
         <div>
           <label class="form-label">Nama lengkap *</label>
-          <input class="form-input" type="text" placeholder="Nama Anda">
+          <input class="form-input" type="text" id="pf-nama" placeholder="Nama Anda" required>
         </div>
         <div>
           <label class="form-label">Nomor WhatsApp *</label>
-          <input class="form-input" type="tel" placeholder="08xx-xxxx-xxxx">
+          <input class="form-input" type="tel" id="pf-whatsapp" placeholder="08xx-xxxx-xxxx" required>
         </div>
       </div>
       <div class="form-field-full">
         <label class="form-label">Institusi / Laboratorium</label>
-        <input class="form-input" type="text" placeholder="Nama institusi Anda">
+        <input class="form-input" type="text" id="pf-institusi" placeholder="Nama institusi Anda">
       </div>
       <div class="form-row">
         <div>
           <label class="form-label">Skema pelatihan *</label>
-          <select class="form-select">
+          <select class="form-select" id="pf-skema" required>
             <option>Lead Implementer ISO/IEC 17025</option>
             <option>Auditor Internal ISO/IEC 17025</option>
             <option>Skema lainnya (sebutkan di catatan)</option>
@@ -528,7 +528,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         </div>
         <div>
           <label class="form-label">Format</label>
-          <select class="form-select">
+          <select class="form-select" id="pf-format">
             <option>Online — Early Bird</option>
             <option>Online — Normal</option>
             <option>Onsite — Early Bird</option>
@@ -536,9 +536,9 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
           </select>
         </div>
       </div>
-      <button class="btn-submit-cta" onclick="alert('Pendaftaran diterima! Tim kami akan menghubungi Anda untuk konfirmasi jadwal.')">Daftar Pelatihan <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></button>
+      <button class="btn-submit-cta" type="submit" id="pf-submit-btn">Daftar Pelatihan <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></button>
       <p style="font-size:11px;color:var(--gray-400);text-align:center;margin-top:10px">Tidak ada biaya di tahap ini — tim kami akan menghubungi Anda terlebih dahulu.</p>
-    </div>
+    </form>
   </div>
 </section>
 
@@ -556,6 +556,62 @@ function toggleCurr(el){
   document.querySelectorAll('.curr-body').forEach(b=>b.classList.remove('open'));
   document.querySelectorAll('.curr-header').forEach(h=>h.classList.remove('active'));
   if(!isOpen){body.classList.add('open');el.classList.add('active')}
+}
+
+const PF_GAS_URL  = <?php echo wp_json_encode( get_theme_mod( 'labnesia_pelatihan_gas_url', '' ) ); ?>;
+const PF_WA_NUMBER = <?php echo wp_json_encode( get_theme_mod( 'labnesia_whatsapp', '6282172221567' ) ); ?>;
+
+function submitPelatihanForm(event){
+  event.preventDefault();
+
+  const nama      = document.getElementById('pf-nama').value.trim();
+  const whatsapp  = document.getElementById('pf-whatsapp').value.trim();
+  const institusi = document.getElementById('pf-institusi').value.trim();
+  const skema     = document.getElementById('pf-skema').value;
+  const format    = document.getElementById('pf-format').value;
+
+  if(!nama || !whatsapp || !skema){
+    alert('Mohon lengkapi Nama, Nomor WhatsApp, dan Skema pelatihan.');
+    return false;
+  }
+
+  const btn = document.getElementById('pf-submit-btn');
+  btn.disabled = true;
+  const originalLabel = btn.innerHTML;
+  btn.innerHTML = 'Mengirim...';
+
+  function goToWhatsApp(){
+    let pesan = 'Halo Labnesia, saya ingin mendaftar Pelatihan & Sertifikasi.\n\n'
+      + 'Nama: ' + nama + '\n'
+      + 'WhatsApp: ' + whatsapp + '\n';
+    if(institusi) pesan += 'Institusi: ' + institusi + '\n';
+    pesan += 'Skema: ' + skema + '\n'
+      + 'Format: ' + format;
+    window.location.href = 'https://wa.me/' + PF_WA_NUMBER + '?text=' + encodeURIComponent(pesan);
+  }
+
+  if(!PF_GAS_URL){
+    // Belum dikonfigurasi (lihat Customizer > Labnesia Settings) — langsung ke WhatsApp saja.
+    goToWhatsApp();
+    return false;
+  }
+
+  const formData = new FormData();
+  formData.append('nama', nama);
+  formData.append('whatsapp', whatsapp);
+  formData.append('institusi', institusi);
+  formData.append('skema', skema);
+  formData.append('format', format);
+
+  fetch(PF_GAS_URL, { method: 'POST', mode: 'no-cors', body: formData })
+    .catch(function(){ /* no-cors gives an opaque response either way — still proceed to WhatsApp */ })
+    .finally(function(){
+      btn.disabled = false;
+      btn.innerHTML = originalLabel;
+      goToWhatsApp();
+    });
+
+  return false;
 }
 </script>
 <?php labnesia_floating_cta(); ?>
