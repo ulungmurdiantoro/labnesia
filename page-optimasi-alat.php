@@ -77,8 +77,14 @@ nav {
 .nav-cta:hover { background: #e09620; }
 @media (max-width: 980px){ .nav-links{ display:none; } }
 
-/* HERO — uses the shared .hero/.hero-inner/.hero-map/.journey-step classes from style.css,
-   matching the home page layout. No local overrides needed. */
+/* HERO — uses the shared .hero/.hero-inner classes from style.css, matching the home page layout. */
+.funnel-vertical { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.funnel-step {
+  color: white; font-weight: 700; font-size: 14px; background: rgba(26,158,117,0.18);
+  padding: 10px 22px; border-radius: 999px; text-align: center;
+}
+.funnel-step-income { background: rgba(245,166,35,0.2); color: var(--amber); }
+.funnel-down { color: rgba(255,255,255,0.35); }
 .btn-primary {
   background: var(--amber); color: var(--navy); padding: 13px 26px; border-radius: 8px;
   font-weight: 700; font-size: 15px; text-decoration: none; display: inline-block; transition: all .2s;
@@ -265,44 +271,17 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
       </div>
     </div>
 
-    <!-- RIGHT: Alur optimasi, vertikal seperti journey map halaman utama -->
-    <div class="hero-map" aria-label="Alur optimasi alat jadi income">
-      <p class="hero-map-title">Alur optimasi alat jadi layanan</p>
-      <div class="journey-step">
-        <div class="journey-dot" style="background:var(--teal);color:#fff">1</div>
-        <div class="journey-info">
-          <div class="journey-label">Punya Alat</div>
-          <div class="journey-sub">Instrumen yang sudah dimiliki lab Anda</div>
-        </div>
-      </div>
-      <div class="journey-step">
-        <div class="journey-dot" style="background:var(--teal);color:#fff">2</div>
-        <div class="journey-info">
-          <div class="journey-label">Parameter Uji</div>
-          <div class="journey-sub">Parameter yang bisa diuji dari alat tersebut</div>
-        </div>
-      </div>
-      <div class="journey-step">
-        <div class="journey-dot" style="background:var(--teal);color:#fff">3</div>
-        <div class="journey-info">
-          <div class="journey-label">Produk</div>
-          <div class="journey-sub">Hasil uji yang bisa ditawarkan ke pelanggan</div>
-        </div>
-      </div>
-      <div class="journey-step">
-        <div class="journey-dot" style="background:var(--teal);color:#fff">4</div>
-        <div class="journey-info">
-          <div class="journey-label">Layanan</div>
-          <div class="journey-sub">Dikemas jadi layanan rutin, bukan sekali jalan</div>
-        </div>
-      </div>
-      <div class="journey-step" style="margin-bottom:0">
-        <div class="journey-dot" style="background:var(--amber);color:var(--navy)">5</div>
-        <div class="journey-info">
-          <div class="journey-label">Income</div>
-          <div class="journey-sub">Sumber pendapatan baru bagi laboratorium</div>
-        </div>
-      </div>
+    <!-- RIGHT: Alur optimasi, pill vertikal dengan panah turun -->
+    <div class="funnel-vertical" aria-label="Alur optimasi alat jadi income">
+      <div class="funnel-step">Punya Alat</div>
+      <div class="funnel-down"><?php labnesia_icon( 'arrow-down', 'rgba(255,255,255,0.35)', 16 ); ?></div>
+      <div class="funnel-step">Parameter Uji</div>
+      <div class="funnel-down"><?php labnesia_icon( 'arrow-down', 'rgba(255,255,255,0.35)', 16 ); ?></div>
+      <div class="funnel-step">Produk</div>
+      <div class="funnel-down"><?php labnesia_icon( 'arrow-down', 'rgba(255,255,255,0.35)', 16 ); ?></div>
+      <div class="funnel-step">Layanan</div>
+      <div class="funnel-down"><?php labnesia_icon( 'arrow-down', 'rgba(255,255,255,0.35)', 16 ); ?></div>
+      <div class="funnel-step funnel-step-income">Income</div>
     </div>
   </div>
 </header>
