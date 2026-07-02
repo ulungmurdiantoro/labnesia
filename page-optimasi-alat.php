@@ -78,28 +78,33 @@ nav {
 @media (max-width: 980px){ .nav-links{ display:none; } }
 
 /* HERO */
-.hero {
-  background: var(--navy); padding: 100px 48px 48px; position: relative; overflow: hidden;
-}
-.hero-bg-pattern {
-  position: absolute; inset: 0; opacity: 0.04;
+.page-hero { background: var(--navy); padding: 104px 48px 64px; position: relative; overflow: hidden; }
+.page-hero::before {
+  content: ''; position: absolute; inset: 0; opacity: 0.04;
   background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0);
   background-size: 40px 40px;
 }
-.hero-glow {
-  position: absolute; top: -120px; right: -120px; width: 600px; height: 600px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(26,158,117,0.18) 0%, transparent 70%); pointer-events: none;
-}
-.hero-inner { max-width: 1160px; margin: 0 auto; position: relative; }
-.eyebrow {
+.page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; }
+.breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 24px; }
+.breadcrumb a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 13px; }
+.breadcrumb-sep { color: rgba(255,255,255,0.2); font-size: 13px; }
+.breadcrumb-cur { color: rgba(255,255,255,0.7); font-size: 13px; }
+.page-eyebrow {
   display: inline-flex; align-items: center; gap: 8px; background: rgba(26,158,117,0.15);
   border: 1px solid rgba(26,158,117,0.3); color: var(--teal-light);
-  padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 16px;
+  padding: 5px 14px; border-radius: 100px; font-size: 11px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase; margin-bottom: 20px;
 }
-.hero h1 { font-size: 44px; line-height: 1.18; color: white; font-weight: 800; letter-spacing: -0.5px; max-width: 760px; }
-.hero h1 span { color: var(--teal-light); }
-.hero p.lede { color: rgba(255,255,255,0.72); font-size: 17px; max-width: 640px; margin-top: 14px; }
-.hero-actions { display: flex; gap: 14px; margin-top: 24px; flex-wrap: wrap; }
+.page-eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal-light); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .4; } }
+.page-hero h1 { font-size: 46px; line-height: 1.12; color: white; font-weight: 800; letter-spacing: -1.3px; margin-bottom: 18px; max-width: 760px; }
+.page-hero h1 span { color: var(--teal-light); }
+.page-hero-sub {
+  font-family: var(--font-serif); font-style: italic; color: rgba(255,255,255,0.6);
+  font-size: 16px; line-height: 1.65; max-width: 640px;
+  border-left: 3px solid var(--teal); padding-left: 18px; margin-bottom: 28px;
+}
+.hero-actions { display: flex; gap: 14px; margin-top: 0; flex-wrap: wrap; }
 .btn-primary {
   background: var(--amber); color: var(--navy); padding: 13px 26px; border-radius: 8px;
   font-weight: 700; font-size: 15px; text-decoration: none; display: inline-block; transition: all .2s;
@@ -277,13 +282,16 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
 </nav>
 
 <!-- HERO -->
-<header class="hero" id="optimasi-alat">
-  <div class="hero-bg-pattern"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-inner">
-    <div class="eyebrow"><?php labnesia_icon( 'microscope', 'var(--teal-light)', 13 ); ?> Insight Khusus Pemilik Lab</div>
+<header class="page-hero" id="optimasi-alat">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="<?php echo $url_home; ?>">Beranda</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-cur">Optimasi Alat</span>
+    </div>
+    <div class="page-eyebrow"><div class="page-eyebrow-dot"></div> <?php labnesia_icon( 'microscope', 'var(--teal-light)', 13 ); ?> Insight Khusus Pemilik Lab</div>
     <h1>Alat Lab Anda Sudah Ada.<br>Tinggal Dipetakan Jadi <span>Layanan & Income.</span></h1>
-    <p class="lede">Setiap jenis laboratorium punya alat dan ruang lingkup yang berbeda — karena itu kebutuhan optimasinya juga berbeda. Pilih jenis lab Anda di bawah, kenali demand khasnya, lalu hubungkan ke jalur program Labnesia yang sudah berjalan.</p>
+    <p class="page-hero-sub">Setiap jenis laboratorium punya alat dan ruang lingkup yang berbeda — karena itu kebutuhan optimasinya juga berbeda. Pilih jenis lab Anda di bawah, kenali demand khasnya, lalu hubungkan ke jalur program Labnesia yang sudah berjalan.</p>
     <div class="hero-actions">
       <a href="#jenis-lab" class="btn-primary">Pilih Jenis Lab Saya <?php labnesia_icon( 'arrow-down', 'var(--navy)', 14 ); ?></a>
       <a href="<?php echo $url_gratis; ?>" class="btn-ghost">Mulai dari Gap Analysis Gratis</a>
