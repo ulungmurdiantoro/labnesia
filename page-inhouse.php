@@ -442,6 +442,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
   </div>
 </footer>
 
+<?php labnesia_floating_cta(); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

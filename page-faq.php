@@ -615,6 +615,7 @@ document.querySelectorAll('.jump-btn').forEach(btn=>{
   });
 });
 </script>
+<?php labnesia_floating_cta(); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

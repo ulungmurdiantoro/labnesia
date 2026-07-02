@@ -291,6 +291,19 @@ function labnesia_icon_tile( $name, $color = 'var(--teal)', $tile_size = 64, $to
     echo '</span>';
 }
 
+// Floating "Konsultasi Gratis" WhatsApp CTA — call once near the end of every page template
+// so it appears consistently site-wide, always pointed at the WhatsApp number (Endang by default).
+function labnesia_floating_cta() {
+    $number  = get_theme_mod( 'labnesia_whatsapp', '6282172221567' );
+    $message = 'Halo Labnesia, saya ingin konsultasi gratis tentang akreditasi lab.';
+    printf(
+        '<a href="%1$s" class="float-cta" id="konsultasi" target="_blank" rel="noopener noreferrer">',
+        esc_url( 'https://wa.me/' . preg_replace( '/\D/', '', $number ) . '?text=' . rawurlencode( $message ) )
+    );
+    labnesia_icon( 'whatsapp', 'var(--navy)', 16 );
+    echo ' Konsultasi Gratis</a>';
+}
+
 // ── Add body classes ──────────────────────────────────────────────────────────
 function labnesia_body_classes( $classes ) {
     if ( ! is_singular() ) $classes[] = 'hfeed';

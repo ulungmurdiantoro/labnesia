@@ -679,6 +679,7 @@ function showResult() {
 }
 </script>
 
+<?php labnesia_floating_cta(); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

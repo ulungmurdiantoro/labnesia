@@ -340,17 +340,6 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
   .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
   .footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; }
 
-  /* FLOATING CTA */
-  .float-cta {
-    position: fixed; bottom: 24px; right: 24px; z-index: 90;
-    background: var(--amber); color: var(--navy);
-    padding: 12px 20px; border-radius: 100px; font-weight: 700; font-size: 14px;
-    text-decoration: none; box-shadow: 0 4px 20px rgba(245,166,35,0.4);
-    display: flex; align-items: center; gap: 8px;
-    transition: all .2s;
-  }
-  .float-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(245,166,35,0.5); }
-
   /* GIVE VALUE BANNER */
   .give-banner {
     background: var(--teal-pale); border: 1px solid rgba(26,158,117,0.25);
@@ -973,9 +962,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 </footer>
 
 <!-- FLOATING CTA -->
-<a href="<?php echo $url_gratis; ?>" class="float-cta" id="konsultasi">
-  <?php labnesia_icon( 'message-circle', 'var(--navy)', 16 ); ?> Konsultasi Gratis
-</a>
+<?php labnesia_floating_cta(); ?>
 
 <script>
   // Subtle scroll effect for nav

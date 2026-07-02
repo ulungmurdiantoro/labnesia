@@ -558,6 +558,7 @@ function toggleCurr(el){
   if(!isOpen){body.classList.add('open');el.classList.add('active')}
 }
 </script>
+<?php labnesia_floating_cta(); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

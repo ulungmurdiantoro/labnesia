@@ -902,6 +902,7 @@ function submitForm(){
   alert('Terima kasih! Tim Labnesia akan menghubungi Anda dalam 1×24 jam untuk konfirmasi pendaftaran.');
 }
 </script>
+<?php labnesia_floating_cta(); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

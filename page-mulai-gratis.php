@@ -632,6 +632,7 @@ function toggleFaqMini(el){
   if(!isOpen)a.classList.add('open');
 }
 </script>
+<?php labnesia_floating_cta(); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -251,12 +251,6 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
 .footer-bottom a { color: rgba(255,255,255,0.6); }
 @media (max-width: 860px){ .footer-grid{ grid-template-columns: 1fr 1fr; } }
 
-.float-cta {
-  position: fixed; bottom: 22px; right: 22px; background: var(--amber); color: var(--navy);
-  padding: 13px 20px; border-radius: 999px; font-weight: 700; font-size: 14px; text-decoration: none;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.18); z-index: 90;
-}
-
 @media (max-width: 600px){
   section { padding: 64px 22px; }
   .hero { padding: 120px 22px 56px; }
@@ -620,7 +614,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
   </div>
 </footer>
 
-<a href="#konsultasi" class="float-cta"><?php labnesia_icon( 'message-circle', 'var(--navy)', 15 ); ?> Konsultasi Gratis</a>
+<?php labnesia_floating_cta(); ?>
 
 <script>
   window.addEventListener('scroll', () => {

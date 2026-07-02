@@ -49,10 +49,7 @@
 </footer>
 
 <!-- FLOATING CTA -->
-<a href="https://wa.me/<?php echo esc_attr( get_theme_mod('labnesia_whatsapp','6282172221567') ); ?>?text=Halo%20Labnesia%2C%20saya%20ingin%20konsultasi%20gratis%20tentang%20akreditasi%20lab."
-   class="float-cta" id="konsultasi" target="_blank" rel="noopener noreferrer">
-    <?php labnesia_icon( 'message-circle', 'var(--navy)', 16 ); ?> Konsultasi Gratis
-</a>
+<?php labnesia_floating_cta(); ?>
 
 <?php wp_footer(); ?>
 </body>
