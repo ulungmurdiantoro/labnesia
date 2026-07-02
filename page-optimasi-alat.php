@@ -288,11 +288,11 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
   <div class="hero-bg-pattern"></div>
   <div class="hero-glow"></div>
   <div class="hero-inner">
-    <div class="eyebrow">🔬 Insight Khusus Pemilik Lab</div>
+    <div class="eyebrow"><?php labnesia_icon( 'microscope', 'var(--teal-light)', 13 ); ?> Insight Khusus Pemilik Lab</div>
     <h1>Alat Lab Anda Sudah Ada.<br>Tinggal Dipetakan Jadi <span>Layanan & Income.</span></h1>
     <p class="lede">Setiap jenis laboratorium punya alat dan ruang lingkup yang berbeda — karena itu kebutuhan optimasinya juga berbeda. Pilih jenis lab Anda di bawah, kenali demand khasnya, lalu hubungkan ke jalur program Labnesia yang sudah berjalan.</p>
     <div class="hero-actions">
-      <a href="#jenis-lab" class="btn-primary">Pilih Jenis Lab Saya ↓</a>
+      <a href="#jenis-lab" class="btn-primary">Pilih Jenis Lab Saya <?php labnesia_icon( 'arrow-down', 'var(--navy)', 14 ); ?></a>
       <a href="<?php echo $url_gratis; ?>" class="btn-ghost">Mulai dari Gap Analysis Gratis</a>
     </div>
 
@@ -316,10 +316,10 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
       <p style="margin-top:14px;">Tujuannya supaya Anda tidak bingung memilih layanan — cukup kenali bidang lab Anda, lihat demand khasnya, lalu masuk ke program yang sudah ada.</p>
     </div>
     <div class="principle-card">
-      <div class="row"><div class="ico">⚙️</div><div><b>Instrumen = Aset</b><span>Bukan sekadar barang inventaris, tapi modal layanan.</span></div></div>
+      <div class="row"><div class="ico"><?php labnesia_icon( 'settings', 'var(--teal)', 20 ); ?></div><div><b>Instrumen = Aset</b><span>Bukan sekadar barang inventaris, tapi modal layanan.</span></div></div>
       <div class="row"><div class="ico"><?php labnesia_icon( 'clipboard-list', 'var(--teal)', 20 ); ?></div><div><b>Parameter = Produk</b><span>Tiap parameter uji yang bisa dijual ke pelanggan.</span></div></div>
       <div class="row"><div class="ico"><?php labnesia_icon( 'building-2', 'var(--teal)', 20 ); ?></div><div><b>Lab = Unit Layanan</b><span>Dikelola dengan sistem mutu, bukan sekadar ruang praktikum.</span></div></div>
-      <div class="row"><div class="ico">🧭</div><div><b>Demand = Penentu Jalur</b><span>Jenis lab Anda menentukan parameter, pasar, dan kebutuhan optimasinya.</span></div></div>
+      <div class="row"><div class="ico"><?php labnesia_icon( 'compass', 'var(--teal)', 20 ); ?></div><div><b>Demand = Penentu Jalur</b><span>Jenis lab Anda menentukan parameter, pasar, dan kebutuhan optimasinya.</span></div></div>
     </div>
   </div>
 </section>
@@ -338,7 +338,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
       <details class="lab-card" open>
         <summary>
           <div class="lab-summary-left">
-            <div class="lab-icon">🌱</div>
+            <div class="lab-icon"><?php labnesia_icon( 'seedling', 'var(--teal)', 22 ); ?></div>
             <div><div class="lab-title">Lab Lingkungan</div><div class="lab-tagline">Air, udara, tanah & limbah</div></div>
           </div>
           <div class="chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 14 ); ?></div>
@@ -351,14 +351,14 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
             <span class="tag alat">pH / DO / Turbidity meter</span><span class="tag alat">Spektrofotometer UV-Vis</span><span class="tag alat">AAS</span><span class="tag alat">GC-MS / HPLC</span><span class="tag alat">Autoclave & Inkubator</span>
           </div></div>
           <div class="lab-row"><b>Demand Optimasi Khas</b><p class="demand-text">Banyak lab kampus sudah punya alat dasar lingkungan, tapi belum memetakan parameter mana yang bisa dijual ke industri, DLH, atau PDAM sebagai layanan rutin.</p></div>
-          <div class="connect-tag">↳ Cocok mulai dari: Gap Analysis Gratis + Kelas Pendampingan</div>
+          <div class="connect-tag"><?php labnesia_icon( 'arrow-turn-down', '#8a5a05', 12 ); ?> Cocok mulai dari: Gap Analysis Gratis + Kelas Pendampingan</div>
         </div>
       </details>
 
       <details class="lab-card">
         <summary>
           <div class="lab-summary-left">
-            <div class="lab-icon">🏗️</div>
+            <div class="lab-icon"><?php labnesia_icon( 'construction', 'var(--teal)', 22 ); ?></div>
             <div><div class="lab-title">Lab Sipil</div><div class="lab-tagline">Material & struktur konstruksi</div></div>
           </div>
           <div class="chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 14 ); ?></div>
@@ -371,14 +371,14 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
             <span class="tag alat">Alat uji kuat tekan/tarik</span><span class="tag alat">CBR test set</span><span class="tag alat">Sieve shaker</span><span class="tag alat">Alat uji Marshall</span>
           </div></div>
           <div class="lab-row"><b>Demand Optimasi Khas</b><p class="demand-text">Demand datang dari proyek konstruksi & kontraktor yang butuh hasil uji material cepat dan diakui — peluang besar untuk lab kampus jadi rujukan uji daerah.</p></div>
-          <div class="connect-tag">↳ Cocok mulai dari: Gap Analysis Gratis + Kelas Pendampingan</div>
+          <div class="connect-tag"><?php labnesia_icon( 'arrow-turn-down', '#8a5a05', 12 ); ?> Cocok mulai dari: Gap Analysis Gratis + Kelas Pendampingan</div>
         </div>
       </details>
 
       <details class="lab-card">
         <summary>
           <div class="lab-summary-left">
-            <div class="lab-icon">🍱</div>
+            <div class="lab-icon"><?php labnesia_icon( 'utensils', 'var(--teal)', 22 ); ?></div>
             <div><div class="lab-title">Lab Pangan, Gizi & Halal</div><div class="lab-tagline">Mutu, gizi & kehalalan produk</div></div>
           </div>
           <div class="chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 14 ); ?></div>
@@ -391,14 +391,14 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
             <span class="tag alat">Instrumen analisis nutrisi</span><span class="tag alat">PCR (deteksi DNA babi)</span><span class="tag alat">AAS (logam berat)</span><span class="tag alat">GC / HPLC (pengawet, gula)</span>
           </div></div>
           <div class="lab-row"><b>Demand Optimasi Khas</b><p class="demand-text">Industri pangan & UMKM butuh bukti gizi, keamanan, dan sertifikasi halal sebelum produk bisa naik kelas ke pasar yang lebih luas.</p></div>
-          <div class="connect-tag">↳ Cocok mulai dari: Gap Analysis Gratis + Kelas Pendampingan</div>
+          <div class="connect-tag"><?php labnesia_icon( 'arrow-turn-down', '#8a5a05', 12 ); ?> Cocok mulai dari: Gap Analysis Gratis + Kelas Pendampingan</div>
         </div>
       </details>
 
       <details class="lab-card">
         <summary>
           <div class="lab-summary-left">
-            <div class="lab-icon">🌾</div>
+            <div class="lab-icon"><?php labnesia_icon( 'wheat', 'var(--teal)', 22 ); ?></div>
             <div><div class="lab-title">Lab Pertanian & Pascapanen</div><div class="lab-tagline">Mutu hasil panen & alsintan</div></div>
           </div>
           <div class="chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 14 ); ?></div>
@@ -411,14 +411,14 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
             <span class="tag alat">UV-Vis, HPLC, GC-MS</span><span class="tag alat">AAS / ICP-OES</span><span class="tag alat">Moisture analyzer & NIR</span><span class="tag alat">Sensor uji alsintan (load cell, torque meter)</span>
           </div></div>
           <div class="lab-row"><b>Demand Optimasi Khas</b><p class="demand-text">Lab pascapanen punya peluang ganda: menjual paket uji mutu produk ke petani/agribisnis, sekaligus menguji performa mesin — bukan cuma sampelnya.</p></div>
-          <div class="connect-tag">↳ Cocok mulai dari: Gap Analysis Gratis + Kelas Pendampingan</div>
+          <div class="connect-tag"><?php labnesia_icon( 'arrow-turn-down', '#8a5a05', 12 ); ?> Cocok mulai dari: Gap Analysis Gratis + Kelas Pendampingan</div>
         </div>
       </details>
 
       <details class="lab-card">
         <summary>
           <div class="lab-summary-left">
-            <div class="lab-icon">💊</div>
+            <div class="lab-icon"><?php labnesia_icon( 'pills', 'var(--teal)', 22 ); ?></div>
             <div><div class="lab-title">Lab Farmasi</div><div class="lab-tagline">Mutu & keamanan obat</div></div>
           </div>
           <div class="chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 14 ); ?></div>
@@ -431,14 +431,14 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
             <span class="tag alat">AAS / ICP (logam berat)</span><span class="tag alat">HPLC / GC (senyawa organik & zat aktif)</span>
           </div></div>
           <div class="lab-row"><b>Demand Optimasi Khas</b><p class="demand-text">Industri farmasi & herbal sangat bergantung pada data valid untuk menjamin mutu, keamanan, dan khasiat produk sebelum beredar.</p></div>
-          <div class="connect-tag">↳ Cocok mulai dari: Kelas Pendampingan + Kelas Lanjutan</div>
+          <div class="connect-tag"><?php labnesia_icon( 'arrow-turn-down', '#8a5a05', 12 ); ?> Cocok mulai dari: Kelas Pendampingan + Kelas Lanjutan</div>
         </div>
       </details>
 
       <details class="lab-card">
         <summary>
           <div class="lab-summary-left">
-            <div class="lab-icon">🧪</div>
+            <div class="lab-icon"><?php labnesia_icon( 'flask', 'var(--teal)', 22 ); ?></div>
             <div><div class="lab-title">Lab Kimia</div><div class="lab-tagline">Riset, sintesis & QC industri</div></div>
           </div>
           <div class="chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 14 ); ?></div>
@@ -451,14 +451,14 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
             <span class="tag alat">Instrumen analitik umum</span><span class="tag alat">LIMS (manajemen data uji)</span>
           </div></div>
           <div class="lab-row"><b>Demand Optimasi Khas</b><p class="demand-text">Lab kimia kampus sering dipakai untuk riset internal saja, padahal berpeluang jadi Tempat Uji Kompetensi dan melayani industri sekitar.</p></div>
-          <div class="connect-tag">↳ Cocok mulai dari: Gap Analysis Gratis + Kelas Pendampingan</div>
+          <div class="connect-tag"><?php labnesia_icon( 'arrow-turn-down', '#8a5a05', 12 ); ?> Cocok mulai dari: Gap Analysis Gratis + Kelas Pendampingan</div>
         </div>
       </details>
 
       <details class="lab-card">
         <summary>
           <div class="lab-summary-left">
-            <div class="lab-icon">🐄</div>
+            <div class="lab-icon"><?php labnesia_icon( 'cow', 'var(--teal)', 22 ); ?></div>
             <div><div class="lab-title">Lab Peternakan</div><div class="lab-tagline">Mutu pakan & kesehatan ternak</div></div>
           </div>
           <div class="chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 14 ); ?></div>
@@ -471,14 +471,14 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
             <span class="tag alat">Instrumen analisis proksimat</span><span class="tag alat">Instrumen mineral</span><span class="tag alat">Alat deteksi kontaminan biologis/kimiawi</span>
           </div></div>
           <div class="lab-row"><b>Demand Optimasi Khas</b><p class="demand-text">Industri pakan dan peternakan butuh kepastian mutu pakan serta jaminan bebas residu sebelum produk ternak beredar ke pasar.</p></div>
-          <div class="connect-tag">↳ Cocok mulai dari: Gap Analysis Gratis + Kelas Pendampingan</div>
+          <div class="connect-tag"><?php labnesia_icon( 'arrow-turn-down', '#8a5a05', 12 ); ?> Cocok mulai dari: Gap Analysis Gratis + Kelas Pendampingan</div>
         </div>
       </details>
 
       <details class="lab-card">
         <summary>
           <div class="lab-summary-left">
-            <div class="lab-icon">🐟</div>
+            <div class="lab-icon"><?php labnesia_icon( 'fish', 'var(--teal)', 22 ); ?></div>
             <div><div class="lab-title">Lab Perikanan</div><div class="lab-tagline">Mutu, ekspor & genetik produk laut</div></div>
           </div>
           <div class="chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 14 ); ?></div>
@@ -491,7 +491,7 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
             <span class="tag alat">Nanodrop & RT-/Digital PCR</span><span class="tag alat">MALDI-TOF</span><span class="tag alat">GC-MS / LC-HRMS</span><span class="tag alat">ICP-AES</span>
           </div></div>
           <div class="lab-row"><b>Demand Optimasi Khas</b><p class="demand-text">Ekspor produk perikanan menuntut paket uji lengkap dan status lab acuan resmi — peluang besar untuk lab dengan instrumen canggih tapi utilisasi rendah.</p></div>
-          <div class="connect-tag">↳ Cocok mulai dari: Kelas Pendampingan + Kelas Lanjutan</div>
+          <div class="connect-tag"><?php labnesia_icon( 'arrow-turn-down', '#8a5a05', 12 ); ?> Cocok mulai dari: Kelas Pendampingan + Kelas Lanjutan</div>
         </div>
       </details>
 
@@ -499,12 +499,12 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
 
     <div class="coming-soon-grid">
       <div class="coming-card">
-        <div class="lab-icon">🧫</div>
+        <div class="lab-icon"><?php labnesia_icon( 'petri-dish', 'var(--gray-600)', 22 ); ?></div>
         <div><b>Lab Biologi & Mikrobiologi</b><span>Webinar tematik · 4 Juli 2026</span></div>
         <div class="soon-badge">Segera Hadir</div>
       </div>
       <div class="coming-card">
-        <div class="lab-icon">📏</div>
+        <div class="lab-icon"><?php labnesia_icon( 'ruler', 'var(--gray-600)', 22 ); ?></div>
         <div><b>Lab Kalibrasi</b><span>Webinar tematik · 11 Juli 2026</span></div>
         <div class="soon-badge">Segera Hadir</div>
       </div>

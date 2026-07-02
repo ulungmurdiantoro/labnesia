@@ -845,7 +845,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
   <div style="position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle at 1px 1px,white 1px,transparent 0);background-size:40px 40px"></div>
   <div style="max-width:1200px;margin:0 auto;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
     <div>
-      <p style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:14px">🔬 Insight Khusus Pemilik Lab</p>
+      <p style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:14px"><?php labnesia_icon( 'microscope', 'var(--amber)', 12 ); ?> Insight Khusus Pemilik Lab</p>
       <h2 style="font-size:36px;font-weight:800;color:white;line-height:1.15;letter-spacing:-0.8px;margin-bottom:18px">Alat Lab Sudah Ada.<br>Tapi Digunakan untuk Apa?</h2>
       <p style="font-size:16px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:28px">Banyak laboratorium punya alat canggih dan mahal, tapi belum tahu cara mengoptimalkannya menjadi layanan dan sumber pendapatan. Masalahnya bukan di alatnya — tapi di cara memetakan potensinya.</p>
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px">

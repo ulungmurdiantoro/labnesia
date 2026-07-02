@@ -466,7 +466,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
       </div>
 
       <div style="background:var(--teal-pale);border:1px solid rgba(26,158,117,0.25);border-radius:10px;padding:16px 18px;margin-top:12px;display:flex;gap:12px;align-items:flex-start">
-        <span style="font-size:20px;flex-shrink:0">🔄</span>
+        <span style="font-size:20px;flex-shrink:0"><?php labnesia_icon( 'refresh-cw', '#085041', 20 ); ?></span>
         <div>
           <p style="font-size:13px;font-weight:700;color:#085041;margin-bottom:3px">Setelah terakreditasi, jangan berhenti di sini.</p>
           <p style="font-size:13px;color:#0F6E56;line-height:1.5">Lab yang sudah terakreditasi perlu mempertahankan statusnya setiap tahun menghadapi surveillance dan menjaga kompetensi SDM yang terus berganti. <strong>Annual Partnership Labnesia</strong> hadir sebagai solusi — mulai Rp 36 jt/tahun, sudah include pelatihan premium untuk SDM, update dokumen, dan pendampingan audit internal. <a href="<?php echo $url_inhouse; ?>" style="color:var(--teal);font-weight:600">Pelajari Annual Partnership <?php labnesia_icon( 'arrow-right', 'var(--teal)', 13 ); ?></a></p>

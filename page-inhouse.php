@@ -194,14 +194,14 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
       <div class="split-title">Full Pendampingan<br>(In House)</div>
       <div class="split-desc">Lab Anda belum punya sistem mutu sama sekali, atau prosesnya berhenti di tengah jalan. Kami bangun dari nol hingga siap akreditasi.</div>
       <div class="split-for"><?php labnesia_icon( 'target', '#ffffff', 14 ); ?> Tujuan: <strong>Mendapatkan</strong> akreditasi</div>
-      <span class="split-arrow-link">Lihat paket Full Pendampingan ↓</span>
+      <span class="split-arrow-link">Lihat paket Full Pendampingan <?php labnesia_icon( 'arrow-down', '#ffffff', 13 ); ?></span>
     </a>
     <a href="#jaga" class="split-card right" style="text-decoration:none;color:white">
       <div class="split-eyebrow">Sudah Terakreditasi</div>
       <div class="split-title">Annual Partnership<br>(Kemitraan Tahunan)</div>
       <div class="split-desc">Lab Anda sudah terakreditasi, tapi perlu mempertahankan status setiap tahun dan menjaga kompetensi SDM yang terus berganti.</div>
-      <div class="split-for">🛡️ Tujuan: <strong>Mempertahankan</strong> akreditasi</div>
-      <span class="split-arrow-link">Lihat paket Annual Partnership ↓</span>
+      <div class="split-for"><?php labnesia_icon( 'shield-check', '#ffffff', 14 ); ?> Tujuan: <strong>Mempertahankan</strong> akreditasi</div>
+      <span class="split-arrow-link">Lihat paket Annual Partnership <?php labnesia_icon( 'arrow-down', '#ffffff', 13 ); ?></span>
     </a>
   </div>
 </div>
@@ -209,7 +209,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 <!-- SECTION A: FULL PENDAMPINGAN -->
 <section class="section-anchor" id="bangun">
   <div class="section-inner">
-    <span class="section-tag-blue">🏗️ Untuk Lab yang Belum Terakreditasi</span>
+    <span class="section-tag-blue"><?php labnesia_icon( 'construction', 'var(--navy)', 12 ); ?> Untuk Lab yang Belum Terakreditasi</span>
     <h2 class="h2">Full Pendampingan (In House)<br>— Privat, Dari Nol hingga Akreditasi.</h2>
     <p class="body-text" style="max-width:620px">Bimbingan langsung dari tim ahli untuk membangun atau menyempurnakan sistem manajemen laboratorium — ISO/IEC 17025:2017, GLP, ISO 9001, ISO 45001 (K3), ISO 14001 (Lingkungan). Dilakukan privat, khusus untuk lab Anda, di lokasi Anda.</p>
 
@@ -279,7 +279,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 <!-- SECTION B: ANNUAL PARTNERSHIP -->
 <section class="annual-section section-anchor" id="jaga">
   <div class="section-inner">
-    <span class="section-tag-teal">🛡️ Untuk Lab yang Sudah Terakreditasi</span>
+    <span class="section-tag-teal"><?php labnesia_icon( 'shield-check', 'var(--teal-dark)', 12 ); ?> Untuk Lab yang Sudah Terakreditasi</span>
     <h2 class="h2">Annual Partnership<br>— Pastikan Tetap Terakreditasi, Setiap Tahun.</h2>
     <p class="body-text" style="max-width:620px">"Lab Anda sudah terakreditasi? Pastikan tetap terakreditasi tahun depan, tahun depannya lagi, dan seterusnya — tanpa perlu memulai dari awal." Satu paket, dua manfaat: <strong>untuk lab</strong> (pendampingan surveillance &amp; review sistem) dan <strong>untuk SDM Anda</strong> (akses event sepanjang tahun + pelatihan premium berskema).</p>
 
@@ -293,7 +293,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         </div>
       </div>
       <div style="background:white;border:1px solid var(--gray-200);border-radius:12px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start">
-        <span style="font-size:24px;flex-shrink:0">👥</span>
+        <span style="font-size:24px;flex-shrink:0"><?php labnesia_icon( 'users', 'var(--navy)', 24 ); ?></span>
         <div>
           <p style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px">Untuk SDM Lab Anda</p>
           <p style="font-size:12.5px;color:var(--gray-600);line-height:1.5">Akses webinar &amp; bootcamp sepanjang tahun, plus pelatihan premium berskema untuk personel — kompetensi tim tetap terjaga meski ada pergantian SDM.</p>
@@ -340,7 +340,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
     </div>
 
     <p style="font-size:13px;color:var(--gray-600);background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px;padding:12px 16px;margin-top:16px;line-height:1.6">
-      ⓘ Biaya menyesuaikan dengan besaran ruang lingkup laboratorium dan rekomendasi terbaik untuk penyelesaian temuan dan optimalisasi sistem mutu laboratorium.
+      <?php labnesia_icon( 'info', 'var(--gray-600)', 13 ); ?> Biaya menyesuaikan dengan besaran ruang lingkup laboratorium dan rekomendasi terbaik untuk penyelesaian temuan dan optimalisasi sistem mutu laboratorium.
     </p>
 
     <p style="font-size:13px;color:var(--gray-600);margin-top:16px;text-align:center">Butuh skema institusional untuk kebutuhan lebih besar (multi-lab, multi-kampus)? <a href="#kontak" style="color:var(--teal-dark);font-weight:600">Hubungi tim kami untuk paket on-demand <?php labnesia_icon( 'arrow-right', 'var(--teal-dark)', 13 ); ?></a></p>
@@ -350,7 +350,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
     <p class="body-text" style="margin-bottom:20px">Untuk profesional lab yang ingin akses berkelanjutan secara personal, bukan atas nama institusi.</p>
     <div class="indiv-grid">
       <div class="indiv-card">
-        <div class="indiv-tier-name">🥈 Silver</div>
+        <div class="indiv-tier-name"><?php labnesia_icon( 'medal', '#9AA5B1', 17 ); ?> Silver</div>
         <div class="indiv-price">Rp 7 jt <span>/tahun</span></div>
         <div class="annual-feature"><span class="annual-check"><?php labnesia_icon( 'check', 'var(--teal)', 13 ); ?></span>Akses webinar &amp; bootcamp sepanjang tahun</div>
         <div class="annual-feature"><span class="annual-check"><?php labnesia_icon( 'check', 'var(--teal)', 13 ); ?></span><strong>1 pelatihan</strong> + akses uji kompetensi (1 skema)</div>
@@ -359,7 +359,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="annual-feature"><span class="annual-check"><?php labnesia_icon( 'check', 'var(--teal)', 13 ); ?></span>Forum diskusi VIP</div>
       </div>
       <div class="indiv-card gold">
-        <div class="indiv-tier-name">🥇 Gold</div>
+        <div class="indiv-tier-name"><?php labnesia_icon( 'medal', '#8B5800', 17 ); ?> Gold</div>
         <div class="indiv-price">Rp 13 jt <span>/tahun</span></div>
         <div class="annual-feature"><span class="annual-check"><?php labnesia_icon( 'check', 'var(--teal)', 13 ); ?></span>Semua benefit Silver</div>
         <div class="annual-feature"><span class="annual-check"><?php labnesia_icon( 'check', 'var(--teal)', 13 ); ?></span>Akses webinar & bootcamp sepanjang tahun</div>
@@ -380,12 +380,12 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
     <h2 class="h2">Bukan sekadar konsultan,<br>tapi mitra jangka panjang.</h2>
     <div class="why-grid">
       <div class="why-card">
-        <div class="why-icon">👨‍🏫</div>
+        <div class="why-icon"><?php labnesia_icon( 'teacher', 'var(--teal)', 28 ); ?></div>
         <div class="why-title">Praktik Langsung dari Pakarnya</div>
         <div class="why-desc">Dibimbing oleh praktisi berpengalaman dengan pendekatan sistematis — bukan hanya konsultan teori.</div>
       </div>
       <div class="why-card">
-        <div class="why-icon">📊</div>
+        <div class="why-icon"><?php labnesia_icon( 'chart', 'var(--teal)', 28 ); ?></div>
         <div class="why-title">Progress Terpantau, Timeline Terkontrol</div>
         <div class="why-desc">Pendampingan dipantau tim internal dengan dukungan administratif yang rapi dan transparan.</div>
       </div>
@@ -395,7 +395,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="why-desc">Program dirancang untuk memberikan hasil nyata bagi laboratorium dan institusi Anda.</div>
       </div>
       <div class="why-card">
-        <div class="why-icon">💰</div>
+        <div class="why-icon"><?php labnesia_icon( 'money-bag', 'var(--teal)', 28 ); ?></div>
         <div class="why-title">Skema Disesuaikan Anggaran</div>
         <div class="why-desc">Biaya terjangkau dan fleksibel — disesuaikan dengan anggaran dan kebutuhan laboratorium Anda.</div>
       </div>
@@ -405,7 +405,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="why-desc">30+ laboratorium telah kami dampingi dalam membangun sistem mutu dan meraih akreditasi.</div>
       </div>
       <div class="why-card">
-        <div class="why-icon">💡</div>
+        <div class="why-icon"><?php labnesia_icon( 'lightbulb', 'var(--teal)', 28 ); ?></div>
         <div class="why-title">Lab Jadi Unit Layanan &amp; Income Generator</div>
         <div class="why-desc">Buka potensi baru untuk mendukung institusi secara nyata — dari cost center menjadi revenue center.</div>
       </div>

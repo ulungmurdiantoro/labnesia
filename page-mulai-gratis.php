@@ -225,7 +225,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
     <div class="eyebrow-tag"><div class="dot-pulse"></div>Give Value First</div>
     <h1>Rasakan manfaatnya<br>sebelum <span class="accent">memutuskan.</span></h1>
     <p class="hero-belief">Kami percaya laboratorium yang sudah merasakan nilai nyata dari pendampingan kami akan tahu sendiri langkah selanjutnya. Tidak perlu dipaksa.</p>
-    <p class="hero-scroll-hint">↓ Semua ini tersedia untuk Anda hari ini, tanpa biaya</p>
+    <p class="hero-scroll-hint"><?php labnesia_icon( 'arrow-down', 'rgba(255,255,255,0.3)', 13 ); ?> Semua ini tersedia untuk Anda hari ini, tanpa biaya</p>
   </div>
 </div>
 
@@ -385,31 +385,31 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
     <p class="body" style="max-width:540px">Tidak perlu daftar dulu untuk beberapa materi di bawah. Langsung unduh dan gunakan untuk lab Anda.</p>
     <div class="download-grid">
       <div class="dl-card">
-        <div class="dl-icon">📘</div>
+        <div class="dl-icon"><?php labnesia_icon( 'book-open', 'var(--teal)', 36 ); ?></div>
         <div class="dl-title">Panduan SNI ISO/IEC 17025:2017</div>
         <div class="dl-desc">Ringkasan klausul &amp; persyaratan standar yang mudah dipahami</div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhQfpt4a1KsUHVKBlJQks0ml5KCyu15jF4LvJDsRQ5QH2FLg/viewform" class="dl-btn">↓ Unduh PDF</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhQfpt4a1KsUHVKBlJQks0ml5KCyu15jF4LvJDsRQ5QH2FLg/viewform" class="dl-btn"><?php labnesia_icon( 'download', 'var(--teal)', 12 ); ?> Unduh PDF</a>
         <div class="dl-format">PDF · 24 halaman</div>
       </div>
       <div class="dl-card">
         <div class="dl-icon"><?php labnesia_icon( 'clipboard-list', 'var(--teal)', 36 ); ?></div>
         <div class="dl-title">Checklist Persiapan Akreditasi KAN</div>
         <div class="dl-desc">Daftar lengkap dokumen yang dibutuhkan sebelum mendaftar akreditasi</div>
-        <a href="#" class="dl-btn">↓ Unduh Excel</a>
+        <a href="#" class="dl-btn"><?php labnesia_icon( 'download', 'var(--teal)', 12 ); ?> Unduh Excel</a>
         <div class="dl-format">XLSX · checklist interaktif</div>
       </div>
       <div class="dl-card">
-        <div class="dl-icon">📚</div>
+        <div class="dl-icon"><?php labnesia_icon( 'book', 'var(--teal)', 36 ); ?></div>
         <div class="dl-title">Silabus Lengkap Kelas Pendampingan</div>
         <div class="dl-desc">Outline 13 sesi, output per sesi, dan timeline 6 bulan program</div>
         <a href="<?php echo $url_kelas; ?>" class="dl-btn">Lihat Program <?php labnesia_icon( 'arrow-right', 'var(--teal)', 12 ); ?></a>
         <div class="dl-format">PDF · 16 halaman</div>
       </div>
       <div class="dl-card">
-        <div class="dl-icon">🗓️</div>
+        <div class="dl-icon"><?php labnesia_icon( 'calendar', 'var(--teal)', 36 ); ?></div>
         <div class="dl-title">Template Roadmap Implementasi</div>
         <div class="dl-desc">Template Excel untuk menyusun rencana implementasi ISO 17025 lab Anda</div>
-        <a href="#" class="dl-btn">↓ Unduh Excel</a>
+        <a href="#" class="dl-btn"><?php labnesia_icon( 'download', 'var(--teal)', 12 ); ?> Unduh Excel</a>
         <div class="dl-format">XLSX · bisa disesuaikan</div>
       </div>
     </div>
@@ -428,8 +428,8 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="webinar-info">
           <div class="webinar-title">Memahami Klausul ISO/IEC 17025 dari Perspektif Asesor KAN</div>
           <div class="webinar-meta">
-            <span class="webinar-meta-item">🕐 13.00–14.30 WIB</span>
-            <span class="webinar-meta-item">🌐 Zoom · Online</span>
+            <span class="webinar-meta-item"><?php labnesia_icon( 'clock', 'var(--gray-600)', 13 ); ?> 13.00–14.30 WIB</span>
+            <span class="webinar-meta-item"><?php labnesia_icon( 'globe', 'var(--gray-600)', 13 ); ?> Zoom · Online</span>
             <span class="webinar-tag">Awareness</span>
           </div>
         </div>
@@ -440,8 +440,8 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="webinar-info">
           <div class="webinar-title">Cara Menyusun Dokumen Mutu ISO 17025 yang Benar-Benar Lulus Audit</div>
           <div class="webinar-meta">
-            <span class="webinar-meta-item">🕐 13.00–14.30 WIB</span>
-            <span class="webinar-meta-item">🌐 Zoom · Online</span>
+            <span class="webinar-meta-item"><?php labnesia_icon( 'clock', 'var(--gray-600)', 13 ); ?> 13.00–14.30 WIB</span>
+            <span class="webinar-meta-item"><?php labnesia_icon( 'globe', 'var(--gray-600)', 13 ); ?> Zoom · Online</span>
             <span class="webinar-tag">Dokumen</span>
           </div>
         </div>
@@ -452,8 +452,8 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="webinar-info">
           <div class="webinar-title">Ketidakpastian Pengujian — Konsep Dasar yang Sering Disalahpahami</div>
           <div class="webinar-meta">
-            <span class="webinar-meta-item">🕐 13.00–14.30 WIB</span>
-            <span class="webinar-meta-item">🌐 Zoom · Online</span>
+            <span class="webinar-meta-item"><?php labnesia_icon( 'clock', 'var(--gray-600)', 13 ); ?> 13.00–14.30 WIB</span>
+            <span class="webinar-meta-item"><?php labnesia_icon( 'globe', 'var(--gray-600)', 13 ); ?> Zoom · Online</span>
             <span class="webinar-tag">Teknis</span>
           </div>
         </div>
@@ -464,7 +464,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="webinar-info">
           <div class="webinar-title">Audit Internal ISO 17025 — Simulasi Temuan &amp; Tindakan Perbaikan</div>
           <div class="webinar-meta">
-            <span class="webinar-meta-item">🕐 13.00–14.30 WIB</span>
+            <span class="webinar-meta-item"><?php labnesia_icon( 'clock', 'var(--gray-600)', 13 ); ?> 13.00–14.30 WIB</span>
             <span class="webinar-meta-item"><?php labnesia_icon( 'check', 'var(--gray-600)', 13 ); ?> Sudah selesai</span>
             <span class="webinar-tag" style="background:var(--gray-100);color:var(--gray-600)">Rekaman tersedia</span>
           </div>
@@ -484,7 +484,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
       <p class="body" style="margin-bottom:20px">Ribuan Manajer Mutu, analis, dan auditor internal dari seluruh Indonesia — sharing pengalaman, tanya pakar, dan update implementasi sistem manajemen laboratorium terbaru.</p>
       <div class="group-list">
         <div class="group-item">
-          <div class="group-icon">🔬</div>
+          <div class="group-icon"><?php labnesia_icon( 'microscope', 'var(--teal)', 22 ); ?></div>
           <div style="flex:1">
             <div class="group-name">Forum Kompeten ISO/IEC 17025</div>
             <div class="group-desc">Diskusi umum implementasi standar lab, tanya jawab, info batch</div>
@@ -492,7 +492,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
           <div class="group-count">2.4k anggota</div>
         </div>
         <div class="group-item">
-          <div class="group-icon">🏫</div>
+          <div class="group-icon"><?php labnesia_icon( 'school', 'var(--teal)', 22 ); ?></div>
           <div style="flex:1">
             <div class="group-name">Labnesia Expert Network (LEN) — Perguruan Tinggi</div>
             <div class="group-desc">Khusus untuk lab perguruan tinggi &amp; dosen</div>
@@ -500,7 +500,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
           <div class="group-count">&gt;400 anggota</div>
         </div>
         <div class="group-item">
-          <div class="group-icon">🏭</div>
+          <div class="group-icon"><?php labnesia_icon( 'industry', 'var(--teal)', 22 ); ?></div>
           <div style="flex:1">
             <div class="group-name">Labnesia Expert Network (LEN) — Industri &amp; Lembaga Pemerintah</div>
             <div class="group-desc">Lab industri, BUMN, dan laboratorium pemerintah</div>
@@ -508,7 +508,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
           <div class="group-count">&gt;200 anggota</div>
         </div>
         <div class="group-item">
-          <div class="group-icon">⭐</div>
+          <div class="group-icon"><?php labnesia_icon( 'star', 'var(--amber)', 22 ); ?></div>
           <div style="flex:1">
             <div class="group-name">VIP Member — Alumni Program</div>
             <div class="group-desc">Eksklusif untuk peserta program Labnesia</div>

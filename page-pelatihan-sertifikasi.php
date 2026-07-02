@@ -199,11 +199,11 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
     <p class="page-hero-sub">Pelatihan teori dan praktik untuk individu yang ingin membangun atau mengaudit sistem manajemen mutu laboratorium — pertama di Indonesia dengan kurikulum berstandar internasional.</p>
     <div class="hero-meta">
       <div class="hero-meta-item">
-        <div class="hero-meta-icon">⏱️</div>
+        <div class="hero-meta-icon"><?php labnesia_icon( 'clock', '#ffffff', 15 ); ?></div>
         <div><div class="hero-meta-label">Total pelatihan</div><div class="hero-meta-val">40 JP per skema</div></div>
       </div>
       <div class="hero-meta-item">
-        <div class="hero-meta-icon">🌐</div>
+        <div class="hero-meta-icon"><?php labnesia_icon( 'globe', '#ffffff', 15 ); ?></div>
         <div><div class="hero-meta-label">Format</div><div class="hero-meta-val">Online / Onsite</div></div>
       </div>
       <div class="hero-meta-item">
@@ -211,7 +211,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div><div class="hero-meta-label">Untuk</div><div class="hero-meta-val">Individu & profesional lab</div></div>
       </div>
       <div class="hero-meta-item">
-        <div class="hero-meta-icon">🏅</div>
+        <div class="hero-meta-icon"><?php labnesia_icon( 'medal', '#ffffff', 15 ); ?></div>
         <div><div class="hero-meta-label">Track record</div><div class="hero-meta-val">100+ peserta terlatih</div></div>
       </div>
     </div>
@@ -221,7 +221,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 <!-- FIREWALL BANNER -->
 <div class="firewall-banner">
   <div class="firewall-banner-inner">
-    <span class="firewall-icon">ℹ️</span>
+    <span class="firewall-icon"><?php labnesia_icon( 'info', 'var(--gray-600)', 18 ); ?></span>
     <p class="firewall-text"><strong>Pelatihan dan uji kompetensi adalah dua kegiatan yang independen.</strong> Labnesia menyelenggarakan pelatihan untuk meningkatkan kompetensi peserta. Uji kompetensi (jika diperlukan) diselenggarakan secara independen oleh Lembaga Sertifikasi Profesi/Person (LSP) terkait, dengan pendaftaran mandiri oleh peserta. <a href="<?php echo $url_faq; ?>#faq-umum" style="color:var(--teal);font-weight:600">Pelajari lebih lanjut <?php labnesia_icon( 'arrow-right', 'var(--teal)', 12 ); ?></a></p>
   </div>
 </div>
@@ -369,7 +369,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="info-item"><div class="info-num">3</div>Memiliki sertifikat pelatihan pemahaman dan penerapan ISO/IEC 17025:2017 (untuk skema lanjutan)</div>
       </div>
       <div class="info-card">
-        <div class="info-card-title">🎁 Benefit Pelatihan</div>
+        <div class="info-card-title"><?php labnesia_icon( 'gift', 'var(--teal)', 18 ); ?> Benefit Pelatihan</div>
         <div class="info-item"><span class="info-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Sertifikat Pelatihan 40 JP</div>
         <div class="info-item"><span class="info-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Soft copy materi pelatihan lengkap</div>
         <div class="info-item"><span class="info-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Kunjungan ke laboratorium (bagi peserta onsite)</div>
@@ -380,7 +380,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 
     <!-- DISCLAIMER -->
     <div class="disclaimer-box">
-      <div class="disclaimer-title">ℹ️ Informasi Mengenai Uji Kompetensi</div>
+      <div class="disclaimer-title"><?php labnesia_icon( 'info', 'var(--gray-600)', 12 ); ?> Informasi Mengenai Uji Kompetensi</div>
       <p class="disclaimer-text">Program pelatihan ini dapat digunakan sebagai salah satu bentuk pemenuhan persyaratan administrasi untuk mengikuti uji kompetensi pada skema terkait di Lembaga Sertifikasi Profesi/Person (LSP) yang relevan, sesuai dengan persyaratan dan ketentuan yang berlaku. <strong>Keikutsertaan dalam pelatihan ini tidak menjamin kemudahan proses uji atau menjamin kelulusan sertifikasi kompetensi.</strong> Pendaftaran uji kompetensi dilakukan secara mandiri oleh peserta langsung kepada LSP terkait, dan jadwal resmi uji kompetensi dipublikasikan melalui media LSP secara terpisah.</p>
     </div>
   </div>
@@ -480,18 +480,18 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
     <h2 class="h2">Pelatihan kompetensi lain<br>untuk profesional lab.</h2>
     <p class="body-text" style="max-width:560px">Selain dua skema utama di atas, tersedia juga skema pelatihan tematik berikut sesuai kebutuhan peran Anda di laboratorium.</p>
     <div class="other-schemes">
-      <div class="scheme-pill"><span class="scheme-pill-icon">🍽️</span>Food Safety Management Officer<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon">👃</span>Panelis Terlatih Pengujian Sensori<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon">🧪</span>GLP Laboratory Technician<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon">🦺</span>Laboratory HSE Officer<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon">⚙️</span>Laboratory Operations Officer<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon">📊</span>Quality Management System (ISO 9001) Officer<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon">🔬</span>QC Laboratory Analyst<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon">✅</span>Quality Assurance Officer<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon">🧬</span>Research and Development Officer<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon">📜</span>Regulatory Affairs Officer<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon">🌱</span>Sustainability Officer<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon">♻️</span>Environmental Management (ISO 14001) Officer<span class="new-tag">New</span></div>
+      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'utensils', 'var(--teal)', 16 ); ?></span>Food Safety Management Officer<span class="new-tag">New</span></div>
+      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'user-check', 'var(--teal)', 16 ); ?></span>Panelis Terlatih Pengujian Sensori<span class="new-tag">New</span></div>
+      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'flask', 'var(--teal)', 16 ); ?></span>GLP Laboratory Technician<span class="new-tag">New</span></div>
+      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'vest', 'var(--teal)', 16 ); ?></span>Laboratory HSE Officer<span class="new-tag">New</span></div>
+      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'settings', 'var(--teal)', 16 ); ?></span>Laboratory Operations Officer<span class="new-tag">New</span></div>
+      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'chart', 'var(--teal)', 16 ); ?></span>Quality Management System (ISO 9001) Officer<span class="new-tag">New</span></div>
+      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'microscope', 'var(--teal)', 16 ); ?></span>QC Laboratory Analyst<span class="new-tag">New</span></div>
+      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'check', 'var(--teal)', 16 ); ?></span>Quality Assurance Officer<span class="new-tag">New</span></div>
+      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'dna', 'var(--teal)', 16 ); ?></span>Research and Development Officer<span class="new-tag">New</span></div>
+      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'scroll', 'var(--teal)', 16 ); ?></span>Regulatory Affairs Officer<span class="new-tag">New</span></div>
+      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'seedling', 'var(--teal)', 16 ); ?></span>Sustainability Officer<span class="new-tag">New</span></div>
+      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'recycle', 'var(--teal)', 16 ); ?></span>Environmental Management (ISO 14001) Officer<span class="new-tag">New</span></div>
     </div>
   </div>
 </section>
