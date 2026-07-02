@@ -79,7 +79,7 @@ nav {
 
 /* HERO */
 .hero {
-  background: var(--navy); padding: 140px 48px 72px; position: relative; overflow: hidden;
+  background: var(--navy); padding: 100px 48px 48px; position: relative; overflow: hidden;
 }
 .hero-bg-pattern {
   position: absolute; inset: 0; opacity: 0.04;
@@ -94,12 +94,12 @@ nav {
 .eyebrow {
   display: inline-flex; align-items: center; gap: 8px; background: rgba(26,158,117,0.15);
   border: 1px solid rgba(26,158,117,0.3); color: var(--teal-light);
-  padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 22px;
+  padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 16px;
 }
 .hero h1 { font-size: 44px; line-height: 1.18; color: white; font-weight: 800; letter-spacing: -0.5px; max-width: 760px; }
 .hero h1 span { color: var(--teal-light); }
-.hero p.lede { color: rgba(255,255,255,0.72); font-size: 17px; max-width: 640px; margin-top: 20px; }
-.hero-actions { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
+.hero p.lede { color: rgba(255,255,255,0.72); font-size: 17px; max-width: 640px; margin-top: 14px; }
+.hero-actions { display: flex; gap: 14px; margin-top: 24px; flex-wrap: wrap; }
 .btn-primary {
   background: var(--amber); color: var(--navy); padding: 13px 26px; border-radius: 8px;
   font-weight: 700; font-size: 15px; text-decoration: none; display: inline-block; transition: all .2s;
@@ -113,8 +113,8 @@ nav {
 
 /* FUNNEL */
 .funnel {
-  margin-top: 56px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 14px; padding: 24px 28px; display: flex; align-items: center; flex-wrap: wrap; gap: 10px;
+  margin-top: 32px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px; padding: 18px 22px; display: flex; align-items: center; flex-wrap: wrap; gap: 10px;
 }
 .funnel-step { color: white; font-weight: 700; font-size: 14px; background: rgba(26,158,117,0.18); padding: 8px 16px; border-radius: 999px; }
 .funnel-arrow { color: rgba(255,255,255,0.35); font-size: 16px; }
@@ -164,9 +164,8 @@ details.lab-card summary::-webkit-details-marker { display: none; }
 }
 .lab-title { font-weight: 700; color: var(--navy); font-size: 16.5px; }
 .lab-tagline { color: var(--gray-600); font-size: 13px; margin-top: 2px; }
-.chevron { color: var(--gray-400); font-size: 14px; transition: transform .2s; flex-shrink: 0; }
-details.lab-card[open] .chevron { transform: rotate(180deg); color: var(--teal); }
-details.lab-card[open] .chevron .icon { background-color: var(--teal); }
+.chevron { font-size: 14px; transition: transform .2s; flex-shrink: 0; }
+details.lab-card[open] .chevron { transform: rotate(180deg); }
 
 .lab-body { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--gray-100); }
 .lab-row { margin-bottom: 14px; }
