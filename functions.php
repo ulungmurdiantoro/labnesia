@@ -178,11 +178,13 @@ remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
 // ── Icon helpers (Lucide icons via CSS mask, replaces emoji-as-icon) ─────────
+// Icons are self-hosted in assets/icons/ (not loaded from a CDN) so they render
+// regardless of the visitor's network/CSP — see design_handoff_icon_system_and_spacing/README.md.
 // Bare inline glyph — buttons, badges, checklists, comparison-table cells.
 function labnesia_icon( $name, $color = 'currentColor', $size = 20 ) {
     printf(
-        '<span class="icon" style="--icon-url:url(\'https://unpkg.com/lucide-static@latest/icons/%1$s.svg\');--icon-color:%2$s;--icon-size:%3$dpx;" aria-hidden="true"></span>',
-        esc_attr( $name ),
+        '<span class="icon" style="--icon-url:url(\'%1$s\');--icon-color:%2$s;--icon-size:%3$dpx;" aria-hidden="true"></span>',
+        esc_url( get_template_directory_uri() . '/assets/icons/' . sanitize_file_name( $name ) . '.svg' ),
         esc_attr( $color ),
         (int) $size
     );
