@@ -525,11 +525,11 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
       <input class="form-input-dark" type="email" id="comm-email" placeholder="Email aktif" required>
       <input class="form-input-dark" type="tel" id="comm-whatsapp" placeholder="Nomor WhatsApp" required>
       <select id="comm-grup" required style="width:100%;padding:11px 14px;border:1px solid rgba(255,255,255,0.15);border-radius:9px;font-size:14px;font-family:var(--font-display);outline:none;background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);margin-bottom:12px">
-        <option value="">Pilih grup yang ingin diikuti</option>
-        <option>Forum Kompeten ISO/IEC 17025 (Umum)</option>
-        <option>Labnesia Expert Network (LEN) — Perguruan Tinggi</option>
-        <option>Labnesia Expert Network (LEN) — Industri &amp; Lembaga Pemerintah</option>
-        <option>VIP Member — Alumni Program</option>
+        <option value="" style="background:var(--navy);color:#fff">Pilih grup yang ingin diikuti</option>
+        <option style="background:var(--navy);color:#fff">Forum Kompeten ISO/IEC 17025 (Umum)</option>
+        <option style="background:var(--navy);color:#fff">Labnesia Expert Network (LEN) — Perguruan Tinggi</option>
+        <option style="background:var(--navy);color:#fff">Labnesia Expert Network (LEN) — Industri &amp; Lembaga Pemerintah</option>
+        <option style="background:var(--navy);color:#fff">VIP Member — Alumni Program</option>
       </select>
       <button class="btn-teal-solid" type="submit" id="comm-submit-btn">Bergabung ke Komunitas <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></button>
       <div class="community-privacy">Gratis selamanya. Data Anda tidak akan dibagikan.</div>
