@@ -42,6 +42,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,31,58,0.9
 .page-hero h1{font-size:48px;font-weight:800;color:white;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px}
 .page-hero h1 .accent{color:var(--teal-light)}
 .page-hero-sub{font-size:17px;color:rgba(255,255,255,0.55);line-height:1.65;margin-bottom:0}
+.gap-stats-row{background:white;padding:28px 48px;border-bottom:1px solid var(--gray-200)}
+.gap-stats-inner{max-width:680px;margin:0 auto;display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.gap-stat{text-align:center}
+.gap-stat-num{font-size:28px;font-weight:800;color:var(--teal)}
+.gap-stat-label{font-size:12px;color:var(--gray-600);margin-top:2px}
 
 /* STICKY SCORE BAR */
 .sticky-score{position:sticky;top:64px;z-index:80;background:white;border-bottom:2px solid var(--teal);padding:10px 48px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 2px 12px rgba(0,0,0,0.08)}
@@ -184,6 +189,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,31,58,0.9
     <div class="eyebrow-tag">Audit Internal ISO/IEC 17025</div>
     <h1>Gap Analysis <span class="accent">Laboratorium</span><br>ISO/IEC 17025 : 2017</h1>
     <p class="page-hero-sub">Nilai kesiapan laboratorium Anda secara mandiri. Checklist 32 indikator berdasarkan persyaratan ISO/IEC 17025 — lengkap, terstruktur, dan langsung terkalkulasi.</p>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="gap-stats-row">
+  <div class="gap-stats-inner">
+    <div class="gap-stat"><div class="gap-stat-num">32</div><div class="gap-stat-label">Indikator Penilaian</div></div>
+    <div class="gap-stat"><div class="gap-stat-num">5</div><div class="gap-stat-label">Klausul ISO 17025</div></div>
+    <div class="gap-stat"><div class="gap-stat-num">0–4</div><div class="gap-stat-label">Skala Skor</div></div>
   </div>
 </div>
 
