@@ -182,11 +182,13 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 // regardless of the visitor's network/CSP — see design_handoff_icon_system_and_spacing/README.md.
 // Bare inline glyph — buttons, badges, checklists, comparison-table cells.
 function labnesia_icon( $name, $color = 'currentColor', $size = 20 ) {
+    $url  = esc_url( get_template_directory_uri() . '/assets/icons/' . sanitize_file_name( $name ) . '.svg' );
+    $size = (int) $size;
     printf(
-        '<span class="icon" style="--icon-url:url(\'%1$s\');--icon-color:%2$s;--icon-size:%3$dpx;" aria-hidden="true"></span>',
-        esc_url( get_template_directory_uri() . '/assets/icons/' . sanitize_file_name( $name ) . '.svg' ),
-        esc_attr( $color ),
-        (int) $size
+        '<span class="icon" style="width:%2$dpx;height:%2$dpx;background-color:%3$s;-webkit-mask-image:url(\'%1$s\');mask-image:url(\'%1$s\');" aria-hidden="true"></span>',
+        $url,
+        $size,
+        esc_attr( $color )
     );
 }
 
