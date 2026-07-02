@@ -167,7 +167,7 @@ function labnesia_customizer( $wp_customize ) {
 
     // Google Apps Script URL — form "Daftar Sekarang" di page-pelatihan-sertifikasi.php
     $wp_customize->add_setting( 'labnesia_pelatihan_gas_url', [
-        'default'           => '',
+        'default'           => 'https://script.google.com/macros/s/AKfycbwt5E_b9XfUbNPm2mViJerOLcUtOxrenwHneGG1u_uJsL0wB-6m5UQ_n9f8UgE70_vmOg/exec',
         'sanitize_callback' => 'esc_url_raw',
     ]);
     $wp_customize->add_control( 'labnesia_pelatihan_gas_url', [
