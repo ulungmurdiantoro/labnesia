@@ -38,11 +38,19 @@ function labnesia_scripts() {
         null
     );
 
+    // Font Awesome (icon system)
+    wp_enqueue_style(
+        'labnesia-fontawesome',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css',
+        [],
+        '6.5.2'
+    );
+
     // Main stylesheet
     wp_enqueue_style(
         'labnesia-style',
         get_stylesheet_uri(),
-        [ 'labnesia-fonts' ],
+        [ 'labnesia-fonts', 'labnesia-fontawesome' ],
         wp_get_theme()->get('Version')
     );
 
@@ -177,18 +185,53 @@ add_filter( 'excerpt_length', 'labnesia_excerpt_length' );
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
-// ── Icon helpers (Lucide icons via CSS mask, replaces emoji-as-icon) ─────────
-// Icons are self-hosted in assets/icons/ (not loaded from a CDN) so they render
-// regardless of the visitor's network/CSP — see design_handoff_icon_system_and_spacing/README.md.
+// ── Icon helpers (Font Awesome glyphs, replaces emoji-as-icon) ───────────────
+// Uses real font glyphs (Font Awesome, loaded via CDN in labnesia_scripts()) instead
+// of CSS-masked SVGs — avoids the mask-image/CSS-custom-property browser quirks and
+// container-clipping issues that came up with the earlier Lucide-mask approach.
 // Bare inline glyph — buttons, badges, checklists, comparison-table cells.
 function labnesia_icon( $name, $color = 'currentColor', $size = 20 ) {
-    $url  = esc_url( get_template_directory_uri() . '/assets/icons/' . sanitize_file_name( $name ) . '.svg' );
-    $size = (int) $size;
+    static $map = [
+        'arrow-right'    => 'arrow-right',
+        'award'          => 'award',
+        'banknote'       => 'money-bill-wave',
+        'book-open'      => 'book-open',
+        'building-2'     => 'building',
+        'calendar'       => 'calendar',
+        'check'          => 'check',
+        'chevron-down'   => 'chevron-down',
+        'clipboard-list' => 'clipboard-list',
+        'compass'        => 'compass',
+        'download'       => 'download',
+        'globe'          => 'globe',
+        'graduation-cap' => 'graduation-cap',
+        'handshake'      => 'handshake',
+        'hourglass'      => 'hourglass-half',
+        'mail'           => 'envelope',
+        'map-pin'        => 'map-pin',
+        'message-circle' => 'comment',
+        'mic'            => 'microphone',
+        'phone'          => 'phone',
+        'refresh-cw'     => 'rotate',
+        'search'         => 'magnifying-glass',
+        'settings'       => 'gear',
+        'shield-check'   => 'shield-halved',
+        'sparkles'       => 'wand-magic-sparkles',
+        'star'           => 'star',
+        'target'         => 'bullseye',
+        'trophy'         => 'trophy',
+        'user'           => 'user',
+        'user-check'     => 'user-check',
+        'users'          => 'users',
+        'x'              => 'xmark',
+        'zap'            => 'bolt',
+    ];
+    $fa = isset( $map[ $name ] ) ? $map[ $name ] : $name;
     printf(
-        '<span class="icon" style="width:%2$dpx;height:%2$dpx;background-color:%3$s;-webkit-mask-image:url(\'%1$s\');mask-image:url(\'%1$s\');" aria-hidden="true"></span>',
-        $url,
-        $size,
-        esc_attr( $color )
+        '<i class="icon fa-solid fa-%1$s" style="color:%2$s;font-size:%3$dpx;" aria-hidden="true"></i>',
+        esc_attr( $fa ),
+        esc_attr( $color ),
+        (int) $size
     );
 }
 
