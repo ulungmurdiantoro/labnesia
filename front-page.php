@@ -954,7 +954,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;">
       </div>
       <p>Membangun SDM Kompeten, Menguatkan Laboratorium Indonesia. Terakreditasi Komite Akreditasi Nasional (KAN).</p>
-      <p style="margin-top:16px;font-size:13px;line-height:1.8;"><?php labnesia_icon( 'mail', 'rgba(255,255,255,.7)', 13 ); ?> info@labnesia.id<br><?php labnesia_icon( 'phone', 'rgba(255,255,255,.7)', 13 ); ?> +62 821-7222-1567 (Endang)<br><?php labnesia_icon( 'phone', 'rgba(255,255,255,.7)', 13 ); ?> +62 851-8500-0367 (Berryl)<br><?php labnesia_icon( 'phone', 'rgba(255,255,255,.7)', 13 ); ?> +62 811-399-523 (Kintan)<br><?php labnesia_icon( 'map-pin', 'rgba(255,255,255,.7)', 13 ); ?> labnesia.id</p>
+      <p style="margin-top:16px;font-size:13px;line-height:1.8;"><?php labnesia_icon( 'mail', 'rgba(255,255,255,.7)', 13 ); ?> info@labnesia.id<br><?php labnesia_whatsapp_link( '6282172221567', '+62 821-7222-1567 (Endang)', 'rgba(255,255,255,.7)', 13 ); ?><br><?php labnesia_whatsapp_link( '6285185000367', '+62 851-8500-0367 (Berryl)', 'rgba(255,255,255,.7)', 13 ); ?><br><?php labnesia_whatsapp_link( '62811399523', '+62 811-399-523 (Kintan)', 'rgba(255,255,255,.7)', 13 ); ?><br><?php labnesia_icon( 'map-pin', 'rgba(255,255,255,.7)', 13 ); ?> labnesia.id</p>
     </div>
     <div class="footer-col">
       <h4>Mulai Gratis</h4>

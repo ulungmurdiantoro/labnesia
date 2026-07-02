@@ -10,7 +10,7 @@
                 <?php labnesia_icon('mail', 'rgba(255,255,255,0.45)', 14); ?> <a href="mailto:<?php echo esc_attr( get_theme_mod('labnesia_email','info@labnesia.id') ); ?>" style="color:inherit;">
                     <?php echo esc_html( get_theme_mod('labnesia_email','info@labnesia.id') ); ?>
                 </a><br>
-                <?php labnesia_icon('phone', 'rgba(255,255,255,0.45)', 14); ?> +62 821-7222-1567 (Endang)<br>
+                <?php labnesia_whatsapp_link( get_theme_mod('labnesia_whatsapp','6282172221567'), '+62 821-7222-1567 (Endang)', 'rgba(255,255,255,0.45)', 14 ); ?><br>
                 <?php labnesia_icon('map-pin', 'rgba(255,255,255,0.45)', 14); ?> labnesia.id
             </p>
         </div>

@@ -431,7 +431,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
         <div class="cta-action-desc">Diskusikan paket kemitraan tahunan yang sesuai dengan ukuran dan kebutuhan institusi Anda.</div>
       </a>
     </div>
-    <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-top:24px"><?php labnesia_icon( 'phone', 'rgba(255,255,255,.9)', 13 ); ?> +62 821-7222-1567 (Endang) · +62 851-8500-0367 (Berryl) · +62 811-399-523 (Kintan)</p>
+    <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-top:24px"><?php labnesia_whatsapp_link( '6282172221567', '+62 821-7222-1567 (Endang)', 'rgba(255,255,255,.9)', 13 ); ?> · <?php labnesia_whatsapp_link( '6285185000367', '+62 851-8500-0367 (Berryl)', 'rgba(255,255,255,.9)', 13 ); ?> · <?php labnesia_whatsapp_link( '62811399523', '+62 811-399-523 (Kintan)', 'rgba(255,255,255,.9)', 13 ); ?></p>
   </div>
 </section>
 

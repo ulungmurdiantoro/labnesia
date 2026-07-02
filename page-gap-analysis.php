@@ -589,8 +589,8 @@ foreach ($klausuls as $k) :
     </div>
     <div class="footer-contact">
       <?php labnesia_icon( 'mail', 'rgba(255,255,255,0.5)', 14 ); ?> info@labnesia.id<br>
-      <?php labnesia_icon( 'phone', 'rgba(255,255,255,0.5)', 14 ); ?> +62 821-7222-1567 (Endang)<br>
-      <?php labnesia_icon( 'phone', 'rgba(255,255,255,0.5)', 14 ); ?> +62 851-8500-0367 (Berryl)<br>
+      <?php labnesia_whatsapp_link( '6282172221567', '+62 821-7222-1567 (Endang)', 'rgba(255,255,255,0.5)', 14 ); ?><br>
+      <?php labnesia_whatsapp_link( '6285185000367', '+62 851-8500-0367 (Berryl)', 'rgba(255,255,255,0.5)', 14 ); ?><br>
       <?php labnesia_icon( 'map-pin', 'rgba(255,255,255,0.5)', 14 ); ?> labnesia.id
     </div>
   </div>

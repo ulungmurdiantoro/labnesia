@@ -545,21 +545,21 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
       <p>Tim kami siap membantu — tanpa tekanan, tanpa sales pitch. Ceritakan kondisi lab Anda dan kami akan berikan rekomendasi yang jujur.</p>
       <div class="contact-options">
         <a href="https://wa.me/6282172221567" class="contact-opt">
-          <div class="contact-icon" style="background:rgba(37,211,102,0.2)"><?php labnesia_icon( 'message-circle', '#ffffff', 18 ); ?></div>
+          <div class="contact-icon" style="background:rgba(37,211,102,0.2)"><?php labnesia_icon( 'whatsapp', '#ffffff', 18 ); ?></div>
           <div>
             <div class="contact-name">Endang — WhatsApp</div>
             <div class="contact-val">+62 821-7222-1567 · Aktif 08.00–17.00</div>
           </div>
         </a>
         <a href="https://wa.me/6285185000367" class="contact-opt">
-          <div class="contact-icon" style="background:rgba(37,211,102,0.2)"><?php labnesia_icon( 'message-circle', '#ffffff', 18 ); ?></div>
+          <div class="contact-icon" style="background:rgba(37,211,102,0.2)"><?php labnesia_icon( 'whatsapp', '#ffffff', 18 ); ?></div>
           <div>
             <div class="contact-name">Berryl — WhatsApp</div>
             <div class="contact-val">+62 851-8500-0367 · Aktif 08.00–17.00</div>
           </div>
         </a>
         <a href="https://wa.me/62811399523" class="contact-opt">
-          <div class="contact-icon" style="background:rgba(37,211,102,0.2)"><?php labnesia_icon( 'message-circle', '#ffffff', 18 ); ?></div>
+          <div class="contact-icon" style="background:rgba(37,211,102,0.2)"><?php labnesia_icon( 'whatsapp', '#ffffff', 18 ); ?></div>
           <div>
             <div class="contact-name">Kintan — WhatsApp</div>
             <div class="contact-val">+62 811-399-523 · Aktif 08.00–17.00</div>

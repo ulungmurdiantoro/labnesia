@@ -254,14 +254,29 @@ function labnesia_icon( $name, $color = 'currentColor', $size = 20 ) {
         'book'           => 'book',
         'school'         => 'school',
         'industry'       => 'industry',
+        'whatsapp'       => 'whatsapp',
     ];
-    $fa = isset( $map[ $name ] ) ? $map[ $name ] : $name;
+    // Brand glyphs (logos) live in Font Awesome's "brands" style, not "solid".
+    static $brands = [ 'whatsapp' => true ];
+    $fa    = isset( $map[ $name ] ) ? $map[ $name ] : $name;
+    $style = isset( $brands[ $name ] ) ? 'fa-brands' : 'fa-solid';
     printf(
-        '<i class="icon fa-solid fa-%1$s" style="color:%2$s;font-size:%3$dpx;" aria-hidden="true"></i>',
+        '<i class="icon %1$s fa-%2$s" style="color:%3$s;font-size:%4$dpx;" aria-hidden="true"></i>',
+        $style,
         esc_attr( $fa ),
         esc_attr( $color ),
         (int) $size
     );
+}
+
+// WhatsApp icon + number, wrapped in a wa.me deep link. $number is digits only (country code, no +/spaces).
+function labnesia_whatsapp_link( $number, $label, $color = 'currentColor', $size = 14 ) {
+    printf(
+        '<a href="%1$s" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">',
+        esc_url( 'https://wa.me/' . preg_replace( '/\D/', '', $number ) )
+    );
+    labnesia_icon( 'whatsapp', $color, $size );
+    printf( ' %s</a>', esc_html( $label ) );
 }
 
 // Tiled icon — circular/rounded-square tile with a centered icon (~46% of tile size).

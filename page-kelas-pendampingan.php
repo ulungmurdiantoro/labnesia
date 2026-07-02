@@ -864,7 +864,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
       <a href="<?php echo $url_gratis; ?>" class="btn-primary" style="font-size:15px;padding:14px 28px">Akses semua yang gratis <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></a>
       <a href="#form-daftar" class="btn-amber" style="font-size:15px;padding:14px 28px">Daftar Kelas Pendampingan</a>
     </div>
-    <p class="cta-note">Atau hubungi tim: +62 821-7222-1567 (Endang) · +62 851-8500-0367 (Berryl) · +62 811-399-523 (Kintan)</p>
+    <p class="cta-note">Atau hubungi tim: <?php labnesia_whatsapp_link( '6282172221567', '+62 821-7222-1567 (Endang)', 'rgba(255,255,255,0.35)', 13 ); ?> · <?php labnesia_whatsapp_link( '6285185000367', '+62 851-8500-0367 (Berryl)', 'rgba(255,255,255,0.35)', 13 ); ?> · <?php labnesia_whatsapp_link( '62811399523', '+62 811-399-523 (Kintan)', 'rgba(255,255,255,0.35)', 13 ); ?></p>
   </div>
 </div>
 
