@@ -77,34 +77,8 @@ nav {
 .nav-cta:hover { background: #e09620; }
 @media (max-width: 980px){ .nav-links{ display:none; } }
 
-/* HERO */
-.page-hero { background: var(--navy); padding: 104px 48px 64px; position: relative; overflow: hidden; }
-.page-hero::before {
-  content: ''; position: absolute; inset: 0; opacity: 0.04;
-  background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0);
-  background-size: 40px 40px;
-}
-.page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; }
-.breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 24px; }
-.breadcrumb a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 13px; }
-.breadcrumb-sep { color: rgba(255,255,255,0.2); font-size: 13px; }
-.breadcrumb-cur { color: rgba(255,255,255,0.7); font-size: 13px; }
-.page-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px; background: rgba(26,158,117,0.15);
-  border: 1px solid rgba(26,158,117,0.3); color: var(--teal-light);
-  padding: 5px 14px; border-radius: 100px; font-size: 11px; font-weight: 700;
-  letter-spacing: .08em; text-transform: uppercase; margin-bottom: 20px;
-}
-.page-eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal-light); animation: pulse 2s infinite; }
-@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .4; } }
-.page-hero h1 { font-size: 46px; line-height: 1.12; color: white; font-weight: 800; letter-spacing: -1.3px; margin-bottom: 18px; max-width: 760px; }
-.page-hero h1 span { color: var(--teal-light); }
-.page-hero-sub {
-  font-family: var(--font-serif); font-style: italic; color: rgba(255,255,255,0.6);
-  font-size: 16px; line-height: 1.65; max-width: 640px;
-  border-left: 3px solid var(--teal); padding-left: 18px; margin-bottom: 28px;
-}
-.hero-actions { display: flex; gap: 14px; margin-top: 0; flex-wrap: wrap; }
+/* HERO — uses the shared .hero/.hero-inner/.hero-map/.journey-step classes from style.css,
+   matching the home page layout. No local overrides needed. */
 .btn-primary {
   background: var(--amber); color: var(--navy); padding: 13px 26px; border-radius: 8px;
   font-weight: 700; font-size: 15px; text-decoration: none; display: inline-block; transition: all .2s;
@@ -115,15 +89,6 @@ nav {
   font-weight: 600; font-size: 15px; text-decoration: none; display: inline-block; transition: all .2s;
 }
 .btn-ghost:hover { background: rgba(255,255,255,0.08); }
-
-/* FUNNEL */
-.funnel {
-  margin-top: 32px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 14px; padding: 18px 22px; display: flex; align-items: center; flex-wrap: wrap; gap: 10px;
-}
-.funnel-step { color: white; font-weight: 700; font-size: 14px; background: rgba(26,158,117,0.18); padding: 8px 16px; border-radius: 999px; }
-.funnel-arrow { color: rgba(255,255,255,0.35); font-size: 16px; }
-.funnel-note { width: 100%; color: rgba(255,255,255,0.55); font-size: 13px; margin-top: 14px; }
 
 /* PRINCIPLE BAND */
 .principle { background: var(--teal-pale); }
@@ -282,28 +247,62 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
 </nav>
 
 <!-- HERO -->
-<header class="page-hero" id="optimasi-alat">
-  <div class="page-hero-inner">
-    <div class="breadcrumb">
-      <a href="<?php echo $url_home; ?>">Beranda</a>
-      <span class="breadcrumb-sep">›</span>
-      <span class="breadcrumb-cur">Optimasi Alat</span>
-    </div>
-    <div class="page-eyebrow"><div class="page-eyebrow-dot"></div> <?php labnesia_icon( 'microscope', 'var(--teal-light)', 13 ); ?> Insight Khusus Pemilik Lab</div>
-    <h1>Alat Lab Anda Sudah Ada.<br>Tinggal Dipetakan Jadi <span>Layanan & Income.</span></h1>
-    <p class="page-hero-sub">Setiap jenis laboratorium punya alat dan ruang lingkup yang berbeda — karena itu kebutuhan optimasinya juga berbeda. Pilih jenis lab Anda di bawah, kenali demand khasnya, lalu hubungkan ke jalur program Labnesia yang sudah berjalan.</p>
-    <div class="hero-actions">
-      <a href="#jenis-lab" class="btn-primary">Pilih Jenis Lab Saya <?php labnesia_icon( 'arrow-down', 'var(--navy)', 14 ); ?></a>
-      <a href="<?php echo $url_gratis; ?>" class="btn-ghost">Mulai dari Gap Analysis Gratis</a>
+<header class="hero" id="optimasi-alat">
+  <div class="hero-bg-pattern" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <!-- LEFT: Headline & CTAs -->
+    <div>
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-dot"></div>
+        <?php labnesia_icon( 'microscope', 'var(--teal-light)', 13 ); ?> Insight Khusus Pemilik Lab
+      </div>
+      <h1>Alat Lab Anda Sudah Ada.<br>Tinggal Dipetakan Jadi <span class="accent">Layanan & Income.</span></h1>
+      <p class="hero-belief">Setiap jenis laboratorium punya alat dan ruang lingkup yang berbeda — karena itu kebutuhan optimasinya juga berbeda. Pilih jenis lab Anda di bawah, kenali demand khasnya, lalu hubungkan ke jalur program Labnesia yang sudah berjalan.</p>
+      <div class="hero-actions">
+        <a href="#jenis-lab" class="btn-primary">Pilih Jenis Lab Saya <?php labnesia_icon( 'arrow-down', 'var(--navy)', 14 ); ?></a>
+        <a href="<?php echo $url_gratis; ?>" class="btn-ghost">Mulai dari Gap Analysis Gratis</a>
+      </div>
     </div>
 
-    <div class="funnel">
-      <div class="funnel-step">Punya Alat</div><div class="funnel-arrow"><?php labnesia_icon( 'arrow-right', 'rgba(255,255,255,0.35)', 16 ); ?></div>
-      <div class="funnel-step">Parameter Uji</div><div class="funnel-arrow"><?php labnesia_icon( 'arrow-right', 'rgba(255,255,255,0.35)', 16 ); ?></div>
-      <div class="funnel-step">Produk</div><div class="funnel-arrow"><?php labnesia_icon( 'arrow-right', 'rgba(255,255,255,0.35)', 16 ); ?></div>
-      <div class="funnel-step">Layanan</div><div class="funnel-arrow"><?php labnesia_icon( 'arrow-right', 'rgba(255,255,255,0.35)', 16 ); ?></div>
-      <div class="funnel-step">Income</div>
-      <div class="funnel-note">Alur ini sama untuk semua jenis lab — yang berbeda hanya alat, parameter, dan pasarnya. Detail tiap bidang dibahas tuntas di rangkaian Webinar Nasional Labnesia 2026.</div>
+    <!-- RIGHT: Alur optimasi, vertikal seperti journey map halaman utama -->
+    <div class="hero-map" aria-label="Alur optimasi alat jadi income">
+      <p class="hero-map-title">Alur optimasi alat jadi layanan</p>
+      <div class="journey-step">
+        <div class="journey-dot" style="background:var(--teal);color:#fff">1</div>
+        <div class="journey-info">
+          <div class="journey-label">Punya Alat</div>
+          <div class="journey-sub">Instrumen yang sudah dimiliki lab Anda</div>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-dot" style="background:var(--teal);color:#fff">2</div>
+        <div class="journey-info">
+          <div class="journey-label">Parameter Uji</div>
+          <div class="journey-sub">Parameter yang bisa diuji dari alat tersebut</div>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-dot" style="background:var(--teal);color:#fff">3</div>
+        <div class="journey-info">
+          <div class="journey-label">Produk</div>
+          <div class="journey-sub">Hasil uji yang bisa ditawarkan ke pelanggan</div>
+        </div>
+      </div>
+      <div class="journey-step">
+        <div class="journey-dot" style="background:var(--teal);color:#fff">4</div>
+        <div class="journey-info">
+          <div class="journey-label">Layanan</div>
+          <div class="journey-sub">Dikemas jadi layanan rutin, bukan sekali jalan</div>
+        </div>
+      </div>
+      <div class="journey-step" style="margin-bottom:0">
+        <div class="journey-dot" style="background:var(--amber);color:var(--navy)">5</div>
+        <div class="journey-info">
+          <div class="journey-label">Income</div>
+          <div class="journey-sub">Sumber pendapatan baru bagi laboratorium</div>
+        </div>
+      </div>
     </div>
   </div>
 </header>
