@@ -246,7 +246,9 @@ get_header(); ?>
             <!-- Card 1 -->
             <div class="product-card">
                 <div class="product-card-header">
-                    <div class="product-card-eyebrow">Entry · Individu</div>
+                    <div class="product-card-top">
+                        <div class="product-card-eyebrow">Entry · Individu</div>
+                    </div>
                     <div class="product-card-name">Pelatihan &amp; Sertifikasi</div>
                     <div class="product-card-price">Rp 2–7 jt <span class="product-card-unit">/orang</span></div>
                 </div>
@@ -262,8 +264,10 @@ get_header(); ?>
             <!-- Card 2 — Featured -->
             <div class="product-card featured">
                 <div class="product-card-header">
-                    <div class="featured-badge"><?php labnesia_icon( 'star', 'var(--navy)', 10 ); ?> Terpopuler</div>
-                    <div class="product-card-eyebrow">Core Program · Laboratorium</div>
+                    <div class="product-card-top">
+                        <div class="product-card-eyebrow">Core Program · Laboratorium</div>
+                        <div class="featured-badge"><?php labnesia_icon( 'star', 'var(--navy)', 10 ); ?> Terpopuler</div>
+                    </div>
                     <div class="product-card-name">Kelas Pendampingan</div>
                     <div class="product-card-price">Rp 14 jt <span class="product-card-unit">/peserta</span></div>
                 </div>
@@ -281,7 +285,9 @@ get_header(); ?>
             <!-- Card 3 -->
             <div class="product-card">
                 <div class="product-card-header">
-                    <div class="product-card-eyebrow">Advanced · Privat</div>
+                    <div class="product-card-top">
+                        <div class="product-card-eyebrow">Advanced · Privat</div>
+                    </div>
                     <div class="product-card-name">Kelas Lanjutan &amp; Full Pendampingan</div>
                     <div class="product-card-price">Rp 36 jt+ <span class="product-card-unit">/lab</span></div>
                 </div>

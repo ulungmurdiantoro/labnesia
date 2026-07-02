@@ -411,15 +411,23 @@ a { text-decoration: none; }
 .product-card.featured { border-color: var(--teal); box-shadow: 0 8px 32px rgba(26,158,117,0.12); }
 .product-card-header { padding: 24px; background: var(--navy); color: #fff; position: relative; }
 .product-card.featured .product-card-header { background: var(--teal); }
-.product-card-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; opacity: .6; margin-bottom: 8px; }
+.product-card-top {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 10px; margin-bottom: 8px;
+}
+.product-card-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; opacity: .6; flex: 1; min-width: 0; }
 .product-card-name    { font-size: 20px; font-weight: 800; margin-bottom: 4px; }
 .product-card-price   { font-size: 26px; font-weight: 800; color: var(--amber); }
 .product-card-unit    { font-size: 13px; opacity: .6; font-weight: 400; }
 .featured-badge {
-  position: absolute; top: 16px; right: 16px;
+  flex-shrink: 0; white-space: nowrap;
   background: var(--amber); color: var(--navy);
   font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
   padding: 4px 10px; border-radius: 4px;
+}
+.featured-badge-subtle {
+  background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.85); font-size: 9px; letter-spacing: .07em; padding: 3px 9px; border-radius: 5px;
 }
 .product-card-body { padding: 20px; }
 .product-feature { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }

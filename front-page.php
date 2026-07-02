@@ -256,18 +256,6 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
   }
   .product-card:hover { border-color: var(--teal); box-shadow: 0 8px 32px rgba(26,158,117,0.1); transform: translateY(-2px); }
   .product-card.featured { border-color: var(--teal); box-shadow: 0 8px 32px rgba(26,158,117,0.12); }
-  .product-card-header { padding: 24px; background: var(--navy); color: white; position: relative; }
-  .product-card.featured .product-card-header { background: var(--teal); }
-  .product-card-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; opacity: .6; margin-bottom: 8px; }
-  .product-card-name { font-size: 20px; font-weight: 800; margin-bottom: 4px; }
-  .product-card-price { font-size: 26px; font-weight: 800; color: var(--amber); }
-  .product-card-unit { font-size: 13px; opacity: .6; font-weight: 400; }
-  .featured-badge {
-    position: absolute; top: 16px; right: 16px;
-    background: var(--amber); color: var(--navy);
-    font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
-    padding: 4px 10px; border-radius: 4px;
-  }
   .product-feature {
     display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;
   }
@@ -722,8 +710,10 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
     <div class="product-cards" style="grid-template-columns:repeat(4,1fr);gap:16px">
       <div class="product-card" style="position:relative">
         <div class="product-card-header">
-          <div style="position:absolute;top:16px;right:16px;background:var(--amber);color:var(--navy);font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:4px">Terpopuler 2026</div>
-          <div class="product-card-eyebrow">Entry · Individu</div>
+          <div class="product-card-top">
+            <div class="product-card-eyebrow">Entry · Individu</div>
+            <div class="featured-badge">Terpopuler 2026</div>
+          </div>
           <div class="product-card-name">Pelatihan & Sertifikasi Kompetensi</div>
           <div class="product-card-price">Rp 2–7 jt <span class="product-card-unit">/orang</span></div>
         </div>
@@ -738,8 +728,10 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 
       <div class="product-card featured">
         <div class="product-card-header">
-          <div class="featured-badge"><?php labnesia_icon( 'star', 'var(--navy)', 10 ); ?> Terpopuler</div>
-          <div class="product-card-eyebrow">Core Program · Laboratorium</div>
+          <div class="product-card-top">
+            <div class="product-card-eyebrow">Core Program · Laboratorium</div>
+            <div class="featured-badge"><?php labnesia_icon( 'star', 'var(--navy)', 10 ); ?> Terpopuler</div>
+          </div>
           <div class="product-card-name">Kelas Pendampingan</div>
           <div class="product-card-price">Rp 14 jt <span class="product-card-unit">/peserta</span></div>
         </div>
@@ -756,7 +748,9 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 
       <div class="product-card">
         <div class="product-card-header">
-          <div class="product-card-eyebrow">Advanced · Privat</div>
+          <div class="product-card-top">
+            <div class="product-card-eyebrow">Advanced · Privat</div>
+          </div>
           <div class="product-card-name">Kelas Lanjutan & Full Pendampingan</div>
           <div class="product-card-price">Rp 36 jt+ <span class="product-card-unit">/lab</span></div>
         </div>
@@ -771,9 +765,11 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
 
       <!-- ANNUAL PARTNERSHIP CARD -->
       <div class="product-card" style="border-color:var(--teal);border-width:1.5px">
-        <div class="product-card-header" style="background:linear-gradient(135deg,#085041,#0F6E56);position:relative">
-          <div style="position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.2);border-radius:5px;padding:3px 9px;font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,0.85)">Sudah Terakreditasi</div>
-          <div class="product-card-eyebrow">Recurring · Tahunan</div>
+        <div class="product-card-header" style="background:linear-gradient(135deg,#085041,#0F6E56)">
+          <div class="product-card-top">
+            <div class="product-card-eyebrow">Recurring · Tahunan</div>
+            <div class="featured-badge featured-badge-subtle">Sudah Terakreditasi</div>
+          </div>
           <div class="product-card-name">Annual Partnership</div>
           <div class="product-card-price" style="color:#4DD9A8">Rp 36 jt <span class="product-card-unit">/tahun</span></div>
         </div>
