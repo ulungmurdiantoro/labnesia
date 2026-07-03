@@ -4,7 +4,7 @@ Theme URI: https://labnesia.id
 Author: Padma Global Nusatama
 Author URI: https://labnesia.id
 Description: Theme resmi Labnesia.id — Pusat Kompetensi ISO/IEC 17025. Dirancang khusus untuk mendukung program pelatihan dan pendampingan akreditasi laboratorium KAN.
-Version: 1.0.3
+Version: 1.0.4
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
@@ -101,6 +101,38 @@ a { text-decoration: none; }
 .nav-links { display: flex; align-items: center; gap: 32px; }
 .nav-links a { color: rgba(255,255,255,0.7); font-size: 14px; font-weight: 500; transition: color .2s; }
 .nav-links a:hover { color: #fff; }
+
+.nav-dropdown-wrap { position: relative; }
+.nav-dropdown-toggle {
+  display: flex; align-items: center; gap: 6px;
+  background: none; border: none; padding: 0; cursor: pointer;
+  font-family: inherit; color: rgba(255,255,255,0.7); font-size: 14px; font-weight: 500;
+  transition: color .2s;
+}
+.nav-dropdown-toggle:hover { color: #fff; }
+.nav-dropdown-wrap.open .nav-dropdown-toggle { color: #fff; }
+.nav-caret { flex-shrink: 0; transition: transform .2s; }
+.nav-dropdown-wrap.open .nav-caret { transform: rotate(180deg); }
+
+.nav-dropdown-menu {
+  position: absolute; top: calc(100% + 16px); left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  min-width: 220px;
+  background: #0b1f3a;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 8px;
+  display: flex; flex-direction: column;
+  box-shadow: 0 16px 32px rgba(0,0,0,0.35);
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .18s, transform .18s, visibility .18s;
+}
+.nav-dropdown-wrap.open .nav-dropdown-menu {
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown-menu a { padding: 10px 12px; border-radius: 6px; font-size: 14px; white-space: nowrap; }
+.nav-dropdown-menu a:hover { background: rgba(255,255,255,0.06); }
 
 .nav-cta {
   background: var(--amber) !important;
@@ -607,7 +639,16 @@ a { text-decoration: none; }
     position: fixed; top: 64px; left: 0; right: 0;
     background: rgba(11,31,58,0.98); padding: 24px;
     gap: 20px; border-bottom: 1px solid rgba(255,255,255,0.1);
+    max-height: calc(100vh - 64px); overflow-y: auto;
   }
+  .nav-dropdown-wrap { width: 100%; }
+  .nav-dropdown-toggle { width: 100%; justify-content: space-between; }
+  .nav-dropdown-menu {
+    position: static; transform: none; opacity: 1; visibility: visible; pointer-events: auto;
+    display: none; width: 100%; margin-top: 12px;
+    background: rgba(255,255,255,0.04); border: none; box-shadow: none; padding: 4px;
+  }
+  .nav-dropdown-wrap.open .nav-dropdown-menu { display: flex; transform: none; }
   .hero { padding: 120px 24px 64px; }
   .hero h1 { font-size: 36px; letter-spacing: -0.5px; }
   .hero-belief { font-size: 16px; }

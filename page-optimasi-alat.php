@@ -10,72 +10,12 @@ $url_faq       = esc_url( home_url( '/faq/' ) );
 $url_inhouse   = esc_url( home_url( '/inhouse/' ) );
 $url_pelatihan = esc_url( home_url( '/pelatihan-sertifikasi/' ) );
 $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
-$logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABNESIA-004.gif' );
 ?>
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<?php wp_head(); ?>
+<?php get_header(); ?>
 <style>
-
-:root {
-  --navy: #0B1F3A;
-  --navy-mid: #122845;
-  --navy-light: #1C3A60;
-  --teal: #1A9E75;
-  --teal-light: #22C28F;
-  --teal-pale: #E8F7F2;
-  --amber: #F5A623;
-  --amber-pale: #FEF3DC;
-  --white: #FFFFFF;
-  --gray-50: #F8F9FA;
-  --gray-100: #F1F3F5;
-  --gray-200: #E9ECEF;
-  --gray-400: #ADB5BD;
-  --gray-600: #6C757D;
-  --gray-800: #343A40;
-  --red-pale: #FEF0F0;
-  --red: #E53935;
-  --font-display: 'Plus Jakarta Sans', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
-  --font-serif: 'Lora', serif;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: var(--font-body); color: var(--gray-800); background: var(--white); line-height: 1.6; }
 a { color: inherit; }
 section { padding: 88px 48px; }
 .wrap { max-width: 1160px; margin: 0 auto; }
-
-/* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(11,31,58,0.97); backdrop-filter: blur(8px);
-  padding: 0 48px; height: 64px;
-  display: flex; align-items: center; justify-content: space-between;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-.nav-logo { display: flex; align-items: center; gap: 10px; }
-.nav-logo-mark {
-  width: 36px; height: 36px; background: var(--teal);
-  border-radius: 8px; display: flex; align-items: center; justify-content: center;
-  font-weight: 800; color: white; font-size: 14px; letter-spacing: -0.5px;
-}
-.nav-logo-text { color: white; font-weight: 700; font-size: 18px; letter-spacing: -0.3px; }
-.nav-logo-sub { color: rgba(255,255,255,0.45); font-size: 11px; font-weight: 400; display: block; margin-top: -2px; }
-.nav-links { display: flex; align-items: center; gap: 32px; }
-.nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
-.nav-links a:hover { color: white; }
-.nav-links a.current { color: var(--teal-light); }
-.nav-cta {
-  background: var(--amber); color: var(--navy); padding: 8px 20px;
-  border-radius: 8px; font-weight: 700; font-size: 14px;
-  text-decoration: none; transition: all .2s;
-}
-.nav-cta:hover { background: #e09620; }
-@media (max-width: 980px){ .nav-links{ display:none; } }
 
 /* HERO */
 .page-hero { background: var(--navy); padding: 104px 48px 64px; position: relative; overflow: hidden; }
@@ -241,20 +181,6 @@ details.lab-card[open] .chevron { transform: rotate(180deg); }
 .cta-card p { color: var(--gray-600); font-size: 14px; margin-top: 8px; }
 .cta-card a.link { display: inline-block; margin-top: 14px; color: var(--teal); font-weight: 700; font-size: 14px; text-decoration: none; }
 
-/* FOOTER */
-footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64px 48px 24px; }
-.footer-grid { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; }
-.footer-brand p { font-size: 13.5px; line-height: 1.7; margin-top: 14px; }
-.footer-col h4 { color: white; font-size: 13.5px; margin-bottom: 14px; }
-.footer-col a { display: block; color: rgba(255,255,255,0.55); text-decoration: none; font-size: 13.5px; margin-bottom: 10px; }
-.footer-col a:hover { color: white; }
-.footer-bottom {
-  max-width: 1160px; margin: 48px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);
-  display: flex; justify-content: space-between; font-size: 12.5px; flex-wrap: wrap; gap: 10px;
-}
-.footer-bottom a { color: rgba(255,255,255,0.6); }
-@media (max-width: 860px){ .footer-grid{ grid-template-columns: 1fr 1fr; } }
-
 @media (max-width: 600px){
   section { padding: 64px 22px; }
   .hero { padding: 120px 22px 56px; }
@@ -262,24 +188,6 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
   .principle .wrap { grid-template-columns: 1fr; gap: 28px; }
 }
 </style>
-</head>
-<body <?php body_class( 'page-optimasi-alat' ); ?>>
-<?php wp_body_open(); ?>
-
-<nav>
-  <div class="nav-logo">
-    <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;">
-  </div>
-    <div class="nav-links">
-    <a href="<?php echo $url_home; ?>">Beranda</a>
-    <a href="<?php echo $url_kelas; ?>">Kelas Pendampingan</a>
-    <a href="<?php echo $url_inhouse; ?>">Inhouse Training</a>
-    <a href="<?php echo $url_pelatihan; ?>">Pelatihan Sertifikasi</a>
-    <a href="<?php echo $url_optimasi; ?>">Optimasi Alat</a>
-    <a href="<?php echo $url_faq; ?>">FAQ</a>
-    <a href="<?php echo $url_gratis; ?>" class="nav-cta">Mulai Gratis</a>
-  </div>
-</nav>
 
 <!-- HERO -->
 <header class="page-hero" id="optimasi-alat">
@@ -583,54 +491,4 @@ footer { background: var(--navy-mid); color: rgba(255,255,255,0.6); padding: 64p
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="nav-logo" style="margin-bottom:16px">
-        <img src="<?php echo $logo_url; ?>" alt="Labnesia" style="height:44px;width:auto;display:block;">
-      </div>
-      <p>Membangun SDM Kompeten, Menguatkan Laboratorium Indonesia. Terakreditasi Komite Akreditasi Nasional (KAN).</p>
-      <p style="margin-top:16px;font-size:13px;line-height:1.8;"><?php labnesia_icon( 'mail', 'rgba(255,255,255,.9)', 13 ); ?> info@labnesia.id<br><?php labnesia_whatsapp_link( '6282172221567', '+62 821-7222-1567 (Endang)', 'rgba(255,255,255,.9)', 13 ); ?><br><?php labnesia_whatsapp_link( '6285185000367', '+62 851-8500-0367 (Berryl)', 'rgba(255,255,255,.9)', 13 ); ?><br><?php labnesia_whatsapp_link( '62811399523', '+62 811-399-523 (Kintan)', 'rgba(255,255,255,.9)', 13 ); ?><br><?php labnesia_icon( 'map-pin', 'rgba(255,255,255,.9)', 13 ); ?> labnesia.id</p>
-    </div>
-    <div class="footer-col">
-      <h4>Mulai Gratis</h4>
-      <a href="<?php echo $url_gratis; ?>">Gap Analysis Gratis</a>
-      <a href="#">Webinar Lab Talk</a>
-      <a href="#">Download Panduan</a>
-      <a href="#">Komunitas Lab</a>
-    </div>
-    <div class="footer-col">
-      <h4>Program</h4>
-      <a href="<?php echo $url_pelatihan; ?>">Pelatihan & Sertifikasi</a>
-      <a href="<?php echo $url_kelas; ?>">Kelas Pendampingan</a>
-      <a href="<?php echo $url_inhouse; ?>">Full Pendampingan</a>
-      <a href="<?php echo $url_optimasi; ?>">Optimasi Alat per Bidang</a>
-    </div>
-    <div class="footer-col">
-      <h4>Tentang</h4>
-      <a href="<?php echo $url_faq; ?>">FAQ</a>
-      <a href="#">Para Pakar</a>
-      <a href="#">Alumni & Testimoni</a>
-      <a href="#">Hubungi Kami</a>
-    </div>
-  </div>
-    <div class="footer-bottom">
-    <span>&copy; <?php echo date('Y'); ?> Labnesia &middot; Padma Global Nusatama</span>
-    <span><a href="https://labnesia.id">labnesia.id</a></span>
-  </div>
-</footer>
-
-<?php labnesia_floating_cta(); ?>
-
-<script>
-  window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 50) { nav.style.borderBottomColor = 'rgba(255,255,255,0.12)'; }
-    else { nav.style.borderBottomColor = 'rgba(255,255,255,0.08)'; }
-  });
-</script>
-
-<?php wp_footer(); ?>
-</body>
-</html>
+<?php get_footer(); ?>

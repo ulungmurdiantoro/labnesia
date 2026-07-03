@@ -20,10 +20,21 @@
   // ── Mobile nav toggle ──────────────────────────────────────────────────────
   const toggle = document.getElementById('nav-toggle');
   const navLinks = document.getElementById('primary-nav');
+  const dropdownWraps = document.querySelectorAll('.nav-dropdown-wrap');
+
+  function closeDropdowns() {
+    dropdownWraps.forEach(function (wrap) {
+      wrap.classList.remove('open');
+      const btn = wrap.querySelector('.nav-dropdown-toggle');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+  }
+
   if (toggle && navLinks) {
     toggle.addEventListener('click', function () {
       const isOpen = navLinks.classList.toggle('open');
       toggle.setAttribute('aria-expanded', isOpen);
+      if (!isOpen) closeDropdowns();
     });
 
     // Close when a nav link is clicked
@@ -31,9 +42,30 @@
       link.addEventListener('click', function () {
         navLinks.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
+        closeDropdowns();
       });
     });
   }
+
+  // ── Nav "Layanan" dropdown ─────────────────────────────────────────────────
+  dropdownWraps.forEach(function (wrap) {
+    const btn = wrap.querySelector('.nav-dropdown-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      const isOpen = wrap.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  });
+  document.addEventListener('click', function (e) {
+    dropdownWraps.forEach(function (wrap) {
+      if (wrap.classList.contains('open') && !wrap.contains(e.target)) {
+        wrap.classList.remove('open');
+        const btn = wrap.querySelector('.nav-dropdown-toggle');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
 
   // ── Journey map interactivity (hero) ──────────────────────────────────────
   const journeySteps = document.querySelectorAll('.hero-map .journey-step');

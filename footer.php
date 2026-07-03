@@ -11,6 +11,8 @@
                     <?php echo esc_html( get_theme_mod('labnesia_email','info@labnesia.id') ); ?>
                 </a><br>
                 <?php labnesia_whatsapp_link( get_theme_mod('labnesia_whatsapp','6282172221567'), '+62 821-7222-1567 (Endang)', 'rgba(255,255,255,0.45)', 14 ); ?><br>
+                <?php labnesia_whatsapp_link( '6285185000367', '+62 851-8500-0367 (Berryl)', 'rgba(255,255,255,0.45)', 14 ); ?><br>
+                <?php labnesia_whatsapp_link( '62811399523', '+62 811-399-523 (Kintan)', 'rgba(255,255,255,0.45)', 14 ); ?><br>
                 <?php labnesia_icon('map-pin', 'rgba(255,255,255,0.45)', 14); ?> labnesia.id
             </p>
         </div>
@@ -30,15 +32,19 @@
             <a href="<?php echo esc_url( home_url('/inhouse/') ); ?>">Inhouse Training</a>
             <a href="<?php echo esc_url( home_url('/pelatihan-sertifikasi/') ); ?>">Pelatihan &amp; Sertifikasi</a>
             <a href="<?php echo esc_url( home_url('/optimasi-alat/') ); ?>">Optimasi Alat Lab</a>
-            <a href="<?php echo esc_url( home_url('/faq/') ); ?>">FAQ &amp; Perbandingan</a>
+            <a href="<?php echo esc_url( home_url('/perbandingan-program/') ); ?>">Perbandingan Program</a>
+            <a href="<?php echo esc_url( home_url('/jadwal/') ); ?>">Jadwal</a>
         </div>
 
         <div class="footer-col">
             <h4><?php _e('Informasi','labnesia'); ?></h4>
-            <a href="<?php echo esc_url( home_url('/faq/') ); ?>">FAQ &amp; Perbandingan</a>
-            <a href="<?php echo esc_url( home_url('/kelas-pendampingan/') ); ?>#para-pakar">Para Pakar</a>
+            <a href="<?php echo esc_url( home_url('/faq/') ); ?>">FAQ</a>
+            <a href="<?php echo esc_url( home_url('/panduan-memilih/') ); ?>">Panduan Memilih</a>
+            <a href="<?php echo esc_url( home_url('/tentang-kami/') ); ?>">Tentang Kami</a>
+            <a href="<?php echo esc_url( home_url('/tentang-kami/') ); ?>#pakar">Para Pakar</a>
+            <a href="<?php echo esc_url( home_url('/blog/') ); ?>">Artikel</a>
             <a href="<?php echo esc_url( home_url('/kelas-pendampingan/') ); ?>#alumni">Alumni &amp; Testimoni</a>
-            <a href="<?php echo esc_url( home_url('/faq/') ); ?>#kontak">Hubungi Kami</a>
+            <a href="<?php echo esc_url( home_url('/kontak/') ); ?>">Hubungi Kami</a>
         </div>
     </div>
 
