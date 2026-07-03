@@ -129,7 +129,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
   .benefit-saving{font-size:12px;color:var(--gray-400);text-decoration:line-through}
 
   /* PRICING SIDEBAR */
-  .price-card{background:white;border:2px solid var(--teal);border-radius:20px;overflow:hidden;position:sticky;top:140px}
+  .price-card{background:white;border:2px solid var(--teal);border-radius:20px;overflow:hidden}
   .price-card-header{background:var(--navy);padding:28px}
   .price-card-eyebrow{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px}
   .price-card-title{font-size:22px;font-weight:800;color:white;margin-bottom:16px}
