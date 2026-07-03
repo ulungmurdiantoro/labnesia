@@ -9,6 +9,7 @@
  *  - pelatihan-sertifikasi : page-pelatihan-sertifikasi.php, "Daftar Sekarang"   -> sheet "Pendaftaran"
  *  - gap-analysis          : page-mulai-gratis.php, "Daftar GAP Analysis Gratis" -> sheet "Daftar GAP Analysis"
  *  - komunitas             : page-mulai-gratis.php, "Bergabung ke Komunitas"     -> sheet "Bergabung Komunitas"
+ *  - kelas-pendampingan    : page-kelas-pendampingan.php, "Amankan slot Anda sekarang" -> sheet "Daftar Kelas Pendampingan"
  *
  * FIRST-TIME SETUP:
  * 1. Create a new Google Sheet (or open an existing one you want submissions in).
@@ -40,6 +41,10 @@ function doPost(e) {
     appendToSheet(ss, 'Daftar GAP Analysis',
       ['Timestamp', 'Nama', 'Jabatan', 'Lab & Institusi', 'Bidang Lab', 'WhatsApp', 'Kondisi Lab'],
       [new Date(), p.nama || '', p.jabatan || '', p.institusi || '', p.bidang || '', p.whatsapp || '', p.kondisi || '']);
+  } else if (p.form === 'kelas-pendampingan') {
+    appendToSheet(ss, 'Daftar Kelas Pendampingan',
+      ['Timestamp', 'Nama', 'Institusi', 'WhatsApp', 'Jumlah Peserta', 'Bidang Lab'],
+      [new Date(), p.nama || '', p.institusi || '', p.whatsapp || '', p.jumlah || '', p.bidang || '']);
   } else {
     // "pelatihan-sertifikasi", and the fallback for older client code that
     // doesn't send a form field yet.

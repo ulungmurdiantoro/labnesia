@@ -294,7 +294,7 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
   </div>
   <div class="sticky-actions">
     <a href="#outline" class="btn-ghost">Lihat Outline</a>
-    <a href="#daftar" class="btn-primary">Daftar Sekarang</a>
+    <a href="#form-daftar" class="btn-primary">Daftar Sekarang</a>
     <a href="<?php echo $url_gratis; ?>" class="btn-amber">Konsultasi Gratis Dulu</a>
   </div>
 </div>
@@ -809,33 +809,33 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
     </div>
 
     <!-- MINI FORM -->
-    <div id="form-daftar" style="margin-top:20px;background:white;border:1px solid var(--gray-200);border-radius:16px;padding:24px">
+    <form id="form-daftar" onsubmit="return submitForm(event)" style="margin-top:20px;background:white;border:1px solid var(--gray-200);border-radius:16px;padding:24px">
       <h3 style="font-size:17px;font-weight:800;color:var(--navy);margin-bottom:4px">Amankan slot Anda sekarang</h3>
       <p style="font-size:13px;color:var(--gray-600);margin-bottom:20px">Tim kami akan menghubungi Anda dalam 1×24 jam untuk konfirmasi dan detail pembayaran.</p>
       <div style="display:flex;flex-direction:column;gap:12px">
         <div>
           <label style="font-size:12px;font-weight:600;color:var(--gray-800);display:block;margin-bottom:5px">Nama lengkap *</label>
-          <input type="text" placeholder="Nama Anda" style="width:100%;padding:10px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:var(--font-display);outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--gray-200)'">
+          <input type="text" id="mf-nama" placeholder="Nama Anda" required style="width:100%;padding:10px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:var(--font-display);outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--gray-200)'">
         </div>
         <div>
           <label style="font-size:12px;font-weight:600;color:var(--gray-800);display:block;margin-bottom:5px">Nama laboratorium / instansi *</label>
-          <input type="text" placeholder="Lab / Universitas / Perusahaan" style="width:100%;padding:10px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:var(--font-display);outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--gray-200)'">
+          <input type="text" id="mf-institusi" placeholder="Lab / Universitas / Perusahaan" required style="width:100%;padding:10px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:var(--font-display);outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--gray-200)'">
         </div>
         <div>
           <label style="font-size:12px;font-weight:600;color:var(--gray-800);display:block;margin-bottom:5px">Nomor WhatsApp *</label>
-          <input type="tel" placeholder="08xx-xxxx-xxxx" style="width:100%;padding:10px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:var(--font-display);outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--gray-200)'">
+          <input type="tel" id="mf-whatsapp" placeholder="08xx-xxxx-xxxx" required style="width:100%;padding:10px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:var(--font-display);outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--gray-200)'">
         </div>
         <div>
           <label style="font-size:12px;font-weight:600;color:var(--gray-800);display:block;margin-bottom:5px">Jumlah peserta</label>
-          <select style="width:100%;padding:10px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:var(--font-display);outline:none;background:white">
+          <select id="mf-jumlah" style="width:100%;padding:10px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:var(--font-display);outline:none;background:white">
             <option>1 peserta — Rp 14.000.000</option>
             <option>2 peserta — Rp 26.000.000</option>
-            <option value="3" selected>3 peserta — Rp 35.000.000 (Best Value)</option>
+            <option selected>3 peserta — Rp 35.000.000 (Best Value)</option>
           </select>
         </div>
         <div>
           <label style="font-size:12px;font-weight:600;color:var(--gray-800);display:block;margin-bottom:5px">Bidang laboratorium</label>
-          <select style="width:100%;padding:10px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:var(--font-display);outline:none;background:white">
+          <select id="mf-bidang" style="width:100%;padding:10px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:var(--font-display);outline:none;background:white">
             <option>Lab Lingkungan</option>
             <option>Lab Pangan / Gizi / Halal</option>
             <option>Lab Sipil</option>
@@ -847,10 +847,10 @@ $logo_url      = esc_url( get_template_directory_uri() . '/assets/logo/LOGO-LABN
             <option>Lainnya</option>
           </select>
         </div>
-        <button onclick="submitForm()" style="background:var(--teal);color:white;padding:13px;border-radius:9px;font-weight:700;font-size:15px;border:none;cursor:pointer;width:100%;font-family:var(--font-display);transition:all .2s" onmouseover="this.style.background='#158a65'" onmouseout="this.style.background='var(--teal)'">Daftar Sekarang <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></button>
+        <button type="submit" id="mf-submit-btn" style="background:var(--teal);color:white;padding:13px;border-radius:9px;font-weight:700;font-size:15px;border:none;cursor:pointer;width:100%;font-family:var(--font-display);transition:all .2s" onmouseover="this.style.background='#158a65'" onmouseout="this.style.background='var(--teal)'">Daftar Sekarang <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></button>
         <p style="font-size:11px;color:var(--gray-400);text-align:center;line-height:1.5">Dengan mendaftar, Anda menyetujui syarat & ketentuan program. Tidak ada biaya di tahap ini — tim kami akan menghubungi Anda terlebih dahulu.</p>
       </div>
-    </div>
+    </form>
   </div>
 </div>
 
@@ -898,8 +898,62 @@ document.querySelectorAll('.faq-q').forEach(q=>{
     if(!isOpen){ans.classList.add('open');item.classList.add('active')}
   });
 });
-function submitForm(){
-  alert('Terima kasih! Tim Labnesia akan menghubungi Anda dalam 1×24 jam untuk konfirmasi pendaftaran.');
+const MF_GAS_URL   = <?php echo wp_json_encode( get_theme_mod( 'labnesia_gas_url', '' ) ); ?>;
+const MF_WA_NUMBER = <?php echo wp_json_encode( get_theme_mod( 'labnesia_whatsapp', '6282172221567' ) ); ?>;
+
+function submitForm(event){
+  event.preventDefault();
+
+  const nama      = document.getElementById('mf-nama').value.trim();
+  const institusi = document.getElementById('mf-institusi').value.trim();
+  const whatsapp  = document.getElementById('mf-whatsapp').value.trim();
+  const jumlahSel = document.getElementById('mf-jumlah');
+  const jumlah    = jumlahSel.selectedOptions[0].text;
+  const bidangSel = document.getElementById('mf-bidang');
+  const bidang    = bidangSel.selectedOptions[0].text;
+
+  if(!nama || !institusi || !whatsapp){
+    alert('Mohon lengkapi Nama, Nama laboratorium/instansi, dan Nomor WhatsApp.');
+    return false;
+  }
+
+  const btn = document.getElementById('mf-submit-btn');
+  btn.disabled = true;
+  const originalLabel = btn.innerHTML;
+  btn.innerHTML = 'Mengirim...';
+
+  function goToWhatsApp(){
+    const pesan = 'Halo Labnesia, saya ingin mendaftar Kelas Pendampingan.\n\n'
+      + 'Nama: ' + nama + '\n'
+      + 'Institusi: ' + institusi + '\n'
+      + 'WhatsApp: ' + whatsapp + '\n'
+      + 'Jumlah peserta: ' + jumlah + '\n'
+      + 'Bidang laboratorium: ' + bidang;
+    window.location.href = 'https://wa.me/' + MF_WA_NUMBER + '?text=' + encodeURIComponent(pesan);
+  }
+
+  if(!MF_GAS_URL){
+    goToWhatsApp();
+    return false;
+  }
+
+  const formData = new FormData();
+  formData.append('form', 'kelas-pendampingan');
+  formData.append('nama', nama);
+  formData.append('institusi', institusi);
+  formData.append('whatsapp', whatsapp);
+  formData.append('jumlah', jumlah);
+  formData.append('bidang', bidang);
+
+  fetch(MF_GAS_URL, { method: 'POST', mode: 'no-cors', body: formData })
+    .catch(function(){ /* no-cors gives an opaque response either way — still proceed */ })
+    .finally(function(){
+      btn.disabled = false;
+      btn.innerHTML = originalLabel;
+      goToWhatsApp();
+    });
+
+  return false;
 }
 </script>
 <?php labnesia_floating_cta(); ?>
