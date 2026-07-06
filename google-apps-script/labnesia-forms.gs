@@ -8,8 +8,9 @@
  * Forms currently wired up:
  *  - pelatihan-sertifikasi : page-pelatihan-sertifikasi.php, "Daftar Sekarang"   -> sheet "Pendaftaran"
  *  - gap-analysis          : page-mulai-gratis.php, "Daftar GAP Analysis Gratis" -> sheet "Daftar GAP Analysis"
- *  - komunitas             : page-mulai-gratis.php, "Bergabung ke Komunitas"     -> sheet "Bergabung Komunitas"
+ *  - komunitas             : page-mulai-gratis.php, "Bergabung ke Saluran"       -> sheet "Bergabung Komunitas"
  *  - kelas-pendampingan    : page-kelas-pendampingan.php, "Amankan slot Anda sekarang" -> sheet "Daftar Kelas Pendampingan"
+ *  - checklist-dokumen     : checklist-dokumen.php (standalone, outside WP), "Download/Akses Template" -> sheet "Checklist Dokumen"
  *
  * FIRST-TIME SETUP:
  * 1. Create a new Google Sheet (or open an existing one you want submissions in).
@@ -45,6 +46,10 @@ function doPost(e) {
     appendToSheet(ss, 'Daftar Kelas Pendampingan',
       ['Timestamp', 'Nama', 'Institusi', 'WhatsApp', 'Jumlah Peserta', 'Bidang Lab'],
       [new Date(), p.nama || '', p.institusi || '', p.whatsapp || '', p.jumlah || '', p.bidang || '']);
+  } else if (p.form === 'checklist-dokumen') {
+    appendToSheet(ss, 'Checklist Dokumen',
+      ['Timestamp', 'Nama', 'Email', 'Lab & Institusi', 'Status Akreditasi', 'Kategori'],
+      [new Date(), p.nama || '', p.email || '', p.lab || '', p.status || '', p.kategori || '']);
   } else {
     // "pelatihan-sertifikasi", and the fallback for older client code that
     // doesn't send a form field yet.

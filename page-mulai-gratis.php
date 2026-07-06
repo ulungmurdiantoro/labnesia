@@ -11,6 +11,7 @@ $url_inhouse   = esc_url( home_url( '/inhouse/' ) );
 $url_pelatihan = esc_url( home_url( '/pelatihan-sertifikasi/' ) );
 $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
 $url_gap       = esc_url( home_url( '/gap-analisis/' ) );
+$wa_text       = rawurlencode( labnesia_wa_default_message() );
 ?>
 <?php get_header(); ?>
 <style>
@@ -345,28 +346,24 @@ $url_gap       = esc_url( home_url( '/gap-analisis/' ) );
         <div class="dl-title">Panduan SNI ISO/IEC 17025:2017</div>
         <div class="dl-desc">Ringkasan klausul &amp; persyaratan standar yang mudah dipahami</div>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhQfpt4a1KsUHVKBlJQks0ml5KCyu15jF4LvJDsRQ5QH2FLg/viewform" class="dl-btn"><?php labnesia_icon( 'download', 'var(--teal)', 12 ); ?> Unduh PDF</a>
-        <div class="dl-format">PDF · 24 halaman</div>
       </div>
       <div class="dl-card">
         <div class="dl-icon"><?php labnesia_icon( 'clipboard-list', 'var(--teal)', 36 ); ?></div>
         <div class="dl-title">Checklist Persiapan Akreditasi KAN</div>
         <div class="dl-desc">Daftar lengkap dokumen yang dibutuhkan sebelum mendaftar akreditasi</div>
-        <a href="#" class="dl-btn"><?php labnesia_icon( 'download', 'var(--teal)', 12 ); ?> Unduh Excel</a>
-        <div class="dl-format">XLSX · checklist interaktif</div>
+        <a href="<?php echo esc_url( get_template_directory_uri() . '/checklist-dokumen.php' ); ?>" class="dl-btn" target="_blank" rel="noopener">Lihat Checklist <?php labnesia_icon( 'arrow-right', 'var(--teal)', 12 ); ?></a>
       </div>
       <div class="dl-card">
         <div class="dl-icon"><?php labnesia_icon( 'book', 'var(--teal)', 36 ); ?></div>
         <div class="dl-title">Silabus Lengkap Kelas Pendampingan</div>
         <div class="dl-desc">Outline 13 sesi, output per sesi, dan timeline 6 bulan program</div>
         <a href="<?php echo $url_kelas; ?>" class="dl-btn">Lihat Program <?php labnesia_icon( 'arrow-right', 'var(--teal)', 12 ); ?></a>
-        <div class="dl-format">PDF · 16 halaman</div>
       </div>
       <div class="dl-card">
         <div class="dl-icon"><?php labnesia_icon( 'calendar', 'var(--teal)', 36 ); ?></div>
         <div class="dl-title">Template Roadmap Implementasi</div>
-        <div class="dl-desc">Template Excel untuk menyusun rencana implementasi ISO 17025 lab Anda</div>
-        <a href="#" class="dl-btn"><?php labnesia_icon( 'download', 'var(--teal)', 12 ); ?> Unduh Excel</a>
-        <div class="dl-format">XLSX · bisa disesuaikan</div>
+        <div class="dl-desc">Bagan tahapan &amp; estimasi waktu implementasi ISO 17025 untuk lab Anda</div>
+        <a href="<?php echo esc_url( home_url( '/roadmap-implementasi/' ) ); ?>" class="dl-btn">Lihat Roadmap <?php labnesia_icon( 'arrow-right', 'var(--teal)', 12 ); ?></a>
       </div>
     </div>
   </div>
@@ -455,7 +452,7 @@ $url_gap       = esc_url( home_url( '/gap-analisis/' ) );
         <div class="pb-item"><div class="pb-check"><?php labnesia_icon( 'check', 'var(--navy)', 11 ); ?></div><div class="pb-text">Bisa online atau onsite — sesuai kebutuhan kampus</div></div>
         <div class="pb-item"><div class="pb-check"><?php labnesia_icon( 'check', 'var(--navy)', 11 ); ?></div><div class="pb-text">Gratis untuk kampus yang mengundang — tidak ada biaya narasumber</div></div>
       </div>
-      <a href="#" class="btn-amber-solid">Undang Labnesia ke Kampus <?php labnesia_icon( 'arrow-right', 'var(--navy)', 15 ); ?></a>
+      <a href="https://wa.me/6282172221567?text=<?php echo $wa_text; ?>" target="_blank" rel="noopener noreferrer" class="btn-amber-solid">Undang Labnesia ke Kampus <?php labnesia_icon( 'arrow-right', 'var(--navy)', 15 ); ?></a>
     </div>
     <div class="praktisi-visual">
       <p style="font-size:12px;font-weight:700;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px">Topik yang sering diminta kampus:</p>
