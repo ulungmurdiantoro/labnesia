@@ -9,6 +9,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 // editor has set one, falling back to the publish date otherwise — something a
 // plain WP_Query 'orderby' can't express in one query without dropping posts
 // that lack the meta key.
+$jadwal_categories = [
+    ''           => 'Semua',
+    'pelatihan'  => 'Pelatihan',
+    'webinar'    => 'Webinar',
+];
+$active_cat = isset( $_GET['kategori'] ) && array_key_exists( $_GET['kategori'], $jadwal_categories ) ? $_GET['kategori'] : '';
+$active_slugs = $active_cat ? [ $active_cat ] : [ 'pelatihan', 'webinar' ];
+
 $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 $per_page = 9;
 
@@ -16,7 +24,7 @@ $jadwal_query = new WP_Query( [
     'post_type'      => 'post',
     'post_status'    => 'publish',
     'posts_per_page' => -1,
-    'category__in'   => labnesia_category_ids_by_slug( [ 'pelatihan', 'webinar' ] ),
+    'category__in'   => labnesia_category_ids_by_slug( $active_slugs ),
 ] );
 
 $jadwal_posts = $jadwal_query->posts;
@@ -43,6 +51,10 @@ $jadwal_page   = array_slice( $jadwal_posts, ( $paged - 1 ) * $per_page, $per_pa
 
   .jadwal-section{padding:72px 48px;background:var(--gray-50)}
   .jadwal-inner{max-width:1200px;margin:0 auto}
+  .jadwal-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+  .jadwal-filter-btn{padding:8px 18px;border-radius:100px;font-size:13px;font-weight:600;text-decoration:none;border:1px solid var(--gray-200);color:var(--gray-600);background:#fff;transition:all .2s}
+  .jadwal-filter-btn:hover{background:var(--gray-100)}
+  .jadwal-filter-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
   .jadwal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .jadwal-card{background:#fff;border:1px solid var(--gray-200);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
   .jadwal-card:hover{box-shadow:0 12px 28px rgba(11,31,58,0.1);transform:translateY(-2px)}
@@ -94,10 +106,21 @@ $jadwal_page   = array_slice( $jadwal_posts, ( $paged - 1 ) * $per_page, $per_pa
 <!-- JADWAL LIST -->
 <section class="jadwal-section">
   <div class="jadwal-inner">
+    <div class="jadwal-filter">
+      <?php foreach ( $jadwal_categories as $slug => $label ) :
+        $url = $slug ? add_query_arg( 'kategori', $slug, home_url( '/jadwal/' ) ) : home_url( '/jadwal/' );
+      ?>
+      <a href="<?php echo esc_url( $url ); ?>" class="jadwal-filter-btn<?php echo $slug === $active_cat ? ' active' : ''; ?>"><?php echo esc_html( $label ); ?></a>
+      <?php endforeach; ?>
+    </div>
     <?php if ( ! empty( $jadwal_page ) ) : global $post; ?>
     <div class="jadwal-grid">
       <?php foreach ( $jadwal_page as $post ) : setup_postdata( $post );
         $event_date = get_post_meta( get_the_ID(), '_jadwal_tanggal', true );
+        $event_date_end = get_post_meta( get_the_ID(), '_jadwal_tanggal_selesai', true );
+        $event_date_display = $event_date
+            ? labnesia_format_jadwal_date( $event_date, $event_date_end )
+            : date_i18n( 'j M Y', strtotime( $post->post_date ) );
         $daftar_url = get_post_meta( get_the_ID(), '_jadwal_link_daftar', true );
         $source_thumb = get_post_meta( get_the_ID(), '_source_featured_image', true );
         // Only ever show Pelatihan/Webinar as the badge here, never Kegiatan
@@ -124,7 +147,7 @@ $jadwal_page   = array_slice( $jadwal_posts, ( $paged - 1 ) * $per_page, $per_pa
             <?php endif; ?>
             <span class="jadwal-card-date">
               <?php labnesia_icon( 'calendar', 'var(--amber)', 11 ); ?>
-              <?php echo esc_html( $event_date ? date_i18n( 'd M Y', strtotime( $event_date ) ) : get_the_date() ); ?>
+              <?php echo esc_html( $event_date_display ); ?>
             </span>
           </div>
           <a href="<?php the_permalink(); ?>" style="text-decoration:none">
@@ -150,6 +173,7 @@ $jadwal_page   = array_slice( $jadwal_posts, ( $paged - 1 ) * $per_page, $per_pa
           'mid_size'=> 2,
           'prev_text' => '&laquo;',
           'next_text' => '&raquo;',
+          'add_args' => $active_cat ? [ 'kategori' => $active_cat ] : false,
       ] );
       ?>
     </div>

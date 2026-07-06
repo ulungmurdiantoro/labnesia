@@ -4,13 +4,22 @@ Template Name: Blog
 */
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+$blog_categories = [
+    ''            => 'Semua',
+    'education'   => 'Education',
+    'kegiatan'    => 'Kegiatan',
+    'pra-event'   => 'Pra Event',
+];
+$active_cat = isset( $_GET['kategori'] ) && array_key_exists( $_GET['kategori'], $blog_categories ) ? $_GET['kategori'] : '';
+$active_slugs = $active_cat ? [ $active_cat ] : [ 'education', 'kegiatan', 'pra-event' ];
+
 $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 $blog_query = new WP_Query( [
     'post_type'      => 'post',
     'post_status'    => 'publish',
     'posts_per_page' => 9,
     'paged'          => $paged,
-    'category__in'   => labnesia_category_ids_by_slug( [ 'education', 'kegiatan', 'pra-event' ] ), // Pelatihan & Webinar are Jadwal-only
+    'category__in'   => labnesia_category_ids_by_slug( $active_slugs ), // Pelatihan & Webinar are Jadwal-only
 ] );
 ?>
 <?php get_header(); ?>
@@ -25,6 +34,10 @@ $blog_query = new WP_Query( [
 
   .blog-section{padding:72px 48px;background:var(--gray-50)}
   .blog-inner{max-width:1200px;margin:0 auto}
+  .blog-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+  .blog-filter-btn{padding:8px 18px;border-radius:100px;font-size:13px;font-weight:600;text-decoration:none;border:1px solid var(--gray-200);color:var(--gray-600);background:#fff;transition:all .2s}
+  .blog-filter-btn:hover{background:var(--gray-100)}
+  .blog-filter-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
   .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .blog-card{background:#fff;border:1px solid var(--gray-200);border-radius:16px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
   .blog-card:hover{box-shadow:0 12px 28px rgba(11,31,58,0.1);transform:translateY(-2px)}
@@ -66,6 +79,13 @@ $blog_query = new WP_Query( [
 <!-- POSTS -->
 <section class="blog-section">
   <div class="blog-inner">
+    <div class="blog-filter">
+      <?php foreach ( $blog_categories as $slug => $label ) :
+        $url = $slug ? add_query_arg( 'kategori', $slug, home_url( '/blog/' ) ) : home_url( '/blog/' );
+      ?>
+      <a href="<?php echo esc_url( $url ); ?>" class="blog-filter-btn<?php echo $slug === $active_cat ? ' active' : ''; ?>"><?php echo esc_html( $label ); ?></a>
+      <?php endforeach; ?>
+    </div>
     <?php if ( $blog_query->have_posts() ) : ?>
     <div class="blog-grid">
       <?php while ( $blog_query->have_posts() ) : $blog_query->the_post(); ?>
@@ -103,6 +123,7 @@ $blog_query = new WP_Query( [
           'mid_size'=> 2,
           'prev_text' => '&laquo;',
           'next_text' => '&raquo;',
+          'add_args' => $active_cat ? [ 'kategori' => $active_cat ] : false,
       ] );
       ?>
     </div>

@@ -365,18 +365,23 @@ add_action( 'add_meta_boxes', 'labnesia_jadwal_meta_box' );
 
 function labnesia_jadwal_meta_box_html( $post ) {
     wp_nonce_field( 'labnesia_jadwal_save', 'labnesia_jadwal_nonce' );
-    $event_date = get_post_meta( $post->ID, '_jadwal_tanggal', true );
-    $daftar_url = get_post_meta( $post->ID, '_jadwal_link_daftar', true );
+    $event_date     = get_post_meta( $post->ID, '_jadwal_tanggal', true );
+    $event_date_end = get_post_meta( $post->ID, '_jadwal_tanggal_selesai', true );
+    $daftar_url     = get_post_meta( $post->ID, '_jadwal_link_daftar', true );
     ?>
     <p>
-        <label for="labnesia_jadwal_tanggal"><strong>Tanggal Pelaksanaan</strong></label><br>
+        <label for="labnesia_jadwal_tanggal"><strong>Tanggal Mulai</strong></label><br>
         <input type="date" id="labnesia_jadwal_tanggal" name="labnesia_jadwal_tanggal" value="<?php echo esc_attr( $event_date ); ?>" style="width:100%">
+    </p>
+    <p>
+        <label for="labnesia_jadwal_tanggal_selesai"><strong>Tanggal Selesai</strong> <span style="font-weight:400;color:#666">(opsional, untuk acara multi-hari)</span></label><br>
+        <input type="date" id="labnesia_jadwal_tanggal_selesai" name="labnesia_jadwal_tanggal_selesai" value="<?php echo esc_attr( $event_date_end ); ?>" style="width:100%">
     </p>
     <p>
         <label for="labnesia_jadwal_link"><strong>Link Pendaftaran</strong></label><br>
         <input type="url" id="labnesia_jadwal_link" name="labnesia_jadwal_link" value="<?php echo esc_attr( $daftar_url ); ?>" placeholder="https://wa.me/... atau link form" style="width:100%">
     </p>
-    <p style="color:#666;font-size:12px">Isi hanya untuk post kategori Pelatihan/Webinar yang ingin muncul di halaman Jadwal.</p>
+    <p style="color:#666;font-size:12px">Isi hanya untuk post kategori Pelatihan/Webinar yang ingin muncul di halaman Jadwal. Kosongkan Tanggal Selesai jika acara hanya 1 hari.</p>
     <?php
 }
 
@@ -388,11 +393,35 @@ function labnesia_jadwal_meta_box_save( $post_id ) {
     if ( isset( $_POST['labnesia_jadwal_tanggal'] ) ) {
         update_post_meta( $post_id, '_jadwal_tanggal', sanitize_text_field( $_POST['labnesia_jadwal_tanggal'] ) );
     }
+    if ( isset( $_POST['labnesia_jadwal_tanggal_selesai'] ) ) {
+        update_post_meta( $post_id, '_jadwal_tanggal_selesai', sanitize_text_field( $_POST['labnesia_jadwal_tanggal_selesai'] ) );
+    }
     if ( isset( $_POST['labnesia_jadwal_link'] ) ) {
         update_post_meta( $post_id, '_jadwal_link_daftar', esc_url_raw( $_POST['labnesia_jadwal_link'] ) );
     }
 }
 add_action( 'save_post', 'labnesia_jadwal_meta_box_save' );
+
+// Format a Jadwal event date (or date range) for display, e.g. "3–4 Jul 2026",
+// "30 Jun – 2 Jul 2026", or a plain single date when there's no end date.
+function labnesia_format_jadwal_date( $start, $end = '' ) {
+    if ( ! $start ) return '';
+    $start_ts = strtotime( $start );
+    if ( ! $end || $end === $start ) {
+        return date_i18n( 'j M Y', $start_ts );
+    }
+    $end_ts = strtotime( $end );
+    if ( $end_ts <= $start_ts ) {
+        return date_i18n( 'j M Y', $start_ts );
+    }
+    if ( date_i18n( 'Y', $start_ts ) !== date_i18n( 'Y', $end_ts ) ) {
+        return date_i18n( 'j M Y', $start_ts ) . ' – ' . date_i18n( 'j M Y', $end_ts );
+    }
+    if ( date_i18n( 'M', $start_ts ) !== date_i18n( 'M', $end_ts ) ) {
+        return date_i18n( 'j M', $start_ts ) . ' – ' . date_i18n( 'j M Y', $end_ts );
+    }
+    return date_i18n( 'j', $start_ts ) . '–' . date_i18n( 'j M Y', $end_ts );
+}
 
 // ── Native registration form (replaces the Google Form embed) ───────────────
 // One shared form + one shared handler for every Pelatihan/Webinar post — editors

@@ -47,14 +47,33 @@ get_header();
   }
 </style>
 
+<?php
+$is_jadwal_post = has_category( [ 'pelatihan', 'webinar' ] );
+if ( $is_jadwal_post ) {
+    $jadwal_slugs = [ 'pelatihan', 'webinar' ];
+    $hero_cats = array_values( array_filter( get_the_category(), function( $c ) use ( $jadwal_slugs ) {
+        return in_array( $c->slug, $jadwal_slugs, true );
+    } ) );
+    $event_start = get_post_meta( get_the_ID(), '_jadwal_tanggal', true );
+    $event_end   = get_post_meta( get_the_ID(), '_jadwal_tanggal_selesai', true );
+    $hero_date   = $event_start ? labnesia_format_jadwal_date( $event_start, $event_end ) : get_the_date();
+    $back_url    = home_url( '/jadwal/' );
+    $back_label  = 'Kembali ke Jadwal';
+} else {
+    $hero_cats  = get_the_category();
+    $hero_date  = get_the_date();
+    $back_url   = home_url( '/blog/' );
+    $back_label = 'Kembali ke Blog';
+}
+?>
 <div class="post-hero">
   <div class="post-hero-inner">
-    <a class="post-back" href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">&larr; Kembali ke Blog</a>
+    <a class="post-back" href="<?php echo esc_url( $back_url ); ?>">&larr; <?php echo esc_html( $back_label ); ?></a>
     <div class="post-hero-meta">
-      <?php $cats = get_the_category(); if ( ! empty( $cats ) ) : ?>
-      <span class="post-hero-cat"><?php echo esc_html( $cats[0]->name ); ?></span>
+      <?php if ( ! empty( $hero_cats ) ) : ?>
+      <span class="post-hero-cat"><?php echo esc_html( $hero_cats[0]->name ); ?></span>
       <?php endif; ?>
-      <span class="post-hero-date"><?php echo esc_html( get_the_date() ); ?></span>
+      <span class="post-hero-date"><?php echo esc_html( $hero_date ); ?></span>
     </div>
     <h1><?php the_title(); ?></h1>
   </div>
