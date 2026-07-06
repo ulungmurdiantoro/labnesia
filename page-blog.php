@@ -10,7 +10,7 @@ $blog_query = new WP_Query( [
     'post_status'    => 'publish',
     'posts_per_page' => 9,
     'paged'          => $paged,
-    'category__in'   => [ 3, 4, 6 ], // Education, Kegiatan, Pra Event (Pelatihan & Webinar are Jadwal-only)
+    'category__in'   => labnesia_category_ids_by_slug( [ 'education', 'kegiatan', 'pra-event' ] ), // Pelatihan & Webinar are Jadwal-only
 ] );
 ?>
 <?php get_header(); ?>

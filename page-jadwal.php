@@ -10,7 +10,7 @@ $jadwal_query = new WP_Query( [
     'post_status'    => 'publish',
     'posts_per_page' => 9,
     'paged'          => $paged,
-    'category__in'   => [ 5, 7 ], // Pelatihan, Webinar
+    'category__in'   => labnesia_category_ids_by_slug( [ 'pelatihan', 'webinar' ] ),
 ] );
 ?>
 <?php get_header(); ?>

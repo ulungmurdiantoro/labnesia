@@ -328,6 +328,18 @@ function labnesia_floating_cta() {
     echo ' Konsultasi Gratis</a>';
 }
 
+// Resolve category slugs to term_ids at runtime — term_ids are auto-increment
+// values that differ per install (e.g. after a WXR import), so pages must never
+// hardcode them; slugs are the only stable identifier across environments.
+function labnesia_category_ids_by_slug( $slugs ) {
+    $ids = [];
+    foreach ( (array) $slugs as $slug ) {
+        $term = get_category_by_slug( $slug );
+        if ( $term ) $ids[] = $term->term_id;
+    }
+    return $ids;
+}
+
 // ── Add body classes ──────────────────────────────────────────────────────────
 function labnesia_body_classes( $classes ) {
     if ( ! is_singular() ) $classes[] = 'hfeed';
