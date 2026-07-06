@@ -28,8 +28,17 @@ get_header();
   .post-content img{max-width:100%;border-radius:12px;height:auto}
   .post-content a{color:var(--teal);text-decoration:underline}
   .post-content blockquote{border-left:3px solid var(--teal);padding-left:18px;color:var(--gray-600);font-style:italic;margin:24px 0}
-  .post-content .gform-embed{margin:24px 0;border:1px solid var(--gray-200);border-radius:16px;overflow:hidden;background:var(--gray-50)}
-  .post-content .gform-embed iframe{display:block;width:100%;border:none}
+  .daftar-form-box{margin-top:40px;padding:28px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:16px}
+  .daftar-form-title{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-0.3px}
+  .daftar-form-sub{font-size:13px;color:var(--gray-600);margin-bottom:18px}
+  .daftar-form{display:flex;flex-direction:column;gap:10px;max-width:420px}
+  .daftar-input{padding:11px 14px;border:1px solid var(--gray-200);border-radius:9px;font-size:14px;font-family:inherit;outline:none;transition:border .2s}
+  .daftar-input:focus{border-color:var(--teal)}
+  .btn-daftar-submit{padding:12px;background:var(--teal);color:#fff;border:none;border-radius:9px;font-weight:700;font-size:14px;font-family:inherit;cursor:pointer;transition:background .2s}
+  .btn-daftar-submit:hover{background:#158a65}
+  .daftar-notice{padding:12px 16px;border-radius:9px;font-size:13px;margin-bottom:14px}
+  .daftar-notice-ok{background:var(--teal-pale);color:#085041;border:1px solid rgba(26,158,117,0.3)}
+  .daftar-notice-err{background:var(--amber-pale);color:#6B4400;border:1px solid rgba(245,166,35,0.3)}
 
   @media (max-width:768px){
     .post-hero{padding:88px 24px 40px}
@@ -65,6 +74,11 @@ get_header();
       <div class="post-content">
         <?php the_content(); ?>
       </div>
+      <?php
+      // Native registration form paused for now — reverted to Google Form embeds
+      // (kept in post_content) until the custom form is ready to go live again.
+      // if ( has_category( [ 'pelatihan', 'webinar' ] ) ) : labnesia_render_daftar_form( get_the_ID() ); endif;
+      ?>
     <?php endwhile; ?>
   </div>
 </section>

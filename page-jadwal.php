@@ -4,14 +4,31 @@ Template Name: Jadwal
 */
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+// Fetched in full (not paginated at the SQL level) because sorting needs to happen
+// in PHP: posts are ordered by their real event date (_jadwal_tanggal) when an
+// editor has set one, falling back to the publish date otherwise — something a
+// plain WP_Query 'orderby' can't express in one query without dropping posts
+// that lack the meta key.
 $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+$per_page = 9;
+
 $jadwal_query = new WP_Query( [
     'post_type'      => 'post',
     'post_status'    => 'publish',
-    'posts_per_page' => 9,
-    'paged'          => $paged,
+    'posts_per_page' => -1,
     'category__in'   => labnesia_category_ids_by_slug( [ 'pelatihan', 'webinar' ] ),
 ] );
+
+$jadwal_posts = $jadwal_query->posts;
+usort( $jadwal_posts, function( $a, $b ) {
+    $date_a = get_post_meta( $a->ID, '_jadwal_tanggal', true ) ?: $a->post_date;
+    $date_b = get_post_meta( $b->ID, '_jadwal_tanggal', true ) ?: $b->post_date;
+    return strtotime( $date_b ) <=> strtotime( $date_a );
+} );
+
+$total_jadwal  = count( $jadwal_posts );
+$max_pages     = (int) ceil( $total_jadwal / $per_page );
+$jadwal_page   = array_slice( $jadwal_posts, ( $paged - 1 ) * $per_page, $per_page );
 ?>
 <?php get_header(); ?>
 <style>
@@ -77,9 +94,9 @@ $jadwal_query = new WP_Query( [
 <!-- JADWAL LIST -->
 <section class="jadwal-section">
   <div class="jadwal-inner">
-    <?php if ( $jadwal_query->have_posts() ) : ?>
+    <?php if ( ! empty( $jadwal_page ) ) : global $post; ?>
     <div class="jadwal-grid">
-      <?php while ( $jadwal_query->have_posts() ) : $jadwal_query->the_post();
+      <?php foreach ( $jadwal_page as $post ) : setup_postdata( $post );
         $event_date = get_post_meta( get_the_ID(), '_jadwal_tanggal', true );
         $daftar_url = get_post_meta( get_the_ID(), '_jadwal_link_daftar', true );
         $source_thumb = get_post_meta( get_the_ID(), '_source_featured_image', true );
@@ -122,13 +139,13 @@ $jadwal_query = new WP_Query( [
           </div>
         </div>
       </div>
-      <?php endwhile; ?>
+      <?php endforeach; ?>
     </div>
 
     <div class="jadwal-pagination">
       <?php
       echo paginate_links( [
-          'total'   => $jadwal_query->max_num_pages,
+          'total'   => $max_pages,
           'current' => $paged,
           'mid_size'=> 2,
           'prev_text' => '&laquo;',

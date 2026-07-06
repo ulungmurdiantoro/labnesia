@@ -393,3 +393,79 @@ function labnesia_jadwal_meta_box_save( $post_id ) {
     }
 }
 add_action( 'save_post', 'labnesia_jadwal_meta_box_save' );
+
+// ── Native registration form (replaces the Google Form embed) ───────────────
+// One shared form + one shared handler for every Pelatihan/Webinar post — editors
+// never build a form per post. Submissions are stored as a comment (comment_type
+// 'pendaftaran'), visible in wp-admin ▸ Comments, plus an email notification.
+function labnesia_render_daftar_form( $post_id ) {
+    $notice = '';
+    if ( isset( $_GET['daftar'] ) && (int) ( $_GET['daftar_post'] ?? 0 ) === (int) $post_id ) {
+        if ( $_GET['daftar'] === 'sukses' ) {
+            $notice = '<div class="daftar-notice daftar-notice-ok">Pendaftaran Anda sudah kami terima. Tim kami akan menghubungi Anda melalui WhatsApp/email untuk konfirmasi.</div>';
+        } elseif ( $_GET['daftar'] === 'gagal' ) {
+            $notice = '<div class="daftar-notice daftar-notice-err">Mohon lengkapi Nama dan Nomor WhatsApp terlebih dahulu.</div>';
+        }
+    }
+    ?>
+    <div class="daftar-form-box">
+        <h2 class="daftar-form-title">Formulir Pendaftaran</h2>
+        <p class="daftar-form-sub">Isi data di bawah ini, tim kami akan menghubungi Anda untuk konfirmasi kehadiran.</p>
+        <?php echo $notice; ?>
+        <form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" class="daftar-form">
+            <?php wp_nonce_field( 'labnesia_daftar_event', 'labnesia_daftar_nonce' ); ?>
+            <input type="hidden" name="action" value="labnesia_daftar_event">
+            <input type="hidden" name="post_id" value="<?php echo (int) $post_id; ?>">
+            <input class="daftar-input" type="text" name="nama" placeholder="Nama Anda" required>
+            <input class="daftar-input" type="tel" name="whatsapp" placeholder="Nomor WhatsApp" required>
+            <input class="daftar-input" type="text" name="instansi" placeholder="Nama lab / instansi">
+            <input class="daftar-input" type="email" name="email" placeholder="Email (opsional)">
+            <button type="submit" class="btn-daftar-submit">Daftar Sekarang</button>
+        </form>
+    </div>
+    <?php
+}
+
+function labnesia_handle_daftar_event() {
+    $post_id = isset( $_POST['post_id'] ) ? (int) $_POST['post_id'] : 0;
+    $redirect_base = $post_id ? get_permalink( $post_id ) : home_url( '/' );
+
+    if ( ! isset( $_POST['labnesia_daftar_nonce'] ) || ! wp_verify_nonce( $_POST['labnesia_daftar_nonce'], 'labnesia_daftar_event' ) ) {
+        wp_safe_redirect( add_query_arg( [ 'daftar' => 'gagal', 'daftar_post' => $post_id ], $redirect_base ) );
+        exit;
+    }
+
+    $nama     = sanitize_text_field( $_POST['nama'] ?? '' );
+    $whatsapp = sanitize_text_field( $_POST['whatsapp'] ?? '' );
+    $instansi = sanitize_text_field( $_POST['instansi'] ?? '' );
+    $email    = sanitize_email( $_POST['email'] ?? '' );
+
+    if ( ! $nama || ! $whatsapp || ! $post_id ) {
+        wp_safe_redirect( add_query_arg( [ 'daftar' => 'gagal', 'daftar_post' => $post_id ], $redirect_base ) );
+        exit;
+    }
+
+    $comment_id = wp_insert_comment( [
+        'comment_post_ID'      => $post_id,
+        'comment_author'       => $nama,
+        'comment_author_email' => $email,
+        'comment_content'      => 'Instansi/Lab: ' . ( $instansi ?: '-' ),
+        'comment_type'         => 'pendaftaran',
+        'comment_approved'     => 1,
+    ] );
+    if ( $comment_id ) {
+        update_comment_meta( $comment_id, '_daftar_whatsapp', $whatsapp );
+    }
+
+    $to = get_theme_mod( 'labnesia_email', 'info@labnesia.id' );
+    $subject = 'Pendaftaran Baru: ' . get_the_title( $post_id );
+    $message = "Ada pendaftaran baru untuk \"" . get_the_title( $post_id ) . "\"\n\n"
+             . "Nama: $nama\nWhatsApp: $whatsapp\nInstansi: " . ( $instansi ?: '-' ) . "\nEmail: " . ( $email ?: '-' ) . "\n\n"
+             . 'Link post: ' . get_permalink( $post_id );
+    wp_mail( $to, $subject, $message );
+
+    wp_safe_redirect( add_query_arg( [ 'daftar' => 'sukses', 'daftar_post' => $post_id ], $redirect_base ) );
+    exit;
+}
+add_action( 'admin_post_labnesia_daftar_event', 'labnesia_handle_daftar_event' );
+add_action( 'admin_post_nopriv_labnesia_daftar_event', 'labnesia_handle_daftar_event' );
