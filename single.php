@@ -28,6 +28,8 @@ get_header();
   .post-content img{max-width:100%;border-radius:12px;height:auto}
   .post-content a{color:var(--teal);text-decoration:underline}
   .post-content blockquote{border-left:3px solid var(--teal);padding-left:18px;color:var(--gray-600);font-style:italic;margin:24px 0}
+  .post-content .gform-embed{margin:24px 0;border:1px solid var(--gray-200);border-radius:16px;overflow:hidden;background:var(--gray-50)}
+  .post-content .gform-embed iframe{display:block;width:100%;border:none}
 
   @media (max-width:768px){
     .post-hero{padding:88px 24px 40px}
