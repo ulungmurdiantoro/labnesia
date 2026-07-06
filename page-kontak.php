@@ -4,6 +4,7 @@ Template Name: Kontak
 */
 if ( ! defined( 'ABSPATH' ) ) exit;
 $wa_text = rawurlencode( labnesia_wa_default_message() );
+$gas_url = get_theme_mod( 'labnesia_gas_url', '' );
 ?>
 <?php get_header(); ?>
 <style>
@@ -97,19 +98,80 @@ $wa_text = rawurlencode( labnesia_wa_default_message() );
       </div>
     </div>
     <div class="chat-right">
-      <div class="chat-title">Kirim pertanyaan Anda</div>
-      <div class="chat-sub">Isi form ini dan tim kami akan menjawab dalam 1×24 jam kerja.</div>
-      <input class="chat-input" type="text" placeholder="Nama Anda">
-      <input class="chat-input" type="tel" placeholder="Nomor WhatsApp">
-      <input class="chat-input" type="text" placeholder="Nama lab / instansi">
-      <input class="chat-input" type="text" placeholder="Jabatan di instansi">
-      <textarea class="chat-textarea" placeholder="Tuliskan pertanyaan atau kondisi lab Anda di sini..."></textarea>
-      <button class="btn-chat" onclick="sendQuestion()">Kirim Pertanyaan <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></button>
+      <form id="kontak-form" onsubmit="return submitKontakForm(event)">
+        <div class="chat-title">Kirim pertanyaan Anda</div>
+        <div class="chat-sub">Isi form ini dan tim kami akan menjawab dalam 1×24 jam kerja.</div>
+        <div class="form-error" id="kontak-error" style="display:none;background:var(--amber-pale);color:#6B4400;border:1px solid rgba(245,166,35,0.3);border-radius:8px;padding:10px 14px;font-size:13px;margin-bottom:12px"></div>
+        <input class="chat-input" type="text" id="kontak-nama" placeholder="Nama Anda" required>
+        <input class="chat-input" type="tel" id="kontak-whatsapp" placeholder="Nomor WhatsApp" required>
+        <input class="chat-input" type="text" id="kontak-institusi" placeholder="Nama lab / instansi">
+        <input class="chat-input" type="text" id="kontak-jabatan" placeholder="Jabatan di instansi">
+        <textarea class="chat-textarea" id="kontak-pertanyaan" placeholder="Tuliskan pertanyaan atau kondisi lab Anda di sini..." required></textarea>
+        <button class="btn-chat" type="submit" id="kontak-submit-btn">Kirim Pertanyaan <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></button>
+      </form>
+      <div id="kontak-success" style="display:none;text-align:center;padding:24px">
+        <div style="font-size:32px;color:var(--teal);margin-bottom:10px"><?php labnesia_icon( 'check', 'var(--teal)', 32 ); ?></div>
+        <div class="chat-title">Pertanyaan terkirim!</div>
+        <div class="chat-sub">Tim kami akan menghubungi Anda dalam 1×24 jam kerja.</div>
+      </div>
     </div>
   </div>
 </div>
 
 <script>
-function sendQuestion(){alert('Pertanyaan Anda sudah kami terima! Tim kami akan menghubungi Anda dalam 1×24 jam.')}
+const KF_GAS_URL = <?php echo wp_json_encode( $gas_url ); ?>;
+
+function submitKontakForm(event){
+  event.preventDefault();
+
+  const nama       = document.getElementById('kontak-nama').value.trim();
+  const whatsapp   = document.getElementById('kontak-whatsapp').value.trim();
+  const institusi  = document.getElementById('kontak-institusi').value.trim();
+  const jabatan    = document.getElementById('kontak-jabatan').value.trim();
+  const pertanyaan = document.getElementById('kontak-pertanyaan').value.trim();
+  const errorEl    = document.getElementById('kontak-error');
+
+  if(!nama || !whatsapp || !pertanyaan){
+    errorEl.textContent = 'Mohon lengkapi Nama, Nomor WhatsApp, dan Pertanyaan Anda.';
+    errorEl.style.display = 'block';
+    return false;
+  }
+  errorEl.style.display = 'none';
+
+  const btn = document.getElementById('kontak-submit-btn');
+  btn.disabled = true;
+  const originalLabel = btn.innerHTML;
+  btn.innerHTML = 'Mengirim...';
+
+  function showSuccess(){
+    document.getElementById('kontak-form').style.display = 'none';
+    document.getElementById('kontak-success').style.display = 'block';
+  }
+
+  if(!KF_GAS_URL){
+    btn.disabled = false;
+    btn.innerHTML = originalLabel;
+    showSuccess();
+    return false;
+  }
+
+  const formData = new FormData();
+  formData.append('form', 'kontak');
+  formData.append('nama', nama);
+  formData.append('whatsapp', whatsapp);
+  formData.append('institusi', institusi);
+  formData.append('jabatan', jabatan);
+  formData.append('pertanyaan', pertanyaan);
+
+  fetch(KF_GAS_URL, { method: 'POST', mode: 'no-cors', body: formData })
+    .catch(function(){ /* no-cors gives an opaque response either way — still proceed */ })
+    .finally(function(){
+      btn.disabled = false;
+      btn.innerHTML = originalLabel;
+      showSuccess();
+    });
+
+  return false;
+}
 </script>
 <?php get_footer(); ?>

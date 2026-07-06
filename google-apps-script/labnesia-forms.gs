@@ -11,6 +11,7 @@
  *  - komunitas             : page-mulai-gratis.php, "Bergabung ke Saluran"       -> sheet "Bergabung Komunitas"
  *  - kelas-pendampingan    : page-kelas-pendampingan.php, "Amankan slot Anda sekarang" -> sheet "Daftar Kelas Pendampingan"
  *  - checklist-dokumen     : checklist-dokumen.php (standalone, outside WP), "Download/Akses Template" -> sheet "Checklist Dokumen"
+ *  - kontak                : page-kontak.php, "Kirim Pertanyaan"              -> sheet "Pertanyaan Kontak"
  *
  * FIRST-TIME SETUP:
  * 1. Create a new Google Sheet (or open an existing one you want submissions in).
@@ -50,6 +51,10 @@ function doPost(e) {
     appendToSheet(ss, 'Checklist Dokumen',
       ['Timestamp', 'Nama', 'Email', 'Lab & Institusi', 'Status Akreditasi', 'Kategori'],
       [new Date(), p.nama || '', p.email || '', p.lab || '', p.status || '', p.kategori || '']);
+  } else if (p.form === 'kontak') {
+    appendToSheet(ss, 'Pertanyaan Kontak',
+      ['Timestamp', 'Nama', 'WhatsApp', 'Lab & Institusi', 'Jabatan', 'Pertanyaan'],
+      [new Date(), p.nama || '', p.whatsapp || '', p.institusi || '', p.jabatan || '', p.pertanyaan || '']);
   } else {
     // "pelatihan-sertifikasi", and the fallback for older client code that
     // doesn't send a form field yet.
