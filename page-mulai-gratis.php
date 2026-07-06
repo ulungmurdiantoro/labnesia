@@ -351,7 +351,7 @@ $wa_text       = rawurlencode( labnesia_wa_default_message() );
         <div class="dl-icon"><?php labnesia_icon( 'clipboard-list', 'var(--teal)', 36 ); ?></div>
         <div class="dl-title">Checklist Persiapan Akreditasi KAN</div>
         <div class="dl-desc">Daftar lengkap dokumen yang dibutuhkan sebelum mendaftar akreditasi</div>
-        <a href="<?php echo esc_url( get_template_directory_uri() . '/checklist-dokumen.php' ); ?>" class="dl-btn" target="_blank" rel="noopener">Lihat Checklist <?php labnesia_icon( 'arrow-right', 'var(--teal)', 12 ); ?></a>
+        <a href="<?php echo esc_url( home_url( '/checklist-dokumen/' ) ); ?>" class="dl-btn">Lihat Checklist <?php labnesia_icon( 'arrow-right', 'var(--teal)', 12 ); ?></a>
       </div>
       <div class="dl-card">
         <div class="dl-icon"><?php labnesia_icon( 'book', 'var(--teal)', 36 ); ?></div>
