@@ -11,7 +11,9 @@ get_header();
   .post-hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
   .post-back{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.55);font-size:13px;font-weight:600;text-decoration:none;margin-bottom:20px}
   .post-back:hover{color:#fff}
-  .post-hero-date{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-light);margin-bottom:14px}
+  .post-hero-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+  .post-hero-cat{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-light);background:rgba(26,158,117,0.15);border:1px solid rgba(26,158,117,0.3);padding:4px 12px;border-radius:100px}
+  .post-hero-date{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.5)}
   .post-hero h1{font-size:36px;font-weight:800;color:#fff;line-height:1.25;letter-spacing:-0.8px}
 
   .post-section{padding:56px 48px 80px;background:#fff}
@@ -37,7 +39,12 @@ get_header();
 <div class="post-hero">
   <div class="post-hero-inner">
     <a class="post-back" href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">&larr; Kembali ke Blog</a>
-    <div class="post-hero-date"><?php echo esc_html( get_the_date() ); ?></div>
+    <div class="post-hero-meta">
+      <?php $cats = get_the_category(); if ( ! empty( $cats ) ) : ?>
+      <span class="post-hero-cat"><?php echo esc_html( $cats[0]->name ); ?></span>
+      <?php endif; ?>
+      <span class="post-hero-date"><?php echo esc_html( get_the_date() ); ?></span>
+    </div>
     <h1><?php the_title(); ?></h1>
   </div>
 </div>
@@ -45,8 +52,13 @@ get_header();
 <section class="post-section">
   <div class="post-inner">
     <?php while ( have_posts() ) : the_post(); ?>
-      <?php if ( has_post_thumbnail() ) : ?>
+      <?php
+      $source_thumb = get_post_meta( get_the_ID(), '_source_featured_image', true );
+      if ( has_post_thumbnail() ) :
+      ?>
         <?php the_post_thumbnail( 'large', [ 'class' => 'post-thumb' ] ); ?>
+      <?php elseif ( $source_thumb ) : ?>
+        <img class="post-thumb" src="<?php echo esc_url( $source_thumb ); ?>" alt="<?php the_title_attribute(); ?>" loading="lazy">
       <?php endif; ?>
       <div class="post-content">
         <?php the_content(); ?>

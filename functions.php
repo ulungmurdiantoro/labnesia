@@ -334,3 +334,50 @@ function labnesia_body_classes( $classes ) {
     return $classes;
 }
 add_filter( 'body_class', 'labnesia_body_classes' );
+
+// ── Jadwal event fields (Tanggal Pelaksanaan & Link Pendaftaran) ─────────────
+// Lets editors fill in the actual event date/registration link for posts in the
+// Pelatihan/Webinar categories, shown on the /jadwal/ page instead of falling
+// back to the post's publish date.
+function labnesia_jadwal_meta_box() {
+    add_meta_box(
+        'labnesia_jadwal',
+        'Info Jadwal (Pelatihan/Webinar)',
+        'labnesia_jadwal_meta_box_html',
+        'post',
+        'side',
+        'default'
+    );
+}
+add_action( 'add_meta_boxes', 'labnesia_jadwal_meta_box' );
+
+function labnesia_jadwal_meta_box_html( $post ) {
+    wp_nonce_field( 'labnesia_jadwal_save', 'labnesia_jadwal_nonce' );
+    $event_date = get_post_meta( $post->ID, '_jadwal_tanggal', true );
+    $daftar_url = get_post_meta( $post->ID, '_jadwal_link_daftar', true );
+    ?>
+    <p>
+        <label for="labnesia_jadwal_tanggal"><strong>Tanggal Pelaksanaan</strong></label><br>
+        <input type="date" id="labnesia_jadwal_tanggal" name="labnesia_jadwal_tanggal" value="<?php echo esc_attr( $event_date ); ?>" style="width:100%">
+    </p>
+    <p>
+        <label for="labnesia_jadwal_link"><strong>Link Pendaftaran</strong></label><br>
+        <input type="url" id="labnesia_jadwal_link" name="labnesia_jadwal_link" value="<?php echo esc_attr( $daftar_url ); ?>" placeholder="https://wa.me/... atau link form" style="width:100%">
+    </p>
+    <p style="color:#666;font-size:12px">Isi hanya untuk post kategori Pelatihan/Webinar yang ingin muncul di halaman Jadwal.</p>
+    <?php
+}
+
+function labnesia_jadwal_meta_box_save( $post_id ) {
+    if ( ! isset( $_POST['labnesia_jadwal_nonce'] ) || ! wp_verify_nonce( $_POST['labnesia_jadwal_nonce'], 'labnesia_jadwal_save' ) ) return;
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+    if ( ! current_user_can( 'edit_post', $post_id ) ) return;
+
+    if ( isset( $_POST['labnesia_jadwal_tanggal'] ) ) {
+        update_post_meta( $post_id, '_jadwal_tanggal', sanitize_text_field( $_POST['labnesia_jadwal_tanggal'] ) );
+    }
+    if ( isset( $_POST['labnesia_jadwal_link'] ) ) {
+        update_post_meta( $post_id, '_jadwal_link_daftar', esc_url_raw( $_POST['labnesia_jadwal_link'] ) );
+    }
+}
+add_action( 'save_post', 'labnesia_jadwal_meta_box_save' );

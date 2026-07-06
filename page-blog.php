@@ -10,6 +10,7 @@ $blog_query = new WP_Query( [
     'post_status'    => 'publish',
     'posts_per_page' => 9,
     'paged'          => $paged,
+    'category__in'   => [ 3, 4, 5, 6 ], // Education, Kegiatan, Pelatihan, Pra Event
 ] );
 ?>
 <?php get_header(); ?>
@@ -30,7 +31,9 @@ $blog_query = new WP_Query( [
   .blog-card-thumb{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;background:var(--gray-100)}
   .blog-card-thumb-fallback{width:100%;aspect-ratio:16/10;background:var(--navy);display:flex;align-items:center;justify-content:center}
   .blog-card-body{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
-  .blog-card-date{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+  .blog-card-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+  .blog-card-cat{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--teal);background:var(--teal-pale);padding:3px 9px;border-radius:100px}
+  .blog-card-date{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gray-400)}
   .blog-card-title{font-size:17px;font-weight:800;color:var(--navy);line-height:1.35;margin-bottom:8px}
   .blog-card-excerpt{font-size:13px;color:var(--gray-600);line-height:1.6;flex:1}
   .blog-card-more{margin-top:14px;font-size:13px;font-weight:700;color:var(--teal)}
@@ -67,13 +70,23 @@ $blog_query = new WP_Query( [
     <div class="blog-grid">
       <?php while ( $blog_query->have_posts() ) : $blog_query->the_post(); ?>
       <a href="<?php the_permalink(); ?>" class="blog-card">
-        <?php if ( has_post_thumbnail() ) : ?>
+        <?php
+        $source_thumb = get_post_meta( get_the_ID(), '_source_featured_image', true );
+        if ( has_post_thumbnail() ) :
+        ?>
           <?php the_post_thumbnail( 'medium_large', [ 'class' => 'blog-card-thumb' ] ); ?>
+        <?php elseif ( $source_thumb ) : ?>
+          <img class="blog-card-thumb" src="<?php echo esc_url( $source_thumb ); ?>" alt="<?php the_title_attribute(); ?>" loading="lazy">
         <?php else : ?>
           <div class="blog-card-thumb-fallback"><?php labnesia_icon( 'book-open', 'rgba(255,255,255,0.5)', 32 ); ?></div>
         <?php endif; ?>
         <div class="blog-card-body">
-          <div class="blog-card-date"><?php echo esc_html( get_the_date() ); ?></div>
+          <div class="blog-card-meta">
+            <?php $cats = get_the_category(); if ( ! empty( $cats ) ) : ?>
+            <span class="blog-card-cat"><?php echo esc_html( $cats[0]->name ); ?></span>
+            <?php endif; ?>
+            <span class="blog-card-date"><?php echo esc_html( get_the_date() ); ?></span>
+          </div>
           <div class="blog-card-title"><?php the_title(); ?></div>
           <div class="blog-card-excerpt"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 20 ) ); ?></div>
           <div class="blog-card-more">Baca selengkapnya <?php labnesia_icon( 'arrow-right', 'currentColor', 12 ); ?></div>
