@@ -293,11 +293,25 @@ function labnesia_icon( $name, $color = 'currentColor', $size = 20 ) {
     );
 }
 
+// Standard pre-filled WhatsApp message used across static contact links/buttons
+// (footer, floating CTA, Kontak cards, Inhouse CTAs, "hubungi tim" links). Not
+// used on the Gap Analysis WA link, which builds its own message from quiz results.
+function labnesia_wa_default_message() {
+    return "Halo Tim Labnesia, saya ingin berkonsultasi mengenai akreditasi laboratorium.\n\n"
+         . "Nama: \n"
+         . "Instansi: \n"
+         . "Jabatan: \n"
+         . "Kebutuhan saat ini: (misalnya persiapan akreditasi ISO/IEC 17025, pelatihan, pendampingan, sertifikasi, atau lainnya)";
+}
+
 // WhatsApp icon + number, wrapped in a wa.me deep link. $number is digits only (country code, no +/spaces).
+// Note: builds the href via esc_attr(), not esc_url() — esc_url() strips %0a/%0d
+// (anti-CRLF-injection), which would silently delete the message's line breaks.
 function labnesia_whatsapp_link( $number, $label, $color = 'currentColor', $size = 14 ) {
+    $url = 'https://wa.me/' . preg_replace( '/\D/', '', $number ) . '?text=' . rawurlencode( labnesia_wa_default_message() );
     printf(
         '<a href="%1$s" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">',
-        esc_url( 'https://wa.me/' . preg_replace( '/\D/', '', $number ) )
+        esc_attr( $url )
     );
     labnesia_icon( 'whatsapp', $color, $size );
     printf( ' %s</a>', esc_html( $label ) );
@@ -319,10 +333,11 @@ function labnesia_icon_tile( $name, $color = 'var(--teal)', $tile_size = 64, $to
 // so it appears consistently site-wide, always pointed at the WhatsApp number (Endang by default).
 function labnesia_floating_cta() {
     $number  = get_theme_mod( 'labnesia_whatsapp', '6282172221567' );
-    $message = 'Halo Labnesia, saya ingin konsultasi gratis tentang akreditasi lab.';
+    $message = labnesia_wa_default_message();
+    $url     = 'https://wa.me/' . preg_replace( '/\D/', '', $number ) . '?text=' . rawurlencode( $message );
     printf(
         '<a href="%1$s" class="float-cta" id="konsultasi" target="_blank" rel="noopener noreferrer">',
-        esc_url( 'https://wa.me/' . preg_replace( '/\D/', '', $number ) . '?text=' . rawurlencode( $message ) )
+        esc_attr( $url )
     );
     labnesia_icon( 'whatsapp', 'var(--navy)', 16 );
     echo ' Konsultasi Gratis</a>';

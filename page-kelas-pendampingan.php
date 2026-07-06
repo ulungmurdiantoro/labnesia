@@ -796,6 +796,10 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
         <p style="font-size:11px;color:var(--gray-400);text-align:center;line-height:1.5">Dengan mendaftar, Anda menyetujui syarat & ketentuan program. Tidak ada biaya di tahap ini — tim kami akan menghubungi Anda terlebih dahulu.</p>
       </div>
     </form>
+    <div id="mf-success" style="display:none;margin-top:20px;background:var(--teal-pale);border:1px solid rgba(26,158,117,0.3);border-radius:16px;padding:24px;text-align:center">
+      <div style="font-size:16px;font-weight:800;color:#085041;margin-bottom:6px">Pendaftaran terkirim!</div>
+      <p style="font-size:13px;color:#085041;line-height:1.6">Tim kami akan menghubungi Anda dalam 1×24 jam melalui WhatsApp untuk konfirmasi dan detail pembayaran.</p>
+    </div>
   </div>
 </div>
 
@@ -837,7 +841,6 @@ document.querySelectorAll('.faq-q').forEach(q=>{
   });
 });
 const MF_GAS_URL   = <?php echo wp_json_encode( get_theme_mod( 'labnesia_gas_url', '' ) ); ?>;
-const MF_WA_NUMBER = <?php echo wp_json_encode( get_theme_mod( 'labnesia_whatsapp', '6282172221567' ) ); ?>;
 
 function submitForm(event){
   event.preventDefault();
@@ -860,18 +863,15 @@ function submitForm(event){
   const originalLabel = btn.innerHTML;
   btn.innerHTML = 'Mengirim...';
 
-  function goToWhatsApp(){
-    const pesan = 'Halo Labnesia, saya ingin mendaftar Kelas Pendampingan.\n\n'
-      + 'Nama: ' + nama + '\n'
-      + 'Institusi: ' + institusi + '\n'
-      + 'WhatsApp: ' + whatsapp + '\n'
-      + 'Jumlah peserta: ' + jumlah + '\n'
-      + 'Bidang laboratorium: ' + bidang;
-    window.location.href = 'https://wa.me/' + MF_WA_NUMBER + '?text=' + encodeURIComponent(pesan);
+  function showSuccess(){
+    document.getElementById('form-daftar').style.display = 'none';
+    document.getElementById('mf-success').style.display = 'block';
   }
 
   if(!MF_GAS_URL){
-    goToWhatsApp();
+    btn.disabled = false;
+    btn.innerHTML = originalLabel;
+    showSuccess();
     return false;
   }
 
@@ -888,7 +888,7 @@ function submitForm(event){
     .finally(function(){
       btn.disabled = false;
       btn.innerHTML = originalLabel;
-      goToWhatsApp();
+      showSuccess();
     });
 
   return false;

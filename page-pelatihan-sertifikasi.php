@@ -496,6 +496,10 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
       <button class="btn-submit-cta" type="submit" id="pf-submit-btn">Daftar Pelatihan <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></button>
       <p style="font-size:11px;color:var(--gray-400);text-align:center;margin-top:10px">Tidak ada biaya di tahap ini — tim kami akan menghubungi Anda terlebih dahulu.</p>
     </form>
+    <div id="pf-success" style="display:none;margin-top:20px;background:var(--teal-pale);border:1px solid rgba(26,158,117,0.3);border-radius:16px;padding:24px;text-align:center">
+      <div style="font-size:16px;font-weight:800;color:#085041;margin-bottom:6px">Pendaftaran terkirim!</div>
+      <p style="font-size:13px;color:#085041;line-height:1.6">Tim kami akan menghubungi Anda dalam 1×24 jam melalui WhatsApp untuk konfirmasi dan detail pembayaran.</p>
+    </div>
   </div>
 </section>
 
@@ -510,7 +514,6 @@ function toggleCurr(el){
 }
 
 const PF_GAS_URL  = <?php echo wp_json_encode( get_theme_mod( 'labnesia_gas_url', '' ) ); ?>;
-const PF_WA_NUMBER = <?php echo wp_json_encode( get_theme_mod( 'labnesia_whatsapp', '6282172221567' ) ); ?>;
 
 function submitPelatihanForm(event){
   event.preventDefault();
@@ -531,19 +534,15 @@ function submitPelatihanForm(event){
   const originalLabel = btn.innerHTML;
   btn.innerHTML = 'Mengirim...';
 
-  function goToWhatsApp(){
-    let pesan = 'Halo Labnesia, saya ingin mendaftar Pelatihan & Sertifikasi.\n\n'
-      + 'Nama: ' + nama + '\n'
-      + 'WhatsApp: ' + whatsapp + '\n';
-    if(institusi) pesan += 'Institusi: ' + institusi + '\n';
-    pesan += 'Skema: ' + skema + '\n'
-      + 'Format: ' + format;
-    window.location.href = 'https://wa.me/' + PF_WA_NUMBER + '?text=' + encodeURIComponent(pesan);
+  function showSuccess(){
+    document.getElementById('pf-form').style.display = 'none';
+    document.getElementById('pf-success').style.display = 'block';
   }
 
   if(!PF_GAS_URL){
-    // Belum dikonfigurasi (lihat Customizer > Labnesia Settings) — langsung ke WhatsApp saja.
-    goToWhatsApp();
+    btn.disabled = false;
+    btn.innerHTML = originalLabel;
+    showSuccess();
     return false;
   }
 
@@ -556,11 +555,11 @@ function submitPelatihanForm(event){
   formData.append('format', format);
 
   fetch(PF_GAS_URL, { method: 'POST', mode: 'no-cors', body: formData })
-    .catch(function(){ /* no-cors gives an opaque response either way — still proceed to WhatsApp */ })
+    .catch(function(){ /* no-cors gives an opaque response either way — still proceed */ })
     .finally(function(){
       btn.disabled = false;
       btn.innerHTML = originalLabel;
-      goToWhatsApp();
+      showSuccess();
     });
 
   return false;

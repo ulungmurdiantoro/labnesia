@@ -10,6 +10,7 @@ $url_faq       = esc_url( home_url( '/faq/' ) );
 $url_inhouse   = esc_url( home_url( '/inhouse/' ) );
 $url_pelatihan = esc_url( home_url( '/pelatihan-sertifikasi/' ) );
 $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
+$wa_text       = rawurlencode( labnesia_wa_default_message() );
 ?>
 <?php get_header(); ?>
 <style>
@@ -377,12 +378,12 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
     <h2 class="cta-split-title">Mana yang sesuai<br>kondisi lab Anda?</h2>
     <p class="cta-split-sub">Tim kami akan bantu petakan kebutuhan spesifik institusi Anda — tanpa tekanan, tanpa komitmen di awal.</p>
     <div class="cta-split-actions">
-      <a href="https://wa.me/6282172221567?text=Halo%2C%20saya%20ingin%20konsultasi%20Full%20Pendampingan%20untuk%20lab%20kami" class="cta-action-card">
+      <a href="https://wa.me/6282172221567?text=<?php echo $wa_text; ?>" class="cta-action-card">
         <div class="cta-action-tag">Belum Terakreditasi</div>
         <div class="cta-action-title">Konsultasi Full Pendampingan</div>
         <div class="cta-action-desc">Ceritakan kondisi lab Anda saat ini. Kami bantu rancang jalur tercepat menuju akreditasi.</div>
       </a>
-      <a href="https://wa.me/6285185000367?text=Halo%2C%20saya%20ingin%20konsultasi%20Annual%20Partnership%20untuk%20lab%20kami" class="cta-action-card">
+      <a href="https://wa.me/6285185000367?text=<?php echo $wa_text; ?>" class="cta-action-card">
         <div class="cta-action-tag">Sudah Terakreditasi</div>
         <div class="cta-action-title">Konsultasi Annual Partnership</div>
         <div class="cta-action-desc">Diskusikan paket kemitraan tahunan yang sesuai dengan ukuran dan kebutuhan institusi Anda.</div>

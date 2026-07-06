@@ -435,7 +435,7 @@ $url_gap       = esc_url( home_url( '/gap-analisis/' ) );
 <section class="community-section">
   <div class="community-inner" style="padding:80px 48px">
     <div class="community-left">
-      <p class="eyebrow">Bergabung dengan Komunitas</p>
+      <p class="eyebrow">Bergabung dengan Saluran</p>
       <h2 class="h2">Forum nasional<br>para profesional lab.</h2>
       <p class="body" style="margin-bottom:20px">Ribuan Manajer Mutu, analis, dan auditor internal dari seluruh Indonesia — sharing pengalaman, tanya pakar, dan update implementasi sistem manajemen laboratorium terbaru.</p>
       <div class="group-list">
@@ -474,7 +474,7 @@ $url_gap       = esc_url( home_url( '/gap-analisis/' ) );
       </div>
     </div>
     <form class="community-form" id="community-form" onsubmit="return joinCommunity(event)">
-      <div class="community-form-title">Bergabung ke Komunitas</div>
+      <div class="community-form-title">Bergabung ke Saluran</div>
       <div class="community-form-sub">Pilih grup yang paling sesuai dengan peran dan institusi Anda.</div>
       <input class="form-input-dark" type="text" id="comm-nama" placeholder="Nama lengkap Anda" required>
       <input class="form-input-dark" type="email" id="comm-email" placeholder="Email aktif" required>
@@ -486,7 +486,7 @@ $url_gap       = esc_url( home_url( '/gap-analisis/' ) );
         <option style="background:var(--navy);color:#fff">Labnesia Expert Network (LEN) — Industri &amp; Lembaga Pemerintah</option>
         <option style="background:var(--navy);color:#fff">VIP Member — Alumni Program</option>
       </select>
-      <button class="btn-teal-solid" type="submit" id="comm-submit-btn">Bergabung ke Komunitas <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></button>
+      <button class="btn-teal-solid" type="submit" id="comm-submit-btn">Bergabung ke Saluran <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></button>
       <div class="community-privacy">Gratis selamanya. Data Anda tidak akan dibagikan.</div>
       <div class="existing-members">
         <div class="avatar-stack">
@@ -559,11 +559,11 @@ $url_gap       = esc_url( home_url( '/gap-analisis/' ) );
     </div>
     <div class="faq-mini-item" onclick="toggleFaqMini(this)">
       <div class="faq-mini-q">Apakah webinar tersedia secara rekaman? <span><?php labnesia_icon( 'chevron-down', 'var(--navy)', 16 ); ?></span></div>
-      <div class="faq-mini-a">Ya, semua webinar yang sudah berlangsung tersedia rekamannya. Daftar ke komunitas kami dan minta akses rekaman melalui grup WhatsApp. Untuk peserta Kelas Pendampingan, semua rekaman tersedia otomatis.</div>
+      <div class="faq-mini-a">Ya, semua webinar yang sudah berlangsung tersedia rekamannya. Daftar ke saluran kami dan minta akses rekaman melalui grup WhatsApp. Untuk peserta Kelas Pendampingan, semua rekaman tersedia otomatis.</div>
     </div>
     <div class="faq-mini-item" onclick="toggleFaqMini(this)">
       <div class="faq-mini-q">Saya mahasiswa, apakah bisa ikut? <span><?php labnesia_icon( 'chevron-down', 'var(--navy)', 16 ); ?></span></div>
-      <div class="faq-mini-a">Tentu. Webinar dan komunitas terbuka untuk semua termasuk mahasiswa. Untuk Program Kuliah Praktisi, mintalah dosen atau pihak kampus Anda untuk mengundang Labnesia — gratis untuk kampus yang mengundang. Kelas Pendampingan berbayar lebih cocok untuk yang sudah berperan aktif di lab (Manajer Mutu, Manajer Teknis, dll).</div>
+      <div class="faq-mini-a">Tentu. Webinar dan saluran terbuka untuk semua termasuk mahasiswa. Untuk Program Kuliah Praktisi, mintalah dosen atau pihak kampus Anda untuk mengundang Labnesia — gratis untuk kampus yang mengundang. Kelas Pendampingan berbayar lebih cocok untuk yang sudah berperan aktif di lab (Manajer Mutu, Manajer Teknis, dll).</div>
     </div>
     <div style="text-align:center;margin-top:24px">
       <a href="<?php echo $url_faq; ?>" style="font-size:14px;color:var(--teal);font-weight:600;text-decoration:none">Lihat semua FAQ &amp; perbandingan program <?php labnesia_icon( 'arrow-right', 'var(--teal)', 14 ); ?></a>

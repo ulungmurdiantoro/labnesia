@@ -3,6 +3,7 @@
 Template Name: Kontak
 */
 if ( ! defined( 'ABSPATH' ) ) exit;
+$wa_text = rawurlencode( labnesia_wa_default_message() );
 ?>
 <?php get_header(); ?>
 <style>
@@ -65,21 +66,21 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       <h2>Hubungi kami langsung.</h2>
       <p>Pilih kanal yang paling nyaman untuk Anda, atau isi form di samping — tim kami akan merespons dalam 1×24 jam kerja.</p>
       <div class="contact-options">
-        <a href="https://wa.me/6282172221567" class="contact-opt">
+        <a href="https://wa.me/6282172221567?text=<?php echo $wa_text; ?>" class="contact-opt">
           <div class="contact-icon" style="background:rgba(37,211,102,0.2)"><?php labnesia_icon( 'whatsapp', '#ffffff', 18 ); ?></div>
           <div>
             <div class="contact-name">Endang — WhatsApp</div>
             <div class="contact-val">+62 821-7222-1567 · Aktif 08.00–17.00</div>
           </div>
         </a>
-        <a href="https://wa.me/6285185000367" class="contact-opt">
+        <a href="https://wa.me/6285185000367?text=<?php echo $wa_text; ?>" class="contact-opt">
           <div class="contact-icon" style="background:rgba(37,211,102,0.2)"><?php labnesia_icon( 'whatsapp', '#ffffff', 18 ); ?></div>
           <div>
             <div class="contact-name">Berryl — WhatsApp</div>
             <div class="contact-val">+62 851-8500-0367 · Aktif 08.00–17.00</div>
           </div>
         </a>
-        <a href="https://wa.me/62811399523" class="contact-opt">
+        <a href="https://wa.me/62811399523?text=<?php echo $wa_text; ?>" class="contact-opt">
           <div class="contact-icon" style="background:rgba(37,211,102,0.2)"><?php labnesia_icon( 'whatsapp', '#ffffff', 18 ); ?></div>
           <div>
             <div class="contact-name">Kintan — WhatsApp</div>
@@ -101,6 +102,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       <input class="chat-input" type="text" placeholder="Nama Anda">
       <input class="chat-input" type="tel" placeholder="Nomor WhatsApp">
       <input class="chat-input" type="text" placeholder="Nama lab / instansi">
+      <input class="chat-input" type="text" placeholder="Jabatan di instansi">
       <textarea class="chat-textarea" placeholder="Tuliskan pertanyaan atau kondisi lab Anda di sini..."></textarea>
       <button class="btn-chat" onclick="sendQuestion()">Kirim Pertanyaan <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></button>
     </div>
