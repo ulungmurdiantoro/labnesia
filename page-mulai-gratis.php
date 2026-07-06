@@ -196,7 +196,7 @@ $url_gap       = esc_url( home_url( '/gap-analisis/' ) );
 </div>
 
 <!-- FEATURED: GAP ANALYSIS -->
-<section>
+<section id="gap-analysis">
   <div class="section-inner">
     <p class="eyebrow">Give Value #1 · Paling Berdampak</p>
     <h2 class="h2">Mulai dari GAP Analysis<br>— 100% Gratis.</h2>
@@ -285,14 +285,14 @@ $url_gap       = esc_url( home_url( '/gap-analisis/' ) );
           <span class="give-card-tag tag-free">Gratis</span>
         </div>
         <div class="give-card-body">
-          <div class="give-card-title">Webinar Lab Talk</div>
+          <div class="give-card-title">Webinar Gratis</div>
           <div class="give-card-desc">Sesi edukasi mingguan — insight, tips, studi kasus, dan update regulasi dari para pakar Labnesia.</div>
           <div class="give-card-outputs">
             <div class="give-output-item"><div class="give-output-check"><?php labnesia_icon( 'check', 'var(--teal)', 12 ); ?></div>Setiap Rabu, pukul 13.00–14.30 WIB</div>
             <div class="give-output-item"><div class="give-output-check"><?php labnesia_icon( 'check', 'var(--teal)', 12 ); ?></div>Rekaman tersedia untuk peserta terdaftar</div>
             <div class="give-output-item"><div class="give-output-check"><?php labnesia_icon( 'check', 'var(--teal)', 12 ); ?></div>Tanya jawab langsung dengan pakar</div>
           </div>
-          <a href="#webinar" class="give-card-cta">Lihat jadwal <?php labnesia_icon( 'arrow-right', 'var(--teal)', 13 ); ?></a>
+          <a href="<?php echo esc_url( home_url( '/jadwal/?kategori=webinar' ) ); ?>" class="give-card-cta">Lihat jadwal <?php labnesia_icon( 'arrow-right', 'var(--teal)', 13 ); ?></a>
         </div>
       </div>
 
@@ -372,67 +372,8 @@ $url_gap       = esc_url( home_url( '/gap-analisis/' ) );
   </div>
 </section>
 
-<!-- WEBINAR SCHEDULE -->
-<section id="webinar">
-  <div class="section-inner">
-    <p class="eyebrow">Jadwal Webinar</p>
-    <h2 class="h2">Lab Talk — edukasi mingguan<br>dari para pakar.</h2>
-    <p class="body" style="max-width:520px;margin-bottom:0">Daftar webinar berikutnya dan pilih topik yang paling relevan dengan kondisi lab Anda saat ini.</p>
-    <div class="webinar-list">
-      <div class="webinar-item">
-        <div class="webinar-date" style="background:var(--teal)"><div class="webinar-day">9</div><div class="webinar-month">Jul 26</div></div>
-        <div class="webinar-info">
-          <div class="webinar-title">Memahami Klausul ISO/IEC 17025 dari Perspektif Asesor KAN</div>
-          <div class="webinar-meta">
-            <span class="webinar-meta-item"><?php labnesia_icon( 'clock', 'var(--gray-600)', 13 ); ?> 13.00–14.30 WIB</span>
-            <span class="webinar-meta-item"><?php labnesia_icon( 'globe', 'var(--gray-600)', 13 ); ?> Zoom · Online</span>
-            <span class="webinar-tag">Awareness</span>
-          </div>
-        </div>
-        <div class="webinar-cta"><a href="#" class="btn-daftar">Daftar gratis</a></div>
-      </div>
-      <div class="webinar-item">
-        <div class="webinar-date"><div class="webinar-day">16</div><div class="webinar-month">Jul 26</div></div>
-        <div class="webinar-info">
-          <div class="webinar-title">Cara Menyusun Dokumen Mutu ISO 17025 yang Benar-Benar Lulus Audit</div>
-          <div class="webinar-meta">
-            <span class="webinar-meta-item"><?php labnesia_icon( 'clock', 'var(--gray-600)', 13 ); ?> 13.00–14.30 WIB</span>
-            <span class="webinar-meta-item"><?php labnesia_icon( 'globe', 'var(--gray-600)', 13 ); ?> Zoom · Online</span>
-            <span class="webinar-tag">Dokumen</span>
-          </div>
-        </div>
-        <div class="webinar-cta"><a href="#" class="btn-daftar">Daftar gratis</a></div>
-      </div>
-      <div class="webinar-item">
-        <div class="webinar-date"><div class="webinar-day">23</div><div class="webinar-month">Jul 26</div></div>
-        <div class="webinar-info">
-          <div class="webinar-title">Ketidakpastian Pengujian — Konsep Dasar yang Sering Disalahpahami</div>
-          <div class="webinar-meta">
-            <span class="webinar-meta-item"><?php labnesia_icon( 'clock', 'var(--gray-600)', 13 ); ?> 13.00–14.30 WIB</span>
-            <span class="webinar-meta-item"><?php labnesia_icon( 'globe', 'var(--gray-600)', 13 ); ?> Zoom · Online</span>
-            <span class="webinar-tag">Teknis</span>
-          </div>
-        </div>
-        <div class="webinar-cta"><a href="#" class="btn-daftar-outline">Ingatkan saya</a></div>
-      </div>
-      <div class="webinar-item" style="opacity:.6">
-        <div class="webinar-date" style="background:var(--gray-400)"><div class="webinar-day">2</div><div class="webinar-month">Jul 26</div></div>
-        <div class="webinar-info">
-          <div class="webinar-title">Audit Internal ISO 17025 — Simulasi Temuan &amp; Tindakan Perbaikan</div>
-          <div class="webinar-meta">
-            <span class="webinar-meta-item"><?php labnesia_icon( 'clock', 'var(--gray-600)', 13 ); ?> 13.00–14.30 WIB</span>
-            <span class="webinar-meta-item"><?php labnesia_icon( 'check', 'var(--gray-600)', 13 ); ?> Sudah selesai</span>
-            <span class="webinar-tag" style="background:var(--gray-100);color:var(--gray-600)">Rekaman tersedia</span>
-          </div>
-        </div>
-        <div class="webinar-cta"><a href="#" class="btn-daftar-outline">Minta rekaman</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- COMMUNITY -->
-<section class="community-section">
+<section class="community-section" id="saluran">
   <div class="community-inner" style="padding:80px 48px">
     <div class="community-left">
       <p class="eyebrow">Bergabung dengan Saluran</p>

@@ -20,7 +20,7 @@
         <div class="footer-col">
             <h4><?php _e('Mulai Gratis','labnesia'); ?></h4>
             <a href="<?php echo esc_url( home_url('/mulai-gratis/') ); ?>">Gap Analysis Gratis</a>
-            <a href="<?php echo esc_url( home_url('/mulai-gratis/') ); ?>#webinar">Webinar Lab Talk</a>
+            <a href="<?php echo esc_url( home_url('/jadwal/?kategori=webinar') ); ?>">Webinar Gratis</a>
             <a href="<?php echo esc_url( home_url('/mulai-gratis/') ); ?>#download">Download Panduan</a>
             <a href="<?php echo esc_url( home_url('/mulai-gratis/') ); ?>">Komunitas Lab</a>
             <a href="<?php echo esc_url( home_url('/mulai-gratis/') ); ?>#praktisi">Kuliah Praktisi</a>

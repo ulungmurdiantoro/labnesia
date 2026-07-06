@@ -7,6 +7,7 @@ $url_faq       = esc_url( home_url( '/faq/' ) );
 $url_inhouse   = esc_url( home_url( '/inhouse/' ) );
 $url_pelatihan = esc_url( home_url( '/pelatihan-sertifikasi/' ) );
 $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
+$url_jadwal    = esc_url( home_url( '/jadwal/' ) );
 
 $mitra_dir = get_template_directory_uri() . '/assets/mitra/';
 $mitra_logos = [
@@ -507,15 +508,15 @@ $mitra_logos = [
         <div class="give-card-icon"><?php labnesia_icon( 'clipboard-list', '#ffffff', 36 ); ?></div>
         <div class="give-card-title">Gap Analysis Gratis</div>
         <div class="give-card-desc">Kami analisis kondisi lab Anda saat ini: gap dokumen, gap teknis, dan kesiapan sistem mutu. Hasilnya Anda dapatkan: Laporan GAP, Penetapan Ruang Lingkup, Struktur Organisasi, dan Roadmap Implementasi.</div>
-        <a href="<?php echo $url_gratis; ?>" class="give-card-cta">Daftar Gap Analysis <?php labnesia_icon( 'arrow-right', 'var(--teal-light)', 13 ); ?></a>
+        <a href="<?php echo $url_gratis; ?>#gap-analysis" class="give-card-cta">Daftar Gap Analysis <?php labnesia_icon( 'arrow-right', 'var(--teal-light)', 13 ); ?></a>
       </div>
 
       <div class="give-card">
         <span class="give-card-tag tag-gratis">100% Gratis</span>
         <div class="give-card-icon"><?php labnesia_icon( 'graduation-cap', '#ffffff', 36 ); ?></div>
-        <div class="give-card-title">Webinar Lab Talk</div>
+        <div class="give-card-title">Webinar Gratis</div>
         <div class="give-card-desc">Sesi edukasi mingguan tentang ISO 17025, tips akreditasi, studi kasus lab, dan sharing dari pakar. Cocok untuk awareness & orientasi tim lab Anda.</div>
-        <a href="<?php echo $url_gratis; ?>" class="give-card-cta">Lihat jadwal webinar <?php labnesia_icon( 'arrow-right', 'var(--teal-light)', 13 ); ?></a>
+        <a href="<?php echo $url_jadwal; ?>?kategori=webinar" class="give-card-cta">Lihat jadwal webinar <?php labnesia_icon( 'arrow-right', 'var(--teal-light)', 13 ); ?></a>
       </div>
 
       <div class="give-card">
@@ -523,7 +524,7 @@ $mitra_logos = [
         <div class="give-card-icon"><?php labnesia_icon( 'download', '#ffffff', 36 ); ?></div>
         <div class="give-card-title">Download Panduan & Template</div>
         <div class="give-card-desc">Panduan SNI ISO 17025, checklist persiapan akreditasi, silabus pelatihan, dan contoh dokumen audit kecukupan. Langsung bisa digunakan oleh tim Anda.</div>
-        <a href="<?php echo $url_gratis; ?>" class="give-card-cta">Download sekarang <?php labnesia_icon( 'arrow-right', 'var(--teal-light)', 13 ); ?></a>
+        <a href="<?php echo $url_gratis; ?>#download" class="give-card-cta">Download sekarang <?php labnesia_icon( 'arrow-right', 'var(--teal-light)', 13 ); ?></a>
       </div>
 
       <div class="give-card">
@@ -531,7 +532,7 @@ $mitra_logos = [
         <div class="give-card-icon"><?php labnesia_icon( 'zap', '#ffffff', 36 ); ?></div>
         <div class="give-card-title">Bootcamp 1 Hari</div>
         <div class="give-card-desc">Program intensif 1 hari (online) untuk memahami alur akreditasi secara menyeluruh. Dari struktur dokumen hingga cara daftar di KANMIS 2.0. Biaya sangat terjangkau.</div>
-        <a href="<?php echo $url_gratis; ?>" class="give-card-cta">Lihat jadwal bootcamp <?php labnesia_icon( 'arrow-right', 'var(--teal-light)', 13 ); ?></a>
+        <a href="<?php echo $url_jadwal; ?>?kategori=pelatihan" class="give-card-cta">Lihat jadwal bootcamp <?php labnesia_icon( 'arrow-right', 'var(--teal-light)', 13 ); ?></a>
       </div>
 
       <div class="give-card">
@@ -547,7 +548,7 @@ $mitra_logos = [
         <div class="give-card-icon"><?php labnesia_icon( 'message-circle', '#ffffff', 36 ); ?></div>
         <div class="give-card-title">Komunitas Lab Kompeten</div>
         <div class="give-card-desc">Forum diskusi eksklusif nasional antar manajer lab, analis, dan auditor internal. Tanya jawab dengan pakar, sharing pengalaman asesmen, dan update regulasi terbaru dari KAN.</div>
-        <a href="<?php echo $url_gratis; ?>" class="give-card-cta">Bergabung ke komunitas <?php labnesia_icon( 'arrow-right', 'var(--teal-light)', 13 ); ?></a>
+        <a href="<?php echo $url_gratis; ?>#saluran" class="give-card-cta">Bergabung ke saluran <?php labnesia_icon( 'arrow-right', 'var(--teal-light)', 13 ); ?></a>
       </div>
     </div>
   </div>
