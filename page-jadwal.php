@@ -83,7 +83,12 @@ $jadwal_query = new WP_Query( [
         $event_date = get_post_meta( get_the_ID(), '_jadwal_tanggal', true );
         $daftar_url = get_post_meta( get_the_ID(), '_jadwal_link_daftar', true );
         $source_thumb = get_post_meta( get_the_ID(), '_source_featured_image', true );
-        $cats = get_the_category();
+        // Only ever show Pelatihan/Webinar as the badge here, never Kegiatan
+        // (or any other category a post might also carry).
+        $jadwal_slugs = [ 'pelatihan', 'webinar' ];
+        $cats = array_values( array_filter( get_the_category(), function( $c ) use ( $jadwal_slugs ) {
+            return in_array( $c->slug, $jadwal_slugs, true );
+        } ) );
       ?>
       <div class="jadwal-card">
         <a href="<?php the_permalink(); ?>">
