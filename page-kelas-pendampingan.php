@@ -920,7 +920,6 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
 
       <div class="price-cta">
         <a href="#form-daftar" class="btn-amber">Daftar Batch Berikutnya</a>
-        <a href="<?php echo $url_booklet; ?>" class="btn-booklet" style="justify-content:center;width:100%" target="_blank" rel="noopener"><?php labnesia_icon( 'download', 'var(--navy)', 14 ); ?> Unduh Booklet Program</a>
         <a href="<?php echo $url_gratis; ?>" class="btn-ghost">Konsultasi gratis dulu <?php labnesia_icon( 'arrow-right', 'var(--navy)', 14 ); ?></a>
       </div>
 
