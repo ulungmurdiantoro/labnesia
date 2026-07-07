@@ -10,6 +10,50 @@ $url_faq       = esc_url( home_url( '/faq/' ) );
 $url_inhouse   = esc_url( home_url( '/inhouse/' ) );
 $url_pelatihan = esc_url( home_url( '/pelatihan-sertifikasi/' ) );
 $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
+$url_booklet   = esc_url( 'https://labnesia.id/wp-content/uploads/2026/07/Booklet-Kelas-Pendampingan-Labnesia-1.pdf' );
+
+/* ===== PRICING TIERS (auto-switch by date) ===== */
+$kp_pricing_tiers = array(
+	'normal' => array(
+		'label'  => 'Harga Normal',
+		'sub'    => '',
+		'start'  => null,
+		'end'    => null,
+		'prices' => array( 1 => 14000000, 2 => 27000000, 3 => 35000000 ),
+	),
+	'early1' => array(
+		'label'  => 'Early Bird 1',
+		'sub'    => '1 – 31 Juli 2026',
+		'start'  => '2026-07-01 00:00:00',
+		'end'    => '2026-07-31 23:59:59',
+		'prices' => array( 1 => 10000000, 2 => 19000000, 3 => 27000000 ),
+	),
+	'early2' => array(
+		'label'  => 'Early Bird 2',
+		'sub'    => '1 Ags – 30 Sept 2026',
+		'start'  => '2026-08-01 00:00:00',
+		'end'    => '2026-09-30 23:59:59',
+		'prices' => array( 1 => 11000000, 2 => 21000000, 3 => 30000000 ),
+	),
+);
+
+$kp_now_ts        = current_time( 'timestamp' );
+$kp_active_key    = 'normal';
+foreach ( array( 'early1', 'early2' ) as $kp_tier_key ) {
+	$kp_tier = $kp_pricing_tiers[ $kp_tier_key ];
+	if ( $kp_now_ts >= strtotime( $kp_tier['start'] ) && $kp_now_ts <= strtotime( $kp_tier['end'] ) ) {
+		$kp_active_key = $kp_tier_key;
+		break;
+	}
+}
+$kp_active        = $kp_pricing_tiers[ $kp_active_key ];
+$kp_active_prices = $kp_active['prices'];
+
+if ( ! function_exists( 'labnesia_kp_rp' ) ) {
+	function labnesia_kp_rp( $n ) {
+		return 'Rp' . number_format( $n, 0, ',', '.' ) . ',-';
+	}
+}
 ?>
 <?php get_header(); ?>
 <style>
@@ -47,6 +91,8 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
   .btn-amber:hover{background:#e09620}
   .btn-ghost{background:transparent;color:var(--navy);padding:11px 24px;border-radius:9px;font-weight:600;font-size:14px;text-decoration:none;border:1.5px solid var(--gray-200);cursor:pointer;transition:all .2s;display:inline-block}
   .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+  .btn-booklet{background:linear-gradient(135deg,#F5A623 0%,#FFC24D 100%);color:var(--navy);padding:11px 24px;border-radius:9px;font-weight:800;font-size:14px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 14px rgba(245,166,35,.45)}
+  .btn-booklet:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(245,166,35,.6)}
 
   /* MAIN LAYOUT */
   .main-layout{max-width:1200px;margin:0 auto;padding:64px 48px;display:grid;grid-template-columns:1fr 360px;gap:64px;align-items:start}
@@ -78,14 +124,25 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
   .seri-outputs{font-size:12px;color:var(--gray-600);line-height:1.5}
   .jp-badge{display:inline-block;background:var(--teal-pale);color:var(--teal);font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;margin-top:6px}
 
-  /* TIMELINE */
-  .timeline{position:relative;padding-left:32px}
-  .timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--gray-200)}
-  .tl-item{position:relative;margin-bottom:20px}
-  .tl-dot{position:absolute;left:-32px;top:4px;width:20px;height:20px;border-radius:50%;background:var(--teal);border:3px solid white;box-shadow:0 0 0 2px var(--teal)}
-  .tl-month{font-size:11px;font-weight:700;color:var(--teal);letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
-  .tl-label{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:2px}
-  .tl-sub{font-size:13px;color:var(--gray-600)}
+  /* BATCH TIMELINE */
+  .batch-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+  .batch-tab{padding:10px 20px;border-radius:9px;border:1.5px solid var(--gray-200);background:white;font-size:14px;font-weight:700;color:var(--gray-600);cursor:pointer;transition:all .2s}
+  .batch-tab:hover{border-color:var(--teal);color:var(--teal)}
+  .batch-tab.active{background:var(--navy);border-color:var(--navy);color:white}
+  .batch-panel{display:none}
+  .batch-panel.active{display:block}
+  .bt-item{display:flex;align-items:center;margin-bottom:14px}
+  .bt-num{width:36px;height:36px;border-radius:50%;background:white;border:2px solid var(--teal);color:var(--teal);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .bt-dash{width:14px;height:2px;background:var(--gray-200);flex-shrink:0}
+  .bt-date{background:var(--teal);border-radius:10px;padding:9px 14px;text-align:center;min-width:100px;flex-shrink:0}
+  .bt-date-day{font-size:9px;font-weight:700;color:rgba(255,255,255,.8);text-transform:uppercase;letter-spacing:.03em}
+  .bt-date-num{font-size:18px;font-weight:800;color:white;line-height:1.15}
+  .bt-date-month{font-size:10px;font-weight:700;color:white;text-transform:uppercase}
+  .bt-date-time{background:var(--navy);color:white;font-size:9px;font-weight:700;padding:3px 8px;border-radius:5px;margin-top:5px;white-space:nowrap;display:inline-block}
+  .bt-card{flex:1;background:white;border:1px solid var(--gray-200);border-radius:10px;padding:12px 18px;margin-left:14px;font-size:14px;font-weight:700;color:var(--navy);line-height:1.4}
+  .bt-coming-soon{background:var(--gray-50);border:1.5px dashed var(--gray-200);border-radius:16px;padding:48px 24px;text-align:center}
+  .bt-coming-soon-title{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:8px}
+  .bt-coming-soon-sub{font-size:14px;color:var(--gray-600);max-width:420px;margin:0 auto}
 
   /* BENEFIT LIST */
   .benefit-item{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid var(--gray-200)}
@@ -127,6 +184,29 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
   .guarantee{display:flex;align-items:center;gap:10px;padding:14px 24px;background:var(--teal-pale);border-top:1px solid rgba(26,158,117,0.2)}
   .guarantee-icon{font-size:22px}
   .guarantee-text{font-size:12px;color:var(--teal);font-weight:500;line-height:1.4}
+
+  /* PRICE TABLE (full width, auto highlight by date) */
+  .price-table-wrap{max-width:1200px;margin:0 auto;padding:48px 48px 0}
+  .price-table-title{font-size:14px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.04em;margin-bottom:20px}
+  .price-table{width:100%;border-collapse:separate;border-spacing:10px 14px}
+  .price-table tr.pt-head-row td{padding:0;text-align:center;font-size:13px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.03em}
+  .pt-best-badge{background:var(--teal);color:white;font-size:10px;font-weight:800;padding:2px 9px;border-radius:100px;margin-left:6px;vertical-align:middle;text-transform:none;letter-spacing:0}
+  .pt-row-label{width:190px;padding:0 10px 0 0!important}
+  .pt-row-label-main{font-size:15px;font-weight:800;color:var(--navy)}
+  .pt-row-label-sub{font-size:12px;color:var(--gray-600);margin-top:2px}
+  .pt-box{border-radius:12px;padding:16px 12px;text-align:center;position:relative}
+  .pt-box-normal{background:white;border:1.5px solid var(--gray-200)}
+  .pt-box-normal .pt-price{color:var(--gray-400);text-decoration:line-through}
+  .pt-box-normal .pt-sub{color:var(--gray-400);text-decoration:line-through}
+  .pt-box-early1{background:var(--teal)}
+  .pt-box-early1 .pt-price,.pt-box-early1 .pt-sub{color:white}
+  .pt-box-early2{background:var(--navy)}
+  .pt-box-early2 .pt-price,.pt-box-early2 .pt-sub{color:white}
+  .pt-price{font-size:19px;font-weight:800;line-height:1.2}
+  .pt-sub{font-size:11px;opacity:.9;margin-top:3px}
+  .pt-active-ring{box-shadow:0 0 0 3px rgba(245,166,35,.6)}
+  .pt-active-tag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--amber);color:var(--navy);font-size:9px;font-weight:800;padding:3px 10px;border-radius:100px;letter-spacing:.03em;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+  @media (max-width:860px){.price-table{border-spacing:6px 10px}.pt-row-label{width:110px}.price-table tr.pt-head-row td{font-size:11px}.pt-price{font-size:15px}}
 
   /* EXPERT GRID */
   .expert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -231,16 +311,55 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
 <div class="sticky-bar">
   <div style="display:flex;align-items:center;gap:20px">
     <div class="sticky-bar-left">
-      <span class="sticky-price">Rp 14 jt</span>
-      <span class="sticky-unit">/peserta · mulai dari</span>
+      <span class="sticky-price"><?php echo labnesia_kp_rp( $kp_active_prices[1] ); ?></span>
+      <span class="sticky-unit">/peserta · mulai dari<?php echo $kp_active_key !== 'normal' ? ' (' . esc_html( $kp_active['label'] ) . ')' : ''; ?></span>
     </div>
     <span class="sticky-promo"><?php labnesia_icon( 'zap', '#8B6000', 12 ); ?> Hemat s.d. Rp 20 juta</span>
-    <span style="font-size:13px;color:var(--gray-600)">Batch dibuka tiap 1–2 bulan — kuota terbatas</span>
   </div>
   <div class="sticky-actions">
+    <a href="<?php echo $url_booklet; ?>" class="btn-booklet" target="_blank" rel="noopener"><?php labnesia_icon( 'download', 'var(--navy)', 14 ); ?> Unduh Booklet</a>
     <a href="#outline" class="btn-ghost">Lihat Outline</a>
     <a href="#form-daftar" class="btn-primary">Daftar Sekarang</a>
     <a href="<?php echo $url_gratis; ?>" class="btn-amber">Konsultasi Gratis Dulu</a>
+  </div>
+</div>
+
+<!-- PRICE TABLE -->
+<div class="price-table-wrap">
+  <p class="price-table-title">Harga per Instansi / Laboratorium:</p>
+  <div style="overflow-x:auto">
+    <table class="price-table">
+      <tr class="pt-head-row">
+        <td></td>
+        <?php foreach ( array( 1, 2, 3 ) as $kp_n ) : ?>
+        <td>
+          <?php echo $kp_n; ?> Peserta<?php if ( 3 === $kp_n ) : ?><span class="pt-best-badge">BEST VALUE</span><?php endif; ?>
+        </td>
+        <?php endforeach; ?>
+      </tr>
+      <?php foreach ( $kp_pricing_tiers as $kp_key => $kp_tier ) :
+        $kp_is_active = ( $kp_key === $kp_active_key );
+      ?>
+      <tr class="pt-row">
+        <td class="pt-row-label">
+          <div class="pt-row-label-main"><?php echo esc_html( $kp_tier['label'] ); ?></div>
+          <?php if ( $kp_tier['sub'] ) : ?><div class="pt-row-label-sub"><?php echo esc_html( $kp_tier['sub'] ); ?></div><?php endif; ?>
+        </td>
+        <?php foreach ( array( 1, 2, 3 ) as $kp_n ) :
+          $kp_price     = $kp_tier['prices'][ $kp_n ];
+          $kp_per_orang = floor( $kp_price / $kp_n );
+        ?>
+        <td>
+          <div class="pt-box pt-box-<?php echo esc_attr( $kp_key ); ?><?php echo $kp_is_active ? ' pt-active-ring' : ''; ?>">
+            <?php if ( $kp_is_active ) : ?><span class="pt-active-tag">Harga Saat Ini</span><?php endif; ?>
+            <div class="pt-price"><?php echo labnesia_kp_rp( $kp_price ); ?></div>
+            <div class="pt-sub"><?php echo ( 1 === $kp_n ) ? '/ orang' : labnesia_kp_rp( $kp_per_orang ) . '/ orang'; ?></div>
+          </div>
+        </td>
+        <?php endforeach; ?>
+      </tr>
+      <?php endforeach; ?>
+    </table>
   </div>
 </div>
 
@@ -420,24 +539,75 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
     </div>
 
     <!-- TIMELINE -->
+    <?php
+    $kp_batch1_sessions = array(
+      array( 'day' => 'Senin',          'date' => '29',    'month' => 'Juni 2026',      'time' => '09.00 – 12.00 WIB', 'title' => 'Pemahaman SNI ISO/IEC 17025:2017' ),
+      array( 'day' => 'Selasa',         'date' => '30',    'month' => 'Juni 2026',      'time' => '09.00 – 12.00 WIB', 'title' => 'GAP Analysis Kesiapan Akreditasi Laboratorium' ),
+      array( 'day' => 'Senin – Selasa', 'date' => '13–14', 'month' => 'Juli 2026',      'time' => '09.00 – 12.00 WIB', 'title' => 'Penyusunan Dokumen Sistem Manajemen SNI ISO/IEC 17025:2017' ),
+      array( 'day' => 'Senin – Selasa', 'date' => '27–28', 'month' => 'Juli 2026',      'time' => '09.00 – 12.00 WIB', 'title' => 'Implementasi Uji Profisiensi dan Uji Banding Antar Laboratorium' ),
+      array( 'day' => 'Senin – Selasa', 'date' => '10–11', 'month' => 'Agustus 2026',   'time' => '09.00 – 12.00 WIB', 'title' => 'Verifikasi dan Validasi Metode Pengujian' ),
+      array( 'day' => 'Senin – Selasa', 'date' => '24–25', 'month' => 'Agustus 2026',   'time' => '09.00 – 12.00 WIB', 'title' => 'Ketidakpastian Pengukuran Sesuai SNI ISO/IEC 17025:2017' ),
+      array( 'day' => 'Senin – Selasa', 'date' => '07–08', 'month' => 'September 2026', 'time' => '09.00 – 12.00 WIB', 'title' => 'Penerapan Jaminan Mutu Internal dan Pengendalian Mutu Hasil Uji' ),
+      array( 'day' => 'Senin – Rabu',   'date' => '21–23', 'month' => 'Oktober 2026',   'time' => '09.00 – 16.00 WIB', 'title' => 'Audit Internal Laboratorium Berdasarkan SNI ISO/IEC 17025:2017' ),
+      array( 'day' => 'Senin – Selasa', 'date' => '26–27', 'month' => 'Oktober 2026',   'time' => '09.00 – 12.00 WIB', 'title' => 'Implementasi Kaji Ulang Manajemen Sesuai SNI ISO/IEC 17025:2017' ),
+    );
+    $kp_batch2_sessions = array(
+      array( 'month' => 'Oktober 2026',   'time' => '09.00 – 12.00 WIB', 'title' => 'Pemahaman SNI ISO/IEC 17025:2017' ),
+      array( 'month' => 'Oktober 2026',   'time' => '09.00 – 12.00 WIB', 'title' => 'GAP Analysis Kesiapan Akreditasi Laboratorium' ),
+      array( 'month' => 'Oktober 2026',   'time' => '09.00 – 12.00 WIB', 'title' => 'Penyusunan Dokumen Sistem Manajemen SNI ISO/IEC 17025:2017' ),
+      array( 'month' => 'November 2026',  'time' => '09.00 – 12.00 WIB', 'title' => 'Implementasi Uji Profisiensi dan Uji Banding Antar Laboratorium' ),
+      array( 'month' => 'November 2026',  'time' => '09.00 – 12.00 WIB', 'title' => 'Verifikasi dan Validasi Metode Pengujian' ),
+      array( 'month' => 'Desember 2026',  'time' => '09.00 – 12.00 WIB', 'title' => 'Ketidakpastian Pengukuran Sesuai SNI ISO/IEC 17025:2017' ),
+      array( 'month' => 'Desember 2026',  'time' => '09.00 – 12.00 WIB', 'title' => 'Penerapan Jaminan Mutu Internal dan Pengendalian Mutu Hasil Uji' ),
+      array( 'month' => 'Januari 2027',   'time' => '09.00 – 12.00 WIB', 'title' => 'Audit Internal Laboratorium Berdasarkan SNI ISO/IEC 17025:2017' ),
+      array( 'month' => 'Januari 2027',   'time' => '09.00 – 12.00 WIB', 'title' => 'Implementasi Kaji Ulang Manajemen Sesuai SNI ISO/IEC 17025:2017' ),
+    );
+    ?>
     <div style="margin-bottom:56px">
-      <p class="eyebrow">Timeline Contoh Satu Batch</p>
-      <h2 class="h2">6 bulan, setiap langkah<br>punya target jelas.</h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:28px">
-        <div class="timeline">
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-month">Bulan 1 · W3</div><div class="tl-label">Awareness ISO 17025</div><div class="tl-sub">Pemahaman standar & sistem mutu</div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-month">Bulan 1 · W4</div><div class="tl-label">GAP Analysis</div><div class="tl-sub">Peta kondisi lab + roadmap program</div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-month">Bulan 2 · W1</div><div class="tl-label">Workshop Dokumen ISO 17025</div><div class="tl-sub">Template PM, SOP, IK, Formulir</div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-month">Bulan 2 · W3</div><div class="tl-label">Uji Profisiensi / Uji Banding</div><div class="tl-sub">Rencana & laporan UP/UB</div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-month">Bulan 3 · W1</div><div class="tl-label">Verifikasi & Validasi Metode</div><div class="tl-sub">Laporan VVM per parameter</div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-month">Bulan 3 · W3</div><div class="tl-label">Ketidakpastian Pengujian</div><div class="tl-sub">Laporan per parameter lab</div></div>
+      <p class="eyebrow">Timeline Per Batch</p>
+      <h2 class="h2">Pilih batch yang sesuai<br>jadwal lab Anda.</h2>
+      <p class="body" style="margin-bottom:24px">Setiap batch mengikuti alur 9 sesi yang sama — hanya jadwal pelaksanaannya yang berbeda.</p>
+
+      <div class="batch-tabs">
+        <button type="button" class="batch-tab" onclick="showBatch(this,'batch-1')">Batch 1 · Juni 2026 <span style="opacity:.7;font-weight:600">(Pendaftaran ditutup)</span></button>
+        <button type="button" class="batch-tab active" onclick="showBatch(this,'batch-2')">Batch 2 · Oktober 2026</button>
+        <button type="button" class="batch-tab" onclick="showBatch(this,'batch-3')">Batch 3</button>
+      </div>
+
+      <div class="batch-panel" id="batch-1">
+        <?php foreach ( $kp_batch1_sessions as $kp_i => $kp_s ) : ?>
+        <div class="bt-item">
+          <div class="bt-num"><?php echo str_pad( $kp_i + 1, 2, '0', STR_PAD_LEFT ); ?></div>
+          <div class="bt-dash"></div>
+          <div class="bt-date">
+            <div class="bt-date-day"><?php echo esc_html( $kp_s['day'] ); ?></div>
+            <div class="bt-date-num"><?php echo esc_html( $kp_s['date'] ); ?></div>
+            <div class="bt-date-month"><?php echo esc_html( $kp_s['month'] ); ?></div>
+            <div class="bt-date-time"><?php echo esc_html( $kp_s['time'] ); ?></div>
+          </div>
+          <div class="bt-card"><?php echo esc_html( $kp_s['title'] ); ?></div>
         </div>
-        <div class="timeline">
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-month">Bulan 4 · W1</div><div class="tl-label">Jaminan Mutu Internal</div><div class="tl-sub">Control chart, replika, antar analis</div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-month">Bulan 4 · W3</div><div class="tl-label">Audit Internal</div><div class="tl-sub">Simulasi AI + laporan lengkap</div></div>
-          <div class="tl-item"><div class="tl-dot"></div><div class="tl-month">Bulan 5 · W2</div><div class="tl-label">Kaji Ulang Manajemen</div><div class="tl-sub">Rapat KUM + matriks tindak lanjut</div></div>
-          <div class="tl-item"><div class="tl-dot" style="background:var(--amber)"></div><div class="tl-month">Bulan 5 · W4</div><div class="tl-label"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?> Siap Audit Internal</div><div class="tl-sub">Lab selesai Tahap 1–4</div></div>
-          <div class="tl-item"><div class="tl-dot" style="background:var(--gray-400)"></div><div class="tl-month">Bulan 6 (opsional)</div><div class="tl-label">Kelas Lanjutan (opsional)</div><div class="tl-sub">Pendaftaran akreditasi & simulasi asesmen</div></div>
+        <?php endforeach; ?>
+      </div>
+
+      <div class="batch-panel active" id="batch-2">
+        <?php foreach ( $kp_batch2_sessions as $kp_i => $kp_s ) : ?>
+        <div class="bt-item">
+          <div class="bt-num"><?php echo str_pad( $kp_i + 1, 2, '0', STR_PAD_LEFT ); ?></div>
+          <div class="bt-dash"></div>
+          <div class="bt-date">
+            <div class="bt-date-month" style="font-size:12px;margin-top:2px"><?php echo esc_html( $kp_s['month'] ); ?></div>
+            <div class="bt-date-time"><?php echo esc_html( $kp_s['time'] ); ?></div>
+          </div>
+          <div class="bt-card"><?php echo esc_html( $kp_s['title'] ); ?></div>
+        </div>
+        <?php endforeach; ?>
+      </div>
+
+      <div class="batch-panel" id="batch-3">
+        <div class="bt-coming-soon">
+          <div class="bt-coming-soon-title">🚧 Jadwal Batch 3 — Coming Soon</div>
+          <p class="bt-coming-soon-sub">Jadwal lengkap Batch 3 akan segera diumumkan. Hubungi tim kami untuk mendapat info paling awal begitu jadwal dan kuota dibuka.</p>
         </div>
       </div>
     </div>
@@ -681,27 +851,33 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
   <!-- RIGHT SIDEBAR -->
   <div id="daftar">
     <div class="price-card">
+      <?php
+      $kp_jt1    = $kp_active_prices[1] / 1000000;
+      $kp_jt2    = $kp_active_prices[2] / 1000000;
+      $kp_jt3    = $kp_active_prices[3] / 1000000;
+      $kp_hemat2 = ( $kp_active_prices[1] * 2 - $kp_active_prices[2] ) / 1000000;
+      ?>
       <div class="price-card-header">
-        <div class="price-card-eyebrow">Kelas Pendampingan · Batch Dibuka Rutin</div>
+        <div class="price-card-eyebrow">Kelas Pendampingan<?php echo ( 'normal' !== $kp_active_key ) ? ' · ' . esc_html( $kp_active['label'] ) . ' Aktif' : ' · Pendaftaran Dibuka'; ?></div>
         <div class="price-card-title">Akreditasi Lab ISO/IEC 17025</div>
         <div class="price-row">
-          <span class="price-main" id="price-display">Rp 14 jt</span>
+          <span class="price-main" id="price-display">Rp <?php echo $kp_jt1; ?> jt</span>
           <span class="price-unit">/peserta</span>
         </div>
         <div class="price-options">
-          <div class="price-opt active" onclick="selectPrice(this,'Rp 14 jt','1 peserta')">
+          <div class="price-opt active" onclick="selectPrice(this,'Rp <?php echo $kp_jt1; ?> jt','1 peserta')">
             <div class="price-opt-num">1 peserta</div>
-            <div class="price-opt-val">14 jt</div>
+            <div class="price-opt-val"><?php echo $kp_jt1; ?> jt</div>
             <div class="price-opt-sub">per orang</div>
           </div>
-          <div class="price-opt" onclick="selectPrice(this,'Rp 26 jt','2 peserta')">
+          <div class="price-opt" onclick="selectPrice(this,'Rp <?php echo $kp_jt2; ?> jt','2 peserta')">
             <div class="price-opt-num">2 peserta</div>
-            <div class="price-opt-val">26 jt</div>
-            <div class="price-opt-sub">hemat 2 jt</div>
+            <div class="price-opt-val"><?php echo $kp_jt2; ?> jt</div>
+            <div class="price-opt-sub"><?php echo $kp_hemat2 > 0 ? 'hemat ' . $kp_hemat2 . ' jt' : 'per instansi'; ?></div>
           </div>
-          <div class="price-opt best" onclick="selectPrice(this,'Rp 35 jt','3 peserta')">
+          <div class="price-opt best" onclick="selectPrice(this,'Rp <?php echo $kp_jt3; ?> jt','3 peserta')">
             <div class="price-opt-num">3 peserta</div>
-            <div class="price-opt-val">35 jt</div>
+            <div class="price-opt-val"><?php echo $kp_jt3; ?> jt</div>
             <span class="best-badge">BEST VALUE</span>
           </div>
         </div>
@@ -739,11 +915,12 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
       </div>
 
       <div class="urgency">
-        <p class="urgency-text"><?php labnesia_icon( 'hourglass', '#8B6000', 12 ); ?> Batch dibuka tiap 1–2 bulan — <strong>maks. 10 instansi/batch</strong></p>
+        <p class="urgency-text"><?php labnesia_icon( 'hourglass', '#8B6000', 12 ); ?> Batch Oktober 2026 dibuka — <strong>maks. 10 instansi/batch</strong></p>
       </div>
 
       <div class="price-cta">
         <a href="#form-daftar" class="btn-amber">Daftar Batch Berikutnya</a>
+        <a href="<?php echo $url_booklet; ?>" class="btn-booklet" style="justify-content:center;width:100%" target="_blank" rel="noopener"><?php labnesia_icon( 'download', 'var(--navy)', 14 ); ?> Unduh Booklet Program</a>
         <a href="<?php echo $url_gratis; ?>" class="btn-ghost">Konsultasi gratis dulu <?php labnesia_icon( 'arrow-right', 'var(--navy)', 14 ); ?></a>
       </div>
 
@@ -773,9 +950,9 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
         <div>
           <label style="font-size:12px;font-weight:600;color:var(--gray-800);display:block;margin-bottom:5px">Jumlah peserta</label>
           <select id="mf-jumlah" style="width:100%;padding:10px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:var(--font-display);outline:none;background:white">
-            <option>1 peserta — Rp 14.000.000</option>
-            <option>2 peserta — Rp 26.000.000</option>
-            <option selected>3 peserta — Rp 35.000.000 (Best Value)</option>
+            <option>1 peserta — <?php echo labnesia_kp_rp( $kp_active_prices[1] ); ?></option>
+            <option>2 peserta — <?php echo labnesia_kp_rp( $kp_active_prices[2] ); ?></option>
+            <option selected>3 peserta — <?php echo labnesia_kp_rp( $kp_active_prices[3] ); ?> (Best Value)</option>
           </select>
         </div>
         <div>
@@ -818,6 +995,12 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
 </div>
 
 <script>
+function showBatch(el,id){
+  document.querySelectorAll('.batch-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.batch-panel').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById(id).classList.add('active');
+}
 function toggleOutline(el){
   const body=el.nextElementSibling;
   const isOpen=body.classList.contains('open');
