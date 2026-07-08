@@ -165,7 +165,925 @@ function labnesia_ps_silabus_section( $posts ) {
 	</div>
 	<?php
 }
+
+function labnesia_get_static_jp24_schemes() {
+	return [
+		[
+			'title' => 'Laboratory Quality System Officer ISO/IEC 17025',
+			'subtitle' => 'Petugas Sistem Mutu Laboratorium ISO/IEC 17025',
+			'date' => '22 s.d. 23 Juni 2026',
+			'format' => 'Online via Zoom',
+			'investasi' => 'Rp 1.750.000 / peserta',
+			'benefit' => [
+				'Mendapatkan e-sertifikat pelatihan 24 JP',
+				'Soft copy materi pelatihan',
+				'Rekaman pelatihan',
+				'Kartu member Labnesia'
+			],
+			'rekomendasi' => [
+				'Kepala Laboratorium',
+				'Manajer Laboratorium',
+				'Pranata Laboratorium',
+				'Quality Assurance',
+				'Quality Control',
+				'Teknisi Laboratorium / Analis Lab',
+				'Mahasiswa / Fresh Graduate'
+			],
+			'silabus' => [
+				[
+					'heading' => '1. Ketidakberpihakan & Kerahasiaan (Klausul 4)',
+					'items' => [
+						'Analisis risiko ketidakberpihakan',
+						'Kebijakan dan prosedur kerahasiaan'
+					]
+				],
+				[
+					'heading' => '2. Struktur Organisasi Laboratorium (Klausul 5)',
+					'items' => [
+						'Status legal & struktur organisasi',
+						'Wewenang, tanggung jawab & peran personel'
+					]
+				],
+				[
+					'heading' => '3. Pengelolaan Sumber Daya (Klausul 6)',
+					'items' => [
+						'Kompetensi personel & kondisi lingkungan',
+						'Ketertelusuran metrologi',
+						'Pengelolaan produk & jasa eksternal'
+					]
+				],
+				[
+					'heading' => '4. Persyaratan Proses (Klausul 7)',
+					'items' => [
+						'Kaji ulang permintaan, tender & kontrak',
+						'Seleksi, verifikasi & validasi metode',
+						'Pengambilan sampel & penanganan barang uji',
+						'Keabsahan hasil & pelaporan',
+						'Analisis keluhan & ketidaksesuaian'
+					]
+				],
+				[
+					'heading' => '5. Sistem Manajemen Laboratorium (Klausul 8)',
+					'items' => [
+						'Opsi sistem manajemen (A & B)',
+						'Pengendalian dokumen & rekaman',
+						'Tindakan risiko & peluang',
+						'Audit internal & kaji ulang manajemen'
+					]
+				]
+			]
+		],
+		[
+			'title' => 'GLP Laboratory Technician',
+			'subtitle' => 'Teknisi Laboratorium Berbasis GLP',
+			'date' => 'Batch 1: 23 s.d. 24 Juli 2026 | Batch 2: 16 s.d. 17 September 2026',
+			'format' => 'Online via Zoom',
+			'investasi' => 'Rp 1.750.000 / peserta',
+			'benefit' => [
+				'Mendapatkan e-sertifikat pelatihan 24 JP',
+				'Soft copy materi pelatihan',
+				'Rekaman pelatihan',
+				'Kartu member Labnesia'
+			],
+			'rekomendasi' => [
+				'Kepala Laboratorium',
+				'Manajer Laboratorium',
+				'Pranata Laboratorium',
+				'Quality Assurance',
+				'Quality Control',
+				'Teknisi Laboratorium / Analis Lab',
+				'Mahasiswa / Fresh Graduate'
+			],
+			'silabus' => [
+				[
+					'heading' => '1. Persiapan Penerapan GLP',
+					'items' => [
+						'Pemetaan area kerja untuk mencegah kontaminasi silang',
+						'Penyusunan SOP teknis yang aplikatif',
+						'Pengecekan status kalibrasi alat & pengelolaan logbook'
+					]
+				],
+				[
+					'heading' => '2. Pelaksanaan Pengujian Sesuai Prinsip GLP',
+					'items' => [
+						'Pelaksanaan pengujian mengikuti Study Plan tanpa penyimpangan',
+						'Teknik penimbangan, pemipetan & preparasi sampel yang meminimalisir human error'
+					]
+				],
+				[
+					'heading' => '3. Pengendalian Mutu dan Data',
+					'items' => [
+						'Pencatatan data prinsip ALCOA',
+						'Verifikasi akurasi menggunakan bahan acuan bersertifikat',
+						'Pembacaan Control Chart & deteksi out-of-trend',
+						'Pengelolaan raw data, spesimen & sampel untuk audit'
+					]
+				],
+				[
+					'heading' => '4. Pengelolaan Limbah & Pasca Pengujian',
+					'items' => [
+						'Pemilahan limbah B3 berdasarkan karakteristik',
+						'Pengembalian area kerja ke kondisi standar',
+						'Pengelolaan manifes limbah'
+					]
+				]
+			]
+		],
+		[
+			'title' => 'Laboratory HSE Officer',
+			'subtitle' => 'Petugas K3L Laboratorium',
+			'date' => 'Batch 1: 31 Juli s.d. 1 Agustus 2026 | Batch 2: 02 s.d. 03 Desember 2026',
+			'format' => 'Online via Zoom',
+			'investasi' => 'Rp 1.750.000 / peserta',
+			'benefit' => [
+				'Mendapatkan e-sertifikat pelatihan 24 JP',
+				'Soft copy materi pelatihan',
+				'Rekaman pelatihan',
+				'Kartu member Labnesia'
+			],
+			'rekomendasi' => [
+				'Kepala Laboratorium',
+				'Manajer Laboratorium',
+				'Pranata Laboratorium',
+				'Quality Assurance',
+				'Quality Control',
+				'Teknisi Laboratorium / Analis Lab',
+				'Mahasiswa / Fresh Graduate'
+			],
+			'silabus' => [
+				[
+					'heading' => '1. Identifikasi Bahaya & Penilaian Risiko (HIRADC)',
+					'items' => [
+						'Identifikasi potensi bahaya di laboratorium',
+						'Penilaian risiko',
+						'Penetapan pengendalian risiko'
+					]
+				],
+				[
+					'heading' => '2. Pengelolaan Bahan Kimia Laboratorium',
+					'items' => [
+						'Penyimpanan bahan kimia',
+						'Pelabelan dan inventarisasi',
+						'Penanganan bahan kimia'
+					]
+				],
+				[
+					'heading' => '3. Pengelolaan & Penyimpanan Limbah B3',
+					'items' => [
+						'Pemilahan dan pengemasan limbah B3',
+						'Pelabelan limbah B3',
+						'Penyimpanan limbah di TPS'
+					]
+				],
+				[
+					'heading' => '4. Pengelolaan Tindakan Tanggap Darurat',
+					'items' => [
+						'Identifikasi situasi darurat',
+						'Respons keadaan darurat',
+						'Pelaporan kejadian'
+					]
+				],
+				[
+					'heading' => '5. Inspeksi K3 & Lingkungan Kerja Laboratorium',
+					'items' => [
+						'Perencanaan inspeksi',
+						'Pelaksanaan inspeksi',
+						'Pelaporan hasil inspeksi'
+					]
+				]
+			]
+		],
+		[
+			'title' => 'QC Laboratory Analyst',
+			'subtitle' => 'Analis Quality Control Laboratorium',
+			'date' => '07 s.d. 08 Agustus 2026',
+			'format' => 'Online via Zoom',
+			'investasi' => 'Rp 1.750.000 / peserta',
+			'benefit' => [
+				'Mendapatkan e-sertifikat pelatihan 24 JP',
+				'Soft copy materi pelatihan',
+				'Rekaman pelatihan',
+				'Kartu member Labnesia'
+			],
+			'rekomendasi' => [
+				'Kepala Laboratorium',
+				'Manajer Laboratorium',
+				'Pranata Laboratorium',
+				'Quality Assurance',
+				'Quality Control',
+				'Teknisi Laboratorium / Analis Lab',
+				'Mahasiswa / Fresh Graduate'
+			],
+			'silabus' => [
+				[
+					'heading' => 'Materi Pelatihan',
+					'items' => [
+						'Kaji Ulang Permintaan, Tender & Kontrak Pengujian',
+						'Pemilihan, Verifikasi & Validasi Metode Pengujian',
+						'Pengambilan Sampel (Sampling)',
+						'Penanganan & Persiapan Sampel untuk Analisis',
+						'Pembuatan & Pengelolaan Rekaman Teknis Pengujian',
+						'Penjaminan Mutu Hasil Pengujian',
+						'Evaluasi Ketidakpastian Pengukuran',
+						'Penyusunan Laporan Hasil Uji',
+						'Identifikasi & Pengendalian Pekerjaan yang Tidak Sesuai'
+					]
+				]
+			]
+		],
+		[
+			'title' => 'Laboratory Operations Officer',
+			'subtitle' => 'Pranata Laboratorium',
+			'date' => '12 s.d. 13 Agustus 2026',
+			'format' => 'Online via Zoom',
+			'investasi' => 'Rp 1.750.000 / peserta',
+			'benefit' => [
+				'Mendapatkan e-sertifikat pelatihan 24 JP',
+				'Soft copy materi pelatihan',
+				'Rekaman pelatihan',
+				'Kartu member Labnesia'
+			],
+			'rekomendasi' => [
+				'Kepala Laboratorium',
+				'Manajer Laboratorium',
+				'Pranata Laboratorium',
+				'Quality Assurance',
+				'Quality Control',
+				'Teknisi Laboratorium / Analis Lab',
+				'Mahasiswa / Fresh Graduate'
+			],
+			'silabus' => [
+				[
+					'heading' => '1. Menetapkan Konteks Organisasi dan Perencanaan Mutu (Plan)',
+					'items' => [
+						'Identifikasi konteks laboratorium',
+						'Penetapan ruang lingkup dan risiko',
+						'Penetapan sasaran mutu'
+					]
+				],
+				[
+					'heading' => '2. Mengelola Sumber Daya dan Operasional (Do)',
+					'items' => [
+						'Pengelolaan sumber daya manusia dan infrastruktur',
+						'Pengendalian informasi terdokumentasi',
+						'Komunikasi dan pengendalian eksternal'
+					]
+				],
+				[
+					'heading' => '3. Melakukan Evaluasi Kinerja (Check)',
+					'items' => [
+						'Pemantauan kepuasan pelanggan',
+						'Pelaksanaan audit internal',
+						'Pelaksanaan tinjauan manajemen'
+					]
+				],
+				[
+					'heading' => '4. Melakukan Peningkatan Berkelanjutan (Act)',
+					'items' => [
+						'Penanganan ketidaksesuaian',
+						'Peningkatan berkelanjutan'
+					]
+				]
+			]
+		],
+		[
+			'title' => 'Research and Development Officer',
+			'subtitle' => 'Petugas R&D',
+			'date' => '19 s.d. 20 Agustus 2026',
+			'format' => 'Online via Zoom',
+			'investasi' => 'Rp 1.750.000 / peserta',
+			'benefit' => [
+				'Mendapatkan e-sertifikat pelatihan 24 JP',
+				'Soft copy materi pelatihan',
+				'Rekaman pelatihan',
+				'Kartu member Labnesia'
+			],
+			'rekomendasi' => [
+				'Staf R&D / Research Officer',
+				'Product Development Officer',
+				'Pranata Laboratorium',
+				'Quality Assurance',
+				'Quality Control',
+				'Teknisi Laboratorium / Analis Lab',
+				'Mahasiswa / Fresh Graduate'
+			],
+			'silabus' => [
+				[
+					'heading' => '1. Perencanaan Kegiatan Penelitian dan Pengembangan',
+					'items' => [
+						'Identifikasi kebutuhan dan peluang penelitian/pengembangan',
+						'Penyusunan rencana kegiatan R&D',
+						'Penetapan pengendalian risiko dan parameter keberhasilan'
+					]
+				],
+				[
+					'heading' => '2. Pelaksanaan Kegiatan Penelitian dan Pengembangan',
+					'items' => [
+						'Pelaksanaan eksperimen/pengembangan sesuai rencana kerja',
+						'Pengoperasian peralatan and teknologi pendukung R&D',
+						'Pengendalian dan dokumentasi hasil penelitian'
+					]
+				],
+				[
+					'heading' => '3. Analisis dan Validasi Hasil Penelitian',
+					'items' => [
+						'Pengolahan dan analisis data hasil penelitian',
+						'Validasi dan verifikasi hasil penelitian',
+						'Penyusunan kesimpulan dan rekomendasi teknis'
+					]
+				],
+				[
+					'heading' => '4. Pengelolaan Dokumentasi dan Pelaporan Kegiatan R&D',
+					'items' => [
+						'Penyusunan dokumentasi teknis kegiatan R&D',
+						'Pengendalian arsip dan ketertelusuran dokumen',
+						'Penyusunan dan penyampaian laporan hasil R&D'
+					]
+				],
+				[
+					'heading' => '5. Implementasi dan Peningkatan Berkelanjutan Hasil Pengembangan',
+					'items' => [
+						'Koordinasi implementasi hasil pengembangan',
+						'Evaluasi efektivitas hasil implementasi',
+						'Penerapan peningkatan berkelanjutan'
+					]
+				]
+			]
+		],
+		[
+			'title' => 'Quality Assurance Officer',
+			'subtitle' => 'Petugas QA',
+			'date' => '02 s.d. 03 September 2026',
+			'format' => 'Online via Zoom',
+			'investasi' => 'Rp 1.750.000 / peserta',
+			'benefit' => [
+				'Mendapatkan e-sertifikat pelatihan 24 JP',
+				'Soft copy materi pelatihan',
+				'Rekaman pelatihan',
+				'Kartu member Labnesia'
+			],
+			'rekomendasi' => [
+				'Kepala Laboratorium',
+				'Manajer Mutu / Quality Manager',
+				'Quality Assurance',
+				'Quality Control',
+				'Pranata Laboratorium',
+				'Teknisi Laboratorium / Analis Lab',
+				'Mahasiswa / Fresh Graduate'
+			],
+			'silabus' => [
+				[
+					'heading' => 'Materi Pelatihan',
+					'items' => [
+						'Pengelolaan & Pengendalian Dokumen Sistem Manajemen Mutu',
+						'Implementasi Sistem Manajemen Mutu Sesuai Standar yang Berlaku',
+						'Pelaksanaan Audit Internal Sistem Manajemen Mutu',
+						'Identifikasi & Pengendalian Ketidaksesuaian',
+						'Pelaksanaan Tindakan Korektif dan Tindakan Pencegahan',
+						'Analisis Risiko dan Peluang dalam Sistem Manajemen Mutu',
+						'Pemantauan, Pengukuran & Evaluasi Kinerja Mutu',
+						'Pengendalian Rekaman & Pelaporan Kinerja Mutu',
+						'Penerapan Prinsip Perbaikan Berkelanjutan (Continuous Improvement)'
+					]
+				]
+			]
+		],
+		[
+			'title' => 'Quality Management System (ISO 9001) Officer',
+			'subtitle' => 'Petugas Sistem Manajemen Mutu ISO 9001',
+			'date' => '09 s.d. 10 September 2026',
+			'format' => 'Online via Zoom',
+			'investasi' => 'Rp 1.750.000 / peserta',
+			'benefit' => [
+				'Mendapatkan e-sertifikat pelatihan 24 JP',
+				'Soft copy materi pelatihan',
+				'Rekaman pelatihan',
+				'Kartu member Labnesia'
+			],
+			'rekomendasi' => [
+				'Kepala Laboratorium',
+				'Manajer Mutu / Quality Manager',
+				'Quality Assurance Officer',
+				'Quality Control',
+				'Pranata Laboratorium',
+				'Teknisi Laboratorium / Analis Lab',
+				'Mahasiswa / Fresh Graduate'
+			],
+			'silabus' => [
+				[
+					'heading' => '1. Analisis Konteks Organisasi dan Pihak Berkepentingan',
+					'items' => [
+						'Penentuan konteks organisasi',
+						'Pemahaman kebutuhan pihak berkepentingan',
+						'Penetapan ruang lingkup SMM'
+					]
+				],
+				[
+					'heading' => '2. Perencanaan Mutu dan Manajemen Risiko',
+					'items' => [
+						'Penanganan risiko dan peluang',
+						'Penetapan sasaran mutu',
+						'Perencanaan perubahan'
+					]
+				],
+				[
+					'heading' => '3. Pengelolaan Sumber Daya dan Informasi Terdokumentasi',
+					'items' => [
+						'Pengelolaan kompetensi dan kesadaran',
+						'Pengelolaan infrastruktur dan lingkungan',
+						'Pengendalian informasi terdokumentasi'
+					]
+				],
+				[
+					'heading' => '4. Pengendalian Operasional dan Penyedia Eksternal',
+					'items' => [
+						'Perencanaan operasional',
+						'Pengendalian penyedia eksternal (purchasing)',
+						'Pengendalian produksi dan penyediaan jasa'
+					]
+				],
+				[
+					'heading' => '5. Evaluasi Kinerja dan Peningkatan Berkelanjutan',
+					'items' => [
+						'Pemantauan dan pengukuran kinerja',
+						'Pelaksanaan audit internal',
+						'Tinjauan manajemen dan peningkatan'
+					]
+				]
+			]
+		],
+		[
+			'title' => 'Regulatory Affairs Officer',
+			'subtitle' => 'Petugas Regulasi',
+			'date' => '07 s.d. 08 Oktober 2026',
+			'format' => 'Online via Zoom',
+			'investasi' => 'Rp 1.750.000 / peserta',
+			'benefit' => [
+				'Mendapatkan e-sertifikat pelatihan 24 JP',
+				'Soft copy materi pelatihan',
+				'Rekaman pelatihan',
+				'Kartu member Labnesia'
+			],
+			'rekomendasi' => [
+				'Kepala Laboratorium',
+				'Regulatory Affairs Staff / Officer',
+				'Quality Assurance',
+				'Product Registration Officer',
+				'Staf perizinan & Compliance',
+				'Pranata Laboratorium',
+				'Mahasiswa / Fresh Graduate'
+			],
+			'silabus' => [
+				[
+					'heading' => 'Materi Pelatihan',
+					'items' => [
+						'Penerapan Prinsip Kepatuhan Regulasi dan Etika Profesi',
+						'Penyusunan dan Evaluasi Dokumen Registrasi dan Perizinan Produk',
+						'Proses Pengajuan Registrasi dan Perizinan Produk kepada Otoritas Terkait',
+						'Pemantauan Perubahan Regulasi dan Analisis Dampaknya terhadap Produk/Perusahaan',
+						'Pengelolaan Arsip dan Sistem Dokumentasi Regulatory Affairs',
+						'Evaluasi Kepatuhan Produk dan Penyusunan Tindak Lanjut Ketidaksesuaian (Compliance Management)'
+					]
+				]
+			]
+		],
+		[
+			'title' => 'Environmental Management System (ISO 14001) Officer',
+			'subtitle' => 'Petugas Sistem Manajemen Lingkungan ISO 14001',
+			'date' => '14 s.d. 15 Oktober 2026',
+			'format' => 'Online via Zoom',
+			'invest static' => 'Rp 1.750.000 / peserta',
+			'investasi' => 'Rp 1.750.000 / peserta',
+			'benefit' => [
+				'Mendapatkan e-sertifikat pelatihan 24 JP',
+				'Soft copy materi pelatihan',
+				'Rekaman pelatihan',
+				'Kartu member Labnesia'
+			],
+			'rekomendasi' => [
+				'Kepala Laboratorium',
+				'Manajer Lingkungan',
+				'HSE Officer',
+				'Quality Assurance',
+				'Pranata Laboratorium',
+				'Staf operasional & Produksi',
+				'Mahasiswa / Fresh Graduate'
+			],
+			'silabus' => [
+				[
+					'heading' => 'Materi Pelatihan',
+					'items' => [
+						'Penerapan Konteks Organisasi dalam Sistem Manajemen Lingkungan (SML)',
+						'Identifikasi Aspek dan Dampak Lingkungan',
+						'Identifikasi dan Evaluasi Kewajiban Kepatuhan',
+						'Penyusunan Sasaran dan Program Lingkungan',
+						'Pengendalian Operasional dan Dokumen SML',
+						'Pelaksanaan Pemantauan dan Pengukuran Kinerja Lingkungan'
+					]
+				]
+			]
+		],
+		[
+			'title' => 'Sustainability Officer',
+			'subtitle' => 'Petugas Keberlanjutan',
+			'date' => '28 s.d. 29 Oktober 2026',
+			'format' => 'Online via Zoom',
+			'investasi' => 'Rp 1.750.000 / peserta',
+			'benefit' => [
+				'Mendapatkan e-sertifikat pelatihan 24 JP',
+				'Soft copy materi pelatihan',
+				'Rekaman pelatihan',
+				'Kartu member Labnesia'
+			],
+			'rekomendasi' => [
+				'Sustainability Officer',
+				'Environmental, Social & Governance (ESG) Officer',
+				'HSE Officer',
+				'CSR Officer',
+				'Quality Assurance',
+				'Staf operasional & Manajemen',
+				'Mahasiswa / Fresh Graduate'
+			],
+			'silabus' => [
+				[
+					'heading' => '1. Identifikasi Aspek dan Dampak Keberlanjutan Operasional',
+					'items' => [
+						'Identifikasi aktivitas operasional',
+						'Penentuan aspek keberlanjutan',
+						'Penilaian dampak keberlanjutan'
+					]
+				],
+				[
+					'heading' => '2. Perencanaan Program Peningkatan Kinerja Lingkungan dan Sosial',
+					'items' => [
+						'Penetapan tujuan program',
+						'Penyusunan rencana aksi',
+						'Penyusunan dokumen perencanaan'
+					]
+				],
+				[
+					'heading' => '3. Implementasi Program Keberlanjutan Organisasi',
+					'items' => [
+						'Koordinasi pelaksanaan program',
+						'Pelaksanaan kegiatan program',
+						'Dokumentasi pelaksanaan'
+					]
+				],
+				[
+					'heading' => '4. Pemantauan dan Evaluasi Capaian Target Keberlanjutan',
+					'items' => [
+						'Penyusunan struktur laporan',
+						'Pemantauan capaian target keberlanjutan',
+						'Evaluasi efektivitas program keberlanjutan'
+					]
+				],
+				[
+					'heading' => '5. Komunikasi Kinerja Keberlanjutan Internal',
+					'items' => [
+						'Penyusunan materi komunikasi',
+						'Penyampaian informasi',
+						'Dokumentasi komunikasi'
+					]
+				],
+				[
+					'heading' => '6. Pengelolaan Data Kinerja Keberlanjutan',
+					'items' => [
+						'Identifikasi kebutuhan data',
+						'Pengumpulan dan pencatatan data',
+						'Penjagaan ketertelusuran data'
+					]
+				]
+			]
+		],
+		[
+			'title' => 'ESG Officer',
+			'subtitle' => 'Environmental, Social, Governance Officer',
+			'date' => '04 s.d. 05 November 2026',
+			'format' => 'Online via Zoom',
+			'investasi' => 'Rp 1.750.000 / peserta',
+			'benefit' => [
+				'Mendapatkan e-sertifikat pelatihan 24 JP',
+				'Soft copy materi pelatihan',
+				'Rekaman pelatihan',
+				'Kartu member Labnesia'
+			],
+			'rekomendasi' => [
+				'ESG Officer',
+				'Sustainability Officer',
+				'CSR Officer',
+				'Investor Relations Officer',
+				'Quality Assurance',
+				'Staf Manajemen Risiko & Kepatuhan',
+				'Mahasiswa / Fresh Graduate'
+			],
+			'silabus' => [
+				[
+					'heading' => 'Materi Pelatihan',
+					'items' => [
+						'Identifikasi dan Pemetaan Pemangku Kepentingan',
+						'Identifikasi Isu dan Risiko ESG',
+						'Penilaian Dampak dan Risiko ESG',
+						'Penyusunan Matriks Materialitas',
+						'Integrasi Risiko ESG ke dalam Manajemen Risiko Organisasi',
+						'Persiapan Informasi Pengungkapan ESG',
+						'Dukungan Tata Kelola dan Kebijakan ESG Organisasi'
+					]
+				]
+			]
+		],
+		[
+			'title' => 'Pelatihan & Workshop Keamanan Pangan dan Sensori',
+			'subtitle' => 'Panelis Terlatih Pengujian Sensori Pangan',
+			'date' => '18 s.d. 19 November 2026',
+			'format' => 'Onsite — Semarang',
+			'investasi' => 'Mahasiswa & Fresh Graduate: Rp 1.300.000 | Umum: Rp 1.500.000',
+			'benefit' => [
+				'Sertifikat Pelatihan',
+				'Modul & Pelatihan (PDF)',
+				'Training Kit dan Souvenir',
+				'Coffee Break dan Makan Siang',
+				'Template dan Form Uji Sensori',
+				'Konsultasi Pasca Pelatihan',
+				'Akses Grup Diskusi Peserta',
+				'Bonus Sertifikasi Kompetensi'
+			],
+			'rekomendasi' => [
+				'Quality Assurance / Quality Control (QA/QC)',
+				'Analis Lab',
+				'Teknisi Lab',
+				'R&D Pangan',
+				'Industri Pangan',
+				'Mahasiswa / Fresh Graduate'
+			],
+			'silabus' => [
+				[
+					'heading' => 'Hari 1',
+					'items' => [
+						'Prinsip Analisis Sensori',
+						'Fisiologi Panca Indera',
+						'Kosakata dalam Uji Sensori',
+						'Jenis Pengujian Sensori',
+						'Melaksanakan Prosedur Uji Pembedaan',
+						'Workshop : Uji Kemampuan Dasar (Warna, Rasa, Aroma)'
+					]
+				],
+				[
+					'heading' => 'Hari 2',
+					'items' => [
+						'Melaksanakan Prosedur Uji Deskriptif Kuantitatif (QDA)',
+						'Good Sensory Practices (GSP)',
+						'Pembentukan Panelis Terlatih',
+						'Mengelola Kinerja & Konsistensi Penilaian',
+						'Workshop : Uji Kemampuan Produk (Pembedaan, Rating, Scoring)'
+					]
+				]
+			]
+		],
+		[
+			'title' => 'Food Safety Management Officer',
+			'subtitle' => 'Petugas Sistem Keamanan Pangan',
+			'date' => '16 s.d. 17 Desember 2026',
+			'format' => 'Online via Zoom',
+			'investasi' => 'Rp 1.750.000 / peserta',
+			'benefit' => [
+				'Mendapatkan e-sertifikat pelatihan 24 JP',
+				'Soft copy materi pelatihan',
+				'Rekaman pelatihan',
+				'Kartu member Labnesia'
+			],
+			'rekomendasi' => [
+				'Kepala Laboratorium',
+				'Manajer Laboratorium',
+				'Pranata Laboratorium',
+				'Quality Assurance',
+				'Quality Control',
+				'Teknisi Laboratorium / Analis Lab',
+				'Mahasiswa / Fresh Graduate'
+			],
+			'silabus' => [
+				[
+					'heading' => 'Materi Pelatihan',
+					'items' => [
+						'Penguasaan Prinsip Dasar dan Regulasi Keamanan Pangan',
+						'Implementasi Program Prasyarat (Prerequisite Programs/PRPs)',
+						'Pengembangan dan Penerapan Rencana HACCP',
+						'Pengelolaan Pengendalian Operasional Keamanan Pangan',
+						'Pelaksanaan Verifikasi dan Peningkatan Berkelanjutan FSMS',
+						'Pengelolaan Komunikasi dan Pelatihan Keamanan Pangan'
+					]
+				]
+			]
+		]
+	];
+}
+
+function labnesia_get_static_jp16_schemes() {
+	return [
+		[
+			'title' => 'Verifikasi dan Validasi Metode Pengujian Standar Laboratorium ISO/IEC 17025',
+			'subtitle' => 'Topik Teknis Penerapan ISO/IEC 17025',
+			'date' => '10 s.d. 11 Agustus 2026',
+			'format' => 'Online via Zoom',
+			'investasi' => 'Rp 1.250.000 / peserta (Pendaftaran 2 peserta atau lebih diskon Rp 250.000/peserta)',
+			'benefit' => [
+				'Mendapatkan e-sertifikat pelatihan 16 JP',
+				'Soft copy materi pelatihan',
+				'Rekaman pelatihan',
+				'Kartu member Labnesia'
+			],
+			'rekomendasi' => [
+				'Kepala Laboratorium',
+				'Manajer Laboratorium',
+				'Pranata Laboratorium',
+				'Quality Assurance',
+				'Quality Control',
+				'Teknisi Laboratorium / Analis Lab',
+				'Mahasiswa / Fresh Graduate'
+			],
+			'output' => [
+				'Laporan Verifikasi dan Validasi Metode'
+			],
+			'silabus' => [
+				[
+					'heading' => 'Materi Pelatihan',
+					'items' => [
+						'Konsep validasi & verifikasi metode',
+						'Parameter verifikasi (akurasi, presisi, linearitas, dll.)',
+						'Penyusunan protokol verifikasi',
+						'Studi kasus metode laboratorium'
+					]
+				]
+			]
+		],
+		[
+			'title' => 'Penerapan Jaminan Mutu Internal dan Pengendalian Mutu Hasil Uji Standar Laboratorium ISO/IEC 17025',
+			'subtitle' => 'Topik Teknis Penerapan ISO/IEC 17025',
+			'date' => '07 s.d. 08 September 2026',
+			'format' => 'Online via Zoom',
+			'investasi' => 'Rp 1.250.000 / peserta (Pendaftaran 2 peserta atau lebih diskon Rp 250.000/peserta)',
+			'benefit' => [
+				'Mendapatkan e-sertifikat pelatihan 16 JP',
+				'Soft copy materi pelatihan',
+				'Rekaman pelatihan',
+				'Kartu member Labnesia'
+			],
+			'rekomendasi' => [
+				'Kepala Laboratorium',
+				'Manajer Laboratorium',
+				'Pranata Laboratorium',
+				'Quality Assurance',
+				'Quality Control',
+				'Teknisi Laboratorium / Analis Lab',
+				'Mahasiswa / Fresh Graduate'
+			],
+			'output' => [
+				'Laporan Pembuatan Control Chart',
+				'Laporan Pengecekan antar alat',
+				'Laporan Replika pengujian',
+				'Laporan Uji banding antar analis'
+			],
+			'silabus' => [
+				[
+					'heading' => 'Materi Pelatihan',
+					'items' => [
+						'Pembuatan Control Chart',
+						'Pengecekan antar alat',
+						'Replika pengujian',
+						'Uji banding antar analis'
+					]
+				]
+			]
+		]
+	];
+}
+
+function labnesia_ps_static_cards_section( $schemes ) {
+	if ( empty( $schemes ) ) return;
+	?>
+	<style>
+		.btn-daftar-skema:hover { background: #158a65 !important; }
+		.btn-toggle-silabus:hover { background: var(--gray-100) !important; border-color: var(--gray-400) !important; }
+	</style>
+	<div class="scheme-grid" style="margin-top: 24px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+		<?php foreach ( $schemes as $scheme ) : $jp_type = isset($scheme['output']) ? '16' : '24'; ?>
+		<div class="scheme-card" style="display: flex; flex-direction: column; justify-content: space-between; border: 2px solid var(--gray-200); border-radius: 18px; overflow: hidden; background: white; transition: all 0.2s;">
+			<div>
+				<!-- Header (gradient) -->
+				<div class="scheme-header auditor" style="background: linear-gradient(135deg, #0B1F3A, #1C3A60); padding: 20px 24px; color: white;">
+					<div class="scheme-tag" style="opacity: 0.85; font-size: 9px; letter-spacing: 0.08em; display: flex; justify-content: space-between; text-transform: uppercase; font-weight: 700; margin-bottom: 6px;">
+						<span><?php echo esc_html( $scheme['format'] ); ?></span>
+						<span style="color: var(--amber); font-weight: 800;"><?php echo $jp_type; ?> JP</span>
+					</div>
+					<div class="scheme-name" style="font-size: 18px; line-height: 1.35; font-weight: 800; margin-bottom: 4px;"><?php echo esc_html( $scheme['title'] ); ?></div>
+					<?php if ( ! empty( $scheme['subtitle'] ) ) : ?>
+						<div class="scheme-sub" style="font-size: 12px; opacity: 0.85; font-weight: normal;"><?php echo esc_html( $scheme['subtitle'] ); ?></div>
+					<?php endif; ?>
+				</div>
+
+				<!-- Body -->
+				<div class="scheme-body" style="padding: 20px 24px;">
+					<!-- Jadwal/Batch -->
+					<div class="scheme-block" style="margin-bottom: 18px;">
+						<div class="scheme-block-title" style="color: var(--navy); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Jadwal Pelaksanaan</div>
+						<div class="scheme-list" style="display: flex; flex-direction: column; gap: 6px;">
+							<div class="scheme-item" style="font-size: 13.5px; font-weight: 700; color: var(--navy); display: flex; align-items: flex-start; gap: 8px;">
+								<span style="margin-top: 1px; color: var(--amber); flex-shrink: 0;"><?php labnesia_icon( 'calendar', 'var(--amber)', 12 ); ?></span>
+								<?php echo esc_html( $scheme['date'] ); ?>
+							</div>
+						</div>
+					</div>
+
+					<!-- Silabus -->
+					<div class="scheme-block" style="margin-bottom: 18px;">
+						<div class="scheme-block-title" style="color: var(--navy); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Materi Pokok / Silabus</div>
+						
+						<!-- Collapsible Trigger -->
+						<button type="button" class="btn-toggle-silabus" onclick="toggleCardSilabus(this)" style="display: flex; align-items: center; justify-content: space-between; width: 100%; border: 1px solid var(--gray-300); background: var(--gray-50); padding: 8px 12px; border-radius: 8px; font-size: 12.5px; font-weight: 700; color: var(--navy); cursor: pointer; text-align: left; transition: all 0.2s; outline: none; font-family: var(--font-display);">
+							<span>Lihat Detail Silabus</span>
+							<span class="toggle-icon" style="transition: transform 0.2s; font-size: 10px; display: inline-block;">▼</span>
+						</button>
+
+						<!-- Collapsible Content -->
+						<div class="collapsible-silabus-content" style="display: none; margin-top: 10px; border-top: 1px dashed var(--gray-200); padding-top: 10px;">
+							<div class="scheme-list" style="display: flex; flex-direction: column; gap: 6px;">
+								<?php foreach ( $scheme['silabus'] as $block ) : ?>
+									<?php if ( count($scheme['silabus']) > 1 && ! empty( $block['heading'] ) ) : ?>
+										<div style="font-size: 11px; font-weight: 700; color: var(--gray-700); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.04em;"><?php echo esc_html( $block['heading'] ); ?></div>
+									<?php endif; ?>
+									<?php foreach ( $block['items'] as $item ) : ?>
+										<div class="scheme-item" style="display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--gray-600); line-height: 1.5;">
+											<span class="scheme-check" style="color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 2px;"><?php labnesia_icon( 'check', 'var(--teal)', 12 ); ?></span>
+											<div><?php echo esc_html( $item ); ?></div>
+										</div>
+									<?php endforeach; ?>
+								<?php endforeach; ?>
+							</div>
+						</div>
+					</div>
+
+					<!-- Target / Rekomendasi -->
+					<?php if ( ! empty( $scheme['rekomendasi'] ) ) : ?>
+					<div class="scheme-block" style="margin-bottom: 18px;">
+						<div class="scheme-block-title" style="color: var(--navy); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Direkomendasikan Untuk</div>
+						<div class="scheme-list" style="display: flex; flex-flow: row wrap; gap: 6px;">
+							<?php foreach ( $scheme['rekomendasi'] as $target ) : ?>
+								<span style="font-size: 11px; background: var(--gray-100); color: var(--gray-700); padding: 4px 8px; border-radius: 6px; font-weight: 600; display: inline-block;">
+									<?php echo esc_html( $target ); ?>
+								</span>
+							<?php endforeach; ?>
+						</div>
+					</div>
+					<?php endif; ?>
+
+					<!-- Benefit khusus (jika ada seperti Sensori) -->
+					<?php if ( count($scheme['benefit']) > 4 || (isset($scheme['title']) && strpos($scheme['title'], 'Sensori') !== false) ) : ?>
+					<div class="scheme-block" style="margin-bottom: 18px;">
+						<div class="scheme-block-title" style="color: var(--navy); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Fasilitas & Benefit Khusus</div>
+						<div class="scheme-list" style="display: flex; flex-direction: column; gap: 6px;">
+							<?php foreach ( $scheme['benefit'] as $benefit ) : ?>
+								<div class="scheme-item" style="display: flex; align-items: flex-start; gap: 8px; font-size: 12.5px; color: var(--gray-600); line-height: 1.45;">
+									<span class="scheme-check" style="color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px;"><?php labnesia_icon( 'gift', 'var(--teal)', 11 ); ?></span>
+									<div><?php echo esc_html( $benefit ); ?></div>
+								</div>
+							<?php endforeach; ?>
+						</div>
+					</div>
+					<?php endif; ?>
+
+					<!-- Output khusus (jika ada seperti 16 JP) -->
+					<?php if ( ! empty( $scheme['output'] ) ) : ?>
+					<div class="scheme-block" style="margin-bottom: 0;">
+						<div class="scheme-block-title" style="color: var(--navy); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Output Laporan</div>
+						<div class="scheme-list" style="display: flex; flex-direction: column; gap: 6px;">
+							<?php foreach ( $scheme['output'] as $out ) : ?>
+								<div class="scheme-item" style="display: flex; align-items: flex-start; gap: 8px; font-size: 12.5px; color: var(--navy); font-weight: 700; line-height: 1.45;">
+									<span class="scheme-check" style="color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px;"><?php labnesia_icon( 'file', 'var(--teal)', 11 ); ?></span>
+									<div><?php echo esc_html( $out ); ?></div>
+								</div>
+							<?php endforeach; ?>
+						</div>
+					</div>
+					<?php endif; ?>
+				</div>
+			</div>
+
+			<!-- Footer Kartu: Investasi & CTA -->
+			<div style="padding: 18px 24px 24px; background: var(--gray-50); border-top: 1px solid var(--gray-200); display: flex; flex-direction: column; gap: 14px;">
+				<div style="display: flex; flex-direction: column; gap: 2px;">
+					<span style="font-size: 10px; font-weight: 700; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.06em;">Investasi</span>
+					<span style="font-size: 16px; font-weight: 800; color: var(--navy);"><?php echo esc_html( $scheme['investasi'] ); ?></span>
+				</div>
+				<button type="button" class="btn-daftar-skema" data-skema="<?php echo esc_attr( $scheme['title'] ); ?>" data-jp="<?php echo $jp_type; ?>" onclick="daftarSkemaStatis(this)" style="width: 100%; text-align: center; border: none; background: var(--teal); color: white; padding: 12px; border-radius: 8px; font-weight: 700; font-size: 13.5px; cursor: pointer; transition: background 0.2s; font-family: var(--font-display);">
+					Daftar Skema Ini
+				</button>
+			</div>
+		</div>
+		<?php endforeach; ?>
+	</div>
+	<?php
+}
 ?>
+
 <?php get_header(); ?>
 <style>
   .page-hero{background:var(--navy);padding:104px 48px 64px;position:relative;overflow:hidden}
@@ -321,6 +1239,7 @@ function labnesia_ps_silabus_section( $posts ) {
   .form-select{width:100%;padding:11px 14px;border:1px solid var(--gray-200);border-radius:9px;font-size:14px;font-family:var(--font-display);outline:none;background:white}
   .btn-submit-cta{width:100%;padding:13px;background:var(--teal);color:white;border:none;border-radius:9px;font-weight:700;font-size:15px;cursor:pointer;margin-top:8px;transition:all .2s}
   .btn-submit-cta:hover{background:#158a65}
+  @media (max-width:992px){.scheme-grid{grid-template-columns:1fr !important}}
 
 </style>
 
@@ -601,17 +1520,19 @@ function labnesia_ps_silabus_section( $posts ) {
     <h2 class="h2">Pelatihan kompetensi tematik<br>untuk profesional lab.</h2>
     <p class="body-text" style="max-width:560px;margin-bottom:32px">Skema pelatihan 2 hari (24 JP), online via Zoom, sesuai kebutuhan peran spesifik Anda di laboratorium maupun organisasi. Investasi Rp 1.750.000/peserta.</p>
 
-    <?php labnesia_ps_silabus_section( $jp24_posts ); ?>
+    <?php labnesia_ps_static_cards_section( labnesia_get_static_jp24_schemes() ); ?>
 
-    <?php if ( $jp24_posts ) : ?>
-    <p class="eyebrow">Daftar Batch</p>
-    <div class="jadwal-grid">
-      <?php foreach ( $jp24_posts as $p ) : labnesia_ps_jadwal_item( $p, '24 JP' ); endforeach; ?>
+    <div id="batch-24" style="margin-top: 64px;">
+      <?php if ( $jp24_posts ) : ?>
+      <p class="eyebrow">Daftar Batch</p>
+      <div class="jadwal-grid">
+        <?php foreach ( $jp24_posts as $p ) : labnesia_ps_jadwal_item( $p, '24 JP' ); endforeach; ?>
+      </div>
+      <p style="font-size:12px;color:var(--gray-400);margin-top:16px">Setiap skema termasuk e-sertifikat 24 JP, soft copy materi, rekaman pelatihan, dan kartu member Labnesia. Sertifikat pelatihan dapat menjadi salah satu syarat untuk melanjutkan ke uji sertifikasi kompetensi di LSP terkait.</p>
+      <?php else : ?>
+      <p class="body-text" style="margin-top:16px">Belum ada jadwal 24 JP yang dipublikasikan. <a href="<?php echo esc_url( home_url( '/jadwal/?kategori=pelatihan-24-jp' ) ); ?>" style="color:var(--teal);font-weight:600">Lihat semua jadwal &rarr;</a></p>
+      <?php endif; ?>
     </div>
-    <p style="font-size:12px;color:var(--gray-400);margin-top:16px">Setiap skema termasuk e-sertifikat 24 JP, soft copy materi, rekaman pelatihan, dan kartu member Labnesia. Sertifikat pelatihan dapat menjadi salah satu syarat untuk melanjutkan ke uji sertifikasi kompetensi di LSP terkait.</p>
-    <?php else : ?>
-    <p class="body-text" style="margin-top:16px">Belum ada jadwal 24 JP yang dipublikasikan. <a href="<?php echo esc_url( home_url( '/jadwal/?kategori=pelatihan-24-jp' ) ); ?>" style="color:var(--teal);font-weight:600">Lihat semua jadwal &rarr;</a></p>
-    <?php endif; ?>
   </div>
 </section>
 </div>
@@ -626,17 +1547,19 @@ function labnesia_ps_silabus_section( $posts ) {
     <h2 class="h2">Pelatihan topik teknis spesifik,<br>lebih singkat dan fokus.</h2>
     <p class="body-text" style="max-width:560px;margin-bottom:32px">Skema pelatihan 2 hari (16 JP), online via Zoom, untuk pendalaman satu topik teknis penerapan ISO/IEC 17025. Investasi Rp 1.250.000/peserta — diskon Rp 250.000/peserta untuk pendaftaran 2 peserta atau lebih.</p>
 
-    <?php labnesia_ps_silabus_section( $jp16_posts ); ?>
+    <?php labnesia_ps_static_cards_section( labnesia_get_static_jp16_schemes() ); ?>
 
-    <?php if ( $jp16_posts ) : ?>
-    <p class="eyebrow">Daftar Batch</p>
-    <div class="jadwal-grid">
-      <?php foreach ( $jp16_posts as $p ) : labnesia_ps_jadwal_item( $p, '16 JP' ); endforeach; ?>
+    <div id="batch-16" style="margin-top: 64px;">
+      <?php if ( $jp16_posts ) : ?>
+      <p class="eyebrow">Daftar Batch</p>
+      <div class="jadwal-grid">
+        <?php foreach ( $jp16_posts as $p ) : labnesia_ps_jadwal_item( $p, '16 JP' ); endforeach; ?>
+      </div>
+      <p style="font-size:12px;color:var(--gray-400);margin-top:16px">Setiap skema termasuk e-sertifikat 16 JP, soft copy materi, rekaman pelatihan, dan kartu member Labnesia. Sertifikat pelatihan dapat menjadi salah satu syarat untuk melanjutkan ke uji sertifikasi kompetensi di LSP terkait.</p>
+      <?php else : ?>
+      <p class="body-text" style="margin-top:16px">Belum ada jadwal 16 JP yang dipublikasikan. <a href="<?php echo esc_url( home_url( '/jadwal/?kategori=pelatihan-16-jp' ) ); ?>" style="color:var(--teal);font-weight:600">Lihat semua jadwal &rarr;</a></p>
+      <?php endif; ?>
     </div>
-    <p style="font-size:12px;color:var(--gray-400);margin-top:16px">Setiap skema termasuk e-sertifikat 16 JP, soft copy materi, rekaman pelatihan, dan kartu member Labnesia. Sertifikat pelatihan dapat menjadi salah satu syarat untuk melanjutkan ke uji sertifikasi kompetensi di LSP terkait.</p>
-    <?php else : ?>
-    <p class="body-text" style="margin-top:16px">Belum ada jadwal 16 JP yang dipublikasikan. <a href="<?php echo esc_url( home_url( '/jadwal/?kategori=pelatihan-16-jp' ) ); ?>" style="color:var(--teal);font-weight:600">Lihat semua jadwal &rarr;</a></p>
-    <?php endif; ?>
   </div>
 </section>
 </div>
@@ -694,6 +1617,58 @@ function labnesia_ps_silabus_section( $posts ) {
 
 
 <script>
+function daftarSkemaStatis(btn) {
+  const skemaName = btn.getAttribute('data-skema');
+  const jpType = btn.getAttribute('data-jp') || '24';
+  const selectElement = document.getElementById('pf-skema');
+  if (selectElement) {
+    let found = false;
+    for (let i = 0; i < selectElement.options.length; i++) {
+      if (selectElement.options[i].text === skemaName) {
+        selectElement.selectedIndex = i;
+        found = true;
+        break;
+      }
+    }
+    if (!found) {
+      const newOpt = document.createElement('option');
+      newOpt.text = skemaName;
+      newOpt.value = skemaName;
+      selectElement.add(newOpt, selectElement.options[0]);
+      selectElement.selectedIndex = 0;
+    }
+  }
+  const targetId = 'batch-' + jpType;
+  const batchSection = document.getElementById(targetId);
+  if (batchSection) {
+    batchSection.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    const formSection = document.getElementById('daftar');
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+}
+
+function toggleCardSilabus(btn) {
+  const content = btn.nextElementSibling;
+  const icon = btn.querySelector('.toggle-icon');
+  const label = btn.querySelector('span');
+  if (content.style.display === 'none' || content.style.display === '') {
+    content.style.display = 'block';
+    icon.style.transform = 'rotate(180deg)';
+    label.textContent = 'Tutup Detail Silabus';
+    btn.style.background = 'var(--teal-pale)';
+    btn.style.borderColor = 'var(--teal)';
+  } else {
+    content.style.display = 'none';
+    icon.style.transform = 'rotate(0deg)';
+    label.textContent = 'Lihat Detail Silabus';
+    btn.style.background = 'var(--gray-50)';
+    btn.style.borderColor = 'var(--gray-300)';
+  }
+}
+
 function showJP(el,id){
   document.querySelectorAll('.jp-tab').forEach(t=>t.classList.remove('active'));
   document.querySelectorAll('.jp-panel').forEach(p=>p.classList.remove('active'));
