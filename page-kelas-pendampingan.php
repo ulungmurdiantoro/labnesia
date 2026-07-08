@@ -11,6 +11,52 @@ $url_inhouse   = esc_url( home_url( '/inhouse/' ) );
 $url_pelatihan = esc_url( home_url( '/pelatihan-sertifikasi/' ) );
 $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
 $url_booklet   = esc_url( 'https://labnesia.id/wp-content/uploads/2026/07/Booklet-Kelas-Pendampingan-Labnesia-1.pdf' );
+$url_daftar    = esc_url( 'https://docs.google.com/forms/d/e/1FAIpQLSfw8fQOZvCCAuNVrZM0vuhVFhFQHYvr6B6yORWpYz026NhvXA/viewform?embedded=true' );
+
+$pakar_dir = get_template_directory_uri() . '/assets/pakar/';
+$experts = [
+    [ 'photo'=>'Mulyono-S.T.P.webp', 'name'=>'Mulyono, S.T.P.', 'role'=>'Manajer Mutu Laboratorium · Konsultan Akreditasi', 'tags'=>['ISO 17025','Kimia'] ],
+    [ 'photo'=>'Ir.-Fajri-Mulya-Iresha-S.T.-M.T.-Ph.D.-CLLI-CLIA.webp', 'name'=>'Ir. Fajri Mulya Iresha, S.T., M.T., Ph.D., CLLI, CLIA', 'role'=>'Trainer ISO/IEC 17025 · Lab Lingkungan', 'tags'=>['Lingkungan','CLIA'] ],
+    [ 'photo'=>'Hanim-Zuhrotul-Amanah-S.T.P.-M.P.-Ph.D.webp', 'name'=>'Hanim Zuhrotul Amanah, S.T.P., M.P., Ph.D.', 'role'=>'Manajer Mutu Lab Pangan · Konsultan Akreditasi', 'tags'=>['Pangan','GLP'] ],
+    [ 'photo'=>'Indra-Permana-S.P.-M.P.webp', 'name'=>'Indra Permana, S.P., M.P.', 'role'=>'Manajer Teknis · Kepala Lab Tanah', 'tags'=>['Pertanian','Ilmu Tanah'] ],
+    [ 'photo'=>'Chandra-Pribadi-S.T.webp', 'name'=>'Chandra Pribadi, S.T.', 'role'=>'Manajer Mutu · Batu Bara &amp; Mineral', 'tags'=>['Mineral','Energi'] ],
+    [ 'photo'=>'Bekti-Trisumaryati-S.Si_.-M.P.webp', 'name'=>'Bekti Trisumaryati, S.Si., M.P.', 'role'=>'Pakar Laboratorium', 'tags'=>[] ],
+    [ 'photo'=>'Zulhamidi-S.Pd_.-M.T.webp', 'name'=>'Zulhamidi, S.Pd., M.T.', 'role'=>'Pakar Laboratorium', 'tags'=>[] ],
+    [ 'photo'=>'Dr.-Joko-Nugroho-Wahyu-Karyadi-S.T.P.-M.Eng_.webp', 'name'=>'Dr. Joko Nugroho Wahyu Karyadi, S.T.P., M.Eng.', 'role'=>'Pakar Laboratorium', 'tags'=>[] ],
+    [ 'photo'=>'Ivanda-Adrian-Sastrawijaya-S.T.webp', 'name'=>'Ivanda Adrian Sastrawijaya, S.T.', 'role'=>'Pakar Laboratorium', 'tags'=>[] ],
+    [ 'photo'=>'Mohamad-Awaludin-S.Si-M.T.Pn_.webp', 'name'=>'Mohamad Awaludin, S.Si., M.T.Pn.', 'role'=>'Pakar Laboratorium', 'tags'=>[] ],
+    [ 'photo'=>'Nova-Shintia-Bokau-S.Si_.webp', 'name'=>'Nova Shintia Bokau, S.Si.', 'role'=>'Pakar Laboratorium', 'tags'=>[] ],
+    [ 'photo'=>'Dr. Yuni Kilawati, S.Pi, M.Si..webp', 'name'=>'Dr. Yuni Kilawati, S.Pi, M.Si.', 'role'=>'Pakar Laboratorium', 'tags'=>[] ],
+];
+
+$mitra_dir = get_template_directory_uri() . '/assets/mitra/';
+$mitra_logos = [
+    [ 'name' => 'Universitas Islam Indonesia',        'file' => 'universitas-islam-indonesia.svg' ],
+    [ 'name' => 'Universitas Gadjah Mada',             'file' => 'universitas-gadjah-mada.png' ],
+    [ 'name' => 'Universitas Muhammadiyah Jakarta',    'file' => 'universitas-muhammadiyah-jakarta.png' ],
+    [ 'name' => 'Laboratorium Riset Terpadu',           'file' => 'laboratorium-riset-terpadu.png' ],
+    [ 'name' => 'Universitas Udayana',                  'file' => 'universitas-udayana.png' ],
+    [ 'name' => 'Universitas Lampung',                  'file' => 'universitas-lampung.png' ],
+    [ 'name' => 'UIN Walisongo',                        'file' => 'uin-walisongo.png' ],
+    [ 'name' => 'CLE UBAYA',                            'file' => 'cle-ubaya.png' ],
+    [ 'name' => 'Universitas Jambi',                    'file' => 'universitas-jambi.png' ],
+    [ 'name' => 'Trinovate Sigma Indonesia',            'file' => 'trinovate-sigma-indonesia.png' ],
+    [ 'name' => 'Dishanpan Jawa Tengah',                 'file' => 'dishanpan-jawa-tengah.png' ],
+    [ 'name' => 'DLH Jawa Timur',                       'file' => 'dlh-jawa-timur.png' ],
+    [ 'name' => 'Kementerian Kelautan & Perikanan',     'file' => 'kementerian-kelautan-perikanan.jpg' ],
+    [ 'name' => 'SKY Pacific Indonesia',                 'file' => 'sky-pacific-indonesia.png' ],
+    [ 'name' => 'SIG Saraswanti',                       'file' => 'sig-saraswanti.png' ],
+    [ 'name' => 'SSU',                                  'file' => 'ssu.png' ],
+    [ 'name' => 'Trusur',                               'file' => 'trusur.png' ],
+    [ 'name' => 'Charoen Pokphand Indonesia',           'file' => 'charoen-pokphand-indonesia.png' ],
+    [ 'name' => 'CDU Lab',                              'file' => 'cdu-lab.png' ],
+    [ 'name' => 'PPI',                                  'file' => 'ppi.png' ],
+    [ 'name' => 'Inalum',                               'file' => 'inalum.png' ],
+    [ 'name' => 'HKA',                                  'file' => 'hka.png' ],
+    [ 'name' => 'Merit Technology',                     'file' => 'merit-technology.png' ],
+    [ 'name' => 'Universitas Sumatera Utara',           'file' => 'universitas-sumatera-utara.svg' ],
+    [ 'name' => 'UMY',                                  'file' => 'umy.jpg' ],
+];
 
 /* ===== PRICING TIERS (auto-switch by date) ===== */
 $kp_pricing_tiers = array(
@@ -95,7 +141,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   .btn-booklet:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(245,166,35,.6)}
 
   /* MAIN LAYOUT */
-  .main-layout{max-width:1200px;margin:0 auto;padding:64px 48px;display:grid;grid-template-columns:1fr 360px;gap:64px;align-items:start}
+  .main-layout{max-width:1200px;margin:0 auto;padding:64px 48px;display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:64px;align-items:start}
   section{padding:64px 48px}
   .section-inner{max-width:1200px;margin:0 auto}
 
@@ -207,14 +253,18 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   .pt-active-tag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--amber);color:var(--navy);font-size:9px;font-weight:800;padding:3px 10px;border-radius:100px;letter-spacing:.03em;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.15)}
   @media (max-width:860px){.price-table{border-spacing:6px 10px}.pt-row-label{width:110px}.price-table tr.pt-head-row td{font-size:11px}.pt-price{font-size:15px}}
 
-  /* EXPERT GRID */
-  .expert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .expert-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:12px;padding:18px}
-  .expert-avatar{width:52px;height:52px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;margin-bottom:12px}
-  .expert-name{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;line-height:1.3}
-  .expert-role{font-size:12px;color:var(--gray-600);line-height:1.5}
-  .expert-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
-  .expert-tag{font-size:10px;padding:2px 7px;background:var(--teal-pale);color:var(--teal);border-radius:3px;font-weight:600}
+  /* PAKAR GRID (matches page-tentang-kami.php) */
+  .pakar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:left}
+  .pakar-card{background:#fff;border:1px solid var(--gray-200);border-radius:16px;overflow:hidden;transition:box-shadow .2s,transform .2s}
+  .pakar-card:hover{box-shadow:0 12px 28px rgba(11,31,58,0.1);transform:translateY(-2px)}
+  .pakar-photo{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:var(--gray-100)}
+  .pakar-body{padding:16px 18px 18px}
+  .pakar-name{font-size:14px;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:4px}
+  .pakar-role{font-size:12px;color:var(--gray-600);line-height:1.5;min-height:18px}
+  .pakar-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
+  .pakar-tag{font-size:10px;padding:2px 7px;background:var(--teal-pale);color:var(--teal);border-radius:3px;font-weight:600}
+  @media (max-width:1024px){.pakar-grid{grid-template-columns:repeat(3,1fr)}}
+  @media (max-width:768px){.pakar-grid{grid-template-columns:repeat(2,1fr);gap:16px}}
 
   /* FAQ */
   .faq-item{border-bottom:1px solid var(--gray-200);padding:20px 0}
@@ -236,15 +286,25 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   .comp-table th.highlight-col{background:var(--teal);color:white;border-radius:8px 8px 0 0}
 
   /* TESTIMONIAL */
-  .testimonial-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  .testimonial{background:white;border:1px solid var(--gray-200);border-radius:16px;padding:28px}
-  .stars{color:var(--amber);font-size:16px;margin-bottom:14px;letter-spacing:2px}
-  .test-text{font-family:var(--font-serif);font-style:italic;font-size:15px;color:var(--gray-800);line-height:1.7;margin-bottom:20px}
-  .test-author{display:flex;align-items:center;gap:12px}
-  .test-avatar{width:44px;height:44px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:15px;flex-shrink:0}
-  .test-name{font-size:14px;font-weight:700;color:var(--navy)}
-  .test-role{font-size:12px;color:var(--gray-600)}
-  .lab-badge{display:inline-block;background:var(--teal-pale);color:var(--teal);font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;margin-top:4px}
+  .testimonial-slider{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none}
+  .testimonial-slider::-webkit-scrollbar{display:none}
+  .testimonial-track{display:flex;gap:20px}
+  .testimonial-track .testimonial{flex:0 0 calc(50% - 10px);scroll-snap-align:start}
+  @media (max-width:768px){.testimonial-track .testimonial{flex:0 0 100%}}
+  .slider-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:20px}
+  .slider-arrow{width:36px;height:36px;border-radius:50%;border:1px solid var(--gray-200);background:white;color:var(--navy);font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+  .slider-arrow:hover{border-color:var(--teal);color:var(--teal)}
+  .slider-dots{display:flex;align-items:center;gap:6px}
+  .slider-dot{width:7px;height:7px;padding:0;border:none;border-radius:4px;background:var(--gray-200);cursor:pointer;transition:all .2s}
+  .slider-dot.active{background:var(--teal);width:20px}
+  .testimonial{background:white;border:1px solid var(--gray-200);border-radius:14px;padding:20px;min-width:0}
+  .stars{color:var(--amber);font-size:13px;margin-bottom:8px;letter-spacing:2px}
+  .test-text{font-family:var(--font-serif);font-style:italic;font-size:13px;color:var(--gray-800);line-height:1.55;margin-bottom:14px;overflow-wrap:break-word}
+  .test-author{display:flex;align-items:center;gap:10px}
+  .test-avatar{width:36px;height:36px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:13px;flex-shrink:0}
+  .test-name{font-size:13px;font-weight:700;color:var(--navy)}
+  .test-role{font-size:11px;color:var(--gray-600)}
+  .lab-badge{display:inline-block;background:var(--teal-pale);color:var(--teal);font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px;margin-top:3px}
 
   /* CTA SECTION */
   .cta-section{background:var(--navy);padding:80px 48px;text-align:center;position:relative;overflow:hidden}
@@ -258,6 +318,16 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   /* UTILITY */
   .bg-gray{background:var(--gray-50)}
   .tag-batch{display:inline-flex;align-items:center;gap:6px;background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.3);color:#8B5800;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:700}
+
+  /* MITRA & LABORATORIUM */
+  .mitra-label{font-size:13px;color:var(--gray-600);font-weight:600;margin-bottom:20px}
+  .mitra-marquee{overflow:hidden;width:100%;-webkit-mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent)}
+  .mitra-track{display:flex;align-items:center;gap:16px;width:max-content;animation:mitra-scroll 38s linear infinite}
+  .mitra-marquee:hover .mitra-track{animation-play-state:paused}
+  @keyframes mitra-scroll{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+  .mitra-logo{background:white;border:1px solid var(--gray-200);border-radius:12px;height:84px;width:160px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;padding:14px}
+  .mitra-logo img{max-width:100%;max-height:100%;object-fit:contain}
+  .mitra-logo-text{font-size:11px;font-weight:700;color:var(--gray-600);text-align:center;line-height:1.35}
 </style>
 
 <!-- PAGE HERO -->
@@ -318,7 +388,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   <div class="sticky-actions">
     <a href="<?php echo $url_booklet; ?>" class="btn-booklet" target="_blank" rel="noopener"><?php labnesia_icon( 'download', 'var(--navy)', 14 ); ?> Unduh Booklet</a>
     <a href="#outline" class="btn-ghost">Lihat Outline</a>
-    <a href="#form-daftar" class="btn-primary">Daftar Sekarang</a>
+    <a href="<?php echo $url_daftar; ?>" class="btn-primary" target="_blank" rel="noopener">Daftar Sekarang</a>
     <a href="<?php echo $url_gratis; ?>" class="btn-amber">Konsultasi Gratis Dulu</a>
   </div>
 </div>
@@ -568,7 +638,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
       <p class="body" style="margin-bottom:24px">Setiap batch mengikuti alur 9 sesi yang sama — hanya jadwal pelaksanaannya yang berbeda.</p>
 
       <div class="batch-tabs">
-        <button type="button" class="batch-tab" onclick="showBatch(this,'batch-1')">Batch 1 · Juni 2026 <span style="opacity:.7;font-weight:600">(Pendaftaran ditutup)</span></button>
+        <button type="button" class="batch-tab" onclick="showBatch(this,'batch-1')">Batch 1 · Juni 2026 <span style="opacity:.7;font-weight:600">(Kuota Penuh)</span></button>
         <button type="button" class="batch-tab active" onclick="showBatch(this,'batch-2')">Batch 2 · Oktober 2026</button>
         <button type="button" class="batch-tab" onclick="showBatch(this,'batch-3')">Batch 3</button>
       </div>
@@ -583,7 +653,12 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
             <div class="bt-date-num"><?php echo esc_html( $kp_s['date'] ); ?></div>
             <div class="bt-date-month"><?php echo esc_html( $kp_s['month'] ); ?></div>
           </div>
-          <div class="bt-card"><?php echo esc_html( $kp_s['title'] ); ?></div>
+          <div class="bt-card">
+            <div><?php echo esc_html( $kp_s['title'] ); ?></div>
+            <div style="font-size:12px;font-weight:500;color:var(--gray-500);margin-top:4px;display:flex;align-items:center;gap:5px">
+              <?php labnesia_icon( 'clock', 'var(--gray-400)', 13 ); ?> 09.00 - 12.00 WIB
+            </div>
+          </div>
         </div>
         <?php endforeach; ?>
       </div>
@@ -596,7 +671,12 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
           <div class="bt-date">
             <div class="bt-date-month" style="font-size:14px;margin-top:2px"><?php echo esc_html( $kp_s['month'] ); ?></div>
           </div>
-          <div class="bt-card"><?php echo esc_html( $kp_s['title'] ); ?></div>
+          <div class="bt-card">
+            <div><?php echo esc_html( $kp_s['title'] ); ?></div>
+            <div style="font-size:12px;font-weight:500;color:var(--gray-500);margin-top:4px;display:flex;align-items:center;gap:5px">
+              <?php labnesia_icon( 'clock', 'var(--gray-400)', 13 ); ?> 09.00 - 12.00 WIB
+            </div>
+          </div>
         </div>
         <?php endforeach; ?>
       </div>
@@ -632,6 +712,12 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
             </div>
           </div>
         </div>
+        <!-- DISCLAIMER WAJIB -->
+        <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-left:3px solid var(--gray-400);border-radius:0 8px 8px 0;padding:14px 16px;margin:8px 0 16px">
+          <p style="font-size:11px;font-weight:700;color:var(--gray-600);margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em">Catatan Penting</p>
+          <p style="font-size:12px;color:var(--gray-600);line-height:1.65">Pelatihan yang kami selenggarakan bertujuan untuk meningkatkan kompetensi sumber daya manusia (SDM) di lingkungan perguruan tinggi, serta dapat digunakan sebagai salah satu bentuk pemenuhan persyaratan administratif untuk mengikuti uji kompetensi pada skema tertentu di LSP Edukia, sesuai dengan ketentuan yang berlaku. </p>
+          <p style="font-size:12px;color:var(--gray-600);line-height:1.65">Perlu ditegaskan bahwa keikutsertaan dalam pelatihan ini tidak menjamin kelulusan dalam proses sertifikasi kompetensi. Seluruh proses sertifikasi diselenggarakan secara independen oleh LSP Edukia berdasarkan asesmen yang objektif dan mengacu pada standar SNI ISO/IEC 17024.</p>
+        </div>
         <div class="benefit-item">
           <div class="benefit-icon"><?php labnesia_icon( 'clipboard-list', 'var(--teal)', 20 ); ?></div>
           <div class="benefit-content">
@@ -654,13 +740,6 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
             </div>
           </div>
         </div>
-
-        <!-- DISCLAIMER WAJIB -->
-        <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-left:3px solid var(--gray-400);border-radius:0 8px 8px 0;padding:14px 16px;margin:8px 0 16px">
-          <p style="font-size:11px;font-weight:700;color:var(--gray-600);margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em">Catatan Penting — Uji Kompetensi</p>
-          <p style="font-size:12px;color:var(--gray-600);line-height:1.65">Pelatihan yang diselenggarakan Labnesia dapat digunakan sebagai salah satu bentuk pemenuhan persyaratan administrasi untuk mengikuti uji kompetensi pada skema tertentu di LSP Edukia (Lembaga Sertifikasi Profesi) sesuai ketentuan yang berlaku. <strong>Pendaftaran uji kompetensi dilakukan secara mandiri oleh peserta langsung kepada LSP Edukia</strong> — Labnesia hanya berperan sebagai penyelenggara pelatihan dan penyampaian informasi. <strong>Keikutsertaan dalam pelatihan tidak menjamin kelulusan uji kompetensi.</strong> Keputusan dan seluruh proses uji kompetensi dilaksanakan secara independen oleh LSP Edukia sesuai SNI ISO/IEC 17024. Jadwal resmi uji kompetensi dipublikasikan melalui media LSP Edukia secara terpisah.</p>
-        </div>
-
         <div class="benefit-item">
           <div class="benefit-icon"><?php labnesia_icon( 'mic', 'var(--teal)', 20 ); ?></div>
           <div class="benefit-content">
@@ -692,46 +771,26 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
     <!-- EXPERTS -->
     <div style="margin-bottom:56px">
       <p class="eyebrow">Para Pakar</p>
-      <h2 class="h2">Dipandu oleh praktisi —<br>bukan hanya pengajar.</h2>
-      <div class="expert-grid">
-        <div class="expert-card">
-          <div class="expert-avatar">MY</div>
-          <div class="expert-name">Mulyono, S.TP.</div>
-          <div class="expert-role">Manajer Mutu Laboratorium · Konsultan Akreditasi</div>
-          <div class="expert-tags"><span class="expert-tag">ISO 17025</span><span class="expert-tag">Kimia</span></div>
+      <h2 class="h2">Dipandu oleh praktisi lab berpengalaman —<br>bukan hanya akademisi.</h2>
+      <div class="pakar-grid">
+        <?php foreach ( $experts as $e ) : ?>
+        <div class="pakar-card">
+          <img class="pakar-photo" src="<?php echo esc_url( $pakar_dir . rawurlencode( $e['photo'] ) ); ?>" alt="<?php echo esc_attr( $e['name'] ); ?>" loading="lazy">
+          <div class="pakar-body">
+            <div class="pakar-name"><?php echo esc_html( $e['name'] ); ?></div>
+            <div class="pakar-role"><?php echo wp_kses_post( $e['role'] ); ?></div>
+            <?php if ( ! empty( $e['tags'] ) ) : ?>
+            <div class="pakar-tags">
+              <?php foreach ( $e['tags'] as $tag ) : ?>
+              <span class="pakar-tag"><?php echo esc_html( $tag ); ?></span>
+              <?php endforeach; ?>
+            </div>
+            <?php endif; ?>
+          </div>
         </div>
-        <div class="expert-card">
-          <div class="expert-avatar">FI</div>
-          <div class="expert-name">Ir. Fajri Mulya Iresha, Ph.D., CLLI, CLIA</div>
-          <div class="expert-role">Trainer ISO/IEC 17025 · Lab Lingkungan</div>
-          <div class="expert-tags"><span class="expert-tag">Lingkungan</span><span class="expert-tag">CLIA</span></div>
-        </div>
-        <div class="expert-card">
-          <div class="expert-avatar">HA</div>
-          <div class="expert-name">Hanim Zuhrotul Amanah, Ph.D.</div>
-          <div class="expert-role">Manajer Mutu Lab Pangan · Konsultan Akreditasi</div>
-          <div class="expert-tags"><span class="expert-tag">Pangan</span><span class="expert-tag">GLP</span></div>
-        </div>
-        <div class="expert-card">
-          <div class="expert-avatar">IP</div>
-          <div class="expert-name">Indra Permana, S.P., M.P.</div>
-          <div class="expert-role">Manajer Teknis · Kepala Lab Tanah</div>
-          <div class="expert-tags"><span class="expert-tag">Pertanian</span><span class="expert-tag">Ilmu Tanah</span></div>
-        </div>
-        <div class="expert-card">
-          <div class="expert-avatar">CP</div>
-          <div class="expert-name">Chandra Pribadi, S.T.</div>
-          <div class="expert-role">Manajer Mutu · Batu Bara & Mineral</div>
-          <div class="expert-tags"><span class="expert-tag">Mineral</span><span class="expert-tag">Energi</span></div>
-        </div>
-        <div class="expert-card">
-          <div class="expert-avatar">PR</div>
-          <div class="expert-name">Prof. Riyanto, Ph.D.</div>
-          <div class="expert-role">Dekan FMIPA UII · Manajer Mutu Lab</div>
-          <div class="expert-tags"><span class="expert-tag">Kimia</span><span class="expert-tag">K3</span></div>
-        </div>
+        <?php endforeach; ?>
       </div>
-      <p style="font-size:13px;color:var(--gray-600);margin-top:16px;text-align:center">+9 pakar lainnya sesuai bidang lab dan topik yang sedang berjalan</p>
+      <p style="font-size:13px;color:var(--gray-600);margin-top:16px;text-align:center">15+ pakar aktif di 9 bidang laboratorium berbeda — sesuai bidang lab dan topik yang sedang berjalan.</p>
     </div>
 
     <!-- COMPARISON TABLE -->
@@ -807,10 +866,11 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
     <div style="margin-bottom:56px">
       <p class="eyebrow">Kata Alumni</p>
       <h2 class="h2">Mereka sudah membuktikan.<br>30+ lab berhasil membangun sistem mutu & meraih akreditasi.</h2>
-      <div class="testimonial-grid">
+      <div class="testimonial-slider" id="testi-slider">
+      <div class="testimonial-track" id="testi-track">
         <div class="testimonial">
           <div class="stars">★★★★★</div>
-          <div class="test-text">"Pendampingan yang dilakukan sangat baik dan menyenangkan, kami merasakan atmosfer kekeluargaan. Metode ini menjadi kunci kelancaran kami dalam proses Akreditasi KAN. Kami mendapat wawasan baru serta info terupdate seputar laboratorium."</div>
+          <div class="test-text">"Pendampingan dari Labnesia sangat baik dan menyenangkan, kami merasakan atmosfer kekeluargaan. Ini jadi kunci kelancaran kami dalam proses Akreditasi KAN."</div>
           <div class="test-author">
             <div class="test-avatar">WS</div>
             <div>
@@ -822,24 +882,66 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
         </div>
         <div class="testimonial">
           <div class="stars">★★★★★</div>
-          <div class="test-text">"Program ini berbeda dari pelatihan biasa — setiap sesi kami langsung mengerjakan dokumen nyata untuk lab kami. Keluar dari sesi, ada output yang langsung bisa dipakai. Tidak ada yang lebih efisien dari ini."</div>
+          <div class="test-text">"Pelayanan konsultan dari Labnesia dalam penyusunan dokumen ISO 17025 sangat mengesankan — penuh dedikasi dan pengetahuan mendalam. Prosesnya berjalan lancar dan efisien, hasilnya sangat memuaskan."</div>
           <div class="test-author">
-            <div class="test-avatar">RT</div>
+            <div class="test-avatar">IP</div>
             <div>
-              <div class="test-name">Manajer Mutu Laboratorium</div>
-              <div class="test-role">Laboratorium Pangan & Gizi</div>
-              <div class="lab-badge">Universitas Gadjah Mada · LP-1709-IDN</div>
+              <div class="test-name">Indra Permana, S.P., M.P.</div>
+              <div class="test-role">Kepala Laboratorium Tanah</div>
+              <div class="lab-badge">Faperta UNSIL</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <div class="test-text">"Dengan ISO kami bekerja lebih terukur dan fokus pada sasaran. Laboratorium kami memiliki pengarsipan terbaik saat ini."</div>
+          <div class="test-author">
+            <div class="test-avatar">TS</div>
+            <div>
+              <div class="test-name">Prof. Dr. Timbangen Sembiring, M.Sc.</div>
+              <div class="test-role">Kepala UPT Pusat Perkuliahan dan Lab. Ilmu Dasar & Umum</div>
+              <div class="lab-badge">Universitas Sumatera Utara · LP-1779-IDN</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <div class="test-text">"Dengan ISO/IEC 17025:2017, tata kelola kami menjadi lebih baik dan pengujian terstandarisasi — performa dan pelayanan kami mencapai predikat Laboratory of Excellent."</div>
+          <div class="test-author">
+            <div class="test-avatar">PT</div>
+            <div>
+              <div class="test-name">Dr. Ir. Paul Benyamin Timotiwu, M.S.</div>
+              <div class="test-role">Kepala UPT Lab Terpadu & Sentra Inovasi Teknologi</div>
+              <div class="lab-badge">Universitas Lampung · LP-1130-IDN</div>
             </div>
           </div>
         </div>
       </div>
-      <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:8px;align-items:center">
-        <span style="font-size:13px;color:var(--gray-600);font-weight:600">Lab yang sudah bergabung:</span>
-        <span style="font-size:12px;background:white;border:1px solid var(--gray-200);padding:4px 12px;border-radius:6px;color:var(--gray-600)">UGM · LP-1709-IDN</span>
-        <span style="font-size:12px;background:white;border:1px solid var(--gray-200);padding:4px 12px;border-radius:6px;color:var(--gray-600)">Univ. Jambi · LP-1774-IDN</span>
-        <span style="font-size:12px;background:white;border:1px solid var(--gray-200);padding:4px 12px;border-radius:6px;color:var(--gray-600)">Univ. Lampung · LP-1130-IDN</span>
-        <span style="font-size:12px;background:white;border:1px solid var(--gray-200);padding:4px 12px;border-radius:6px;color:var(--gray-600)">USU · LP-1779-IDN</span>
-        <span style="font-size:12px;color:var(--teal);font-weight:600">+26 lainnya <?php labnesia_icon( 'arrow-right', 'var(--teal)', 12 ); ?></span>
+      </div>
+      <div class="slider-controls">
+        <button type="button" class="slider-arrow" id="testi-prev" aria-label="Testimoni sebelumnya">‹</button>
+        <div class="slider-dots" id="testi-dots"></div>
+        <button type="button" class="slider-arrow" id="testi-next" aria-label="Testimoni berikutnya">›</button>
+      </div>
+      <div style="margin-top:32px">
+        <p class="mitra-label">Lab yang sudah bergabung:</p>
+        <?php
+        $render_mitra_tile = function( $m, $hidden = false ) use ( $mitra_dir ) {
+            printf( '<div class="mitra-logo" title="%1$s"%2$s>', esc_attr( $m['name'] ), $hidden ? ' aria-hidden="true"' : '' );
+            if ( $m['file'] ) {
+                printf( '<img src="%1$s" alt="%2$s" loading="lazy">', esc_url( $mitra_dir . rawurlencode( $m['file'] ) ), esc_attr( $m['name'] ) );
+            } else {
+                printf( '<span class="mitra-logo-text">%s</span>', esc_html( $m['name'] ) );
+            }
+            echo '</div>';
+        };
+        ?>
+        <div class="mitra-marquee">
+          <div class="mitra-track">
+            <?php foreach ( $mitra_logos as $m ) : $render_mitra_tile( $m ); endforeach; ?>
+            <?php foreach ( $mitra_logos as $m ) : $render_mitra_tile( $m, true ); endforeach; ?>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -916,7 +1018,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
       </div>
 
       <div class="price-cta">
-        <a href="#form-daftar" class="btn-amber">Daftar Batch Berikutnya</a>
+        <a href="<?php echo $url_daftar; ?>" class="btn-amber" target="_blank" rel="noopener">Daftar Batch Berikutnya</a>
         <a href="<?php echo $url_gratis; ?>" class="btn-ghost">Konsultasi gratis dulu <?php labnesia_icon( 'arrow-right', 'var(--navy)', 14 ); ?></a>
       </div>
 
@@ -926,53 +1028,6 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
       </div>
     </div>
 
-    <!-- MINI FORM -->
-    <form id="form-daftar" onsubmit="return submitForm(event)" style="margin-top:20px;background:white;border:1px solid var(--gray-200);border-radius:16px;padding:24px">
-      <h3 style="font-size:17px;font-weight:800;color:var(--navy);margin-bottom:4px">Amankan slot Anda sekarang</h3>
-      <p style="font-size:13px;color:var(--gray-600);margin-bottom:20px">Tim kami akan menghubungi Anda dalam 1×24 jam untuk konfirmasi dan detail pembayaran.</p>
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <div>
-          <label style="font-size:12px;font-weight:600;color:var(--gray-800);display:block;margin-bottom:5px">Nama lengkap *</label>
-          <input type="text" id="mf-nama" placeholder="Nama Anda" required style="width:100%;padding:10px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:var(--font-display);outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--gray-200)'">
-        </div>
-        <div>
-          <label style="font-size:12px;font-weight:600;color:var(--gray-800);display:block;margin-bottom:5px">Nama laboratorium / instansi *</label>
-          <input type="text" id="mf-institusi" placeholder="Lab / Universitas / Perusahaan" required style="width:100%;padding:10px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:var(--font-display);outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--gray-200)'">
-        </div>
-        <div>
-          <label style="font-size:12px;font-weight:600;color:var(--gray-800);display:block;margin-bottom:5px">Nomor WhatsApp *</label>
-          <input type="tel" id="mf-whatsapp" placeholder="08xx-xxxx-xxxx" required style="width:100%;padding:10px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:var(--font-display);outline:none;transition:border .2s" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--gray-200)'">
-        </div>
-        <div>
-          <label style="font-size:12px;font-weight:600;color:var(--gray-800);display:block;margin-bottom:5px">Jumlah peserta</label>
-          <select id="mf-jumlah" style="width:100%;padding:10px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:var(--font-display);outline:none;background:white">
-            <option>1 peserta — <?php echo labnesia_kp_rp( $kp_active_prices[1] ); ?></option>
-            <option>2 peserta — <?php echo labnesia_kp_rp( $kp_active_prices[2] ); ?></option>
-            <option selected>3 peserta — <?php echo labnesia_kp_rp( $kp_active_prices[3] ); ?> (Best Value)</option>
-          </select>
-        </div>
-        <div>
-          <label style="font-size:12px;font-weight:600;color:var(--gray-800);display:block;margin-bottom:5px">Bidang laboratorium</label>
-          <select id="mf-bidang" style="width:100%;padding:10px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:var(--font-display);outline:none;background:white">
-            <option>Lab Lingkungan</option>
-            <option>Lab Pangan / Gizi / Halal</option>
-            <option>Lab Sipil</option>
-            <option>Lab Pertanian / Pascapanen</option>
-            <option>Lab Farmasi / Kimia</option>
-            <option>Lab Biologi & Mikrobiologi</option>
-            <option>Lab Kalibrasi</option>
-            <option>Lab Peternakan & Perikanan</option>
-            <option>Lainnya</option>
-          </select>
-        </div>
-        <button type="submit" id="mf-submit-btn" style="background:var(--teal);color:white;padding:13px;border-radius:9px;font-weight:700;font-size:15px;border:none;cursor:pointer;width:100%;font-family:var(--font-display);transition:all .2s" onmouseover="this.style.background='#158a65'" onmouseout="this.style.background='var(--teal)'">Daftar Sekarang <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></button>
-        <p style="font-size:11px;color:var(--gray-400);text-align:center;line-height:1.5">Dengan mendaftar, Anda menyetujui syarat & ketentuan program. Tidak ada biaya di tahap ini — tim kami akan menghubungi Anda terlebih dahulu.</p>
-      </div>
-    </form>
-    <div id="mf-success" style="display:none;margin-top:20px;background:var(--teal-pale);border:1px solid rgba(26,158,117,0.3);border-radius:16px;padding:24px;text-align:center">
-      <div style="font-size:16px;font-weight:800;color:#085041;margin-bottom:6px">Pendaftaran terkirim!</div>
-      <p style="font-size:13px;color:#085041;line-height:1.6">Tim kami akan menghubungi Anda dalam 1×24 jam melalui WhatsApp untuk konfirmasi dan detail pembayaran.</p>
-    </div>
   </div>
 </div>
 
@@ -984,13 +1039,61 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
     <p class="cta-sub">Gap Analysis gratis, webinar, dan panduan sudah menunggu — tanpa perlu keputusan apapun dari Anda saat ini.</p>
     <div class="cta-actions">
       <a href="<?php echo $url_gratis; ?>" class="btn-primary" style="font-size:15px;padding:14px 28px">Akses semua yang gratis <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></a>
-      <a href="#form-daftar" class="btn-amber" style="font-size:15px;padding:14px 28px">Daftar Kelas Pendampingan</a>
+      <a href="<?php echo $url_daftar; ?>" class="btn-amber" style="font-size:15px;padding:14px 28px" target="_blank" rel="noopener">Daftar Kelas Pendampingan</a>
     </div>
     <p class="cta-note">Atau hubungi tim: <?php labnesia_whatsapp_link( '6282172221567', '+62 821-7222-1567 (Endang)', 'rgba(255,255,255,0.35)', 13 ); ?> · <?php labnesia_whatsapp_link( '6285185000367', '+62 851-8500-0367 (Berryl)', 'rgba(255,255,255,0.35)', 13 ); ?> · <?php labnesia_whatsapp_link( '62811399523', '+62 811-399-523 (Kintan)', 'rgba(255,255,255,0.35)', 13 ); ?></p>
   </div>
 </div>
 
 <script>
+(function () {
+  const slider = document.getElementById('testi-slider');
+  if (!slider) return;
+  const track = document.getElementById('testi-track');
+  const cards = Array.from(track.querySelectorAll('.testimonial'));
+  const dotsWrap = document.getElementById('testi-dots');
+  const prevBtn = document.getElementById('testi-prev');
+  const nextBtn = document.getElementById('testi-next');
+
+  cards.forEach((card, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Ke testimoni ' + (i + 1));
+    dot.addEventListener('click', () => {
+      slider.scrollTo({ left: card.offsetLeft, behavior: 'smooth' });
+    });
+    dotsWrap.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  function activeIndex() {
+    let closest = 0, dist = Infinity;
+    cards.forEach((c, i) => {
+      const d = Math.abs(c.offsetLeft - slider.scrollLeft);
+      if (d < dist) { dist = d; closest = i; }
+    });
+    return closest;
+  }
+  function refresh() {
+    const idx = activeIndex();
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  }
+  let scrollTimer;
+  slider.addEventListener('scroll', () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(refresh, 100);
+  });
+  prevBtn.addEventListener('click', () => {
+    const idx = Math.max(0, activeIndex() - 1);
+    slider.scrollTo({ left: cards[idx].offsetLeft, behavior: 'smooth' });
+  });
+  nextBtn.addEventListener('click', () => {
+    const idx = Math.min(cards.length - 1, activeIndex() + 1);
+    slider.scrollTo({ left: cards[idx].offsetLeft, behavior: 'smooth' });
+  });
+  refresh();
+})();
 function showBatch(el,id){
   document.querySelectorAll('.batch-tab').forEach(t=>t.classList.remove('active'));
   document.querySelectorAll('.batch-panel').forEach(p=>p.classList.remove('active'));
@@ -1019,58 +1122,5 @@ document.querySelectorAll('.faq-q').forEach(q=>{
     if(!isOpen){ans.classList.add('open');item.classList.add('active')}
   });
 });
-const MF_GAS_URL   = <?php echo wp_json_encode( get_theme_mod( 'labnesia_gas_url', '' ) ); ?>;
-
-function submitForm(event){
-  event.preventDefault();
-
-  const nama      = document.getElementById('mf-nama').value.trim();
-  const institusi = document.getElementById('mf-institusi').value.trim();
-  const whatsapp  = document.getElementById('mf-whatsapp').value.trim();
-  const jumlahSel = document.getElementById('mf-jumlah');
-  const jumlah    = jumlahSel.selectedOptions[0].text;
-  const bidangSel = document.getElementById('mf-bidang');
-  const bidang    = bidangSel.selectedOptions[0].text;
-
-  if(!nama || !institusi || !whatsapp){
-    alert('Mohon lengkapi Nama, Nama laboratorium/instansi, dan Nomor WhatsApp.');
-    return false;
-  }
-
-  const btn = document.getElementById('mf-submit-btn');
-  btn.disabled = true;
-  const originalLabel = btn.innerHTML;
-  btn.innerHTML = 'Mengirim...';
-
-  function showSuccess(){
-    document.getElementById('form-daftar').style.display = 'none';
-    document.getElementById('mf-success').style.display = 'block';
-  }
-
-  if(!MF_GAS_URL){
-    btn.disabled = false;
-    btn.innerHTML = originalLabel;
-    showSuccess();
-    return false;
-  }
-
-  const formData = new FormData();
-  formData.append('form', 'kelas-pendampingan');
-  formData.append('nama', nama);
-  formData.append('institusi', institusi);
-  formData.append('whatsapp', whatsapp);
-  formData.append('jumlah', jumlah);
-  formData.append('bidang', bidang);
-
-  fetch(MF_GAS_URL, { method: 'POST', mode: 'no-cors', body: formData })
-    .catch(function(){ /* no-cors gives an opaque response either way — still proceed */ })
-    .finally(function(){
-      btn.disabled = false;
-      btn.innerHTML = originalLabel;
-      showSuccess();
-    });
-
-  return false;
-}
 </script>
 <?php get_footer(); ?>

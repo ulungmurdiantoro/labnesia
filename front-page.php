@@ -248,19 +248,32 @@ $mitra_logos = [
   .stat-num { font-size: 42px; font-weight: 800; color: var(--navy); letter-spacing: -2px; line-height: 1; }
   .stat-unit { font-size: 20px; color: var(--teal); }
   .stat-label { font-size: 13px; color: var(--gray-600); margin-top: 6px; }
-  .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .testimonial-slider { overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none; }
+  .testimonial-slider::-webkit-scrollbar { display: none; }
+  .testimonial-track { display: flex; gap: 20px; }
+  .testimonial-track .testimonial { flex: 0 0 calc(50% - 10px); scroll-snap-align: start; }
+  @media (max-width: 768px) { .testimonial-track .testimonial { flex: 0 0 100%; } }
+  .slider-controls { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 20px; }
+  .slider-arrow { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--gray-200); background: white; color: var(--navy); font-size: 18px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .2s; }
+  .slider-arrow:hover { border-color: var(--teal); color: var(--teal); }
+  .slider-dots { display: flex; align-items: center; gap: 6px; }
+  .slider-dot { width: 7px; height: 7px; padding: 0; border: none; border-radius: 4px; background: var(--gray-200); cursor: pointer; transition: all .2s; }
+  .slider-dot.active { background: var(--teal); width: 20px; }
   .testimonial {
-    background: white; border: 1px solid var(--gray-200); border-radius: 16px; padding: 28px;
+    background: white; border: 1px solid var(--gray-200); border-radius: 14px; padding: 20px;
+    min-width: 0;
   }
-  .testimonial-text { font-family: var(--font-serif); font-style: italic; font-size: 15px; color: var(--gray-800); line-height: 1.7; margin-bottom: 20px; }
-  .testimonial-author { display: flex; align-items: center; gap: 12px; }
-  .author-avatar {
-    width: 44px; height: 44px; border-radius: 50%;
+  .stars { color: var(--amber); font-size: 13px; margin-bottom: 8px; letter-spacing: 2px; }
+  .test-text { font-family: var(--font-serif); font-style: italic; font-size: 13px; color: var(--gray-800); line-height: 1.55; margin-bottom: 14px; overflow-wrap: break-word; }
+  .test-author { display: flex; align-items: center; gap: 10px; }
+  .test-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
     background: var(--teal); display: flex; align-items: center; justify-content: center;
-    font-weight: 700; color: white; font-size: 16px; flex-shrink: 0;
+    font-weight: 700; color: white; font-size: 13px; flex-shrink: 0;
   }
-  .author-name { font-size: 14px; font-weight: 700; color: var(--navy); }
-  .author-role { font-size: 12px; color: var(--gray-600); }
+  .test-name { font-size: 13px; font-weight: 700; color: var(--navy); }
+  .test-role { font-size: 11px; color: var(--gray-600); }
+  .lab-badge { display: inline-block; background: var(--teal-pale); color: var(--teal); font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 4px; margin-top: 3px; }
   .mitra-section { background: #fff; padding: 56px 48px; border-top: 1px solid var(--gray-200); }
   .mitra-label { font-size: 13px; color: var(--gray-600); font-weight: 600; margin-bottom: 20px; text-align: center; }
   .mitra-marquee {
@@ -410,7 +423,7 @@ $mitra_logos = [
       <div class="journey-step">
         <div class="journey-dot" style="background:var(--teal)"><?php labnesia_icon( 'graduation-cap', '#ffffff', 14 ); ?></div>
         <div class="journey-info">
-          <div class="journey-label">Pelatihan & Sertifikasi Kompetensi</div>
+          <div class="journey-label">Pelatihan 16, 24 dan 40 JP</div>
           <div class="journey-sub">Untuk individu — Lead Implementer / Auditor Internal</div>
         </div>
         <span class="journey-badge" style="background:rgba(26,158,117,0.2);color:#4DD9A8">Individu</span>
@@ -439,6 +452,18 @@ $mitra_logos = [
         </div>
         <span class="journey-badge badge-adv"><?php labnesia_icon( 'trophy', 'rgba(255,255,255,.9)', 10 ); ?> Goal</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATATAN PENTING -->
+<section style="background:var(--gray-50);padding:24px 48px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;gap:14px;align-items:flex-start;background:var(--amber-pale);border:1px solid rgba(245,166,35,0.35);border-left:4px solid var(--amber);border-radius:0 12px 12px 0;padding:18px 22px">
+    <span style="flex-shrink:0;margin-top:2px"><?php labnesia_icon( 'info', '#8B6000', 18 ); ?></span>
+    <div>
+      <p style="font-size:12px;font-weight:700;color:#6B4400;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Catatan Penting</p>
+      <p style="font-size:13px;color:#8B5800;line-height:1.65">Pelatihan yang kami selenggarakan bertujuan untuk meningkatkan kompetensi sumber daya manusia (SDM) di lingkungan perguruan tinggi, serta dapat digunakan sebagai salah satu bentuk pemenuhan persyaratan administratif untuk mengikuti uji kompetensi pada skema tertentu di LSP Edukia, sesuai dengan ketentuan yang berlaku. </p>
+      <p style="font-size:13px;color:#8B5800;line-height:1.65">Perlu ditegaskan bahwa keikutsertaan dalam pelatihan ini tidak menjamin kelulusan dalam proses sertifikasi kompetensi. Seluruh proses sertifikasi diselenggarakan secara independen oleh LSP Edukia berdasarkan asesmen yang objektif dan mengacu pada standar SNI ISO/IEC 17024.</p>
     </div>
   </div>
 </section>
@@ -574,8 +599,10 @@ $mitra_logos = [
         <div class="ladder-step">
           <div class="ladder-left" style="background:var(--teal)"><div class="ladder-dot" style="background:var(--teal)"></div></div>
           <div class="ladder-body" style="border-color:var(--teal);background:var(--teal-pale)">
-            <div class="ladder-row"><span class="ladder-name" style="color:var(--teal)">Sertifikasi Kompetensi</span><span class="ladder-price">2–7 jt/orang</span></div>
-            <div class="ladder-desc" style="margin-bottom:8px">Pelatihan 40 JP — Lead Implementer atau Auditor Internal ISO/IEC 17025</div>
+            <div class="ladder-row"><span class="ladder-name" style="color:var(--teal)">Pelatihan 16, 24 dan 40 JP</span><span class="ladder-price">1,25–7,5 jt/orang</span></div>
+            <div class="ladder-desc" style="margin-bottom:8px">16 JP — Standar Laboratorium ISO/IEC 17025<br>
+              24 JP — Laboratory HSE Officer, GLP Laboratory Technician, dll<br>
+              40 JP — Lead Implementer atau Auditor Internal ISO/IEC 17025</div>
             <div class="ladder-badge">Produk Unggulan 2026</div>
           </div>
         </div>
@@ -660,13 +687,13 @@ $mitra_logos = [
             <div class="product-card-eyebrow">Entry · Individu</div>
             <div class="featured-badge">Terpopuler 2026</div>
           </div>
-          <div class="product-card-name">Pelatihan & Sertifikasi Kompetensi</div>
-          <div class="product-card-price">Rp 2–7 jt <span class="product-card-unit">/orang</span></div>
+          <div class="product-card-name">Pelatihan 16, 24 dan 40 JP</div>
+          <div class="product-card-price">Rp 1,25–7,5 jt <span class="product-card-unit">/orang</span></div>
         </div>
         <div class="product-card-body">
-          <div class="product-feature"><div class="feature-check"><?php labnesia_icon( 'check', 'var(--teal)', 16 ); ?></div><div class="feature-text">Pelatihan 40 JP online/offline</div></div>
-          <div class="product-feature"><div class="feature-check"><?php labnesia_icon( 'check', 'var(--teal)', 16 ); ?></div><div class="feature-text">Materi Lead Implementer atau Auditor Internal ISO/IEC 17025</div></div>
-          <div class="product-feature"><div class="feature-check"><?php labnesia_icon( 'check', 'var(--teal)', 16 ); ?></div><div class="feature-text">Modul pembelajaran terstandarisasi oleh para pakar</div></div>
+          <div class="product-feature"><div class="feature-check"><?php labnesia_icon( 'check', 'var(--teal)', 16 ); ?></div><div class="feature-text"><strong>16 JP</strong> — Standar Laboratorium ISO/IEC 17025 · Rp 1.250.000</div></div>
+          <div class="product-feature"><div class="feature-check"><?php labnesia_icon( 'check', 'var(--teal)', 16 ); ?></div><div class="feature-text"><strong>24 JP</strong> — 12 skema kompetensi profesi lab: Food Safety Management Officer, GLP Laboratory Technician, QA/QC Officer, dll · Rp 1.750.000</div></div>
+          <div class="product-feature"><div class="feature-check"><?php labnesia_icon( 'check', 'var(--teal)', 16 ); ?></div><div class="feature-text"><strong>40 JP</strong> — Lead Implementer atau Auditor Internal ISO/IEC 17025 · Rp 6.500.000 (online) / Rp 7.500.000 (onsite)</div></div>
           <div class="product-feature"><div class="feature-check"><?php labnesia_icon( 'check', 'var(--teal)', 16 ); ?></div><div class="feature-text">Cocok untuk individu & fresh graduate</div></div>
           <a href="<?php echo $url_pelatihan; ?>" class="product-card-cta cta-outline">Lihat jadwal pelatihan</a>
         </div>
@@ -765,27 +792,62 @@ $mitra_logos = [
       </div>
     </div>
 
-    <div class="testimonial-grid">
-      <div class="testimonial">
-        <div class="testimonial-text">"Pendampingan yang dilakukan sangat baik dan menyenangkan, kami merasakan atmosfer kekeluargaan. Metode ini menjadi kunci kelancaran kami dalam proses Akreditasi KAN. Kami mendapat wawasan baru serta info terupdate seputar laboratorium."</div>
-        <div class="testimonial-author">
-          <div class="author-avatar">WS</div>
-          <div>
-            <div class="author-name">Wawan Abdullah Setiawan, S.Si., M.Si.</div>
-            <div class="author-role">Ketua Divisi Biomolekuler · UPT Lab Terpadu Universitas Lampung</div>
+    <div class="testimonial-slider" id="testi-slider">
+      <div class="testimonial-track" id="testi-track">
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <div class="test-text">"Pendampingan dari Labnesia sangat baik dan menyenangkan, kami merasakan atmosfer kekeluargaan. Ini jadi kunci kelancaran kami dalam proses Akreditasi KAN."</div>
+          <div class="test-author">
+            <div class="test-avatar">WS</div>
+            <div>
+              <div class="test-name">Wawan Abdullah Setiawan, S.Si., M.Si.</div>
+              <div class="test-role">Ketua Divisi Biomolekuler</div>
+              <div class="lab-badge">UPT Lab Terpadu Universitas Lampung · LP-1130-IDN</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <div class="test-text">"Pelayanan konsultan dari Labnesia dalam penyusunan dokumen ISO 17025 sangat mengesankan — penuh dedikasi dan pengetahuan mendalam. Prosesnya berjalan lancar dan efisien, hasilnya sangat memuaskan."</div>
+          <div class="test-author">
+            <div class="test-avatar">IP</div>
+            <div>
+              <div class="test-name">Indra Permana, S.P., M.P.</div>
+              <div class="test-role">Kepala Laboratorium Tanah</div>
+              <div class="lab-badge">Faperta UNSIL</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <div class="test-text">"Dengan ISO kami bekerja lebih terukur dan fokus pada sasaran. Laboratorium kami memiliki pengarsipan terbaik saat ini."</div>
+          <div class="test-author">
+            <div class="test-avatar">TS</div>
+            <div>
+              <div class="test-name">Prof. Dr. Timbangen Sembiring, M.Sc.</div>
+              <div class="test-role">Kepala UPT Pusat Perkuliahan dan Lab. Ilmu Dasar & Umum</div>
+              <div class="lab-badge">Universitas Sumatera Utara · LP-1779-IDN</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <div class="test-text">"Dengan ISO/IEC 17025:2017, tata kelola kami menjadi lebih baik dan pengujian terstandarisasi — performa dan pelayanan kami mencapai predikat Laboratory of Excellent."</div>
+          <div class="test-author">
+            <div class="test-avatar">PT</div>
+            <div>
+              <div class="test-name">Dr. Ir. Paul Benyamin Timotiwu, M.S.</div>
+              <div class="test-role">Kepala UPT Lab Terpadu & Sentra Inovasi Teknologi</div>
+              <div class="lab-badge">Universitas Lampung · LP-1130-IDN</div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="testimonial">
-        <div class="testimonial-text">"Dengan program Kelas Pendampingan, tim kami yang awalnya tidak paham alur akreditasi kini bisa menyusun seluruh dokumen mutu secara mandiri. Outputnya nyata — bukan hanya teori semata."</div>
-        <div class="testimonial-author">
-          <div class="author-avatar">RP</div>
-          <div>
-            <div class="author-name">Manajer Mutu Laboratorium</div>
-            <div class="author-role">Laboratorium Pangan & Gizi · Universitas Negeri</div>
-          </div>
-        </div>
-      </div>
+    </div>
+    <div class="slider-controls">
+      <button type="button" class="slider-arrow" id="testi-prev" aria-label="Testimoni sebelumnya">‹</button>
+      <div class="slider-dots" id="testi-dots"></div>
+      <button type="button" class="slider-arrow" id="testi-next" aria-label="Testimoni berikutnya">›</button>
     </div>
   </div>
 </section>
@@ -921,6 +983,56 @@ $mitra_logos = [
       step.classList.add('active');
     });
   });
+
+  // Testimonial slider
+  (function () {
+    const slider = document.getElementById('testi-slider');
+    if (!slider) return;
+    const track = document.getElementById('testi-track');
+    const cards = Array.from(track.querySelectorAll('.testimonial'));
+    const dotsWrap = document.getElementById('testi-dots');
+    const prevBtn = document.getElementById('testi-prev');
+    const nextBtn = document.getElementById('testi-next');
+
+    cards.forEach((card, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Ke testimoni ' + (i + 1));
+      dot.addEventListener('click', () => {
+        slider.scrollTo({ left: card.offsetLeft, behavior: 'smooth' });
+      });
+      dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    function activeIndex() {
+      let closest = 0, dist = Infinity;
+      cards.forEach((c, i) => {
+        const d = Math.abs(c.offsetLeft - slider.scrollLeft);
+        if (d < dist) { dist = d; closest = i; }
+      });
+      return closest;
+    }
+    function refresh() {
+      const idx = activeIndex();
+      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    }
+    let scrollTimer;
+    slider.addEventListener('scroll', () => {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(refresh, 100);
+    });
+    prevBtn.addEventListener('click', () => {
+      const idx = Math.max(0, activeIndex() - 1);
+      slider.scrollTo({ left: cards[idx].offsetLeft, behavior: 'smooth' });
+    });
+    nextBtn.addEventListener('click', () => {
+      const idx = Math.min(cards.length - 1, activeIndex() + 1);
+      slider.scrollTo({ left: cards[idx].offsetLeft, behavior: 'smooth' });
+    });
+    refresh();
+  })();
 </script>
 
 <?php get_footer(); ?>

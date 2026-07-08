@@ -10,12 +10,15 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 // plain WP_Query 'orderby' can't express in one query without dropping posts
 // that lack the meta key.
 $jadwal_categories = [
-    ''           => 'Semua',
-    'pelatihan'  => 'Pelatihan',
-    'webinar'    => 'Webinar',
+    ''                 => 'Semua',
+    'pelatihan'        => 'Pelatihan',
+    'pelatihan-40-jp'  => 'Pelatihan 40 JP',
+    'pelatihan-24-jp'  => 'Pelatihan 24 JP',
+    'pelatihan-16-jp'  => 'Pelatihan 16 JP',
+    'webinar'          => 'Webinar',
 ];
 $active_cat = isset( $_GET['kategori'] ) && array_key_exists( $_GET['kategori'], $jadwal_categories ) ? $_GET['kategori'] : '';
-$active_slugs = $active_cat ? [ $active_cat ] : [ 'pelatihan', 'webinar' ];
+$active_slugs = $active_cat ? [ $active_cat ] : [ 'pelatihan', 'pelatihan-40-jp', 'pelatihan-24-jp', 'pelatihan-16-jp', 'webinar' ];
 
 $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 $per_page = 9;
@@ -27,11 +30,21 @@ $jadwal_query = new WP_Query( [
     'category__in'   => labnesia_category_ids_by_slug( $active_slugs ),
 ] );
 
+// Upcoming events first (soonest to today first), past events pushed to the
+// end (most recently passed first among them).
 $jadwal_posts = $jadwal_query->posts;
-usort( $jadwal_posts, function( $a, $b ) {
+$jadwal_today = strtotime( 'today' );
+usort( $jadwal_posts, function( $a, $b ) use ( $jadwal_today ) {
     $date_a = get_post_meta( $a->ID, '_jadwal_tanggal', true ) ?: $a->post_date;
     $date_b = get_post_meta( $b->ID, '_jadwal_tanggal', true ) ?: $b->post_date;
-    return strtotime( $date_b ) <=> strtotime( $date_a );
+    $ts_a = strtotime( $date_a );
+    $ts_b = strtotime( $date_b );
+    $upcoming_a = $ts_a >= $jadwal_today;
+    $upcoming_b = $ts_b >= $jadwal_today;
+    if ( $upcoming_a !== $upcoming_b ) {
+        return $upcoming_a ? -1 : 1;
+    }
+    return $upcoming_a ? ( $ts_a <=> $ts_b ) : ( $ts_b <=> $ts_a );
 } );
 
 $total_jadwal  = count( $jadwal_posts );
@@ -124,11 +137,16 @@ $jadwal_page   = array_slice( $jadwal_posts, ( $paged - 1 ) * $per_page, $per_pa
         $daftar_url = get_post_meta( get_the_ID(), '_jadwal_link_daftar', true );
         $source_thumb = get_post_meta( get_the_ID(), '_source_featured_image', true );
         // Only ever show Pelatihan/Webinar as the badge here, never Kegiatan
-        // (or any other category a post might also carry).
-        $jadwal_slugs = [ 'pelatihan', 'webinar' ];
+        // (or any other category a post might also carry). The JP-tier slugs
+        // are listed first so a post tagged with both "pelatihan" and e.g.
+        // "pelatihan-24-jp" shows the more specific badge.
+        $jadwal_slugs = [ 'pelatihan-40-jp', 'pelatihan-24-jp', 'pelatihan-16-jp', 'pelatihan', 'webinar' ];
         $cats = array_values( array_filter( get_the_category(), function( $c ) use ( $jadwal_slugs ) {
             return in_array( $c->slug, $jadwal_slugs, true );
         } ) );
+        usort( $cats, function( $a, $b ) use ( $jadwal_slugs ) {
+            return array_search( $a->slug, $jadwal_slugs ) <=> array_search( $b->slug, $jadwal_slugs );
+        } );
       ?>
       <div class="jadwal-card">
         <a href="<?php the_permalink(); ?>">

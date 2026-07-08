@@ -85,7 +85,7 @@ $url_panduan   = esc_url( home_url( '/panduan-memilih/' ) );
             <td>Investasi</td>
             <td><span class="price-tag">Rp 0</span><span class="price-sub">Modal waktu</span></td>
             <td><span class="price-tag">Rp 2–7 jt</span><span class="price-sub">Per orang</span></td>
-            <td class="col-featured"><span class="price-tag">Rp 14–35 jt</span><span class="price-sub">1–3 peserta/lab</span></td>
+            <td class="col-featured"><span class="price-tag">Rp 14jt</span><span class="price-sub">1 peserta/lab</span></td>
             <td><span class="price-tag">Rp 36 jt</span><span class="price-sub">Per lab</span></td>
             <td><span class="price-tag">Rp 150–200 jt</span><span class="price-sub">Per lab</span></td>
             <td style="background:rgba(8,80,65,0.05)"><span class="price-tag" style="color:#085041">Rp 36–70 jt</span><span class="price-sub">Per tahun · recurring</span></td>

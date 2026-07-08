@@ -10,6 +10,161 @@ $url_faq       = esc_url( home_url( '/faq/' ) );
 $url_inhouse   = esc_url( home_url( '/inhouse/' ) );
 $url_pelatihan = esc_url( home_url( '/pelatihan-sertifikasi/' ) );
 $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
+
+/**
+ * Fetch published jadwal posts for a given JP-tier category, soonest first.
+ */
+function labnesia_ps_jadwal_posts( $slug ) {
+	$q = new WP_Query( [
+		'post_type'      => 'post',
+		'post_status'    => 'publish',
+		'posts_per_page' => -1,
+		'category_name'  => $slug,
+	] );
+	$posts = $q->posts;
+	$today = strtotime( 'today' );
+	usort( $posts, function( $a, $b ) use ( $today ) {
+		$date_a = get_post_meta( $a->ID, '_jadwal_tanggal', true ) ?: $a->post_date;
+		$date_b = get_post_meta( $b->ID, '_jadwal_tanggal', true ) ?: $b->post_date;
+		$ts_a = strtotime( $date_a );
+		$ts_b = strtotime( $date_b );
+		$upcoming_a = $ts_a >= $today;
+		$upcoming_b = $ts_b >= $today;
+		if ( $upcoming_a !== $upcoming_b ) {
+			return $upcoming_a ? -1 : 1;
+		}
+		return $upcoming_a ? ( $ts_a <=> $ts_b ) : ( $ts_b <=> $ts_a );
+	} );
+	return $posts;
+}
+
+/**
+ * Render one jadwal-card for a JP-tier post — identical presentation to the
+ * cards on /jadwal/ (poster, badge, date, title, excerpt, Daftar Sekarang).
+ * Registration only — syllabus content lives in its own section, see
+ * labnesia_ps_silabus_section().
+ */
+function labnesia_ps_jadwal_item( $post, $tag_label ) {
+	$event_date     = get_post_meta( $post->ID, '_jadwal_tanggal', true );
+	$event_date_end = get_post_meta( $post->ID, '_jadwal_tanggal_selesai', true );
+	$event_display  = $event_date
+		? labnesia_format_jadwal_date( $event_date, $event_date_end )
+		: date_i18n( 'j M Y', strtotime( $post->post_date ) );
+	$daftar_url = get_post_meta( $post->ID, '_jadwal_link_daftar', true );
+	if ( ! $daftar_url ) $daftar_url = get_permalink( $post );
+	$source_thumb = get_post_meta( $post->ID, '_source_featured_image', true );
+	$permalink    = get_permalink( $post );
+	?>
+	<div class="jadwal-card">
+		<a href="<?php echo esc_url( $permalink ); ?>">
+			<?php if ( has_post_thumbnail( $post ) ) : ?>
+				<?php echo get_the_post_thumbnail( $post, 'medium_large', [ 'class' => 'jadwal-card-thumb' ] ); ?>
+			<?php elseif ( $source_thumb ) : ?>
+				<img class="jadwal-card-thumb" src="<?php echo esc_url( $source_thumb ); ?>" alt="<?php echo esc_attr( get_the_title( $post ) ); ?>" loading="lazy">
+			<?php else : ?>
+				<div class="jadwal-card-thumb-fallback"><?php labnesia_icon( 'calendar', 'rgba(255,255,255,0.5)', 32 ); ?></div>
+			<?php endif; ?>
+		</a>
+		<div class="jadwal-card-body">
+			<div class="jadwal-card-meta">
+				<span class="jadwal-card-cat"><?php echo esc_html( $tag_label ); ?></span>
+				<span class="jadwal-card-date">
+					<?php labnesia_icon( 'calendar', 'var(--amber)', 11 ); ?>
+					<?php echo esc_html( $event_display ); ?>
+				</span>
+			</div>
+			<a href="<?php echo esc_url( $permalink ); ?>" style="text-decoration:none">
+				<div class="jadwal-card-title"><?php echo esc_html( get_the_title( $post ) ); ?></div>
+			</a>
+			<div class="jadwal-card-excerpt"><?php echo esc_html( wp_trim_words( get_the_excerpt( $post ), 16 ) ); ?></div>
+			<div class="jadwal-card-actions">
+				<a href="<?php echo esc_url( $daftar_url ); ?>" class="jadwal-card-daftar" target="_blank" rel="noopener noreferrer">Daftar Sekarang</a>
+			</div>
+		</div>
+	</div>
+	<?php
+}
+
+/**
+ * Render a single combined "Silabus" section listing the syllabus for every
+ * post in $posts that has structured silabus meta (_jadwal_silabus_data).
+ * Kept entirely separate from the registration cards.
+ */
+function labnesia_ps_silabus_section( $posts ) {
+	$entries = [];
+	foreach ( $posts as $post ) {
+		$silabus = get_post_meta( $post->ID, '_jadwal_silabus_data', true );
+		if ( is_array( $silabus ) && ! empty( $silabus['silabus'] ) ) {
+			$entries[] = [ 'post' => $post, 'silabus' => $silabus ];
+		}
+	}
+	if ( empty( $entries ) ) return;
+	?>
+	<div class="silabus-section">
+		<p class="eyebrow">Silabus Pelatihan</p>
+		<h3 class="silabus-section-title">Lihat materi lengkap tiap skema.</h3>
+		<div class="silabus-accordion">
+			<?php foreach ( $entries as $i => $entry ) : $post = $entry['post']; $silabus = $entry['silabus']; ?>
+			<div class="sil-step">
+				<div class="sil-header<?php echo 0 === $i ? ' active' : ''; ?>" onclick="toggleSilabus(this)">
+					<div class="sil-title"><?php echo esc_html( get_the_title( $post ) ); ?></div>
+					<span class="sil-chevron">&#8250;</span>
+				</div>
+				<div class="sil-body<?php echo 0 === $i ? ' open' : ''; ?>">
+					<?php foreach ( $silabus['silabus'] as $block ) : ?>
+					<div class="jsb-block">
+						<?php if ( ! empty( $block['heading'] ) ) : ?><div class="jsb-block-title"><?php echo esc_html( $block['heading'] ); ?></div><?php endif; ?>
+						<div class="jsb-list">
+							<?php foreach ( $block['items'] as $item ) : ?>
+							<div class="jsb-item"><span class="jsb-check"><?php labnesia_icon( 'check', 'var(--teal)', 13 ); ?></span><?php echo esc_html( $item ); ?></div>
+							<?php endforeach; ?>
+						</div>
+					</div>
+					<?php endforeach; ?>
+
+					<div class="jsb-grid">
+						<?php if ( ! empty( $silabus['output'] ) ) : ?>
+						<div class="jsb-block">
+							<div class="jsb-block-title">Output</div>
+							<div class="jsb-list">
+								<?php foreach ( $silabus['output'] as $item ) : ?>
+								<div class="jsb-item"><span class="jsb-check"><?php labnesia_icon( 'check', 'var(--teal)', 13 ); ?></span><?php echo esc_html( $item ); ?></div>
+								<?php endforeach; ?>
+							</div>
+						</div>
+						<?php endif; ?>
+						<?php if ( ! empty( $silabus['benefit'] ) ) : ?>
+						<div class="jsb-block">
+							<div class="jsb-block-title">Benefit</div>
+							<div class="jsb-list">
+								<?php foreach ( $silabus['benefit'] as $item ) : ?>
+								<div class="jsb-item"><span class="jsb-check"><?php labnesia_icon( 'check', 'var(--teal)', 13 ); ?></span><?php echo esc_html( $item ); ?></div>
+								<?php endforeach; ?>
+							</div>
+						</div>
+						<?php endif; ?>
+						<?php if ( ! empty( $silabus['rekomendasi'] ) ) : ?>
+						<div class="jsb-block">
+							<div class="jsb-block-title">Direkomendasikan untuk</div>
+							<div class="jsb-list">
+								<?php foreach ( $silabus['rekomendasi'] as $item ) : ?>
+								<div class="jsb-item"><span class="jsb-check"><?php labnesia_icon( 'check', 'var(--teal)', 13 ); ?></span><?php echo esc_html( $item ); ?></div>
+								<?php endforeach; ?>
+							</div>
+						</div>
+						<?php endif; ?>
+					</div>
+
+					<?php if ( ! empty( $silabus['investasi'] ) ) : ?>
+					<div class="jsb-investasi">Investasi: <?php echo esc_html( $silabus['investasi'] ); ?></div>
+					<?php endif; ?>
+				</div>
+			</div>
+			<?php endforeach; ?>
+		</div>
+	</div>
+	<?php
+}
 ?>
 <?php get_header(); ?>
 <style>
@@ -32,11 +187,12 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
   .hero-meta-label{font-size:11px;color:rgba(255,255,255,0.45)}
   .hero-meta-val{font-size:14px;font-weight:700;color:white}
 
-  .firewall-banner{background:var(--gray-50);border-bottom:1px solid var(--gray-200);padding:14px 48px}
-  .firewall-banner-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:12px}
-  .firewall-icon{font-size:18px;flex-shrink:0}
-  .firewall-text{font-size:12.5px;color:var(--gray-600);line-height:1.5}
-  .firewall-text strong{color:var(--gray-800)}
+  .jp-tabs{display:inline-flex;gap:6px;background:var(--gray-50);padding:6px;border-radius:12px;flex-wrap:wrap;justify-content:center}
+  .jp-tab{background:transparent;border:none;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:700;color:var(--gray-600);cursor:pointer;transition:all .2s;font-family:var(--font-display)}
+  .jp-tab:hover{color:var(--navy)}
+  .jp-tab.active{background:var(--navy);color:white}
+  .jp-panel{display:none}
+  .jp-panel.active{display:block}
 
   section{padding:64px 48px}
   .section-inner{max-width:1200px;margin:0 auto}
@@ -105,25 +261,49 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
   .disclaimer-text{font-size:13px;color:var(--gray-600);line-height:1.7}
   .disclaimer-text strong{color:var(--gray-800)}
 
-  /* JADWAL TABLE */
+  /* JADWAL — registration cards only, matching /jadwal/ exactly */
   .jadwal-section{background:var(--gray-50)}
-  .jadwal-list{margin-top:32px;display:flex;flex-direction:column;gap:10px}
-  .jadwal-item{background:white;border:1px solid var(--gray-200);border-radius:12px;padding:18px 22px;display:flex;align-items:center;gap:18px;transition:all .2s}
-  .jadwal-item:hover{border-color:var(--teal)}
-  .jadwal-tag{font-size:10px;font-weight:700;padding:3px 9px;border-radius:4px;text-transform:uppercase;letter-spacing:.04em;flex-shrink:0}
-  .tag-implementer{background:rgba(26,158,117,0.15);color:var(--teal)}
-  .tag-auditor{background:rgba(11,31,58,0.1);color:var(--navy)}
-  .jadwal-info{flex:1}
-  .jadwal-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:3px}
-  .jadwal-meta{font-size:12.5px;color:var(--gray-600)}
-  .jadwal-cta{flex-shrink:0}
-  .btn-jadwal{background:var(--teal);color:white;padding:9px 18px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;transition:all .2s}
-  .btn-jadwal:hover{background:#158a65}
+  .jadwal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .jadwal-card{background:#fff;border:1px solid var(--gray-200);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
+  .jadwal-card:hover{box-shadow:0 12px 28px rgba(11,31,58,0.1);transform:translateY(-2px)}
+  .jadwal-card-thumb{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;background:var(--gray-100)}
+  .jadwal-card-thumb-fallback{width:100%;aspect-ratio:16/10;background:var(--navy);display:flex;align-items:center;justify-content:center}
+  .jadwal-card-body{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
+  .jadwal-card-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+  .jadwal-card-cat{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--teal);background:var(--teal-pale);padding:3px 9px;border-radius:100px}
+  .jadwal-card-date{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:4px}
+  .jadwal-card-title{font-size:17px;font-weight:800;color:var(--navy);line-height:1.35;margin-bottom:8px}
+  .jadwal-card-excerpt{font-size:13px;color:var(--gray-600);line-height:1.6;flex:1;margin-bottom:14px}
+  .jadwal-card-actions{display:flex;gap:8px;flex-wrap:wrap}
+  .jadwal-card-actions a{font-size:13px;font-weight:700;padding:8px 14px;border-radius:8px;text-decoration:none}
+  .jadwal-card-daftar{background:var(--teal);color:#fff}
+  .jadwal-card-daftar:hover{background:#158a65}
+  @media (max-width:1024px){.jadwal-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.jadwal-grid{grid-template-columns:1fr}}
+
+  /* SILABUS — standalone section, separate from the registration cards */
+  .silabus-section{margin-bottom:40px}
+  .silabus-section-title{font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-0.4px;margin-bottom:20px}
+  .silabus-accordion{display:flex;flex-direction:column;gap:10px}
+  .sil-step{background:white;border:1px solid var(--gray-200);border-radius:12px;overflow:hidden}
+  .sil-header{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 20px;cursor:pointer;transition:background .2s}
+  .sil-header:hover{background:var(--gray-50)}
+  .sil-header.active{background:var(--teal-pale)}
+  .sil-title{font-size:14px;font-weight:700;color:var(--navy)}
+  .sil-chevron{font-size:16px;color:var(--gray-400);transition:transform .2s;flex-shrink:0;display:inline-block}
+  .sil-header.active .sil-chevron{transform:rotate(90deg)}
+  .sil-body{display:none;padding:0 20px 20px;border-top:1px solid var(--gray-100)}
+  .sil-body.open{display:block;padding-top:18px}
+  .jsb-block{margin-bottom:14px}
+  .jsb-block:last-child{margin-bottom:0}
+  .jsb-block-title{font-size:12px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+  .jsb-list{display:flex;flex-direction:column;gap:5px}
+  .jsb-item{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--gray-600);line-height:1.5}
+  .jsb-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:6px}
+  .jsb-investasi{background:var(--teal-pale);border-radius:8px;padding:10px 14px;margin-top:14px;font-size:13px;color:#085041;font-weight:700}
+  @media (max-width:640px){.jsb-grid{grid-template-columns:1fr}}
 
   /* OTHER SCHEMES */
-  .other-schemes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px}
-  .scheme-pill{background:white;border:1px solid var(--gray-200);border-radius:10px;padding:14px 16px;font-size:13px;color:var(--gray-700);font-weight:500;display:flex;align-items:center;gap:8px}
-  .scheme-pill-icon{font-size:16px;flex-shrink:0}
   .new-tag{background:var(--teal-pale);color:var(--teal);font-size:9px;font-weight:800;padding:2px 6px;border-radius:3px;letter-spacing:.04em;text-transform:uppercase;margin-left:auto}
 
   /* CTA FORM */
@@ -175,14 +355,28 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
   </div>
 </div>
 
-<!-- FIREWALL BANNER -->
-<div class="firewall-banner">
-  <div class="firewall-banner-inner">
-    <span class="firewall-icon"><?php labnesia_icon( 'info', 'var(--gray-600)', 18 ); ?></span>
-    <p class="firewall-text"><strong>Pelatihan dan uji kompetensi adalah dua kegiatan yang independen.</strong> Labnesia menyelenggarakan pelatihan untuk meningkatkan kompetensi peserta. Uji kompetensi (jika diperlukan) diselenggarakan secara independen oleh Lembaga Sertifikasi Profesi/Person (LSP) terkait, dengan pendaftaran mandiri oleh peserta. <a href="<?php echo $url_faq; ?>#faq-umum" style="color:var(--teal);font-weight:600">Pelajari lebih lanjut <?php labnesia_icon( 'arrow-right', 'var(--teal)', 12 ); ?></a></p>
+<!-- CATATAN PENTING -->
+<div style="background:var(--gray-50);padding:24px 48px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;gap:14px;align-items:flex-start;background:var(--amber-pale);border:1px solid rgba(245,166,35,0.35);border-left:4px solid var(--amber);border-radius:0 12px 12px 0;padding:18px 22px">
+    <span style="flex-shrink:0;margin-top:2px"><?php labnesia_icon( 'info', '#8B6000', 18 ); ?></span>
+    <div>
+      <p style="font-size:12px;font-weight:700;color:#6B4400;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Catatan Penting</p>
+      <p style="font-size:13px;color:#8B5800;line-height:1.65">Pelatihan yang kami selenggarakan bertujuan untuk meningkatkan kompetensi sumber daya manusia (SDM) di lingkungan perguruan tinggi, serta dapat digunakan sebagai salah satu bentuk pemenuhan persyaratan administratif untuk mengikuti uji kompetensi pada skema tertentu di LSP Edukia, sesuai dengan ketentuan yang berlaku. </p>
+      <p style="font-size:13px;color:#8B5800;line-height:1.65">Perlu ditegaskan bahwa keikutsertaan dalam pelatihan ini tidak menjamin kelulusan dalam proses sertifikasi kompetensi. Seluruh proses sertifikasi diselenggarakan secara independen oleh LSP Edukia berdasarkan asesmen yang objektif dan mengacu pada standar SNI ISO/IEC 17024.</p>
+    </div>
   </div>
 </div>
 
+<!-- JP TABS -->
+<div style="background:#fff;padding:28px 48px 0;text-align:center">
+  <div class="jp-tabs">
+    <button type="button" class="jp-tab active" onclick="showJP(this,'jp-40')">Pelatihan 40 JP</button>
+    <button type="button" class="jp-tab" onclick="showJP(this,'jp-24')">Pelatihan 24 JP</button>
+    <button type="button" class="jp-tab" onclick="showJP(this,'jp-16')">Pelatihan 16 JP</button>
+  </div>
+</div>
+
+<div id="jp-40" class="jp-panel active">
 <!-- TWO SCHEMES -->
 <section>
   <div class="section-inner">
@@ -380,78 +574,73 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
 </section>
 
 <!-- JADWAL -->
+<?php $jp40_posts = labnesia_ps_jadwal_posts( 'pelatihan-40-jp' ); ?>
 <section class="jadwal-section">
   <div class="section-inner">
     <p class="eyebrow">Jadwal Pelatihan</p>
     <h2 class="h2">Dibuka rutin sepanjang 2026.</h2>
     <p class="body-text" style="max-width:560px">Jadwal dan tema menyesuaikan kebutuhan & ketersediaan pakar. Hubungi tim kami untuk konfirmasi jadwal terdekat.</p>
-    <div class="jadwal-list">
-      <div class="jadwal-item">
-        <span class="jadwal-tag tag-implementer">Implementer</span>
-        <div class="jadwal-info">
-          <div class="jadwal-title">Lead Implementer ISO/IEC 17025 — Umum</div>
-          <div class="jadwal-meta">Online · 40 JP · Jadwal dibuka rutin tiap bulan</div>
-        </div>
-        <div class="jadwal-cta"><a href="#daftar" class="btn-jadwal">Daftar</a></div>
-      </div>
-      <div class="jadwal-item">
-        <span class="jadwal-tag tag-auditor">Auditor Internal</span>
-        <div class="jadwal-info">
-          <div class="jadwal-title">Auditor Internal ISO/IEC 17025 — Umum</div>
-          <div class="jadwal-meta">Online · 40 JP · Jadwal dibuka rutin tiap bulan</div>
-        </div>
-        <div class="jadwal-cta"><a href="#daftar" class="btn-jadwal">Daftar</a></div>
-      </div>
-      <div class="jadwal-item">
-        <span class="jadwal-tag tag-implementer">Implementer</span>
-        <div class="jadwal-info">
-          <div class="jadwal-title">Implementer ISO/IEC 17025 — Lab Lingkungan</div>
-          <div class="jadwal-meta">Online · 40 JP · Bidang spesifik laboratorium lingkungan</div>
-        </div>
-        <div class="jadwal-cta"><a href="#daftar" class="btn-jadwal">Daftar</a></div>
-      </div>
-      <div class="jadwal-item">
-        <span class="jadwal-tag tag-implementer">Implementer</span>
-        <div class="jadwal-info">
-          <div class="jadwal-title">Implementer ISO/IEC 17025 — Lab Pangan, Gizi, Halal</div>
-          <div class="jadwal-meta">Online · 40 JP · Bidang spesifik laboratorium pangan</div>
-        </div>
-        <div class="jadwal-cta"><a href="#daftar" class="btn-jadwal">Daftar</a></div>
-      </div>
-      <div class="jadwal-item">
-        <span class="jadwal-tag tag-implementer">Implementer</span>
-        <div class="jadwal-info">
-          <div class="jadwal-title">Implementer ISO/IEC 17025 — Lab Biologi/Mikrobiologi</div>
-          <div class="jadwal-meta">Online · 40 JP · Bidang spesifik laboratorium biologi</div>
-        </div>
-        <div class="jadwal-cta"><a href="#daftar" class="btn-jadwal">Daftar</a></div>
-      </div>
+    <?php if ( $jp40_posts ) : ?>
+    <div class="jadwal-grid">
+      <?php foreach ( $jp40_posts as $p ) : labnesia_ps_jadwal_item( $p, '40 JP' ); endforeach; ?>
     </div>
+    <?php else : ?>
+    <p class="body-text" style="margin-top:16px">Belum ada jadwal 40 JP yang dipublikasikan. <a href="<?php echo esc_url( home_url( '/jadwal/?kategori=pelatihan-40-jp' ) ); ?>" style="color:var(--teal);font-weight:600">Lihat semua jadwal &rarr;</a></p>
+    <?php endif; ?>
   </div>
 </section>
+</div>
+<!-- /jp-40 -->
 
-<!-- OTHER SCHEMES -->
+<!-- JP 24 PANEL -->
+<?php $jp24_posts = labnesia_ps_jadwal_posts( 'pelatihan-24-jp' ); ?>
+<div id="jp-24" class="jp-panel">
 <section>
   <div class="section-inner">
-    <p class="eyebrow">Skema Lainnya</p>
-    <h2 class="h2">Pelatihan kompetensi lain<br>untuk profesional lab.</h2>
-    <p class="body-text" style="max-width:560px">Selain dua skema utama di atas, tersedia juga skema pelatihan tematik berikut sesuai kebutuhan peran Anda di laboratorium.</p>
-    <div class="other-schemes">
-      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'utensils', 'var(--teal)', 16 ); ?></span>Food Safety Management Officer<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'user-check', 'var(--teal)', 16 ); ?></span>Panelis Terlatih Pengujian Sensori<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'flask', 'var(--teal)', 16 ); ?></span>GLP Laboratory Technician<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'vest', 'var(--teal)', 16 ); ?></span>Laboratory HSE Officer<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'settings', 'var(--teal)', 16 ); ?></span>Laboratory Operations Officer<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'chart', 'var(--teal)', 16 ); ?></span>Quality Management System (ISO 9001) Officer<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'microscope', 'var(--teal)', 16 ); ?></span>QC Laboratory Analyst<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'check', 'var(--teal)', 16 ); ?></span>Quality Assurance Officer<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'dna', 'var(--teal)', 16 ); ?></span>Research and Development Officer<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'scroll', 'var(--teal)', 16 ); ?></span>Regulatory Affairs Officer<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'seedling', 'var(--teal)', 16 ); ?></span>Sustainability Officer<span class="new-tag">New</span></div>
-      <div class="scheme-pill"><span class="scheme-pill-icon"><?php labnesia_icon( 'recycle', 'var(--teal)', 16 ); ?></span>Environmental Management (ISO 14001) Officer<span class="new-tag">New</span></div>
+    <p class="eyebrow">Skema 24 JP</p>
+    <h2 class="h2">Pelatihan kompetensi tematik<br>untuk profesional lab.</h2>
+    <p class="body-text" style="max-width:560px;margin-bottom:32px">Skema pelatihan 2 hari (24 JP), online via Zoom, sesuai kebutuhan peran spesifik Anda di laboratorium maupun organisasi. Investasi Rp 1.750.000/peserta.</p>
+
+    <?php labnesia_ps_silabus_section( $jp24_posts ); ?>
+
+    <?php if ( $jp24_posts ) : ?>
+    <p class="eyebrow">Daftar Batch</p>
+    <div class="jadwal-grid">
+      <?php foreach ( $jp24_posts as $p ) : labnesia_ps_jadwal_item( $p, '24 JP' ); endforeach; ?>
     </div>
+    <p style="font-size:12px;color:var(--gray-400);margin-top:16px">Setiap skema termasuk e-sertifikat 24 JP, soft copy materi, rekaman pelatihan, dan kartu member Labnesia. Sertifikat pelatihan dapat menjadi salah satu syarat untuk melanjutkan ke uji sertifikasi kompetensi di LSP terkait.</p>
+    <?php else : ?>
+    <p class="body-text" style="margin-top:16px">Belum ada jadwal 24 JP yang dipublikasikan. <a href="<?php echo esc_url( home_url( '/jadwal/?kategori=pelatihan-24-jp' ) ); ?>" style="color:var(--teal);font-weight:600">Lihat semua jadwal &rarr;</a></p>
+    <?php endif; ?>
   </div>
 </section>
+</div>
+<!-- /jp-24 -->
+
+<!-- JP 16 PANEL -->
+<?php $jp16_posts = labnesia_ps_jadwal_posts( 'pelatihan-16-jp' ); ?>
+<div id="jp-16" class="jp-panel">
+<section>
+  <div class="section-inner">
+    <p class="eyebrow">Skema 16 JP</p>
+    <h2 class="h2">Pelatihan topik teknis spesifik,<br>lebih singkat dan fokus.</h2>
+    <p class="body-text" style="max-width:560px;margin-bottom:32px">Skema pelatihan 2 hari (16 JP), online via Zoom, untuk pendalaman satu topik teknis penerapan ISO/IEC 17025. Investasi Rp 1.250.000/peserta — diskon Rp 250.000/peserta untuk pendaftaran 2 peserta atau lebih.</p>
+
+    <?php labnesia_ps_silabus_section( $jp16_posts ); ?>
+
+    <?php if ( $jp16_posts ) : ?>
+    <p class="eyebrow">Daftar Batch</p>
+    <div class="jadwal-grid">
+      <?php foreach ( $jp16_posts as $p ) : labnesia_ps_jadwal_item( $p, '16 JP' ); endforeach; ?>
+    </div>
+    <p style="font-size:12px;color:var(--gray-400);margin-top:16px">Setiap skema termasuk e-sertifikat 16 JP, soft copy materi, rekaman pelatihan, dan kartu member Labnesia. Sertifikat pelatihan dapat menjadi salah satu syarat untuk melanjutkan ke uji sertifikasi kompetensi di LSP terkait.</p>
+    <?php else : ?>
+    <p class="body-text" style="margin-top:16px">Belum ada jadwal 16 JP yang dipublikasikan. <a href="<?php echo esc_url( home_url( '/jadwal/?kategori=pelatihan-16-jp' ) ); ?>" style="color:var(--teal);font-weight:600">Lihat semua jadwal &rarr;</a></p>
+    <?php endif; ?>
+  </div>
+</section>
+</div>
+<!-- /jp-16 -->
 
 <!-- CTA FORM -->
 <section class="cta-form-section" id="daftar">
@@ -505,6 +694,20 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
 
 
 <script>
+function showJP(el,id){
+  document.querySelectorAll('.jp-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.jp-panel').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById(id).classList.add('active');
+}
+function toggleSilabus(el){
+  const body = el.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+  const accordion = el.closest('.silabus-accordion');
+  accordion.querySelectorAll('.sil-body').forEach(b=>b.classList.remove('open'));
+  accordion.querySelectorAll('.sil-header').forEach(h=>h.classList.remove('active'));
+  if(!isOpen){body.classList.add('open');el.classList.add('active')}
+}
 function toggleCurr(el){
   const body=el.nextElementSibling;
   const isOpen=body.classList.contains('open');
