@@ -1239,7 +1239,10 @@ function labnesia_ps_static_cards_section( $schemes ) {
   .form-select{width:100%;padding:11px 14px;border:1px solid var(--gray-200);border-radius:9px;font-size:14px;font-family:var(--font-display);outline:none;background:white}
   .btn-submit-cta{width:100%;padding:13px;background:var(--teal);color:white;border:none;border-radius:9px;font-weight:700;font-size:15px;cursor:pointer;margin-top:8px;transition:all .2s}
   .btn-submit-cta:hover{background:#158a65}
-  @media (max-width:992px){.scheme-grid{grid-template-columns:1fr !important}}
+  @media (max-width:992px){
+    .scheme-grid{grid-template-columns:1fr !important}
+    .pricing-grid{grid-template-columns:1fr !important}
+  }
 
 </style>
 
@@ -1461,29 +1464,16 @@ function labnesia_ps_static_cards_section( $schemes ) {
   <div class="section-inner">
     <p class="eyebrow">Investasi Pelatihan</p>
     <h2 class="h2">Skema harga yang fleksibel,<br>online maupun onsite.</h2>
-    <div class="pricing-grid">
+    <div class="pricing-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 600px; margin: 32px auto 0;">
       <div class="price-tier">
         <div class="price-tier-label">Online · Normal</div>
         <div class="price-tier-val">Rp 6,5 jt</div>
         <div class="price-tier-unit">per orang</div>
         <div class="price-tier-note">Rp 6 jt jika ≥3 peserta</div>
       </div>
-      <div class="price-tier featured">
-        <div class="price-tier-badge">Early Bird</div>
-        <div class="price-tier-label">Online · Early Bird</div>
-        <div class="price-tier-val">Rp 5,75 jt</div>
-        <div class="price-tier-unit">per orang</div>
-        <div class="price-tier-note">Rp 5,25 jt jika ≥3 peserta</div>
-      </div>
       <div class="price-tier">
         <div class="price-tier-label">Onsite · Normal</div>
         <div class="price-tier-val">Rp 7,5 jt</div>
-        <div class="price-tier-unit">per orang</div>
-        <div class="price-tier-note">+Rp 1 jt dari harga online</div>
-      </div>
-      <div class="price-tier">
-        <div class="price-tier-label">Onsite · Early Bird</div>
-        <div class="price-tier-val">Rp 6,75 jt</div>
         <div class="price-tier-unit">per orang</div>
         <div class="price-tier-note">+Rp 1 jt dari harga online</div>
       </div>
