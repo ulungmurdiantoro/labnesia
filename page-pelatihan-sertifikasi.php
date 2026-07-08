@@ -1378,58 +1378,167 @@ function labnesia_ps_static_cards_section( $schemes ) {
 <section style="background:var(--gray-50)">
   <div class="section-inner">
     <p class="eyebrow">Kurikulum Pelatihan</p>
-    <h2 class="h2">Teori dan praktik,<br>4 modul pembelajaran.</h2>
-    <p class="body-text" style="max-width:560px;margin-bottom:24px">Struktur kurikulum berlaku untuk kedua skema, dengan penekanan materi yang disesuaikan — implementasi untuk Lead Implementer, audit untuk Auditor Internal.</p>
+    <h2 class="h2">Materi lengkap per skema,<br>disesuaikan dengan peran Anda.</h2>
+    <p class="body-text" style="max-width:600px;margin-bottom:28px">Pilih tab skema di bawah untuk melihat detail kurikulum yang sesuai — Lead Implementer berfokus pada membangun sistem, Auditor Internal berfokus pada menilai dan mengaudit sistem yang sudah berjalan.</p>
 
-    <div class="curr-step">
-      <div class="curr-header active" onclick="toggleCurr(this)">
-        <div class="curr-num">1</div>
-        <div class="curr-title">Pengenalan ISO/IEC 17025:2017</div>
-        <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
+    <!-- Curriculum Scheme Tabs -->
+    <div style="display:inline-flex;gap:6px;background:var(--gray-200);padding:5px;border-radius:10px;margin-bottom:28px">
+      <button type="button" id="curr-tab-li" class="curr-scheme-tab active" onclick="showCurrScheme('li')"
+        style="border:none;padding:9px 22px;border-radius:7px;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;font-family:var(--font-display);background:var(--navy);color:white">
+        Lead Implementer
+      </button>
+      <button type="button" id="curr-tab-ai" class="curr-scheme-tab" onclick="showCurrScheme('ai')"
+        style="border:none;padding:9px 22px;border-radius:7px;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;font-family:var(--font-display);background:transparent;color:var(--gray-600)">
+        Auditor Internal
+      </button>
+    </div>
+
+    <!-- Lead Implementer Curriculum -->
+    <div id="curr-panel-li" class="curr-scheme-panel">
+      <div class="curr-step">
+        <div class="curr-header active" onclick="toggleCurr(this)">
+          <div class="curr-num">1</div>
+          <div class="curr-title">Pengenalan ISO/IEC 17025:2017</div>
+          <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
+        </div>
+        <div class="curr-body open">
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Kerangka standar dan regulasi yang relevan</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Prinsip Sistem Manajemen Laboratorium dan Plan-Do-Check-Act (PDCA)</div>
+        </div>
       </div>
-      <div class="curr-body open">
-        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Kerangka standar dan regulasi yang relevan</div>
-        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Prinsip Sistem Manajemen Laboratorium dan Plan-Do-Check-Act (PDCA)</div>
+      <div class="curr-step">
+        <div class="curr-header" onclick="toggleCurr(this)">
+          <div class="curr-num">2</div>
+          <div class="curr-title">Perencanaan Implementasi ISO/IEC 17025:2017</div>
+          <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
+        </div>
+        <div class="curr-body">
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Ketidakberpihakan, kerahasiaan, dan kode etik</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Kepemimpinan, struktur organisasi, dan personel</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Pengelolaan sistem dokumentasi dan informasi</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Pengelolaan fasilitas, kondisi lingkungan, dan peralatan</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Perencanaan penyedia eksternal laboratorium</div>
+        </div>
+      </div>
+      <div class="curr-step">
+        <div class="curr-header" onclick="toggleCurr(this)">
+          <div class="curr-num">3</div>
+          <div class="curr-title">Implementasi ISO/IEC 17025:2017</div>
+          <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
+        </div>
+        <div class="curr-body">
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Pelayanan pelanggan, pengelolaan sampel, dan sampling</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Pemilihan, verifikasi, dan validasi metode</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Ketertelusuran dan ketidakpastian pengukuran</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Jaminan mutu, pengendalian mutu, dan uji profisiensi</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Penerbitan laporan hasil pengukuran</div>
+        </div>
+      </div>
+      <div class="curr-step">
+        <div class="curr-header" onclick="toggleCurr(this)">
+          <div class="curr-num">4</div>
+          <div class="curr-title">Pemantauan, Evaluasi &amp; Continual Improvement</div>
+          <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
+        </div>
+        <div class="curr-body">
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Pengelolaan pengaduan dan manajemen risiko</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Identifikasi ketidaksesuaian dan tindakan perbaikan</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Audit internal dan kaji ulang manajemen</div>
+        </div>
       </div>
     </div>
-    <div class="curr-step">
-      <div class="curr-header" onclick="toggleCurr(this)">
-        <div class="curr-num">2</div>
-        <div class="curr-title">Perencanaan Implementasi ISO/IEC 17025:2017</div>
-        <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
+
+    <!-- Auditor Internal Curriculum -->
+    <div id="curr-panel-ai" class="curr-scheme-panel" style="display:none">
+      <div class="curr-step">
+        <div class="curr-header active" onclick="toggleCurr(this)">
+          <div class="curr-num">1</div>
+          <div class="curr-title">Pengenalan ISO/IEC 17025:2017</div>
+          <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
+        </div>
+        <div class="curr-body open">
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Sejarah dan pentingnya Standar ISO/IEC 17025:2017</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Prinsip-Prinsip Dasar SNI ISO/IEC 17025:2017</div>
+        </div>
       </div>
-      <div class="curr-body">
-        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Ketidakberpihakan, kerahasiaan, dan kode etik</div>
-        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Kepemimpinan, struktur organisasi, dan personel</div>
-        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Pengelolaan sistem dokumentasi dan informasi</div>
-        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Pengelolaan fasilitas, kondisi lingkungan, dan peralatan</div>
-        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Perencanaan penyedia eksternal laboratorium</div>
+      <div class="curr-step">
+        <div class="curr-header" onclick="toggleCurr(this)">
+          <div class="curr-num">2</div>
+          <div class="curr-title">Persyaratan Umum ISO/IEC 17025:2017</div>
+          <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
+        </div>
+        <div class="curr-body">
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Pemahaman Umum Persyaratan ISO/IEC 17025:2017</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Perencanaan dan Pengaturan Audit Internal</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>ISO 19011:2018 — Pedoman Audit Sistem Manajemen</div>
+        </div>
       </div>
-    </div>
-    <div class="curr-step">
-      <div class="curr-header" onclick="toggleCurr(this)">
-        <div class="curr-num">3</div>
-        <div class="curr-title">Implementasi ISO/IEC 17025:2017</div>
-        <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
+      <div class="curr-step">
+        <div class="curr-header" onclick="toggleCurr(this)">
+          <div class="curr-num">3</div>
+          <div class="curr-title">Kompetensi Auditor Internal</div>
+          <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
+        </div>
+        <div class="curr-body">
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Kriteria dan Keterampilan Auditor Internal</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Proses Seleksi, Pelatihan, dan Sertifikasi Auditor Internal</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Etika dan Sikap Auditor Internal</div>
+        </div>
       </div>
-      <div class="curr-body">
-        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Pelayanan pelanggan, pengelolaan sampel, dan sampling</div>
-        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Pemilihan, verifikasi, dan validasi metode</div>
-        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Ketertelusuran dan ketidakpastian pengukuran</div>
-        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Jaminan mutu, pengendalian mutu, dan uji profisiensi</div>
-        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Penerbitan laporan hasil pengukuran</div>
+      <div class="curr-step">
+        <div class="curr-header" onclick="toggleCurr(this)">
+          <div class="curr-num">4</div>
+          <div class="curr-title">Pelaksanaan Audit Internal</div>
+          <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
+        </div>
+        <div class="curr-body">
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Teknik Pengumpulan Bukti (Pengambilan Sampel, Wawancara, Pemeriksaan Dokumen, dan Pengamatan)</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Pengujian dan Evaluasi Bukti</div>
+        </div>
       </div>
-    </div>
-    <div class="curr-step">
-      <div class="curr-header" onclick="toggleCurr(this)">
-        <div class="curr-num">4</div>
-        <div class="curr-title">Pemantauan, Evaluasi & Continual Improvement</div>
-        <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
+      <div class="curr-step">
+        <div class="curr-header" onclick="toggleCurr(this)">
+          <div class="curr-num">5</div>
+          <div class="curr-title">Identifikasi Ketidaksesuaian dan Tindakan Korektif</div>
+          <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
+        </div>
+        <div class="curr-body">
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Teknik Pengumpulan Bukti (Pengambilan Sampel, Wawancara, Pemeriksaan Dokumen, dan Pengamatan)</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Pengujian dan Evaluasi Bukti</div>
+        </div>
       </div>
-      <div class="curr-body">
-        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Pengelolaan pengaduan dan manajemen risiko</div>
-        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Identifikasi ketidaksesuaian dan tindakan perbaikan</div>
-        <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Audit internal dan kaji ulang manajemen</div>
+      <div class="curr-step">
+        <div class="curr-header" onclick="toggleCurr(this)">
+          <div class="curr-num">6</div>
+          <div class="curr-title">Analisis Risiko dan Peluang Perbaikan</div>
+          <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
+        </div>
+        <div class="curr-body">
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Identifikasi dan penilaian risiko dalam proses audit</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Perumusan peluang perbaikan sistem laboratorium</div>
+        </div>
+      </div>
+      <div class="curr-step">
+        <div class="curr-header" onclick="toggleCurr(this)">
+          <div class="curr-num">7</div>
+          <div class="curr-title">Pelaporan Audit Internal</div>
+          <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
+        </div>
+        <div class="curr-body">
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Struktur Laporan Audit Internal yang Efektif</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Rekomendasi dan Tindakan Korektif yang Tepat</div>
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Komunikasi Hasil Audit kepada Manajemen</div>
+        </div>
+      </div>
+      <div class="curr-step">
+        <div class="curr-header" onclick="toggleCurr(this)">
+          <div class="curr-num">8</div>
+          <div class="curr-title">Simulasi Audit Internal Laboratorium</div>
+          <span class="curr-chevron"><?php labnesia_icon( 'chevron-down', 'var(--gray-400)', 16 ); ?></span>
+        </div>
+        <div class="curr-body">
+          <div class="curr-sub-item"><span class="curr-sub-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></span>Simulasi Audit Internal Laboratorium secara menyeluruh sesuai persyaratan ISO/IEC 17025:2017</div>
+        </div>
       </div>
     </div>
 
@@ -1458,6 +1567,20 @@ function labnesia_ps_static_cards_section( $schemes ) {
     </div>
   </div>
 </section>
+
+<script>
+function showCurrScheme(scheme) {
+  document.querySelectorAll('.curr-scheme-panel').forEach(function(p) { p.style.display = 'none'; });
+  document.querySelectorAll('.curr-scheme-tab').forEach(function(t) {
+    t.style.background = 'transparent';
+    t.style.color = 'var(--gray-600)';
+  });
+  document.getElementById('curr-panel-' + scheme).style.display = 'block';
+  var activeTab = document.getElementById('curr-tab-' + scheme);
+  activeTab.style.background = (scheme === 'li') ? 'var(--navy)' : 'var(--navy)';
+  activeTab.style.color = 'white';
+}
+</script>
 
 <!-- PRICING -->
 <section>
