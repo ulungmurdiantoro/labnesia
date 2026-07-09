@@ -64,6 +64,7 @@ $faqs = [
   .track-side .date{font-weight:800;font-size:19px;color:var(--navy);margin-bottom:14px}
   .track-side p{font-size:13px;color:var(--gray-600);line-height:1.6;margin-bottom:18px}
   .track-side .btn-primary{width:100%;text-align:center}
+  .form-url{display:block;margin-top:12px;font-size:12px;color:var(--gray-600);word-break:break-all;text-align:center}
 
   /* PERAN */
   .roles-section{padding:80px 48px}
@@ -161,7 +162,8 @@ $faqs = [
         <div class="label">Pendaftaran</div>
         <div class="date">Terbuka Sepanjang Tahun</div>
         <p>Isi formulir pendaftaran secara daring kapan saja. Tim Labnesia akan menghubungi Anda melalui email atau WhatsApp untuk proses selanjutnya.</p>
-        <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSd-_On8CAAtl9N37aJtdd6Uxrb2Nf402kYy8d0id5Prwaa0Qw/viewform?usp=header" target="_blank" rel="noopener">Isi Formulir Pendaftaran &rarr;</a>
+        <a class="btn-primary" href="https://tinyurl.com/LabnesiaExpertNetwork" target="_blank" rel="noopener">Isi Formulir Pendaftaran &rarr;</a>
+        <span class="form-url">tinyurl.com/LabnesiaExpertNetwork</span>
       </div>
     </div>
 
@@ -180,7 +182,8 @@ $faqs = [
         <div class="label">Pendaftaran</div>
         <div class="date">Terbuka Sepanjang Tahun</div>
         <p>Isi formulir pendaftaran secara daring kapan saja. Tim Labnesia akan menghubungi Anda melalui email atau WhatsApp untuk proses selanjutnya.</p>
-        <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScmlAsGcvXszO9Z4gcB-5J8fvQUGHY5rqBVduTtHom7wWTTZA/viewform?usp=header" target="_blank" rel="noopener">Isi Formulir Pendaftaran &rarr;</a>
+        <a class="btn-primary" href="https://tinyurl.com/LabnesiaExpertNetwork-2" target="_blank" rel="noopener">Isi Formulir Pendaftaran &rarr;</a>
+        <span class="form-url">tinyurl.com/LabnesiaExpertNetwork-2</span>
       </div>
     </div>
   </div>
