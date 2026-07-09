@@ -265,9 +265,9 @@ $faqs = [
     <p>Isi formulir pendaftaran, atau hubungi tim kami untuk informasi lebih lanjut.</p>
     <div class="btns">
       <a class="btn-primary" href="#daftar">Isi Formulir Pendaftaran</a>
-      <a class="btn-wa" href="https://wa.me/6282172221567" target="_blank" rel="noopener">WhatsApp Endang — +62 821-7222-1567</a>
-      <a class="btn-wa" href="https://wa.me/6285185000367" target="_blank" rel="noopener">WhatsApp Berryl — +62 851-8500-0367</a>
-      <a class="btn-wa" href="https://wa.me/62811399523" target="_blank" rel="noopener">WhatsApp Kintan — +62 811-399-523</a>
+      <a class="btn-wa" href="https://wa.me/6282172221567" target="_blank" rel="noopener">WhatsApp +62 821-7222-1567 (Endang)</a>
+      <a class="btn-wa" href="https://wa.me/6285185000367" target="_blank" rel="noopener">WhatsApp +62 851-8500-0367 (Berryl)</a>
+      <a class="btn-wa" href="https://wa.me/62811399523" target="_blank" rel="noopener">WhatsApp +62 811-399-523 (Kintan)</a>
     </div>
   </div>
 </div>
