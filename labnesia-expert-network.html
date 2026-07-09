@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Labnesia Expert Network — Bergabung sebagai Pakar Laboratorium</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1E2A5E;
+  --navy-deep:#141D45;
+  --indigo:#2B3380;
+  --teal:#3FB8AC;
+  --teal-dark:#2E9A90;
+  --mint:#A8E6DE;
+  --yellow:#F9E27D;
+  --yellow-deep:#F2D14E;
+  --paper:#F5F8FA;
+  --white:#FFFFFF;
+  --ink:#1C2340;
+  --ink-soft:#4A5273;
+  --line:rgba(30,42,94,.12);
+  --radius:18px;
+  --shadow:0 10px 30px rgba(20,29,69,.10);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+  color:var(--ink);
+  background:
+    linear-gradient(rgba(30,42,94,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30,42,94,.045) 1px, transparent 1px),
+    var(--paper);
+  background-size:34px 34px, 34px 34px, auto;
+  line-height:1.6;
+}
+h1,h2,h3{font-family:'Poppins',sans-serif;line-height:1.2}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.eyebrow{
+  display:inline-block;font-family:'Poppins',sans-serif;font-weight:700;
+  font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal-dark);
+}
+.btn{
+  display:inline-flex;align-items:center;gap:.55em;
+  font-family:'Poppins',sans-serif;font-weight:700;font-size:.95rem;
+  padding:.85em 1.6em;border-radius:999px;text-decoration:none;
+  border:2px solid transparent;cursor:pointer;
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.btn-primary{background:var(--yellow);color:var(--navy-deep);box-shadow:0 6px 18px rgba(242,209,78,.45)}
+.btn-primary:hover{transform:translateY(-2px);background:var(--yellow-deep)}
+.btn-ghost{background:transparent;color:var(--white);border-color:rgba(255,255,255,.5)}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-wa{background:#22B95E;color:#fff;box-shadow:0 6px 18px rgba(34,185,94,.35)}
+.btn-wa:hover{transform:translateY(-2px)}
+
+/* ---------- Header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.logo svg{width:30px;height:30px}
+.logo strong{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.35rem;color:var(--teal-dark)}
+.logo strong span{color:var(--navy)}
+.nav-links{display:flex;gap:1.6rem;font-weight:600;font-size:.92rem}
+.nav-links a{text-decoration:none;color:var(--ink-soft)}
+.nav-links a:hover{color:var(--teal-dark)}
+@media(max-width:760px){.nav-links{display:none}}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--indigo) 55%,var(--navy-deep) 100%);
+  color:var(--white);
+  padding:72px 0 150px;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size:34px 34px;
+  pointer-events:none;
+}
+.hero .wrap{position:relative}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:.5em;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);
+  border-radius:999px;padding:.4em 1.1em;font-weight:600;font-size:.85rem;
+  margin-bottom:1.4rem;
+}
+.hero-badge .dot{width:9px;height:9px;border-radius:50%;background:var(--yellow);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hero h1{
+  font-size:clamp(2rem,4.6vw,3.3rem);font-weight:800;max-width:17ch;
+  margin-bottom:1.1rem;
+}
+.hero h1 .hl{
+  color:var(--navy-deep);
+  background:linear-gradient(180deg,var(--mint),var(--teal));
+  padding:.02em .18em;border-radius:.18em;display:inline-block;
+}
+.hero p.lead{max-width:52ch;font-size:1.06rem;color:rgba(255,255,255,.86);margin-bottom:2rem}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.9rem}
+.periods{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.2rem}
+.period-chip{
+  background:var(--navy-deep);border:1px solid rgba(255,255,255,.18);
+  border-radius:14px;padding:.7em 1.1em;font-size:.86rem;
+}
+.period-chip strong{display:block;font-family:'Poppins',sans-serif;color:var(--yellow);font-size:.95rem}
+
+/* ---------- Track tabs (signature) ---------- */
+.tracks{margin-top:-92px;position:relative;z-index:2}
+.track-card{
+  background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);
+  overflow:hidden;border:1px solid var(--line);
+}
+.track-tabs{display:flex}
+.track-tab{
+  flex:1;font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;
+  padding:1.05em .8em;border:none;cursor:pointer;
+  background:#E9EEF4;color:var(--ink-soft);
+  border-bottom:4px solid transparent;
+  transition:background .15s,color .15s;
+}
+.track-tab[aria-selected="true"]{background:var(--white);color:var(--navy);border-bottom-color:var(--teal)}
+.track-tab:focus-visible{outline:3px solid var(--teal);outline-offset:-3px}
+.track-panel{display:none;padding:36px;gap:36px}
+.track-panel.active{display:grid;grid-template-columns:1.15fr .85fr}
+@media(max-width:820px){.track-panel.active{grid-template-columns:1fr}.track-panel{padding:26px}}
+.track-panel h3{font-size:1.35rem;color:var(--navy);margin-bottom:.35rem}
+.track-panel .sub{color:var(--ink-soft);font-size:.95rem;margin-bottom:1.3rem}
+.invite-list{list-style:none;display:grid;gap:.6rem;margin-bottom:1.6rem}
+.invite-list li{
+  display:flex;align-items:center;gap:.7em;
+  background:var(--navy);color:#fff;font-weight:600;font-size:.93rem;
+  border-radius:999px;padding:.6em 1.2em;width:fit-content;max-width:100%;
+}
+.invite-list li svg{flex:none;width:18px;height:18px}
+.track-side{
+  background:linear-gradient(160deg,#F2FBF9,#E8F6F4);
+  border:1px solid rgba(63,184,172,.35);
+  border-radius:14px;padding:26px;align-self:start;
+}
+.track-side .label{
+  font-family:'Poppins',sans-serif;font-weight:700;font-size:.8rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--teal-dark);
+  margin-bottom:.4rem;
+}
+.track-side .date{
+  font-family:'Poppins',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy);
+  margin-bottom:1.1rem;
+}
+.track-side p{font-size:.9rem;color:var(--ink-soft);margin-bottom:1.2rem}
+.track-side .btn{width:100%;justify-content:center}
+.form-url{display:block;margin-top:.9rem;font-size:.8rem;color:var(--ink-soft);word-break:break-all;text-align:center}
+
+/* ---------- Sections ---------- */
+section{padding:76px 0}
+.sec-head{max-width:640px;margin-bottom:2.4rem}
+.sec-head h2{font-size:clamp(1.5rem,3vw,2.1rem);color:var(--navy);margin:.35rem 0 .6rem}
+.sec-head p{color:var(--ink-soft)}
+
+/* Peran */
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+@media(max-width:820px){.roles{grid-template-columns:1fr}}
+.role{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px;box-shadow:var(--shadow);
+}
+.role .icon{
+  width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+  background:var(--navy);margin-bottom:1.1rem;
+}
+.role .icon svg{width:26px;height:26px}
+.role h3{font-size:1.05rem;color:var(--navy);margin-bottom:.45rem}
+.role p{font-size:.92rem;color:var(--ink-soft)}
+
+/* Benefit */
+.benefit-sec{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.benefit-sec::before{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size:34px 34px;pointer-events:none;
+}
+.benefit-sec .wrap{position:relative}
+.benefit-sec .eyebrow{color:var(--mint)}
+.benefit-sec h2{color:#fff}
+.benefit-sec .sec-head p{color:rgba(255,255,255,.75)}
+.benefits{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+@media(max-width:760px){.benefits{grid-template-columns:1fr}}
+.benefit{
+  display:flex;gap:.9em;align-items:flex-start;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+  border-radius:14px;padding:20px 22px;
+}
+.benefit svg{flex:none;width:24px;height:24px;margin-top:.15em}
+.benefit strong{font-family:'Poppins',sans-serif;display:block;font-size:.98rem;margin-bottom:.2rem}
+.benefit span{font-size:.88rem;color:rgba(255,255,255,.78)}
+
+/* Bidang */
+.fields{display:flex;flex-wrap:wrap;gap:.7rem}
+.field-chip{
+  display:inline-flex;align-items:center;gap:.5em;
+  background:var(--white);border:1.5px solid rgba(63,184,172,.5);
+  color:var(--navy);font-weight:600;font-size:.9rem;
+  border-radius:999px;padding:.55em 1.15em;
+}
+.field-chip::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--teal)}
+
+/* FAQ */
+.faq{max-width:760px}
+details{
+  background:var(--white);border:1px solid var(--line);border-radius:14px;
+  margin-bottom:.8rem;box-shadow:var(--shadow);
+}
+summary{
+  font-family:'Poppins',sans-serif;font-weight:600;color:var(--navy);
+  padding:18px 22px;cursor:pointer;list-style:none;position:relative;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+";position:absolute;right:22px;top:50%;transform:translateY(-50%);
+  font-size:1.3rem;color:var(--teal-dark);transition:transform .2s;
+}
+details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+details p{padding:0 22px 18px;color:var(--ink-soft);font-size:.94rem}
+
+/* CTA final */
+.cta-final{
+  background:linear-gradient(135deg,var(--teal) 0%,var(--teal-dark) 100%);
+  border-radius:22px;color:#fff;padding:56px 40px;text-align:center;
+  box-shadow:0 18px 40px rgba(46,154,144,.35);
+}
+.cta-final h2{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.6rem}
+.cta-final p{max-width:46ch;margin:0 auto 1.8rem;color:rgba(255,255,255,.9)}
+.cta-final .btns{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center}
+@media(max-width:600px){.cta-final{padding:40px 22px}}
+
+/* Footer */
+footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:34px 0;font-size:.88rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
+footer a{color:var(--mint);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#" aria-label="Labnesia — beranda">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M9 3h6M10 3v5.5L4.8 18a2.4 2.4 0 0 0 2.1 3.6h10.2a2.4 2.4 0 0 0 2.1-3.6L14 8.5V3" stroke="#2E9A90" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7.5 14.5h9" stroke="#F2D14E" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <strong>lab<span>nesia</span></strong>
+    </a>
+    <nav class="nav-links" aria-label="Navigasi utama">
+      <a href="#peran">Peran Pakar</a>
+      <a href="#benefit">Benefit</a>
+      <a href="#bidang">Bidang Lab</a>
+      <a href="#faq">FAQ</a>
+      <a href="#daftar">Daftar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" aria-labelledby="hero-title" style="padding-top:72px">
+  <div class="wrap">
+    <span class="hero-badge"><span class="dot" aria-hidden="true"></span> Pendaftaran dibuka — Labnesia Expert Network</span>
+    <h1 id="hero-title">Call for <span class="hl">Laboratory Expert</span> / Practitioner</h1>
+    <p class="lead">Bergabunglah dalam Labnesia Expert Network untuk berkolaborasi membangun laboratorium yang produktif, terstandar, dan berdampak bagi industri serta masyarakat.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#daftar">Daftar Sekarang</a>
+      <a class="btn btn-ghost" href="#peran">Pelajari Peran Pakar</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DUA JALUR (signature) ================= -->
+<div class="wrap tracks" id="daftar">
+  <div class="track-card">
+    <div class="track-tabs" role="tablist" aria-label="Pilih jalur pendaftaran">
+      <button class="track-tab" id="tab-pt" role="tab" aria-selected="true" aria-controls="panel-pt">🎓 Pakar Perguruan Tinggi</button>
+      <button class="track-tab" id="tab-industri" role="tab" aria-selected="false" aria-controls="panel-industri">🏭 Praktisi Industri &amp; Pemerintah</button>
+    </div>
+
+    <div class="track-panel active" id="panel-pt" role="tabpanel" aria-labelledby="tab-pt">
+      <div>
+        <h3>Pakar Laboratorium Perguruan Tinggi</h3>
+        <p class="sub">Untuk sivitas akademika yang mengelola dan mengembangkan laboratorium kampus.</p>
+        <ul class="invite-list">
+          <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4 2 9l10 5 8-4v6h2V9L12 4Z" fill="#A8E6DE"/><path d="M6 12.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.5l-6 3-6-3Z" fill="#A8E6DE"/></svg> Dosen</li>
+          <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4 2 9l10 5 8-4v6h2V9L12 4Z" fill="#A8E6DE"/><path d="M6 12.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.5l-6 3-6-3Z" fill="#A8E6DE"/></svg> Tenaga Kependidikan</li>
+          <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 3h-2v2.6L6.8 13A4.5 4.5 0 0 0 10.6 20h2.8A4.5 4.5 0 0 0 17.2 13L13 5.6V3Z" fill="#A8E6DE"/></svg> Kepala / Pengelola Laboratorium</li>
+          <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.5" stroke="#A8E6DE" stroke-width="2.4"/><path d="m15 15 5 5" stroke="#A8E6DE" stroke-width="2.4" stroke-linecap="round"/></svg> Peneliti dan Praktisi Laboratorium</li>
+        </ul>
+      </div>
+      <div class="track-side">
+        <div class="label">Pendaftaran</div>
+        <div class="date">Terbuka Sepanjang Tahun</div>
+        <p>Isi formulir pendaftaran secara daring kapan saja. Tim Labnesia akan menghubungi Anda melalui email atau WhatsApp untuk proses selanjutnya.</p>
+        <a class="btn btn-primary" href="https://tinyurl.com/LabnesiaExpertNetwork" target="_blank" rel="noopener">Isi Formulir Pendaftaran →</a>
+        <span class="form-url">tinyurl.com/LabnesiaExpertNetwork</span>
+      </div>
+    </div>
+
+    <div class="track-panel" id="panel-industri" role="tabpanel" aria-labelledby="tab-industri" hidden>
+      <div>
+        <h3>Praktisi Laboratorium Standar ISO/IEC 17025</h3>
+        <p class="sub">Untuk praktisi dari industri, swasta, dan laboratorium pemerintah.</p>
+        <ul class="invite-list">
+          <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V9l6 3V9l6 3V6h4v14H4Z" fill="#A8E6DE"/></svg> Praktisi Lab Industri</li>
+          <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 3 8h18L12 3ZM5 10v7H3v3h18v-3h-2v-7h-3v7h-3v-7h-2v7H8v-7H5Z" fill="#A8E6DE"/></svg> Praktisi Lab Pemerintah</li>
+          <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 3h-2v2.6L6.8 13A4.5 4.5 0 0 0 10.6 20h2.8A4.5 4.5 0 0 0 17.2 13L13 5.6V3Z" fill="#A8E6DE"/></svg> Praktisi Lab Swasta</li>
+          <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.5" stroke="#A8E6DE" stroke-width="2.4"/><path d="m15 15 5 5" stroke="#A8E6DE" stroke-width="2.4" stroke-linecap="round"/></svg> Praktisi bidang Lab, GLP, ISO 17025, QC/QA &amp; relevan</li>
+        </ul>
+      </div>
+      <div class="track-side">
+        <div class="label">Pendaftaran</div>
+        <div class="date">Terbuka Sepanjang Tahun</div>
+        <p>Isi formulir pendaftaran secara daring kapan saja. Tim Labnesia akan menghubungi Anda melalui email atau WhatsApp untuk proses selanjutnya.</p>
+        <a class="btn btn-primary" href="https://tinyurl.com/LabnesiaExpertNetwork-2" target="_blank" rel="noopener">Isi Formulir Pendaftaran →</a>
+        <span class="form-url">tinyurl.com/LabnesiaExpertNetwork-2</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PERAN ================= -->
+<section id="peran" aria-labelledby="peran-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Peran Pakar Labnesia</span>
+      <h2 id="peran-title">Kontribusi Anda dalam Expert Network</h2>
+      <p>Tiga peran utama yang akan Anda jalankan bersama Labnesia.</p>
+    </div>
+    <div class="roles">
+      <article class="role">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h12v10H8l-4 4V4Z" fill="#F9E27D"/><path d="M18 8h2v10l-3-3h-7v-2h8V8Z" fill="#A8E6DE"/></svg></div>
+        <h3>Narasumber &amp; Expert Speaker</h3>
+        <p>Berbagi keahlian sebagai narasumber pada pelatihan, webinar, dan program Labnesia lainnya.</p>
+      </article>
+      <article class="role">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3.4" fill="#A8E6DE"/><path d="M3 19c0-3 2.7-5 6-5s6 2 6 5H3Z" fill="#A8E6DE"/><path d="m16.5 6 1 2 2.2.3-1.6 1.5.4 2.2-2-1-2 1 .4-2.2-1.6-1.5L15.5 8l1-2Z" fill="#F9E27D"/></svg></div>
+        <h3>Pendamping Strategic Mentoring</h3>
+        <p>Mendampingi laboratorium — termasuk lab perguruan tinggi — dalam program strategic mentoring menuju standar ISO/IEC 17025.</p>
+      </article>
+      <article class="role">
+        <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" fill="#F9E27D"/><circle cx="4.5" cy="6" r="2.2" fill="#A8E6DE"/><circle cx="19.5" cy="6" r="2.2" fill="#A8E6DE"/><circle cx="4.5" cy="18" r="2.2" fill="#A8E6DE"/><circle cx="19.5" cy="18" r="2.2" fill="#A8E6DE"/><path d="M6.3 7.3 10 10.4M17.7 7.3 14 10.4M6.3 16.7 10 13.6M17.7 16.7 14 13.6" stroke="#A8E6DE" stroke-width="1.6"/></svg></div>
+        <h3>Kontributor Ekosistem</h3>
+        <p>Ikut mengembangkan ekosistem laboratorium Indonesia yang produktif, terstandar, dan berdampak.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BENEFIT ================= -->
+<section class="benefit-sec" id="benefit" aria-labelledby="benefit-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Benefit</span>
+      <h2 id="benefit-title">Yang Anda dapatkan sebagai Pakar Labnesia</h2>
+      <p>Keanggotaan Expert Network membuka akses ke jejaring, panggung, dan sertifikasi kompetensi.</p>
+    </div>
+    <div class="benefits">
+      <div class="benefit">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#F9E27D"/><path d="m7.5 12.5 3 3 6-6.5" stroke="#1E2A5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><strong>Bagian dari Labnesia Expert Network</strong><span>Bergabung dalam jaringan pakar laboratorium nasional lintas institusi.</span></div>
+      </div>
+      <div class="benefit">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#F9E27D"/><path d="m7.5 12.5 3 3 6-6.5" stroke="#1E2A5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><strong>Profil tampil di Platform Labnesia</strong><span>Keahlian dan rekam jejak Anda dipublikasikan pada platform resmi Labnesia.</span></div>
+      </div>
+      <div class="benefit">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#F9E27D"/><path d="m7.5 12.5 3 3 6-6.5" stroke="#1E2A5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><strong>Kesempatan menjadi Trainer / Mentor</strong><span>Terlibat langsung sebagai trainer atau mentor pada program-program Labnesia.</span></div>
+      </div>
+      <div class="benefit">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#F9E27D"/><path d="m7.5 12.5 3 3 6-6.5" stroke="#1E2A5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><strong>Akses prioritas ke Pelatihan</strong><span>Mendapat prioritas untuk mengikuti program-program pelatihan Labnesia.</span></div>
+      </div>
+      <div class="benefit">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#F9E27D"/><path d="m7.5 12.5 3 3 6-6.5" stroke="#1E2A5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><strong>Kolaborasi jejaring laboratorium nasional</strong><span>Terhubung dengan jejaring laboratorium perguruan tinggi dan industri se-Indonesia.</span></div>
+      </div>
+      <div class="benefit">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#F9E27D"/><path d="m7.5 12.5 3 3 6-6.5" stroke="#1E2A5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><strong>Berdampak bagi industri &amp; masyarakat</strong><span>Berkontribusi nyata membangun laboratorium yang produktif dan terstandar.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BIDANG ================= -->
+<section id="bidang" aria-labelledby="bidang-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Bidang Laboratorium</span>
+      <h2 id="bidang-title">Kami membuka pendaftaran untuk 13+ bidang</h2>
+      <p>Apapun bidang laboratorium Anda, keahlian Anda dibutuhkan.</p>
+    </div>
+    <div class="fields">
+      <span class="field-chip">Lingkungan</span>
+      <span class="field-chip">Sipil</span>
+      <span class="field-chip">Kimia</span>
+      <span class="field-chip">Farmasi / Kesehatan</span>
+      <span class="field-chip">Pangan, Gizi &amp; Halal</span>
+      <span class="field-chip">Pertanian &amp; Pascapanen</span>
+      <span class="field-chip">Peternakan / Perikanan</span>
+      <span class="field-chip">Material</span>
+      <span class="field-chip">Energi</span>
+      <span class="field-chip">Biologi / Mikrobiologi</span>
+      <span class="field-chip">Kalibrasi</span>
+      <span class="field-chip">Manajemen Bisnis Lab</span>
+      <span class="field-chip">Bidang lainnya</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq" aria-labelledby="faq-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">FAQ</span>
+      <h2 id="faq-title">Pertanyaan yang sering diajukan</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Siapa saja yang bisa mendaftar?</summary>
+        <p>Jalur perguruan tinggi terbuka untuk dosen, tenaga kependidikan, kepala/pengelola laboratorium, serta peneliti dan praktisi laboratorium. Jalur industri terbuka untuk praktisi lab industri, pemerintah, swasta, serta seluruh praktisi di bidang lab, GLP, ISO 17025, dan QC/QA.</p>
+      </details>
+      <details>
+        <summary>Apakah pendaftaran berbayar?</summary>
+        <p>Tidak. Pendaftaran Labnesia Expert Network tidak dipungut biaya. Anda cukup mengisi formulir pendaftaran daring.</p>
+      </details>
+      <details>
+        <summary>Apa perbedaan kedua jalur pendaftaran?</summary>
+        <p>Perbedaannya hanya pada latar belakang pendaftar: jalur perguruan tinggi untuk sivitas akademika, dan jalur industri untuk praktisi dari industri, swasta, serta laboratorium pemerintah. Peran dan benefit yang diperoleh pada dasarnya sama.</p>
+      </details>
+      <details>
+        <summary>Kapan pendaftaran dibuka?</summary>
+        <p>Pendaftaran Labnesia Expert Network terbuka sepanjang tahun. Anda dapat mengisi formulir pendaftaran kapan saja.</p>
+      </details>
+      <details>
+        <summary>Bagaimana proses setelah mendaftar?</summary>
+        <p>Tim Labnesia akan melakukan kurasi terhadap profil dan bidang keahlian Anda, kemudian menghubungi Anda melalui email atau WhatsApp untuk tahap selanjutnya.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA FINAL ================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-final">
+      <h2>Siap bergabung dalam Labnesia Expert Network?</h2>
+      <p>Isi formulir pendaftaran, atau hubungi tim kami untuk informasi lebih lanjut.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="#daftar">Isi Formulir Pendaftaran</a>
+        <a class="btn btn-wa" href="https://wa.me/6282172221567" target="_blank" rel="noopener">WhatsApp Endang — 0821-7222-1567</a>
+        <a class="btn btn-wa" href="https://wa.me/6285185000367" target="_blank" rel="noopener">WhatsApp Atikah — 0851-8500-0367</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Labnesia — Pusat Kompetensi ISO/IEC 17025 bagi Individu dan Laboratorium</div>
+    <div>
+      <a href="https://www.labnesia.id" target="_blank" rel="noopener">www.labnesia.id</a> ·
+      <a href="https://instagram.com/labnesia.id" target="_blank" rel="noopener">@labnesia.id</a> ·
+      <a href="mailto:info@labnesia.id">info@labnesia.id</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const tabs = document.querySelectorAll('.track-tab');
+const panels = document.querySelectorAll('.track-panel');
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.setAttribute('aria-selected', t === tab ? 'true' : 'false'));
+    panels.forEach(p => {
+      const active = p.id === tab.getAttribute('aria-controls');
+      p.classList.toggle('active', active);
+      p.hidden = !active;
+    });
+  });
+});
+</script>
+</body>
+</html>

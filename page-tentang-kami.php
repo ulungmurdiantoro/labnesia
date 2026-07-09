@@ -60,6 +60,24 @@ $experts = [
   .about-cta-inner{max-width:640px;margin:0 auto}
   .about-cta h2{font-size:32px;font-weight:800;color:var(--navy);line-height:1.25;letter-spacing:-0.6px;margin-bottom:28px}
 
+  /* JARINGAN PAKAR CTA */
+  .jaringan-section{padding:80px 48px;background:var(--navy);position:relative;overflow:hidden}
+  .jaringan-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(26,158,117,0.15) 0%,transparent 60%)}
+  .jaringan-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+  .jaringan-text{max-width:560px}
+  .jaringan-text .eyebrow-light{margin-bottom:12px}
+  .jaringan-text h2{font-size:28px;font-weight:800;color:#fff;line-height:1.3;letter-spacing:-0.5px;margin-bottom:12px}
+  .jaringan-text p{font-size:15px;color:rgba(255,255,255,0.6);line-height:1.7}
+  .jaringan-cta-actions{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+  .jaringan-cta-actions .btn-primary{white-space:nowrap}
+  .jaringan-cta-actions .jaringan-note{font-size:12px;color:rgba(255,255,255,0.45)}
+  @media (max-width:768px){
+    .jaringan-section{padding:48px 24px}
+    .jaringan-inner{flex-direction:column;align-items:flex-start}
+    .jaringan-cta-actions{align-items:flex-start;width:100%}
+    .jaringan-cta-actions .btn-primary{width:100%;text-align:center}
+  }
+
   /* PAKAR */
   .pakar-section{padding:72px 48px;background:var(--gray-50)}
   .pakar-inner{max-width:1200px;margin:0 auto;text-align:center}
@@ -150,6 +168,21 @@ $experts = [
       <?php endforeach; ?>
     </div>
     <p class="pakar-note">15+ pakar aktif di 9 bidang laboratorium berbeda — sesuai bidang lab dan topik yang sedang berjalan.</p>
+  </div>
+</section>
+
+<!-- JARINGAN PAKAR -->
+<section class="jaringan-section">
+  <div class="jaringan-inner">
+    <div class="jaringan-text">
+      <p class="eyebrow-light">Labnesia Expert Network</p>
+      <h2>Punya keahlian di bidang laboratorium? Bergabunglah sebagai Pakar Labnesia.</h2>
+      <p>Kami membuka pendaftaran Expert Network untuk dosen, pengelola lab, peneliti, hingga praktisi industri dan pemerintah — sepanjang tahun.</p>
+    </div>
+    <div class="jaringan-cta-actions">
+      <a href="<?php echo esc_url( home_url( '/jaringan-pakar/' ) ); ?>" class="btn-primary">Gabung Jaringan Pakar &rarr;</a>
+      <span class="jaringan-note">Pendaftaran terbuka sepanjang tahun, tanpa biaya.</span>
+    </div>
   </div>
 </section>
 
