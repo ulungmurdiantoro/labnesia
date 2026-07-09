@@ -13,7 +13,8 @@
                 <?php labnesia_whatsapp_link( get_theme_mod('labnesia_whatsapp','6282172221567'), '+62 821-7222-1567 (Endang)', 'rgba(255,255,255,0.45)', 14 ); ?><br>
                 <?php labnesia_whatsapp_link( '6285185000367', '+62 851-8500-0367 (Berryl)', 'rgba(255,255,255,0.45)', 14 ); ?><br>
                 <?php labnesia_whatsapp_link( '62811399523', '+62 811-399-523 (Kintan)', 'rgba(255,255,255,0.45)', 14 ); ?><br>
-                <?php labnesia_icon('map-pin', 'rgba(255,255,255,0.45)', 14); ?> labnesia.id
+                <?php labnesia_icon('map-pin', 'rgba(255,255,255,0.45)', 14); ?> labnesia.id<br>
+                <?php labnesia_icon('map-pin', 'rgba(255,255,255,0.45)', 14); ?> Kompleks Ruko Bali, Jl. Teras Bali No.12, Bubakan, Kec. Mijen, Kota Semarang, Jawa Tengah 50216
             </p>
         </div>
 
