@@ -61,6 +61,14 @@ $url_banding = esc_url( home_url( '/perbandingan-program/' ) );
   .decision-cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 
   @media (max-width:1024px){ .decision-grid{grid-template-columns:1fr} }
+
+  @media(max-width:768px){
+    .page-hero{padding:88px 24px 56px}
+    .page-hero h1{font-size:28px}
+    .decision-section{padding:48px 24px 56px}
+    .decision-num{font-size:26px}
+    .decision-cta{padding:40px 24px}
+  }
 </style>
 
 <!-- HERO -->

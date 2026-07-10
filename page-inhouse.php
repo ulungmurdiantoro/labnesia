@@ -128,6 +128,26 @@ $wa_text       = rawurlencode( labnesia_wa_default_message() );
   .cta-action-title{font-size:16px;font-weight:700;color:white;margin-bottom:6px}
   .cta-action-desc{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.5}
 
+  @media(max-width:1024px){
+    .package-grid{grid-template-columns:repeat(2,1fr)}
+    .why-grid{grid-template-columns:repeat(2,1fr)}
+  }
+
+  @media(max-width:768px){
+    .page-hero{padding:88px 24px 48px}
+    .page-hero h1{font-size:28px}
+    .split-inner{grid-template-columns:1fr}
+    .split-card{padding:32px 24px}
+    section{padding:48px 24px}
+    .h2{font-size:24px}
+    .package-grid{grid-template-columns:1fr}
+    .comp-mini-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .annual-tier-grid,.annual-tier-grid[style]{grid-template-columns:1fr!important}
+    .indiv-grid{grid-template-columns:1fr}
+    .why-grid{grid-template-columns:1fr}
+    .cta-split-actions{grid-template-columns:1fr}
+    .cta-split-title{font-size:24px}
+  }
 </style>
 
 <div class="page-hero">

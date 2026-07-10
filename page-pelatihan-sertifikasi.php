@@ -1244,6 +1244,12 @@ function labnesia_ps_static_cards_section( $schemes ) {
     .pricing-grid{grid-template-columns:1fr !important}
   }
 
+  @media(max-width:768px){
+    .page-hero{padding:88px 24px 56px}
+    .page-hero h1{font-size:28px}
+    .cta-form-title{font-size:24px}
+  }
+
 </style>
 
 <div class="page-hero">

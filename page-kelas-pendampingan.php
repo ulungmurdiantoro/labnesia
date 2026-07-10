@@ -328,6 +328,17 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   .mitra-logo{background:white;border:1px solid var(--gray-200);border-radius:12px;height:84px;width:160px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;padding:14px}
   .mitra-logo img{max-width:100%;max-height:100%;object-fit:contain}
   .mitra-logo-text{font-size:11px;font-weight:700;color:var(--gray-600);text-align:center;line-height:1.35}
+
+  @media(max-width:768px){
+    .page-hero{padding:88px 24px 56px}
+    .page-hero h1{font-size:30px}
+    .cta-title{font-size:26px}
+    .cta-section{padding:56px 24px}
+    .main-layout{grid-template-columns:1fr;padding:48px 24px;gap:40px}
+    section{padding:48px 24px}
+    .seri-list{grid-template-columns:1fr}
+    .price-options{grid-template-columns:1fr}
+  }
 </style>
 
 <!-- PAGE HERO -->

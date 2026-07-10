@@ -174,6 +174,28 @@ $wa_text       = rawurlencode( labnesia_wa_default_message() );
   .faq-mini-a{font-size:14px;color:var(--gray-600);line-height:1.7;margin-top:12px;display:none}
   .faq-mini-a.open{display:block}
 
+  @media(max-width:1024px){
+    .gives-grid{grid-template-columns:repeat(2,1fr)}
+    .download-grid{grid-template-columns:repeat(2,1fr)}
+  }
+
+  @media(max-width:768px){
+    .page-hero{padding:88px 24px 56px}
+    .page-hero h1{font-size:30px}
+    .hero-belief{font-size:15px}
+    .trust-row{padding:14px 20px}
+    .trust-inner{gap:16px}
+    section{padding:48px 24px}
+    .h2{font-size:24px}
+    .gap-feature{grid-template-columns:1fr;gap:28px;padding:28px}
+    .gap-title{font-size:24px}
+    .gives-grid{grid-template-columns:1fr}
+    .download-grid{grid-template-columns:1fr}
+    .community-inner,.community-inner[style]{grid-template-columns:1fr;gap:32px;padding:48px 24px!important}
+    .praktisi-inner,.praktisi-inner[style]{grid-template-columns:1fr;gap:32px;padding:48px 24px!important}
+    .praktisi-title{font-size:26px}
+    .webinar-item{flex-direction:column;align-items:flex-start;gap:12px}
+  }
 </style>
 
 <!-- HERO -->

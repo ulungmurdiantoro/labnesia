@@ -332,6 +332,7 @@ $mitra_logos = [
   .funnel-sub { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.5; }
 
   .start-options { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 48px; }
+  .start-options-4 { grid-template-columns: repeat(4,1fr); }
   .start-option {
     background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
     border-radius: 14px; padding: 24px; text-align: left; cursor: pointer;
@@ -361,6 +362,41 @@ $mitra_logos = [
   .mt-4 { margin-top: 4px; }
   .mt-8 { margin-top: 8px; }
   .text-center { text-align: center; }
+
+  /* Ad-hoc sections that only had inline style="" (no class) */
+  .income-teaser { padding: 80px 48px; }
+  .income-grid { display: grid; grid-template-columns: 1fr 1fr; }
+  .product-cards-4 { grid-template-columns: repeat(4,1fr); }
+
+  /* MOBILE — overrides the unconditional rules above, which otherwise
+     outrank style.css's @media rules (same specificity, later in the
+     cascade since this <style> block prints after wp_head()). */
+  @media (max-width: 1024px) {
+    .start-options-4 { grid-template-columns: repeat(2,1fr); }
+    .product-cards-4 { grid-template-columns: repeat(2,1fr); }
+    .product-intro   { grid-template-columns: 1fr; gap: 40px; }
+    .income-grid     { grid-template-columns: 1fr; gap: 32px; }
+  }
+  @media (max-width: 768px) {
+    section { padding: 56px 24px; }
+    .hero h1 { font-size: 36px; letter-spacing: -0.5px; }
+    .hero-belief { font-size: 16px; }
+    .section-title { font-size: 30px; }
+    .stat-num { font-size: 32px; }
+    .funnel-grid { grid-template-columns: 1fr; gap: 24px; }
+    .funnel-grid::before { display: none; }
+    .start-options { grid-template-columns: 1fr; }
+    .income-teaser { padding: 48px 24px; }
+  }
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 28px; }
+    .section-title { font-size: 24px; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .stat-card { padding: 16px; }
+    .stat-num { font-size: 26px; }
+    .give-banner { padding: 20px; }
+    .product-cards-4 { grid-template-columns: 1fr; }
+  }
 </style>
 
 <!-- HERO -->
@@ -680,7 +716,7 @@ $mitra_logos = [
 
     <!-- 3 Featured Products -->
     <h3 style="font-size:24px;font-weight:800;color:var(--navy);margin-bottom:24px;">Program yang paling banyak dipilih</h3>
-    <div class="product-cards" style="grid-template-columns:repeat(4,1fr);gap:16px">
+    <div class="product-cards product-cards-4" style="gap:16px">
       <div class="product-card" style="position:relative">
         <div class="product-card-header">
           <div class="product-card-top">
@@ -877,9 +913,9 @@ $mitra_logos = [
 </section>
 
 <!-- INCOME GENERATOR TEASER -->
-<section style="background:linear-gradient(135deg,#0F2845 0%,#0B1F3A 100%);padding:80px 48px;position:relative;overflow:hidden">
+<section class="income-teaser" style="background:linear-gradient(135deg,#0F2845 0%,#0B1F3A 100%);position:relative;overflow:hidden">
   <div style="position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle at 1px 1px,white 1px,transparent 0);background-size:40px 40px"></div>
-  <div style="max-width:1200px;margin:0 auto;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+  <div class="income-grid" style="max-width:1200px;margin:0 auto;position:relative;align-items:center">
     <div>
       <p style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:14px"><?php labnesia_icon( 'microscope', 'var(--amber)', 12 ); ?> Insight Khusus Pemilik Lab</p>
       <h2 style="font-size:36px;font-weight:800;color:white;line-height:1.15;letter-spacing:-0.8px;margin-bottom:18px">Alat Lab Sudah Ada.<br>Tapi Digunakan untuk Apa?</h2>
@@ -938,7 +974,7 @@ $mitra_logos = [
       </div>
     </div>
 
-    <div class="start-options" style="grid-template-columns:repeat(4,1fr)">
+    <div class="start-options start-options-4">
       <a href="<?php echo $url_gratis; ?>" class="start-option">
         <div class="start-option-tag">Mulai Hari Ini · Gratis</div>
         <div class="start-option-title">Daftar Gap Analysis Lab Saya</div>

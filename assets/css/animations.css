@@ -1,38 +1,16 @@
 /**
  * Labnesia — animations.css
- * Scroll-triggered entrance animations (appended to main style via functions.php)
+ * Scroll-triggered entrance animations + site-wide motion accents
+ * (appended to main style via functions.php)
  */
 
-/* Base state for animatable elements */
+/* Base state for animatable elements. Per-element stagger delay is set
+   inline by main.js (transitionDelay), computed per parent container. */
 .will-animate {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
-/* Stagger children in grids */
-.problem-grid .will-animate:nth-child(1)  { transition-delay: 0.05s; }
-.problem-grid .will-animate:nth-child(2)  { transition-delay: 0.10s; }
-.problem-grid .will-animate:nth-child(3)  { transition-delay: 0.15s; }
-.problem-grid .will-animate:nth-child(4)  { transition-delay: 0.20s; }
-.problem-grid .will-animate:nth-child(5)  { transition-delay: 0.25s; }
-.problem-grid .will-animate:nth-child(6)  { transition-delay: 0.30s; }
-
-.give-grid .will-animate:nth-child(1) { transition-delay: 0.05s; }
-.give-grid .will-animate:nth-child(2) { transition-delay: 0.10s; }
-.give-grid .will-animate:nth-child(3) { transition-delay: 0.15s; }
-.give-grid .will-animate:nth-child(4) { transition-delay: 0.20s; }
-.give-grid .will-animate:nth-child(5) { transition-delay: 0.25s; }
-.give-grid .will-animate:nth-child(6) { transition-delay: 0.30s; }
-
-.product-cards .will-animate:nth-child(1) { transition-delay: 0.05s; }
-.product-cards .will-animate:nth-child(2) { transition-delay: 0.12s; }
-.product-cards .will-animate:nth-child(3) { transition-delay: 0.20s; }
-
-.stats-row .will-animate:nth-child(1) { transition-delay: 0.05s; }
-.stats-row .will-animate:nth-child(2) { transition-delay: 0.10s; }
-.stats-row .will-animate:nth-child(3) { transition-delay: 0.15s; }
-.stats-row .will-animate:nth-child(4) { transition-delay: 0.20s; }
 
 /* Visible state */
 .will-animate.is-visible {
@@ -40,11 +18,137 @@
   transform: translateY(0);
 }
 
-/* Respect prefers-reduced-motion */
+/* =====================================================================
+   SCROLL PROGRESS BAR
+   ===================================================================== */
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px; width: 0%;
+  background: linear-gradient(90deg, var(--teal), var(--teal-light));
+  z-index: 200;
+  transition: width 0.1s ease-out;
+  pointer-events: none;
+}
+
+/* =====================================================================
+   HERO GLOW PARALLAX — the decorative glow layers already present on the
+   homepage hero (.hero-glow) and every inner page's .page-hero::after
+   drift with a slow idle motion and lean toward the cursor. Driven by
+   main.js, which writes --glow-x/--glow-y/--glow-s onto <html> every
+   frame; these rules just read them. No markup changes required.
+   ===================================================================== */
+.hero-glow,
+.page-hero::after {
+  transform: translate(var(--glow-x, 0px), var(--glow-y, 0px)) scale(var(--glow-s, 1));
+  will-change: transform;
+}
+
+/* =====================================================================
+   FLOATING HERO ICONS — decorative lab icons (injected by main.js as the
+   first children of .hero / .page-hero) drifting slowly in the background.
+   ===================================================================== */
+.hero-float-icon {
+  position: absolute;
+  color: rgba(255,255,255,0.07);
+  pointer-events: none;
+  z-index: 0;
+  animation: labFloatDrift ease-in-out infinite;
+}
+.hero-float-icon:nth-child(1) { top: 14%; left: 6%;  font-size: 46px; animation-duration: 16s; }
+.hero-float-icon:nth-child(2) { top: 66%; left: 10%; font-size: 34px; animation-duration: 12s; animation-delay: -3s; }
+.hero-float-icon:nth-child(3) { top: 18%; right: 8%; font-size: 54px; animation-duration: 18s; animation-delay: -6s; }
+.hero-float-icon:nth-child(4) { top: 68%; right: 12%; font-size: 38px; animation-duration: 13s; animation-delay: -1s; }
+@keyframes labFloatDrift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50%      { transform: translate(14px, -18px) rotate(6deg); }
+}
+
+/* =====================================================================
+   EYEBROW ACCENT SWEEP — a light accent sweeps across the hero badge
+   every few seconds (homepage .hero-eyebrow and inner-page .eyebrow-tag).
+   ===================================================================== */
+.hero-eyebrow,
+.eyebrow-tag {
+  position: relative;
+  overflow: hidden;
+}
+.hero-eyebrow::before,
+.eyebrow-tag::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 30%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: translateX(-160%) skewX(-15deg);
+  animation: labEyebrowSweep 4s ease-in-out infinite;
+  animation-delay: 1.2s;
+  pointer-events: none;
+}
+@keyframes labEyebrowSweep {
+  0%, 20%   { transform: translateX(-160%) skewX(-15deg); }
+  45%, 100% { transform: translateX(260%) skewX(-15deg); }
+}
+
+/* =====================================================================
+   BUTTON SHIMMER — a soft light sweep on the primary CTA
+   ===================================================================== */
+@keyframes labShimmerSweep {
+  0%   { transform: translateX(-120%) skewX(-15deg); }
+  100% { transform: translateX(220%) skewX(-15deg); }
+}
+.btn-primary::after {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 40%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform: translateX(-120%) skewX(-15deg);
+  pointer-events: none;
+}
+.btn-primary:hover::after {
+  animation: labShimmerSweep 0.9s ease;
+}
+
+/* =====================================================================
+   NAV LINK UNDERLINE
+   ===================================================================== */
+.nav-links a:not(.nav-cta) {
+  position: relative;
+}
+.nav-links a:not(.nav-cta)::after {
+  content: '';
+  position: absolute; left: 0; bottom: -6px;
+  width: 100%; height: 2px;
+  background: var(--teal-light);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-links a:not(.nav-cta):hover::after {
+  transform: scaleX(1);
+}
+
+/* =====================================================================
+   HERO EYEBROW DOT — keep original pulse (already defined in style.css)
+   ===================================================================== */
+
+/* Respect prefers-reduced-motion for everything animated above */
 @media (prefers-reduced-motion: reduce) {
   .will-animate {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+  #scroll-progress {
+    transition: none;
+  }
+  .btn-primary::after,
+  .hero-float-icon,
+  .hero-eyebrow::before,
+  .eyebrow-tag::before {
+    animation: none;
+  }
+  .hero-glow,
+  .page-hero::after {
+    transform: none;
   }
 }

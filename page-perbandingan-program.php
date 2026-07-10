@@ -52,6 +52,15 @@ $url_panduan   = esc_url( home_url( '/panduan-memilih/' ) );
   .comp-cta h2{font-size:26px;font-weight:800;color:var(--navy);margin-bottom:10px;letter-spacing:-0.4px}
   .comp-cta p{font-size:14px;color:var(--gray-600);margin-bottom:22px}
   .comp-cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+  @media(max-width:768px){
+    .page-hero{padding:88px 24px 56px}
+    .page-hero h1{font-size:28px}
+    .comp-section{padding:40px 20px 56px}
+    .comp-full{min-width:640px}
+    .comp-cta{padding:40px 24px}
+    .comp-cta h2{font-size:21px}
+  }
 </style>
 
 <!-- HERO -->

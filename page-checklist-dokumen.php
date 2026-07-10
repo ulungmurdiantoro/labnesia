@@ -212,6 +212,11 @@ function labnesia_checklist_doc_onclick( $kategori ) {
     .hero-grid{grid-template-columns:1fr}
     .container{padding:0 24px}
   }
+  @media(max-width:768px){
+    .hero h1{font-size:26px}
+    #poster h2{font-size:22px}
+    .section-title{font-size:24px}
+  }
 </style>
 
 <section class="hero" id="home">

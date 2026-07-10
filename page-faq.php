@@ -49,6 +49,18 @@ $url_kontak  = esc_url( home_url( '/kontak/' ) );
   .faq-a a{color:var(--teal);text-decoration:none}
   .faq-a a:hover{text-decoration:underline}
   .faq-highlight{background:var(--amber-pale);border:1px solid rgba(245,166,35,0.3);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;color:#6B4400}
+
+  @media(max-width:768px){
+    .page-hero{padding:88px 24px 56px}
+    .page-hero h1{font-size:28px}
+    .jump-nav{padding:14px 20px;top:56px}
+    .jump-nav-inner{gap:6px}
+    .jump-btn{font-size:12px;padding:6px 12px}
+    .faq-section{padding:48px 20px}
+    .faq-inner,.faq-inner[style]{grid-template-columns:1fr;gap:24px;padding:48px 20px!important}
+    .faq-nav{position:static}
+    .faq-group-title{font-size:17px}
+  }
 </style>
 
 <!-- HERO -->
