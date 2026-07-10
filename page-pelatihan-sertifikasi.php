@@ -1248,6 +1248,7 @@ function labnesia_ps_static_cards_section( $schemes ) {
     .page-hero{padding:88px 24px 56px}
     .page-hero h1{font-size:28px}
     .cta-form-title{font-size:24px}
+    .info-grid{grid-template-columns:1fr}
   }
 
 </style>

@@ -334,10 +334,14 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
     .page-hero h1{font-size:30px}
     .cta-title{font-size:26px}
     .cta-section{padding:56px 24px}
-    .main-layout{grid-template-columns:1fr;padding:48px 24px;gap:40px}
+    .main-layout{grid-template-columns:minmax(0,1fr);padding:48px 24px;gap:40px}
     section{padding:48px 24px}
     .seri-list{grid-template-columns:1fr}
     .price-options{grid-template-columns:1fr}
+    .sticky-bar{flex-direction:column;align-items:stretch;padding:10px 20px;gap:10px}
+    .sticky-bar > div:first-child{flex-wrap:wrap;gap:10px}
+    .sticky-actions{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+    .sticky-actions a{flex-shrink:0}
   }
 </style>
 
