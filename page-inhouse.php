@@ -235,7 +235,6 @@ $wa_text       = rawurlencode( labnesia_wa_default_message() );
           <div class="package-feature"><div class="pf-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></div><div class="pf-text">Cocok untuk lab yang sudah maju di sebagian sistem</div></div>
           <div class="package-feature"><div class="pf-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></div><div class="pf-text">Bisa dikombinasikan dengan beberapa tema sekaligus</div></div>
           <div class="package-feature"><div class="pf-check"><?php labnesia_icon( 'check', 'var(--teal)', 14 ); ?></div><div class="pf-text">Fleksibel sesuai HOK (Hari Orang Kerja) yang dibutuhkan</div></div>
-          <div class="package-hok"><div class="hok-label">Estimasi</div><div class="hok-val">2–5 HOK/tema</div></div>
         </div>
       </div>
     </div>
@@ -290,7 +289,6 @@ $wa_text       = rawurlencode( labnesia_wa_default_message() );
           <div class="annual-tier-unit">per tahun</div>
         </div>
         <div class="annual-tier-body">
-          <div class="annual-feature"><span class="annual-check"><?php labnesia_icon( 'check', 'var(--teal)', 13 ); ?></span><strong>5 HOK</strong> pendampingan onsite — fokus kesiapan surveillance</div>
           <div class="annual-feature"><span class="annual-check"><?php labnesia_icon( 'check', 'var(--teal)', 13 ); ?></span>Review dokumen mutu tahunan</div>
           <div class="annual-feature"><span class="annual-check"><?php labnesia_icon( 'check', 'var(--teal)', 13 ); ?></span>Akses webinar &amp; bootcamp sepanjang tahun untuk seluruh tim</div>
           <div class="annual-feature"><span class="annual-check"><?php labnesia_icon( 'check', 'var(--teal)', 13 ); ?></span><strong>1 tema pelatihan premium</strong> + akses uji kompetensi terkait, untuk 1 personel</div>
@@ -308,7 +306,6 @@ $wa_text       = rawurlencode( labnesia_wa_default_message() );
           <div class="annual-tier-unit">per tahun</div>
         </div>
         <div class="annual-tier-body">
-          <div class="annual-feature"><span class="annual-check"><?php labnesia_icon( 'check', 'var(--teal)', 13 ); ?></span><strong>10 HOK</strong> pendampingan onsite — review menyeluruh sistem &amp; teknis</div>
           <div class="annual-feature"><span class="annual-check"><?php labnesia_icon( 'check', 'var(--teal)', 13 ); ?></span>Review dokumen mutu + pendampingan audit internal tahunan</div>
           <div class="annual-feature"><span class="annual-check"><?php labnesia_icon( 'check', 'var(--teal)', 13 ); ?></span>Akses webinar &amp; bootcamp sepanjang tahun untuk seluruh tim</div>
           <div class="annual-feature"><span class="annual-check"><?php labnesia_icon( 'check', 'var(--teal)', 13 ); ?></span><strong>2 tema pelatihan premium</strong> + akses uji kompetensi terkait, untuk 2 personel</div>
