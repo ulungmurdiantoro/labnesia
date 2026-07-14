@@ -28,8 +28,8 @@
             </button>
             <div class="nav-dropdown-menu" id="layanan-menu">
                 <a href="<?php echo esc_url( home_url('/pelatihan-sertifikasi/') ); ?>"><?php _e('Pelatihan 16, 24 dan 40 JP','labnesia'); ?></a>
-                <a href="<?php echo esc_url( home_url('/kelas-pendampingan/') ); ?>"><?php _e('Kelas Pendampingan','labnesia'); ?></a>
-                <a href="<?php echo esc_url( home_url('/inhouse/') ); ?>"><?php _e('Inhouse Training','labnesia'); ?></a>
+                <a href="<?php echo esc_url( home_url('/kelas-pendampingan/') ); ?>"><?php _e('Kelas Pendampingan (Publik)','labnesia'); ?></a>
+                <a href="<?php echo esc_url( home_url('/inhouse/') ); ?>"><?php _e('Training & Pendampingan (In House)','labnesia'); ?></a>
                 <a href="<?php echo esc_url( home_url('/optimasi-alat/') ); ?>"><?php _e('Optimasi Alat','labnesia'); ?></a>
                 <a href="<?php echo esc_url( home_url('/perbandingan-program/') ); ?>"><?php _e('Perbandingan Program','labnesia'); ?></a>
                 <a href="<?php echo esc_url( home_url('/panduan-memilih/') ); ?>"><?php _e('Panduan Memilih','labnesia'); ?></a>
