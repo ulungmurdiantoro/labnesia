@@ -101,7 +101,7 @@ $gas_url = get_theme_mod( 'labnesia_gas_url', '' );
       <form id="kontak-form" onsubmit="return submitKontakForm(event)">
         <div class="chat-title">Kirim pertanyaan Anda</div>
         <div class="chat-sub">Isi form ini dan tim kami akan menjawab dalam 1×24 jam kerja.</div>
-        <div class="form-error" id="kontak-error" style="display:none;background:var(--amber-pale);color:#6B4400;border:1px solid rgba(255, 154, 18,0.3);border-radius:8px;padding:10px 14px;font-size:13px;margin-bottom:12px"></div>
+        <div class="form-error" id="kontak-error" style="display:none;background:var(--amber-pale);color:#6B4400;border:1px solid rgba(245, 166, 35,0.3);border-radius:8px;padding:10px 14px;font-size:13px;margin-bottom:12px"></div>
         <input class="chat-input" type="text" id="kontak-nama" placeholder="Nama Anda" required>
         <input class="chat-input" type="tel" id="kontak-whatsapp" placeholder="Nomor WhatsApp" required>
         <input class="chat-input" type="text" id="kontak-institusi" placeholder="Nama lab / instansi">

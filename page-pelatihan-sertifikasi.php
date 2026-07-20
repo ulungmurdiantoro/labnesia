@@ -1093,7 +1093,7 @@ function labnesia_ps_static_cards_section( $schemes ) {
   .breadcrumb a{color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px}
   .breadcrumb-sep{color:rgba(255,255,255,0.2);font-size:13px}
   .breadcrumb-cur{color:rgba(255,255,255,0.7);font-size:13px}
-  .page-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255, 154, 18,0.15);border:1px solid rgba(255, 154, 18,0.3);color:var(--amber);padding:5px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+  .page-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(245, 166, 35,0.15);border:1px solid rgba(245, 166, 35,0.3);color:var(--amber);padding:5px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
   .page-eyebrow-dot{width:5px;height:5px;border-radius:50%;background:var(--amber);animation:pulse 2s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
   .page-hero h1{font-size:46px;font-weight:800;color:white;line-height:1.12;letter-spacing:-1.3px;margin-bottom:18px;max-width:680px}
@@ -1286,8 +1286,8 @@ function labnesia_ps_static_cards_section( $schemes ) {
 
 <!-- CATATAN PENTING -->
 <div style="background:var(--gray-50);padding:24px 48px">
-  <div style="max-width:1200px;margin:0 auto;display:flex;gap:14px;align-items:flex-start;background:var(--amber-pale);border:1px solid rgba(255, 154, 18,0.35);border-left:4px solid var(--amber);border-radius:0 12px 12px 0;padding:18px 22px">
-    <span style="flex-shrink:0;margin-top:2px"><?php labnesia_icon( 'info', '#845500', 18 ); ?></span>
+  <div style="max-width:1200px;margin:0 auto;display:flex;gap:14px;align-items:flex-start;background:var(--amber-pale);border:1px solid rgba(245, 166, 35,0.35);border-left:4px solid var(--amber);border-radius:0 12px 12px 0;padding:18px 22px">
+    <span style="flex-shrink:0;margin-top:2px"><?php labnesia_icon( 'info', '#8B6000', 18 ); ?></span>
     <div>
       <p style="font-size:12px;font-weight:700;color:#6B4400;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Catatan Penting</p>
       <p style="font-size:13px;color:#8B5800;line-height:1.65">Pelatihan yang kami selenggarakan bertujuan untuk meningkatkan kompetensi sumber daya manusia (SDM) di lingkungan perguruan tinggi, serta dapat digunakan sebagai salah satu bentuk pemenuhan persyaratan administratif untuk mengikuti uji kompetensi pada skema tertentu di LSP Edukia, sesuai dengan ketentuan yang berlaku. </p>

@@ -49,7 +49,7 @@ section { padding: 88px 48px; }
   background: var(--amber); color: var(--navy); padding: 13px 26px; border-radius: 8px;
   font-weight: 700; font-size: 15px; text-decoration: none; display: inline-block; transition: all .2s;
 }
-.btn-primary:hover { background: #E58A14; }
+.btn-primary:hover { background: #E09620; }
 .btn-ghost {
   border: 1px solid rgba(255,255,255,0.25); color: white; padding: 13px 26px; border-radius: 8px;
   font-weight: 600; font-size: 15px; text-decoration: none; display: inline-block; transition: all .2s;

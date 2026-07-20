@@ -48,7 +48,7 @@ add_action( 'wp_head', function() { echo '<title>Gap Analysis ISO/IEC 17025 — 
 .guide-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 .guide-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:14px 12px;text-align:center}
 .guide-card.s0{border-color:rgba(231,76,60,0.4);background:rgba(231,76,60,0.1)}
-.guide-card.s1{border-color:rgba(255, 154, 18,0.4);background:rgba(255, 154, 18,0.1)}
+.guide-card.s1{border-color:rgba(245, 166, 35,0.4);background:rgba(245, 166, 35,0.1)}
 .guide-card.s2{border-color:rgba(52,152,219,0.4);background:rgba(52,152,219,0.1)}
 .guide-card.s3{border-color:rgba(46,204,113,0.3);background:rgba(46,204,113,0.08)}
 .guide-card.s4{border-color:rgba(77, 161, 169,0.5);background:rgba(77, 161, 169,0.15)}
@@ -112,7 +112,7 @@ add_action( 'wp_head', function() { echo '<title>Gap Analysis ISO/IEC 17025 — 
 .result-total-label{font-size:14px;color:rgba(255,255,255,0.6)}
 .result-interpretation{border-radius:10px;padding:16px 20px;margin-bottom:24px;font-size:14px;font-weight:600}
 .result-interpretation.low{background:rgba(231,76,60,0.15);border:1px solid rgba(231,76,60,0.3);color:#ff8a80}
-.result-interpretation.mid{background:rgba(255, 154, 18,0.15);border:1px solid rgba(255, 154, 18,0.3);color:#ffd54f}
+.result-interpretation.mid{background:rgba(245, 166, 35,0.15);border:1px solid rgba(245, 166, 35,0.3);color:#ffd54f}
 .result-interpretation.high{background:rgba(77, 161, 169,0.15);border:1px solid rgba(77, 161, 169,0.3);color:var(--teal-light)}
 .result-actions{display:flex;gap:12px;flex-wrap:wrap}
 .btn-wa{background:#25D366;color:white;padding:13px 24px;border-radius:9px;font-weight:700;font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:8px}

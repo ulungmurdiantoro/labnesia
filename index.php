@@ -380,7 +380,7 @@ get_header(); ?>
                 <div class="funnel-sub">Gap Analysis gratis untuk tahu kondisi aktual lab Anda sekarang</div>
             </div>
             <div class="funnel-step">
-                <div class="funnel-icon" style="background:rgba(255, 154, 18,0.15);border-color:rgba(255, 154, 18,0.3);" aria-hidden="true"><?php labnesia_icon( 'handshake', '#ffffff', 26 ); ?></div>
+                <div class="funnel-icon" style="background:rgba(245, 166, 35,0.15);border-color:rgba(245, 166, 35,0.3);" aria-hidden="true"><?php labnesia_icon( 'handshake', '#ffffff', 26 ); ?></div>
                 <div class="funnel-num">Langkah 2</div>
                 <div class="funnel-label">Pilih program yang tepat</div>
                 <div class="funnel-sub">Konsultasi 30 menit dengan tim kami — gratis, tanpa paksaan</div>

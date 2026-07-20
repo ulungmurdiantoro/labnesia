@@ -78,7 +78,7 @@ $mitra_logos = [
     text-decoration: none; display: inline-block; transition: all .2s;
     border: none; cursor: pointer;
   }
-  .btn-primary:hover { background: #E58A14; transform: translateY(-1px); }
+  .btn-primary:hover { background: #E09620; transform: translateY(-1px); }
   .btn-ghost {
     background: rgba(255,255,255,0.08); color: white; padding: 14px 28px;
     border-radius: 10px; font-weight: 600; font-size: 15px;
@@ -117,7 +117,7 @@ $mitra_logos = [
     font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 4px;
   }
   .badge-free { background: rgba(77, 161, 169,0.2); color: var(--teal-light); }
-  .badge-core { background: rgba(255, 154, 18,0.2); color: var(--amber); }
+  .badge-core { background: rgba(245, 166, 35,0.2); color: var(--amber); }
   .badge-adv { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); }
 
   /* SECTION GENERIC */
@@ -169,7 +169,7 @@ $mitra_logos = [
     padding: 4px 10px; border-radius: 4px; margin-bottom: 20px; width: fit-content;
   }
   .tag-gratis { background: rgba(77, 161, 169,0.2); color: #79D7BE; }
-  .tag-terbuka { background: rgba(255, 154, 18,0.2); color: #FEC032; }
+  .tag-terbuka { background: rgba(245, 166, 35,0.2); color: #F5C842; }
   .tag-eksklusif { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
   .give-card-icon { font-size: 36px; margin-bottom: 16px; }
   .give-card-title { font-size: 17px; font-weight: 700; color: white; margin-bottom: 8px; }
@@ -217,7 +217,7 @@ $mitra_logos = [
   .ladder-desc { font-size: 13px; color: var(--gray-600); }
   .ladder-badge {
     font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 3px;
-    background: var(--amber-pale); color: #845500;
+    background: var(--amber-pale); color: #8B6000;
   }
 
   /* Detail cards */
@@ -494,8 +494,8 @@ $mitra_logos = [
 
 <!-- CATATAN PENTING -->
 <section style="background:var(--gray-50);padding:24px 48px">
-  <div style="max-width:1200px;margin:0 auto;display:flex;gap:14px;align-items:flex-start;background:var(--amber-pale);border:1px solid rgba(255, 154, 18,0.35);border-left:4px solid var(--amber);border-radius:0 12px 12px 0;padding:18px 22px">
-    <span style="flex-shrink:0;margin-top:2px"><?php labnesia_icon( 'info', '#845500', 18 ); ?></span>
+  <div style="max-width:1200px;margin:0 auto;display:flex;gap:14px;align-items:flex-start;background:var(--amber-pale);border:1px solid rgba(245, 166, 35,0.35);border-left:4px solid var(--amber);border-radius:0 12px 12px 0;padding:18px 22px">
+    <span style="flex-shrink:0;margin-top:2px"><?php labnesia_icon( 'info', '#8B6000', 18 ); ?></span>
     <div>
       <p style="font-size:12px;font-weight:700;color:#6B4400;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Catatan Penting</p>
       <p style="font-size:13px;color:#8B5800;line-height:1.65">Pelatihan yang kami selenggarakan bertujuan untuk meningkatkan kompetensi sumber daya manusia (SDM) di lingkungan perguruan tinggi, serta dapat digunakan sebagai salah satu bentuk pemenuhan persyaratan administratif untuk mengikuti uji kompetensi pada skema tertentu di LSP Edukia, sesuai dengan ketentuan yang berlaku. </p>
@@ -933,7 +933,7 @@ $mitra_logos = [
       <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
         <div style="background:rgba(77, 161, 169,0.15);border:1px solid rgba(77, 161, 169,0.3);border-radius:10px;padding:14px 16px;flex:1;min-width:90px;text-align:center"><p style="font-size:12px;font-weight:700;color:#79D7BE">Punya Alat</p></div>
         <span style="color:rgba(255,255,255,0.3)">→</span>
-        <div style="background:rgba(255, 154, 18,0.15);border:1px solid rgba(255, 154, 18,0.3);border-radius:10px;padding:14px 16px;flex:1;min-width:90px;text-align:center"><p style="font-size:12px;font-weight:700;color:var(--amber)">Parameter Uji</p></div>
+        <div style="background:rgba(245, 166, 35,0.15);border:1px solid rgba(245, 166, 35,0.3);border-radius:10px;padding:14px 16px;flex:1;min-width:90px;text-align:center"><p style="font-size:12px;font-weight:700;color:var(--amber)">Parameter Uji</p></div>
         <span style="color:rgba(255,255,255,0.3)">→</span>
         <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:14px 16px;flex:1;min-width:90px;text-align:center"><p style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.7)">Produk</p></div>
         <span style="color:rgba(255,255,255,0.3)">→</span>
@@ -961,7 +961,7 @@ $mitra_logos = [
         <div class="funnel-sub">Gap Analysis gratis untuk tahu kondisi aktual lab Anda sekarang</div>
       </div>
       <div class="funnel-step">
-        <div class="funnel-icon" style="background:rgba(255, 154, 18,0.15);border-color:rgba(255, 154, 18,0.3);"><?php labnesia_icon( 'handshake', '#ffffff', 26 ); ?></div>
+        <div class="funnel-icon" style="background:rgba(245, 166, 35,0.15);border-color:rgba(245, 166, 35,0.3);"><?php labnesia_icon( 'handshake', '#ffffff', 26 ); ?></div>
         <div class="funnel-num">Langkah 2</div>
         <div class="funnel-label">Pilih program yang tepat</div>
         <div class="funnel-sub">Konsultasi 30 menit dengan tim kami — gratis, tanpa paksaan</div>

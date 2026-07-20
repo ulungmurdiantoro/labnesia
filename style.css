@@ -23,8 +23,8 @@ Tags: custom-theme, education, laboratory, one-page
   --teal:        #4DA1A9;
   --teal-light:  #79D7BE;
   --teal-pale:   #E2EAE7;
-  --amber:       #FF9A12;
-  --amber-pale:  #F7E9D5;
+  --amber:       #F5A623;
+  --amber-pale:  #FEF3DC;
   --white:       #F6F4F0;
   --gray-50:     #F8F9FA;
   --gray-100:    #F1F3F5;
@@ -141,7 +141,7 @@ a { text-decoration: none; }
   font-weight: 700 !important; font-size: 14px !important;
   transition: background .2s;
 }
-.nav-cta:hover { background: #E58A14 !important; }
+.nav-cta:hover { background: #E09620 !important; }
 
 /* Mobile hamburger — morphs into an X via aria-expanded */
 .nav-toggle {
@@ -257,7 +257,7 @@ body.nav-open { overflow: hidden; }
   font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 4px;
 }
 .badge-free { background: rgba(77, 161, 169,0.2); color: var(--teal-light); }
-.badge-core { background: rgba(255, 154, 18,0.2); color: var(--amber); }
+.badge-core { background: rgba(245, 166, 35,0.2); color: var(--amber); }
 .badge-adv  { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); }
 
 /* =====================================================================
@@ -270,7 +270,7 @@ body.nav-open { overflow: hidden; }
   border: none; cursor: pointer; transition: background .2s, transform .2s;
   position: relative; overflow: hidden;
 }
-.btn-primary:hover { background: #E58A14; transform: translateY(-1px); }
+.btn-primary:hover { background: #E09620; transform: translateY(-1px); }
 
 .btn-ghost {
   background: rgba(255,255,255,0.08); color: #fff;
@@ -377,7 +377,7 @@ body.nav-open { overflow: hidden; }
   padding: 4px 10px; border-radius: 4px; margin-bottom: 20px; width: fit-content;
 }
 .tag-gratis   { background: rgba(77, 161, 169,0.2);  color: #79D7BE; }
-.tag-terbuka  { background: rgba(255, 154, 18,0.2);  color: #FEC032; }
+.tag-terbuka  { background: rgba(245, 166, 35,0.2);  color: #F5C842; }
 .tag-eksklusif{ background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
 
 .give-card-icon  { font-size: 36px; margin-bottom: 16px; }
@@ -426,7 +426,7 @@ body.nav-open { overflow: hidden; }
 .ladder-desc  { font-size: 13px; color: var(--gray-600); }
 .ladder-badge {
   display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 3px;
-  background: var(--amber-pale); color: #845500; margin-top: 8px;
+  background: var(--amber-pale); color: #8B6000; margin-top: 8px;
 }
 
 /* Give banner */
@@ -615,11 +615,11 @@ body.nav-open { overflow: hidden; }
   background: var(--amber); color: var(--navy);
   padding: 12px 20px; border-radius: 100px;
   font-weight: 700; font-size: 14px;
-  box-shadow: 0 4px 20px rgba(255, 154, 18,0.4);
+  box-shadow: 0 4px 20px rgba(245, 166, 35,0.4);
   display: flex; align-items: center; gap: 8px;
   transition: transform .2s, box-shadow .2s;
 }
-.float-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255, 154, 18,0.5); }
+.float-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(245, 166, 35,0.5); }
 
 /* =====================================================================
    WORDPRESS CORE ALIGNMENT HELPERS
