@@ -38,7 +38,7 @@ get_header();
   .btn-daftar-submit:hover{background:#43939A}
   .daftar-notice{padding:12px 16px;border-radius:9px;font-size:13px;margin-bottom:14px}
   .daftar-notice-ok{background:var(--teal-pale);color:#085041;border:1px solid rgba(77, 161, 169,0.3)}
-  .daftar-notice-err{background:var(--amber-pale);color:#6B4400;border:1px solid rgba(245, 166, 35,0.3)}
+  .daftar-notice-err{background:var(--amber-pale);color:#6B4400;border:1px solid rgba(255, 236, 122,0.3)}
 
   @media (max-width:768px){
     .post-hero{padding:88px 24px 40px}

@@ -57,10 +57,10 @@ $wa_text       = rawurlencode( labnesia_wa_default_message() );
   .package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
   .package-card{border:1.5px solid var(--gray-200);border-radius:18px;overflow:hidden;transition:all .2s}
   .package-card:hover{border-color:var(--navy);box-shadow:0 8px 28px rgba(46, 80, 119,0.1)}
-  .package-card.featured{border-color:var(--amber);box-shadow:0 8px 28px rgba(245, 166, 35,0.15)}
+  .package-card.featured{border-color:var(--amber);box-shadow:0 8px 28px rgba(255, 236, 122,0.15)}
   .package-header{padding:22px;background:var(--navy);color:white;position:relative}
   .package-header.featured-h{background:linear-gradient(135deg,#2E5077,#607A98)}
-  .package-badge{position:absolute;top:14px;right:14px;background:var(--amber);color:var(--navy);font-size:9px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:4px}
+  .package-badge{position:absolute;top:14px;right:14px;background:var(--amber);color:var(--navy);font-size:9px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:4px;border:1.5px solid var(--navy)}
   .package-eyebrow{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.6;margin-bottom:6px}
   .package-name{font-size:18px;font-weight:800;margin-bottom:4px}
   .package-price{font-size:22px;font-weight:800;color:var(--amber)}
@@ -79,7 +79,7 @@ $wa_text       = rawurlencode( labnesia_wa_default_message() );
   .comp-mini-table td{padding:12px 16px;border-bottom:1px solid var(--gray-100)}
   .comp-mini-table td:first-child{font-weight:600;color:var(--navy)}
   .comp-mini-table tr:last-child td{border-bottom:none}
-  .comp-highlight{background:rgba(245, 166, 35,0.06)}
+  .comp-highlight{background:rgba(255, 236, 122,0.06)}
 
   /* SECTION B: ANNUAL PARTNERSHIP */
   .annual-section{background:var(--teal-pale)}

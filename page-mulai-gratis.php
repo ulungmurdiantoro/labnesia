@@ -76,7 +76,7 @@ $wa_text       = rawurlencode( labnesia_wa_default_message() );
   .give-card-icon{font-size:40px;position:relative;z-index:1}
   .give-card-tag{position:absolute;top:16px;right:16px;font-size:10px;font-weight:700;padding:3px 10px;border-radius:4px;letter-spacing:.06em;text-transform:uppercase;z-index:1}
   .tag-free{background:rgba(77, 161, 169,0.25);color:var(--teal-light);border:1px solid rgba(77, 161, 169,0.4)}
-  .tag-open{background:rgba(245, 166, 35,0.25);color:var(--amber);border:1px solid rgba(245, 166, 35,0.4)}
+  .tag-open{background:rgba(255, 236, 122,0.25);color:var(--amber);border:1px solid rgba(255, 236, 122,0.4)}
   .tag-member{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.15)}
   .give-card-body{padding:20px}
   .give-card-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px}
@@ -148,23 +148,23 @@ $wa_text       = rawurlencode( labnesia_wa_default_message() );
   .member-count{font-size:12px;color:rgba(255,255,255,0.5)}
 
   /* PRAKTISI */
-  .praktisi-section{background:var(--amber-pale);border-top:1px solid rgba(245, 166, 35,0.3)}
+  .praktisi-section{background:var(--amber-pale);border-top:1px solid rgba(255, 236, 122,0.3)}
   .praktisi-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-  .praktisi-tag{display:inline-block;background:rgba(245, 166, 35,0.3);color:#6B4400;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:6px;margin-bottom:16px}
+  .praktisi-tag{display:inline-block;background:rgba(255, 236, 122,0.3);color:#6B4400;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:6px;margin-bottom:16px}
   .praktisi-title{font-size:34px;font-weight:800;color:var(--navy);line-height:1.15;letter-spacing:-0.8px;margin-bottom:14px}
   .praktisi-desc{font-size:15px;color:var(--gray-600);line-height:1.7;margin-bottom:24px}
   .praktisi-benefits{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
   .pb-item{display:flex;align-items:flex-start;gap:10px}
   .pb-check{width:22px;height:22px;background:var(--amber);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:11px;font-weight:800;flex-shrink:0}
   .pb-text{font-size:14px;color:var(--gray-700);line-height:1.5}
-  .btn-amber-solid{display:inline-block;padding:13px 28px;background:var(--amber);color:var(--navy);border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;transition:all .2s;border:none;cursor:pointer}
-  .btn-amber-solid:hover{background:#E09620;transform:translateY(-1px)}
-  .praktisi-visual{background:white;border-radius:20px;padding:32px;border:1px solid rgba(245, 166, 35,0.3)}
+  .btn-amber-solid{display:inline-block;padding:11px 26px;background:var(--amber);color:var(--navy);border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;transition:all .2s;border:2px solid var(--navy);cursor:pointer;box-shadow:0 2px 8px rgba(46,80,119,0.2)}
+  .btn-amber-solid:hover{background:#D1C264;transform:translateY(-1px);box-shadow:0 4px 14px rgba(46,80,119,0.3)}
+  .praktisi-visual{background:white;border-radius:20px;padding:32px;border:1px solid rgba(255, 236, 122,0.3)}
   .praktisi-scenario{background:var(--gray-50);border-radius:12px;padding:18px;margin-bottom:12px}
   .ps-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
   .ps-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px}
   .ps-desc{font-size:13px;color:var(--gray-600);line-height:1.5}
-  .ps-tag{display:inline-block;background:var(--amber-pale);color:#8B6000;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;margin-top:6px}
+  .ps-tag{display:inline-block;background:var(--amber-pale);color:#736A37;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;margin-top:6px}
 
   /* FAQ MINI */
   .faq-mini-section{background:var(--gray-50)}

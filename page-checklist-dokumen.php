@@ -183,8 +183,8 @@ function labnesia_checklist_doc_onclick( $kategori ) {
   .doc-grid-action{grid-column:1/-1;text-align:center;margin-top:4px}
   .btn-outline{background:transparent;border:1.5px solid var(--gray-200);color:var(--gray-600);padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
   .btn-outline:hover{background:var(--gray-50)}
-  .btn-primary,.btn-gold{background:var(--amber);color:var(--navy);border:none;padding:13px 26px;border-radius:10px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:background .2s}
-  .btn-primary:hover,.btn-gold:hover{background:#E09620}
+  .btn-primary,.btn-gold{background:var(--amber);color:var(--navy);border:2px solid var(--navy);padding:11px 24px;border-radius:10px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .2s;box-shadow:0 2px 8px rgba(46,80,119,0.2)}
+  .btn-primary:hover,.btn-gold:hover{background:#D1C264;box-shadow:0 4px 14px rgba(46,80,119,0.3)}
   .modal-overlay{display:none;position:fixed;inset:0;background:rgba(46, 80, 119,0.6);z-index:200;align-items:center;justify-content:center;padding:24px}
   .modal-overlay.active{display:flex}
   .modal{background:#fff;border-radius:18px;padding:28px;max-width:440px;width:100%;position:relative;max-height:90vh;overflow-y:auto}
@@ -196,7 +196,7 @@ function labnesia_checklist_doc_onclick( $kategori ) {
   .form-group input,.form-group select{width:100%;padding:10px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:inherit;outline:none}
   .form-group input:focus,.form-group select:focus{border-color:var(--teal)}
   .form-check{display:flex;gap:8px;align-items:flex-start;margin-bottom:16px;font-size:12px;color:var(--gray-600)}
-  .form-error{background:var(--amber-pale);color:#6B4400;border:1px solid rgba(245, 166, 35,0.3);border-radius:8px;padding:10px 14px;font-size:13px;margin-bottom:12px}
+  .form-error{background:var(--amber-pale);color:#6B4400;border:1px solid rgba(255, 236, 122,0.3);border-radius:8px;padding:10px 14px;font-size:13px;margin-bottom:12px}
   .btn-submit{width:100%;background:var(--teal);color:#fff;border:none;padding:13px;border-radius:9px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;transition:background .2s}
   .btn-submit:hover{background:#43939A}
   .modal-success{text-align:center}

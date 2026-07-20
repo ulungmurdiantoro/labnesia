@@ -46,12 +46,13 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
   }
   .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
   .btn-primary {
-    background: var(--amber); color: var(--navy); padding: 14px 28px;
+    background: var(--amber); color: var(--navy); padding: 12px 26px;
     border-radius: 10px; font-weight: 700; font-size: 15px;
     text-decoration: none; display: inline-block; transition: all .2s;
-    border: none; cursor: pointer;
+    border: 2px solid var(--navy); cursor: pointer;
+    box-shadow: 0 2px 8px rgba(46,80,119,0.2);
   }
-  .btn-primary:hover { background: #E09620; transform: translateY(-1px); }
+  .btn-primary:hover { background: #D1C264; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(46,80,119,0.3); }
   .btn-ghost {
     background: rgba(255,255,255,0.08); color: white; padding: 14px 28px;
     border-radius: 10px; font-weight: 600; font-size: 15px;
@@ -90,7 +91,7 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
     font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 4px;
   }
   .badge-free { background: rgba(77, 161, 169,0.2); color: var(--teal-light); }
-  .badge-core { background: rgba(245, 166, 35,0.2); color: var(--amber); }
+  .badge-core { background: rgba(255, 236, 122,0.2); color: var(--amber); }
   .badge-adv { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); }
 
   /* SECTION GENERIC */
@@ -136,7 +137,7 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
     padding: 4px 10px; border-radius: 4px; margin-bottom: 20px; width: fit-content;
   }
   .tag-gratis { background: rgba(77, 161, 169,0.2); color: #79D7BE; }
-  .tag-terbuka { background: rgba(245, 166, 35,0.2); color: #F5C842; }
+  .tag-terbuka { background: rgba(255, 236, 122,0.2); color: #EBD970; }
   .tag-eksklusif { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
   .give-card-icon { font-size: 36px; margin-bottom: 16px; }
   .give-card-title { font-size: 17px; font-weight: 700; color: white; margin-bottom: 8px; }
@@ -180,7 +181,7 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
   .ladder-desc { font-size: 13px; color: var(--gray-600); }
   .ladder-badge {
     font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 3px;
-    background: var(--amber-pale); color: #8B6000;
+    background: var(--amber-pale); color: #736A37;
   }
 
   .product-feature {
@@ -759,7 +760,7 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
       <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
         <div style="background:rgba(77, 161, 169,0.15);border:1px solid rgba(77, 161, 169,0.3);border-radius:10px;padding:14px 16px;flex:1;min-width:90px;text-align:center"><p style="font-size:12px;font-weight:700;color:#79D7BE">Punya Alat</p></div>
         <span style="color:rgba(255,255,255,0.3)">→</span>
-        <div style="background:rgba(245, 166, 35,0.15);border:1px solid rgba(245, 166, 35,0.3);border-radius:10px;padding:14px 16px;flex:1;min-width:90px;text-align:center"><p style="font-size:12px;font-weight:700;color:var(--amber)">Parameter Uji</p></div>
+        <div style="background:rgba(255, 236, 122,0.15);border:1px solid rgba(255, 236, 122,0.3);border-radius:10px;padding:14px 16px;flex:1;min-width:90px;text-align:center"><p style="font-size:12px;font-weight:700;color:var(--amber)">Parameter Uji</p></div>
         <span style="color:rgba(255,255,255,0.3)">→</span>
         <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:14px 16px;flex:1;min-width:90px;text-align:center"><p style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.7)">Produk</p></div>
         <span style="color:rgba(255,255,255,0.3)">→</span>
@@ -787,7 +788,7 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
         <div class="funnel-sub">Gap Analysis gratis untuk tahu kondisi aktual lab Anda sekarang</div>
       </div>
       <div class="funnel-step">
-        <div class="funnel-icon" style="background:rgba(245, 166, 35,0.15);border-color:rgba(245, 166, 35,0.3);"><?php labnesia_icon( 'handshake', '#ffffff', 29 ); ?></div>
+        <div class="funnel-icon" style="background:rgba(255, 236, 122,0.15);border-color:rgba(255, 236, 122,0.3);"><?php labnesia_icon( 'handshake', '#ffffff', 29 ); ?></div>
         <div class="funnel-num">Langkah 2</div>
         <div class="funnel-label">Pilih program yang tepat</div>
         <div class="funnel-sub">Konsultasi 30 menit dengan tim kami — gratis, tanpa paksaan</div>

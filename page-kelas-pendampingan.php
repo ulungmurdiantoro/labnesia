@@ -129,16 +129,16 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   .sticky-bar-left{display:flex;align-items:baseline;gap:8px}
   .sticky-price{font-size:26px;font-weight:800;color:var(--navy)}
   .sticky-unit{font-size:14px;color:var(--gray-600)}
-  .sticky-promo{background:var(--amber-pale);color:#8B6000;font-size:12px;font-weight:700;padding:3px 10px;border-radius:4px}
+  .sticky-promo{background:var(--amber-pale);color:#736A37;font-size:12px;font-weight:700;padding:3px 10px;border-radius:4px}
   .sticky-actions{display:flex;gap:10px}
   .btn-primary{background:var(--teal);color:white;padding:11px 24px;border-radius:9px;font-weight:700;font-size:14px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;display:inline-block}
   .btn-primary:hover{background:#43939A;transform:translateY(-1px)}
-  .btn-amber{background:var(--amber);color:var(--navy);padding:11px 24px;border-radius:9px;font-weight:700;font-size:14px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;display:inline-block}
-  .btn-amber:hover{background:#E09620}
+  .btn-amber{background:var(--amber);color:var(--navy);padding:9px 22px;border-radius:9px;font-weight:700;font-size:14px;text-decoration:none;border:2px solid var(--navy);cursor:pointer;transition:all .2s;display:inline-block;box-shadow:0 2px 8px rgba(46,80,119,0.2)}
+  .btn-amber:hover{background:#D1C264;box-shadow:0 4px 12px rgba(46,80,119,0.3)}
   .btn-ghost{background:transparent;color:var(--navy);padding:11px 24px;border-radius:9px;font-weight:600;font-size:14px;text-decoration:none;border:1.5px solid var(--gray-200);cursor:pointer;transition:all .2s;display:inline-block}
   .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
-  .btn-booklet{background:linear-gradient(135deg,#F5A623 0%,#FFC24D 100%);color:var(--navy);padding:11px 24px;border-radius:9px;font-weight:800;font-size:14px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 14px rgba(245, 166, 35,.45)}
-  .btn-booklet:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(245, 166, 35,.6)}
+  .btn-booklet{background:linear-gradient(135deg,#FFEC7A 0%,#FFF2A2 100%);color:var(--navy);padding:9px 22px;border-radius:9px;font-weight:800;font-size:14px;text-decoration:none;border:2px solid var(--navy);cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;box-shadow:0 2px 8px rgba(46,80,119,0.2)}
+  .btn-booklet:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(46,80,119,0.3)}
 
   /* MAIN LAYOUT */
   .main-layout{max-width:1200px;margin:0 auto;padding:64px 48px;display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:64px;align-items:start}
@@ -161,7 +161,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   .outline-title{flex:1}
   .outline-title-main{font-size:15px;font-weight:700;color:var(--navy)}
   .outline-title-sub{font-size:13px;color:var(--gray-600);margin-top:2px}
-  .outline-badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:4px;background:var(--amber-pale);color:#8B6000;white-space:nowrap}
+  .outline-badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:4px;background:var(--amber-pale);color:#736A37;white-space:nowrap}
   .outline-body{display:none;padding:20px;border:1px solid var(--teal);border-top:none;border-radius:0 0 12px 12px;background:white;margin-top:-4px}
   .outline-body.open{display:block}
   .seri-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -215,7 +215,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   .price-opt-sub{font-size:10px;color:rgba(255,255,255,0.4);margin-top:2px}
   .price-opt.active .price-opt-num,.price-opt.active .price-opt-sub{color:var(--teal-light)}
   .price-opt.best .price-opt-val{color:var(--amber)}
-  .best-badge{background:var(--amber);color:var(--navy);font-size:9px;font-weight:800;padding:2px 6px;border-radius:3px;display:block;margin-top:4px;letter-spacing:.04em}
+  .best-badge{background:var(--amber);color:var(--navy);font-size:9px;font-weight:800;padding:1px 5px;border-radius:3px;display:block;margin-top:4px;letter-spacing:.04em;border:1px solid var(--navy)}
   .price-card-body{padding:24px}
   .price-feature{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
   .pf-check{color:var(--teal);font-size:15px;flex-shrink:0;margin-top:2px;font-weight:700}
@@ -224,8 +224,8 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   .price-cta{padding:0 24px 24px}
   .price-cta .btn-amber{display:block;width:100%;text-align:center;font-size:15px;padding:14px}
   .price-cta .btn-ghost{display:block;width:100%;text-align:center;margin-top:8px;font-size:14px;padding:11px}
-  .urgency{background:var(--amber-pale);border:1px solid #F5A623;border-radius:8px;padding:10px 14px;text-align:center;margin:0 24px 20px}
-  .urgency-text{font-size:12px;font-weight:600;color:#8B6000}
+  .urgency{background:var(--amber-pale);border:1px solid #FFEC7A;border-radius:8px;padding:10px 14px;text-align:center;margin:0 24px 20px}
+  .urgency-text{font-size:12px;font-weight:600;color:#736A37}
   .guarantee{display:flex;align-items:center;gap:10px;padding:14px 24px;background:var(--teal-pale);border-top:1px solid rgba(77, 161, 169,0.2)}
   .guarantee-icon{font-size:22px}
   .guarantee-text{font-size:12px;color:var(--teal);font-weight:500;line-height:1.4}
@@ -249,8 +249,8 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   .pt-box-early2 .pt-price,.pt-box-early2 .pt-sub{color:white}
   .pt-price{font-size:19px;font-weight:800;line-height:1.2}
   .pt-sub{font-size:11px;opacity:.9;margin-top:3px}
-  .pt-active-ring{box-shadow:0 0 0 3px rgba(245, 166, 35,.6)}
-  .pt-active-tag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--amber);color:var(--navy);font-size:9px;font-weight:800;padding:3px 10px;border-radius:100px;letter-spacing:.03em;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+  .pt-active-ring{box-shadow:0 0 0 2px var(--navy)}
+  .pt-active-tag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--amber);color:var(--navy);font-size:9px;font-weight:800;padding:2px 9px;border-radius:100px;letter-spacing:.03em;white-space:nowrap;border:1.5px solid var(--navy)}
   @media (max-width:860px){.price-table{border-spacing:6px 10px}.pt-row-label{width:110px}.price-table tr.pt-head-row td{font-size:11px}.pt-price{font-size:15px}}
 
   /* PAKAR GRID (matches page-tentang-kami.php) */
@@ -317,7 +317,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
 
   /* UTILITY */
   .bg-gray{background:var(--gray-50)}
-  .tag-batch{display:inline-flex;align-items:center;gap:6px;background:rgba(245, 166, 35,0.15);border:1px solid rgba(245, 166, 35,0.3);color:#8B5800;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:700}
+  .tag-batch{display:inline-flex;align-items:center;gap:6px;background:rgba(255, 236, 122,0.15);border:1px solid rgba(255, 236, 122,0.3);color:#8B5800;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:700}
 
   /* MITRA & LABORATORIUM */
   .mitra-label{font-size:13px;color:var(--gray-600);font-weight:600;margin-bottom:20px}
@@ -398,7 +398,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
       <span class="sticky-price"><?php echo labnesia_kp_rp( $kp_active_prices[1] ); ?></span>
       <span class="sticky-unit">/peserta · mulai dari<?php echo $kp_active_key !== 'normal' ? ' (' . esc_html( $kp_active['label'] ) . ')' : ''; ?></span>
     </div>
-    <span class="sticky-promo"><?php labnesia_icon( 'zap', '#8B6000', 12 ); ?> Hemat s.d. Rp 20 juta</span>
+    <span class="sticky-promo"><?php labnesia_icon( 'zap', '#736A37', 12 ); ?> Hemat s.d. Rp 20 juta</span>
   </div>
   <div class="sticky-actions">
     <a href="<?php echo $url_booklet; ?>" class="btn-booklet" target="_blank" rel="noopener"><?php labnesia_icon( 'download', 'var(--navy)', 14 ); ?> Unduh Booklet</a>
@@ -605,7 +605,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
         </div>
       </div>
 
-      <div style="background:var(--amber-pale);border:1px solid rgba(245, 166, 35,0.3);border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start;margin-top:16px">
+      <div style="background:var(--amber-pale);border:1px solid rgba(255, 236, 122,0.3);border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start;margin-top:16px">
         <span style="flex-shrink:0"><?php labnesia_icon( 'target', '#6B4400', 24 ); ?></span>
         <div>
           <p style="font-size:14px;font-weight:700;color:#6B4400;margin-bottom:4px">Setelah Tahap 4, lab Anda siap Audit Internal</p>
@@ -1029,7 +1029,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
       </div>
 
       <div class="urgency">
-        <p class="urgency-text"><?php labnesia_icon( 'hourglass', '#8B6000', 12 ); ?> Batch Oktober 2026 dibuka — <strong>maks. 10 instansi/batch</strong></p>
+        <p class="urgency-text"><?php labnesia_icon( 'hourglass', '#736A37', 12 ); ?> Batch Oktober 2026 dibuka — <strong>maks. 10 instansi/batch</strong></p>
       </div>
 
       <div class="price-cta">

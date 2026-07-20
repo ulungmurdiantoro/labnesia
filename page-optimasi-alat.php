@@ -46,10 +46,11 @@ section { padding: 88px 48px; }
 }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 .btn-primary {
-  background: var(--amber); color: var(--navy); padding: 13px 26px; border-radius: 8px;
+  background: var(--amber); color: var(--navy); padding: 11px 24px; border-radius: 8px;
   font-weight: 700; font-size: 15px; text-decoration: none; display: inline-block; transition: all .2s;
+  border: 2px solid var(--navy); box-shadow: 0 2px 8px rgba(46,80,119,0.2);
 }
-.btn-primary:hover { background: #E09620; }
+.btn-primary:hover { background: #D1C264; box-shadow: 0 4px 14px rgba(46,80,119,0.3); }
 .btn-ghost {
   border: 1px solid rgba(255,255,255,0.25); color: white; padding: 13px 26px; border-radius: 8px;
   font-weight: 600; font-size: 15px; text-decoration: none; display: inline-block; transition: all .2s;
