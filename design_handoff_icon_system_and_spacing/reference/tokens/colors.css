@@ -4,16 +4,16 @@
    ========================================================================== */
 :root {
   /* Base palette */
-  --navy:        #0B1F3A;
-  --navy-mid:    #122845;
-  --navy-light:  #1C3A60;
+  --navy:        #2E5077;
+  --navy-mid:    #476587;
+  --navy-light:  #607A98;
   --teal-dark:   #085041;
-  --teal:        #1A9E75;
-  --teal-light:  #22C28F;
-  --teal-pale:   #E8F7F2;
-  --amber:       #F5A623;
-  --amber-hover: #E09620;
-  --amber-pale:  #FEF3DC;
+  --teal:        #4DA1A9;
+  --teal-light:  #79D7BE;
+  --teal-pale:   #E2EAE7;
+  --amber:       #FF9A12;
+  --amber-hover: #E58A14;
+  --amber-pale:  #F7E9D5;
   --white:       #FFFFFF;
 
   --gray-50:  #F8F9FA;
@@ -50,7 +50,7 @@
   --action-primary-hover: var(--amber-hover);
   --action-primary-text:  var(--navy);
   --action-secondary:     var(--teal);
-  --action-secondary-hover: #158A65;
+  --action-secondary-hover: #43939A;
 
   --focus-ring: var(--teal);
 }

@@ -31,14 +31,14 @@ $experts = [
 <style>
   .page-hero{background:var(--navy);padding:104px 48px 72px;text-align:center;position:relative;overflow:hidden}
   .page-hero::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle at 1px 1px,white 1px,transparent 0);background-size:40px 40px}
-  .page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(26,158,117,0.15) 0%,transparent 60%)}
+  .page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(77, 161, 169,0.15) 0%,transparent 60%)}
   .page-hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
-  .eyebrow-tag{display:inline-block;background:rgba(26,158,117,0.15);border:1px solid rgba(26,158,117,0.3);color:var(--teal-light);padding:5px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+  .eyebrow-tag{display:inline-block;background:rgba(77, 161, 169,0.15);border:1px solid rgba(77, 161, 169,0.3);color:var(--teal-light);padding:5px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
   .page-hero h1{font-size:44px;font-weight:800;color:white;line-height:1.15;letter-spacing:-1.2px;margin-bottom:16px}
   .page-hero-sub{font-size:17px;color:rgba(255,255,255,0.6);line-height:1.7}
 
   .visi-section{padding:80px 48px;background:var(--navy);color:#fff;position:relative;overflow:hidden}
-  .visi-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(26,158,117,0.12) 0%,transparent 60%)}
+  .visi-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(77, 161, 169,0.12) 0%,transparent 60%)}
   .visi-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
   .eyebrow-light{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-light);margin-bottom:14px}
   .visi-title{font-size:32px;font-weight:800;line-height:1.3;letter-spacing:-0.6px;max-width:760px}
@@ -62,7 +62,7 @@ $experts = [
 
   /* JARINGAN PAKAR CTA */
   .jaringan-section{padding:80px 48px;background:var(--navy);position:relative;overflow:hidden}
-  .jaringan-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(26,158,117,0.15) 0%,transparent 60%)}
+  .jaringan-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(77, 161, 169,0.15) 0%,transparent 60%)}
   .jaringan-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
   .jaringan-text{max-width:560px}
   .jaringan-text .eyebrow-light{margin-bottom:12px}
@@ -85,7 +85,7 @@ $experts = [
   .pakar-inner .h2{font-size:32px;font-weight:800;color:var(--navy);line-height:1.2;letter-spacing:-0.6px;margin-bottom:36px}
   .pakar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:left}
   .pakar-card{background:#fff;border:1px solid var(--gray-200);border-radius:16px;overflow:hidden;transition:box-shadow .2s,transform .2s}
-  .pakar-card:hover{box-shadow:0 12px 28px rgba(11,31,58,0.1);transform:translateY(-2px)}
+  .pakar-card:hover{box-shadow:0 12px 28px rgba(46, 80, 119,0.1);transform:translateY(-2px)}
   .pakar-photo{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:var(--gray-100)}
   .pakar-body{padding:16px 18px 18px}
   .pakar-name{font-size:14px;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:4px}

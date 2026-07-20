@@ -10,23 +10,23 @@ $gas_url = get_theme_mod( 'labnesia_gas_url', '' );
 <style>
   .page-hero{background:var(--navy);padding:104px 48px 72px;text-align:center;position:relative;overflow:hidden}
   .page-hero::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle at 1px 1px,white 1px,transparent 0);background-size:40px 40px}
-  .page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(26,158,117,0.15) 0%,transparent 60%)}
+  .page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(77, 161, 169,0.15) 0%,transparent 60%)}
   .page-hero-inner{max-width:680px;margin:0 auto;position:relative;z-index:1}
-  .eyebrow-tag{display:inline-block;background:rgba(26,158,117,0.15);border:1px solid rgba(26,158,117,0.3);color:var(--teal-light);padding:5px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+  .eyebrow-tag{display:inline-block;background:rgba(77, 161, 169,0.15);border:1px solid rgba(77, 161, 169,0.3);color:var(--teal-light);padding:5px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
   .page-hero h1{font-size:44px;font-weight:800;color:white;line-height:1.15;letter-spacing:-1.2px;margin-bottom:16px}
   .page-hero h1 .accent{color:var(--teal-light)}
   .page-hero-sub{font-size:17px;color:rgba(255,255,255,0.55);line-height:1.65}
 
   /* LIVE CHAT */
   .chat-section{background:var(--navy);padding:80px 48px;position:relative;overflow:hidden}
-  .chat-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(26,158,117,0.2) 0%,transparent 60%)}
+  .chat-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(77, 161, 169,0.2) 0%,transparent 60%)}
   .chat-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
   .chat-left .eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-light);margin-bottom:10px}
   .chat-left h2{font-size:36px;font-weight:800;color:white;line-height:1.15;letter-spacing:-0.8px;margin-bottom:12px}
   .chat-left p{font-size:16px;color:rgba(255,255,255,0.55);line-height:1.65;margin-bottom:28px}
   .contact-options{display:flex;flex-direction:column;gap:10px}
   .contact-opt{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:14px;text-decoration:none;transition:all .2s}
-  .contact-opt:hover{background:rgba(255,255,255,0.12);border-color:rgba(26,158,117,0.4)}
+  .contact-opt:hover{background:rgba(255,255,255,0.12);border-color:rgba(77, 161, 169,0.4)}
   .contact-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
   .contact-name{font-size:14px;font-weight:700;color:white;margin-bottom:2px}
   .contact-val{font-size:13px;color:rgba(255,255,255,0.5)}
@@ -40,7 +40,7 @@ $gas_url = get_theme_mod( 'labnesia_gas_url', '' );
   .chat-textarea:focus{border-color:var(--teal)}
   .chat-textarea::placeholder{color:rgba(255,255,255,0.3)}
   .btn-chat{width:100%;padding:13px;background:var(--teal);color:white;border:none;border-radius:9px;font-weight:700;font-size:15px;font-family:var(--font-display);cursor:pointer;transition:all .2s}
-  .btn-chat:hover{background:#158a65}
+  .btn-chat:hover{background:#43939A}
 
   @media (max-width:1024px){ .chat-inner{grid-template-columns:1fr;gap:40px} }
   @media (max-width:768px){
@@ -101,7 +101,7 @@ $gas_url = get_theme_mod( 'labnesia_gas_url', '' );
       <form id="kontak-form" onsubmit="return submitKontakForm(event)">
         <div class="chat-title">Kirim pertanyaan Anda</div>
         <div class="chat-sub">Isi form ini dan tim kami akan menjawab dalam 1×24 jam kerja.</div>
-        <div class="form-error" id="kontak-error" style="display:none;background:var(--amber-pale);color:#6B4400;border:1px solid rgba(245,166,35,0.3);border-radius:8px;padding:10px 14px;font-size:13px;margin-bottom:12px"></div>
+        <div class="form-error" id="kontak-error" style="display:none;background:var(--amber-pale);color:#6B4400;border:1px solid rgba(255, 154, 18,0.3);border-radius:8px;padding:10px 14px;font-size:13px;margin-bottom:12px"></div>
         <input class="chat-input" type="text" id="kontak-nama" placeholder="Nama Anda" required>
         <input class="chat-input" type="tel" id="kontak-whatsapp" placeholder="Nomor WhatsApp" required>
         <input class="chat-input" type="text" id="kontak-institusi" placeholder="Nama lab / instansi">

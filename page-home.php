@@ -22,12 +22,12 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
   .hero-glow {
     position: absolute; top: -100px; right: -100px;
     width: 600px; height: 600px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(26,158,117,0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(77, 161, 169,0.15) 0%, transparent 70%);
     pointer-events: none;
   }
   .hero-eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(26,158,117,0.15); border: 1px solid rgba(26,158,117,0.3);
+    background: rgba(77, 161, 169,0.15); border: 1px solid rgba(77, 161, 169,0.3);
     color: var(--teal-light); padding: 6px 14px; border-radius: 100px;
     font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
     margin-bottom: 24px;
@@ -51,7 +51,7 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
     text-decoration: none; display: inline-block; transition: all .2s;
     border: none; cursor: pointer;
   }
-  .btn-primary:hover { background: #e09620; transform: translateY(-1px); }
+  .btn-primary:hover { background: #E58A14; transform: translateY(-1px); }
   .btn-ghost {
     background: rgba(255,255,255,0.08); color: white; padding: 14px 28px;
     border-radius: 10px; font-weight: 600; font-size: 15px;
@@ -89,8 +89,8 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
   .journey-badge {
     font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 4px;
   }
-  .badge-free { background: rgba(26,158,117,0.2); color: var(--teal-light); }
-  .badge-core { background: rgba(245,166,35,0.2); color: var(--amber); }
+  .badge-free { background: rgba(77, 161, 169,0.2); color: var(--teal-light); }
+  .badge-core { background: rgba(255, 154, 18,0.2); color: var(--amber); }
   .badge-adv { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); }
 
   /* SECTION GENERIC */
@@ -122,7 +122,7 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
     background-size: 40px 40px;
   }
   .give-philosophy {
-    background: rgba(26,158,117,0.12); border: 1px solid rgba(26,158,117,0.25);
+    background: rgba(77, 161, 169,0.12); border: 1px solid rgba(77, 161, 169,0.25);
     border-radius: 16px; padding: 24px 32px; max-width: 680px; margin: 32px auto 0;
     text-align: center;
   }
@@ -135,8 +135,8 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
     font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
     padding: 4px 10px; border-radius: 4px; margin-bottom: 20px; width: fit-content;
   }
-  .tag-gratis { background: rgba(26,158,117,0.2); color: #4DD9A8; }
-  .tag-terbuka { background: rgba(245,166,35,0.2); color: #F5C842; }
+  .tag-gratis { background: rgba(77, 161, 169,0.2); color: #79D7BE; }
+  .tag-terbuka { background: rgba(255, 154, 18,0.2); color: #FEC032; }
   .tag-eksklusif { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
   .give-card-icon { font-size: 36px; margin-bottom: 16px; }
   .give-card-title { font-size: 17px; font-weight: 700; color: white; margin-bottom: 8px; }
@@ -180,7 +180,7 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
   .ladder-desc { font-size: 13px; color: var(--gray-600); }
   .ladder-badge {
     font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 3px;
-    background: var(--amber-pale); color: #8B6000;
+    background: var(--amber-pale); color: #845500;
   }
 
   .product-feature {
@@ -194,7 +194,7 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
     text-decoration: none; margin-top: 20px; transition: all .2s; border: none; cursor: pointer;
   }
   .cta-primary { background: var(--teal); color: white; }
-  .cta-primary:hover { background: #158a65; }
+  .cta-primary:hover { background: #43939A; }
   .cta-outline { background: transparent; color: var(--teal); border: 1.5px solid var(--teal); }
   .cta-outline:hover { background: var(--teal-pale); }
 
@@ -233,7 +233,7 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
   }
   .journey-section::before {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(26,158,117,0.2) 0%, transparent 60%);
+    background: radial-gradient(ellipse at 50% 0%, rgba(77, 161, 169,0.2) 0%, transparent 60%);
   }
   .journey-section .section-inner { position: relative; }
   .journey-section .section-title { color: white; }
@@ -261,7 +261,7 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
     border-radius: 14px; padding: 24px; text-align: left; cursor: pointer;
     transition: all .2s; text-decoration: none; display: block;
   }
-  .start-option:hover { background: rgba(255,255,255,0.1); border-color: rgba(26,158,117,0.4); transform: translateY(-2px); }
+  .start-option:hover { background: rgba(255,255,255,0.1); border-color: rgba(77, 161, 169,0.4); transform: translateY(-2px); }
   .start-option-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--teal-light); margin-bottom: 10px; }
   .start-option-title { font-size: 16px; font-weight: 700; color: white; margin-bottom: 6px; }
   .start-option-desc { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.5; }
@@ -269,7 +269,7 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
 
   /* GIVE VALUE BANNER */
   .give-banner {
-    background: var(--teal-pale); border: 1px solid rgba(26,158,117,0.25);
+    background: var(--teal-pale); border: 1px solid rgba(77, 161, 169,0.25);
     border-radius: 16px; padding: 32px; display: flex; align-items: center; justify-content: space-between;
     gap: 24px; margin-bottom: 48px; flex-wrap: wrap;
   }
@@ -278,7 +278,7 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
   .give-banner-sub { font-size: 14px; color: var(--gray-600); }
   .give-banner-actions { display: flex; gap: 10px; flex-wrap: wrap; }
   .btn-teal { background: var(--teal); color: white; padding: 11px 22px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; transition: all .2s; }
-  .btn-teal:hover { background: #158a65; }
+  .btn-teal:hover { background: #43939A; }
 
   /* UTILS */
   .text-teal { color: var(--teal); }
@@ -350,7 +350,7 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
           <div class="journey-label">Pelatihan & Sertifikasi Kompetensi</div>
           <div class="journey-sub">Untuk individu — Lead Implementer / Auditor Internal</div>
         </div>
-        <span class="journey-badge" style="background:rgba(26,158,117,0.2);color:#4DD9A8">Individu</span>
+        <span class="journey-badge" style="background:rgba(77, 161, 169,0.2);color:#79D7BE">Individu</span>
       </div>
       <div class="journey-step active">
         <div class="journey-dot dot-active"><?php labnesia_icon( 'star', 'var(--navy)', 17 ); ?></div>
@@ -441,7 +441,7 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
     <div class="give-grid">
       <!-- Free tier -->
       <div class="give-card featured">
-        <span class="give-card-tag tag-gratis"><?php labnesia_icon( 'sparkles', '#4DD9A8', 10 ); ?> 100% Gratis</span>
+        <span class="give-card-tag tag-gratis"><?php labnesia_icon( 'sparkles', '#79D7BE', 10 ); ?> 100% Gratis</span>
         <div class="give-card-icon"><?php labnesia_icon( 'clipboard-list', '#ffffff', 33 ); ?></div>
         <div class="give-card-title">Gap Analysis Gratis</div>
         <div class="give-card-desc">Kami analisis kondisi lab Anda saat ini: gap dokumen, gap teknis, dan kesiapan sistem mutu. Hasilnya Anda dapatkan: Laporan GAP, Penetapan Ruang Lingkup, Struktur Organisasi, dan Roadmap Implementasi.</div>
@@ -551,7 +551,7 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
 
         <div style="display:flex;align-items:center;gap:12px;margin:20px 0 12px;padding-left:52px">
           <div style="flex:1;height:1px;background:var(--gray-200)"></div>
-          <div style="display:flex;align-items:center;gap:7px;background:var(--teal-pale);border:1px solid rgba(26,158,117,0.25);border-radius:100px;padding:5px 14px;white-space:nowrap;flex-shrink:0">
+          <div style="display:flex;align-items:center;gap:7px;background:var(--teal-pale);border:1px solid rgba(77, 161, 169,0.25);border-radius:100px;padding:5px 14px;white-space:nowrap;flex-shrink:0">
             <div style="width:7px;height:7px;border-radius:50%;background:var(--teal)"></div>
             <span style="font-size:11px;font-weight:700;color:var(--teal);letter-spacing:.04em">Sudah terakreditasi KAN?</span>
           </div>
@@ -567,9 +567,9 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
             </div>
             <div class="ladder-desc" style="margin-bottom:8px">Pastikan tetap terakreditasi tahun depan, tahun depannya lagi, dan seterusnya — tanpa perlu memulai dari awal.</div>
             <div style="display:flex;gap:6px;flex-wrap:wrap">
-              <span style="font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;background:rgba(26,158,117,0.12);color:var(--teal)">Surveillance KAN</span>
-              <span style="font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;background:rgba(26,158,117,0.12);color:var(--teal)">Update SDM rutin</span>
-              <span style="font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;background:rgba(26,158,117,0.12);color:var(--teal)">Hemat vs beli satuan</span>
+              <span style="font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;background:rgba(77, 161, 169,0.12);color:var(--teal)">Surveillance KAN</span>
+              <span style="font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;background:rgba(77, 161, 169,0.12);color:var(--teal)">Update SDM rutin</span>
+              <span style="font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;background:rgba(77, 161, 169,0.12);color:var(--teal)">Hemat vs beli satuan</span>
             </div>
           </div>
         </div>
@@ -648,26 +648,26 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
 
       <!-- ANNUAL PARTNERSHIP CARD -->
       <div class="product-card" style="border-color:var(--teal);border-width:1.5px">
-        <div class="product-card-header" style="background:linear-gradient(135deg,#085041,#0F6E56)">
+        <div class="product-card-header" style="background:linear-gradient(135deg,#085041,#377984)">
           <div class="product-card-top">
             <div class="product-card-eyebrow">Recurring · Tahunan</div>
             <div class="featured-badge featured-badge-subtle">Sudah Terakreditasi</div>
           </div>
           <div class="product-card-name">Annual Partnership</div>
-          <div class="product-card-price" style="color:#4DD9A8">Rp 36 jt <span class="product-card-unit">/tahun</span></div>
+          <div class="product-card-price" style="color:#79D7BE">Rp 36 jt <span class="product-card-unit">/tahun</span></div>
         </div>
         <div class="product-card-body" style="background:var(--teal-pale)">
-          <div style="background:rgba(26,158,117,0.12);border:1px solid rgba(26,158,117,0.2);border-radius:8px;padding:10px 12px;margin-bottom:14px">
+          <div style="background:rgba(77, 161, 169,0.12);border:1px solid rgba(77, 161, 169,0.2);border-radius:8px;padding:10px 12px;margin-bottom:14px">
             <p style="font-size:12px;color:#085041;line-height:1.5;font-style:italic">"Pastikan lab tetap terakreditasi tahun depan, tahun depannya lagi — tanpa memulai dari awal."</p>
           </div>
           <div class="product-feature"><div class="feature-check"><?php labnesia_icon( 'check', 'var(--teal)', 16 ); ?></div><div class="feature-text" style="color:#085041">Pendampingan onsite & kesiapan surveillance</div></div>
           <div class="product-feature"><div class="feature-check"><?php labnesia_icon( 'check', 'var(--teal)', 16 ); ?></div><div class="feature-text" style="color:#085041">Pelatihan premium + akses uji kompetensi untuk SDM</div></div>
           <div class="product-feature"><div class="feature-check"><?php labnesia_icon( 'check', 'var(--teal)', 16 ); ?></div><div class="feature-text" style="color:#085041">Free akses webinar & bootcamp 1 tahun</div></div>
           <div class="product-feature"><div class="feature-check"><?php labnesia_icon( 'check', 'var(--teal)', 16 ); ?></div><div class="feature-text" style="color:#085041">Review & update dokumen mutu</div></div>
-          <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(26,158,117,0.2)">
+          <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(77, 161, 169,0.2)">
             <p style="font-size:11px;color:var(--teal);font-weight:600;margin-bottom:4px">Tersedia untuk:</p>
             <div style="display:flex;gap:4px;flex-wrap:wrap">
-              <span style="font-size:10px;padding:2px 7px;border-radius:3px;background:rgba(26,158,117,0.15);color:var(--teal);font-weight:600">Surveillance Lite · Surveillance Pro</span>
+              <span style="font-size:10px;padding:2px 7px;border-radius:3px;background:rgba(77, 161, 169,0.15);color:var(--teal);font-weight:600">Surveillance Lite · Surveillance Pro</span>
             </div>
           </div>
           <a href="<?php echo $url_inhouse; ?>#jaga" class="product-card-cta" style="background:var(--teal);color:white;margin-top:16px">Lihat paket tahunan</a>
@@ -739,7 +739,7 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
 </section>
 
 <!-- INCOME GENERATOR TEASER -->
-<section style="background:linear-gradient(135deg,#0F2845 0%,#0B1F3A 100%);padding:80px 48px;position:relative;overflow:hidden">
+<section style="background:linear-gradient(135deg,#365A7E 0%,#2E5077 100%);padding:80px 48px;position:relative;overflow:hidden">
   <div style="position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle at 1px 1px,white 1px,transparent 0);background-size:40px 40px"></div>
   <div style="max-width:1200px;margin:0 auto;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
     <div>
@@ -757,15 +757,15 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
     <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:28px">
       <p style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.4);letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px">Alur optimalisasi yang kami bahas</p>
       <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
-        <div style="background:rgba(26,158,117,0.15);border:1px solid rgba(26,158,117,0.3);border-radius:10px;padding:14px 16px;flex:1;min-width:90px;text-align:center"><p style="font-size:12px;font-weight:700;color:#4DD9A8">Punya Alat</p></div>
+        <div style="background:rgba(77, 161, 169,0.15);border:1px solid rgba(77, 161, 169,0.3);border-radius:10px;padding:14px 16px;flex:1;min-width:90px;text-align:center"><p style="font-size:12px;font-weight:700;color:#79D7BE">Punya Alat</p></div>
         <span style="color:rgba(255,255,255,0.3)">→</span>
-        <div style="background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.3);border-radius:10px;padding:14px 16px;flex:1;min-width:90px;text-align:center"><p style="font-size:12px;font-weight:700;color:var(--amber)">Parameter Uji</p></div>
+        <div style="background:rgba(255, 154, 18,0.15);border:1px solid rgba(255, 154, 18,0.3);border-radius:10px;padding:14px 16px;flex:1;min-width:90px;text-align:center"><p style="font-size:12px;font-weight:700;color:var(--amber)">Parameter Uji</p></div>
         <span style="color:rgba(255,255,255,0.3)">→</span>
         <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:14px 16px;flex:1;min-width:90px;text-align:center"><p style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.7)">Produk</p></div>
         <span style="color:rgba(255,255,255,0.3)">→</span>
         <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:14px 16px;flex:1;min-width:90px;text-align:center"><p style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.7)">Layanan</p></div>
         <span style="color:rgba(255,255,255,0.3)">→</span>
-        <div style="background:rgba(26,158,117,0.2);border:1px solid rgba(26,158,117,0.4);border-radius:10px;padding:14px 16px;flex:1;min-width:90px;text-align:center"><p style="font-size:12px;font-weight:700;color:#4DD9A8">Income</p></div>
+        <div style="background:rgba(77, 161, 169,0.2);border:1px solid rgba(77, 161, 169,0.4);border-radius:10px;padding:14px 16px;flex:1;min-width:90px;text-align:center"><p style="font-size:12px;font-weight:700;color:#79D7BE">Income</p></div>
       </div>
       <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-top:18px;line-height:1.6">Webinar tematik tersedia untuk 8+ bidang laboratorium — dari pemetaan instrumen, parameter uji, hingga strategi menjadikan lab sebagai unit layanan publik.</p>
     </div>
@@ -781,13 +781,13 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
 
     <div class="funnel-grid">
       <div class="funnel-step">
-        <div class="funnel-icon" style="background:rgba(26,158,117,0.15);border-color:rgba(26,158,117,0.3);"><?php labnesia_icon( 'target', '#ffffff', 29 ); ?></div>
+        <div class="funnel-icon" style="background:rgba(77, 161, 169,0.15);border-color:rgba(77, 161, 169,0.3);"><?php labnesia_icon( 'target', '#ffffff', 29 ); ?></div>
         <div class="funnel-num">Langkah 1</div>
         <div class="funnel-label">Kenali posisi lab Anda</div>
         <div class="funnel-sub">Gap Analysis gratis untuk tahu kondisi aktual lab Anda sekarang</div>
       </div>
       <div class="funnel-step">
-        <div class="funnel-icon" style="background:rgba(245,166,35,0.15);border-color:rgba(245,166,35,0.3);"><?php labnesia_icon( 'handshake', '#ffffff', 29 ); ?></div>
+        <div class="funnel-icon" style="background:rgba(255, 154, 18,0.15);border-color:rgba(255, 154, 18,0.3);"><?php labnesia_icon( 'handshake', '#ffffff', 29 ); ?></div>
         <div class="funnel-num">Langkah 2</div>
         <div class="funnel-label">Pilih program yang tepat</div>
         <div class="funnel-sub">Konsultasi 30 menit dengan tim kami — gratis, tanpa paksaan</div>
@@ -819,8 +819,8 @@ $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
         <div class="start-option-desc">Batch berikutnya dimulai bulan depan. Tempat terbatas — maks. 10 instansi per batch.</div>
         <div class="start-option-arrow"><?php labnesia_icon( 'arrow-right', 'var(--teal-light)', 20 ); ?></div>
       </a>
-      <a href="<?php echo $url_inhouse; ?>" class="start-option" style="border-color:rgba(26,158,117,0.4);background:rgba(26,158,117,0.08)">
-        <div class="start-option-tag" style="color:#4DD9A8">Sudah Terakreditasi KAN</div>
+      <a href="<?php echo $url_inhouse; ?>" class="start-option" style="border-color:rgba(77, 161, 169,0.4);background:rgba(77, 161, 169,0.08)">
+        <div class="start-option-tag" style="color:#79D7BE">Sudah Terakreditasi KAN</div>
         <div class="start-option-title">Jaga Akreditasi dengan Annual Partnership</div>
         <div class="start-option-desc">Program tahunan untuk lab yang ingin tetap terakreditasi — tanpa memulai dari nol setiap tahun.</div>
         <div class="start-option-arrow"><?php labnesia_icon( 'arrow-right', 'var(--teal-light)', 20 ); ?></div>

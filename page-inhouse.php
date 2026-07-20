@@ -23,7 +23,7 @@ $wa_text       = rawurlencode( labnesia_wa_default_message() );
   .breadcrumb a{color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px}
   .breadcrumb-sep{color:rgba(255,255,255,0.2);font-size:13px}
   .breadcrumb-cur{color:rgba(255,255,255,0.7);font-size:13px}
-  .page-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(26,158,117,0.15);border:1px solid rgba(26,158,117,0.3);color:var(--teal-light);padding:5px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+  .page-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(77, 161, 169,0.15);border:1px solid rgba(77, 161, 169,0.3);color:var(--teal-light);padding:5px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
   .page-eyebrow-dot{width:5px;height:5px;border-radius:50%;background:var(--teal-light);animation:pulse 2s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
   .page-hero h1{font-size:44px;font-weight:800;color:white;line-height:1.15;letter-spacing:-1.2px;margin-bottom:18px;max-width:700px}
@@ -51,15 +51,15 @@ $wa_text       = rawurlencode( labnesia_wa_default_message() );
 
   /* SECTION A: FULL PENDAMPINGAN */
   .section-anchor{scroll-margin-top:80px}
-  .section-tag-blue{display:inline-block;background:rgba(11,31,58,0.08);color:var(--navy);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:6px;margin-bottom:14px}
+  .section-tag-blue{display:inline-block;background:rgba(46, 80, 119,0.08);color:var(--navy);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:6px;margin-bottom:14px}
   .section-tag-teal{display:inline-block;background:var(--teal-pale);color:var(--teal-dark);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:6px;margin-bottom:14px}
 
   .package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
   .package-card{border:1.5px solid var(--gray-200);border-radius:18px;overflow:hidden;transition:all .2s}
-  .package-card:hover{border-color:var(--navy);box-shadow:0 8px 28px rgba(11,31,58,0.1)}
-  .package-card.featured{border-color:var(--amber);box-shadow:0 8px 28px rgba(245,166,35,0.15)}
+  .package-card:hover{border-color:var(--navy);box-shadow:0 8px 28px rgba(46, 80, 119,0.1)}
+  .package-card.featured{border-color:var(--amber);box-shadow:0 8px 28px rgba(255, 154, 18,0.15)}
   .package-header{padding:22px;background:var(--navy);color:white;position:relative}
-  .package-header.featured-h{background:linear-gradient(135deg,#0B1F3A,#1C3A60)}
+  .package-header.featured-h{background:linear-gradient(135deg,#2E5077,#607A98)}
   .package-badge{position:absolute;top:14px;right:14px;background:var(--amber);color:var(--navy);font-size:9px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:4px}
   .package-eyebrow{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.6;margin-bottom:6px}
   .package-name{font-size:18px;font-weight:800;margin-bottom:4px}
@@ -79,14 +79,14 @@ $wa_text       = rawurlencode( labnesia_wa_default_message() );
   .comp-mini-table td{padding:12px 16px;border-bottom:1px solid var(--gray-100)}
   .comp-mini-table td:first-child{font-weight:600;color:var(--navy)}
   .comp-mini-table tr:last-child td{border-bottom:none}
-  .comp-highlight{background:rgba(245,166,35,0.06)}
+  .comp-highlight{background:rgba(255, 154, 18,0.06)}
 
   /* SECTION B: ANNUAL PARTNERSHIP */
   .annual-section{background:var(--teal-pale)}
   .annual-tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
   .annual-tier{background:white;border:1.5px solid var(--gray-200);border-radius:16px;overflow:hidden;transition:all .2s}
   .annual-tier:hover{border-color:var(--teal);transform:translateY(-2px)}
-  .annual-tier.best{border-color:var(--teal);box-shadow:0 8px 28px rgba(26,158,117,0.15)}
+  .annual-tier.best{border-color:var(--teal);box-shadow:0 8px 28px rgba(77, 161, 169,0.15)}
   .annual-tier-header{padding:20px;text-align:center;border-bottom:1px solid var(--gray-100)}
   .annual-tier-best-badge{background:var(--teal);color:white;font-size:9px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:10px}
   .annual-tier-name{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px}
@@ -117,13 +117,13 @@ $wa_text       = rawurlencode( labnesia_wa_default_message() );
 
   /* CTA SPLIT */
   .cta-split-section{background:var(--navy);position:relative;overflow:hidden}
-  .cta-split-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(26,158,117,0.2) 0%,transparent 60%)}
+  .cta-split-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(77, 161, 169,0.2) 0%,transparent 60%)}
   .cta-split-inner{max-width:1000px;margin:0 auto;text-align:center;position:relative}
   .cta-split-title{font-size:32px;font-weight:800;color:white;margin-bottom:14px;letter-spacing:-0.7px}
   .cta-split-sub{font-size:15px;color:rgba(255,255,255,0.6);margin-bottom:32px}
   .cta-split-actions{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .cta-action-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:24px;text-align:left;text-decoration:none;transition:all .2s}
-  .cta-action-card:hover{background:rgba(255,255,255,0.1);border-color:rgba(26,158,117,0.4)}
+  .cta-action-card:hover{background:rgba(255,255,255,0.1);border-color:rgba(77, 161, 169,0.4)}
   .cta-action-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--teal-light);margin-bottom:8px}
   .cta-action-title{font-size:16px;font-weight:700;color:white;margin-bottom:6px}
   .cta-action-desc{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.5}

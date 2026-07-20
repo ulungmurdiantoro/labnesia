@@ -37,10 +37,10 @@
   --radius-circle: 50%;
 
   /* Shadows (subtle — cards mostly rely on border + color tint, not shadow) */
-  --shadow-card-hover: 0 8px 32px rgba(26,158,117,0.1);
-  --shadow-card-hover-navy: 0 8px 28px rgba(11,31,58,0.1);
-  --shadow-cta-amber: 0 4px 20px rgba(245,166,35,0.4);
-  --shadow-cta-amber-hover: 0 8px 28px rgba(245,166,35,0.5);
+  --shadow-card-hover: 0 8px 32px rgba(77, 161, 169,0.1);
+  --shadow-card-hover-navy: 0 8px 28px rgba(46, 80, 119,0.1);
+  --shadow-cta-amber: 0 4px 20px rgba(255, 154, 18,0.4);
+  --shadow-cta-amber-hover: 0 8px 28px rgba(255, 154, 18,0.5);
 
   /* Motion */
   --ease-default: ease; /* @kind other */

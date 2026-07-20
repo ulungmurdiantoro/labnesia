@@ -12,9 +12,9 @@ $url_banding = esc_url( home_url( '/perbandingan-program/' ) );
 <style>
   .page-hero{background:var(--navy);padding:104px 48px 72px;text-align:center;position:relative;overflow:hidden}
   .page-hero::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle at 1px 1px,white 1px,transparent 0);background-size:40px 40px}
-  .page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(26,158,117,0.15) 0%,transparent 60%)}
+  .page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(77, 161, 169,0.15) 0%,transparent 60%)}
   .page-hero-inner{max-width:680px;margin:0 auto;position:relative;z-index:1}
-  .eyebrow-tag{display:inline-block;background:rgba(26,158,117,0.15);border:1px solid rgba(26,158,117,0.3);color:var(--teal-light);padding:5px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+  .eyebrow-tag{display:inline-block;background:rgba(77, 161, 169,0.15);border:1px solid rgba(77, 161, 169,0.3);color:var(--teal-light);padding:5px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
   .page-hero h1{font-size:44px;font-weight:800;color:white;line-height:1.15;letter-spacing:-1.2px;margin-bottom:16px}
   .page-hero h1 .accent{color:var(--teal-light)}
   .page-hero-sub{font-size:17px;color:rgba(255,255,255,0.55);line-height:1.65}
@@ -35,9 +35,9 @@ $url_banding = esc_url( home_url( '/perbandingan-program/' ) );
   .fit-check{color:var(--teal);font-weight:700;flex-shrink:0;margin-top:2px}
   .decision-body .btn{display:block;text-align:center;padding:11px;border-radius:9px;font-size:14px;font-weight:700;text-decoration:none;margin-top:16px;transition:all .2s}
   .btn-teal-d{background:var(--teal);color:white}
-  .btn-teal-d:hover{background:#158a65}
+  .btn-teal-d:hover{background:#43939A}
   .btn-navy-d{background:var(--navy);color:white}
-  .btn-navy-d:hover{background:#0f2845}
+  .btn-navy-d:hover{background:#365A7E}
   .btn-outline-d{background:transparent;color:var(--teal);border:1.5px solid var(--teal)}
   .btn-outline-d:hover{background:var(--teal-pale)}
   .d-free{background:var(--teal-pale)}

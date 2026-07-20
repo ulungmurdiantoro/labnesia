@@ -11,9 +11,9 @@ $url_kontak  = esc_url( home_url( '/kontak/' ) );
   /* PAGE HERO */
   .page-hero{background:var(--navy);padding:104px 48px 72px;text-align:center;position:relative;overflow:hidden}
   .page-hero::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle at 1px 1px,white 1px,transparent 0);background-size:40px 40px}
-  .page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(26,158,117,0.15) 0%,transparent 60%)}
+  .page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(77, 161, 169,0.15) 0%,transparent 60%)}
   .page-hero-inner{max-width:680px;margin:0 auto;position:relative;z-index:1}
-  .eyebrow-tag{display:inline-block;background:rgba(26,158,117,0.15);border:1px solid rgba(26,158,117,0.3);color:var(--teal-light);padding:5px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+  .eyebrow-tag{display:inline-block;background:rgba(77, 161, 169,0.15);border:1px solid rgba(77, 161, 169,0.3);color:var(--teal-light);padding:5px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
   .page-hero h1{font-size:48px;font-weight:800;color:white;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px}
   .page-hero h1 .accent{color:var(--teal-light)}
   .page-hero-sub{font-size:17px;color:rgba(255,255,255,0.55);line-height:1.65;margin-bottom:32px}
@@ -48,7 +48,7 @@ $url_kontak  = esc_url( home_url( '/kontak/' ) );
   .faq-a strong{color:var(--navy)}
   .faq-a a{color:var(--teal);text-decoration:none}
   .faq-a a:hover{text-decoration:underline}
-  .faq-highlight{background:var(--amber-pale);border:1px solid rgba(245,166,35,0.3);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;color:#6B4400}
+  .faq-highlight{background:var(--amber-pale);border:1px solid rgba(255, 154, 18,0.3);border-radius:8px;padding:14px 18px;margin-top:10px;font-size:13px;color:#6B4400}
 
   @media(max-width:768px){
     .page-hero{padding:88px 24px 56px}
@@ -95,7 +95,7 @@ $url_kontak  = esc_url( home_url( '/kontak/' ) );
       <button class="faq-nav-item" onclick="scrollToFaq('faq-harga',this)">Harga &amp; Pembayaran</button>
       <button class="faq-nav-item" onclick="scrollToFaq('faq-teknis',this)">Teknis &amp; Logistik</button>
 
-      <div style="margin-top:28px;padding:16px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(26,158,117,0.2)">
+      <div style="margin-top:28px;padding:16px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(77, 161, 169,0.2)">
         <p style="font-size:12px;font-weight:700;color:var(--teal);margin-bottom:6px">Tidak menemukan jawaban?</p>
         <p style="font-size:12px;color:#085041;line-height:1.5;margin-bottom:10px">Tim kami siap membantu dalam 1×24 jam.</p>
         <a href="<?php echo $url_kontak; ?>" style="display:block;text-align:center;padding:8px;background:var(--teal);color:white;border-radius:7px;font-size:12px;font-weight:700;text-decoration:none">Tanya Tim <?php labnesia_icon( 'arrow-right', '#ffffff', 12 ); ?></a>

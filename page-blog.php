@@ -26,9 +26,9 @@ $blog_query = new WP_Query( [
 <style>
   .page-hero{background:var(--navy);padding:104px 48px 72px;text-align:center;position:relative;overflow:hidden}
   .page-hero::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle at 1px 1px,white 1px,transparent 0);background-size:40px 40px}
-  .page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(26,158,117,0.15) 0%,transparent 60%)}
+  .page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(77, 161, 169,0.15) 0%,transparent 60%)}
   .page-hero-inner{max-width:680px;margin:0 auto;position:relative;z-index:1}
-  .eyebrow-tag{display:inline-block;background:rgba(26,158,117,0.15);border:1px solid rgba(26,158,117,0.3);color:var(--teal-light);padding:5px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+  .eyebrow-tag{display:inline-block;background:rgba(77, 161, 169,0.15);border:1px solid rgba(77, 161, 169,0.3);color:var(--teal-light);padding:5px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
   .page-hero h1{font-size:44px;font-weight:800;color:white;line-height:1.15;letter-spacing:-1.2px;margin-bottom:16px}
   .page-hero-sub{font-size:17px;color:rgba(255,255,255,0.55);line-height:1.65}
 
@@ -40,7 +40,7 @@ $blog_query = new WP_Query( [
   .blog-filter-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
   .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .blog-card{background:#fff;border:1px solid var(--gray-200);border-radius:16px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
-  .blog-card:hover{box-shadow:0 12px 28px rgba(11,31,58,0.1);transform:translateY(-2px)}
+  .blog-card:hover{box-shadow:0 12px 28px rgba(46, 80, 119,0.1);transform:translateY(-2px)}
   .blog-card-thumb{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;background:var(--gray-100)}
   .blog-card-thumb-fallback{width:100%;aspect-ratio:16/10;background:var(--navy);display:flex;align-items:center;justify-content:center}
   .blog-card-body{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}

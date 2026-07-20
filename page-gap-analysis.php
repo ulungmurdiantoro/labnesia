@@ -19,9 +19,9 @@ add_action( 'wp_head', function() { echo '<title>Gap Analysis ISO/IEC 17025 — 
 /* HERO — matches page-faq.php's compact page-hero pattern */
 .page-hero{background:var(--navy);padding:104px 48px 72px;text-align:center;position:relative;overflow:hidden}
 .page-hero::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle at 1px 1px,white 1px,transparent 0);background-size:40px 40px}
-.page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(26,158,117,0.15) 0%,transparent 60%)}
+.page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(77, 161, 169,0.15) 0%,transparent 60%)}
 .page-hero-inner{max-width:680px;margin:0 auto;position:relative;z-index:1}
-.eyebrow-tag{display:inline-block;background:rgba(26,158,117,0.15);border:1px solid rgba(26,158,117,0.3);color:var(--teal-light);padding:5px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+.eyebrow-tag{display:inline-block;background:rgba(77, 161, 169,0.15);border:1px solid rgba(77, 161, 169,0.3);color:var(--teal-light);padding:5px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
 .page-hero h1{font-size:48px;font-weight:800;color:white;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px}
 .page-hero h1 .accent{color:var(--teal-light)}
 .page-hero-sub{font-size:17px;color:rgba(255,255,255,0.55);line-height:1.65;margin-bottom:0}
@@ -39,19 +39,19 @@ add_action( 'wp_head', function() { echo '<title>Gap Analysis ISO/IEC 17025 — 
 .sticky-progress{flex:1;max-width:300px;height:8px;background:var(--gray-200);border-radius:4px;overflow:hidden}
 .sticky-progress-bar{height:100%;background:var(--teal);border-radius:4px;transition:width .3s;width:0%}
 .sticky-score-btn{background:var(--teal);color:white;border:none;padding:9px 20px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;font-family:var(--font)}
-.sticky-score-btn:hover{background:#158a65}
+.sticky-score-btn:hover{background:#43939A}
 
 /* PANDUAN SKOR */
-.guide-section{background:var(--navy-mid, #122845);padding:36px 48px}
+.guide-section{background:var(--navy-mid, #476587);padding:36px 48px}
 .guide-inner{max-width:1100px;margin:0 auto}
 .guide-title{font-size:14px;font-weight:800;color:white;letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px}
 .guide-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 .guide-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:14px 12px;text-align:center}
 .guide-card.s0{border-color:rgba(231,76,60,0.4);background:rgba(231,76,60,0.1)}
-.guide-card.s1{border-color:rgba(245,166,35,0.4);background:rgba(245,166,35,0.1)}
+.guide-card.s1{border-color:rgba(255, 154, 18,0.4);background:rgba(255, 154, 18,0.1)}
 .guide-card.s2{border-color:rgba(52,152,219,0.4);background:rgba(52,152,219,0.1)}
 .guide-card.s3{border-color:rgba(46,204,113,0.3);background:rgba(46,204,113,0.08)}
-.guide-card.s4{border-color:rgba(26,158,117,0.5);background:rgba(26,158,117,0.15)}
+.guide-card.s4{border-color:rgba(77, 161, 169,0.5);background:rgba(77, 161, 169,0.15)}
 .guide-score{font-size:28px;font-weight:800;color:white;margin-bottom:4px}
 .guide-label{font-size:11px;font-weight:700;color:rgba(255,255,255,0.9);margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em}
 .guide-desc{font-size:11px;color:rgba(255,255,255,0.55);line-height:1.5}
@@ -107,13 +107,13 @@ add_action( 'wp_head', function() { echo '<title>Gap Analysis ISO/IEC 17025 — 
 .result-card-max{font-size:12px;color:rgba(255,255,255,0.4)}
 .result-card-bar{height:4px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;margin-top:10px}
 .result-card-fill{height:100%;background:var(--teal-light);border-radius:2px;transition:width .5s}
-.result-total{background:rgba(34,194,143,0.15);border:1px solid rgba(34,194,143,0.3);border-radius:12px;padding:24px;text-align:center;margin-bottom:24px}
+.result-total{background:rgba(121, 215, 190,0.15);border:1px solid rgba(121, 215, 190,0.3);border-radius:12px;padding:24px;text-align:center;margin-bottom:24px}
 .result-total-num{font-size:52px;font-weight:800;color:var(--teal-light)}
 .result-total-label{font-size:14px;color:rgba(255,255,255,0.6)}
 .result-interpretation{border-radius:10px;padding:16px 20px;margin-bottom:24px;font-size:14px;font-weight:600}
 .result-interpretation.low{background:rgba(231,76,60,0.15);border:1px solid rgba(231,76,60,0.3);color:#ff8a80}
-.result-interpretation.mid{background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.3);color:#ffd54f}
-.result-interpretation.high{background:rgba(26,158,117,0.15);border:1px solid rgba(26,158,117,0.3);color:var(--teal-light)}
+.result-interpretation.mid{background:rgba(255, 154, 18,0.15);border:1px solid rgba(255, 154, 18,0.3);color:#ffd54f}
+.result-interpretation.high{background:rgba(77, 161, 169,0.15);border:1px solid rgba(77, 161, 169,0.3);color:var(--teal-light)}
 .result-actions{display:flex;gap:12px;flex-wrap:wrap}
 .btn-wa{background:#25D366;color:white;padding:13px 24px;border-radius:9px;font-weight:700;font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
 .btn-konsul{background:var(--amber);color:var(--navy);padding:13px 24px;border-radius:9px;font-weight:700;font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
@@ -121,7 +121,7 @@ add_action( 'wp_head', function() { echo '<title>Gap Analysis ISO/IEC 17025 — 
 /* SUBMIT AREA */
 .submit-area{text-align:center;padding:32px 0}
 .btn-hitung{background:var(--teal);color:white;border:none;padding:16px 48px;border-radius:10px;font-size:16px;font-weight:800;cursor:pointer;font-family:var(--font);transition:all .2s;letter-spacing:-.2px}
-.btn-hitung:hover{background:#158a65;transform:translateY(-2px)}
+.btn-hitung:hover{background:#43939A;transform:translateY(-2px)}
 .submit-note{font-size:13px;color:var(--gray-400);margin-top:12px}
 
 @media(max-width:768px){
