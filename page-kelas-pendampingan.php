@@ -636,15 +636,15 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
       array( 'day' => 'Senin – Selasa', 'date' => '26–27', 'month' => 'Oktober 2026',   'title' => 'Implementasi Kaji Ulang Manajemen Sesuai SNI ISO/IEC 17025:2017' ),
     );
     $kp_batch2_sessions = array(
-      array( 'month' => 'Oktober 2026',   'title' => 'Pemahaman SNI ISO/IEC 17025:2017' ),
-      array( 'month' => 'Oktober 2026',   'title' => 'GAP Analysis Kesiapan Akreditasi Laboratorium' ),
-      array( 'month' => 'Oktober 2026',   'title' => 'Penyusunan Dokumen Sistem Manajemen SNI ISO/IEC 17025:2017' ),
-      array( 'month' => 'November 2026',  'title' => 'Implementasi Uji Profisiensi dan Uji Banding Antar Laboratorium' ),
-      array( 'month' => 'November 2026',  'title' => 'Verifikasi dan Validasi Metode Pengujian' ),
-      array( 'month' => 'Desember 2026',  'title' => 'Ketidakpastian Pengukuran Sesuai SNI ISO/IEC 17025:2017' ),
-      array( 'month' => 'Desember 2026',  'title' => 'Penerapan Jaminan Mutu Internal dan Pengendalian Mutu Hasil Uji' ),
-      array( 'month' => 'Januari 2027',   'title' => 'Audit Internal Laboratorium Berdasarkan SNI ISO/IEC 17025:2017' ),
-      array( 'month' => 'Januari 2027',   'title' => 'Implementasi Kaji Ulang Manajemen Sesuai SNI ISO/IEC 17025:2017' ),
+      array( 'day' => 'Senin',           'date' => '5',     'month' => 'Oktober 2026',   'title' => 'Pemahaman SNI ISO/IEC 17025:2017' ),
+      array( 'day' => 'Selasa',          'date' => '6',     'month' => 'Oktober 2026',   'title' => 'GAP Analysis Kesiapan Akreditasi Laboratorium' ),
+      array( 'day' => 'Senin – Selasa',  'date' => '19–20', 'month' => 'Oktober 2026',   'title' => 'Penyusunan Dokumen Sistem Manajemen SNI ISO/IEC 17025:2017' ),
+      array( 'day' => 'Senin – Selasa',  'date' => '2–3',   'month' => 'November 2026',  'title' => 'Implementasi Uji Profisiensi dan Uji Banding Antar Laboratorium' ),
+      array( 'day' => 'Senin – Selasa',  'date' => '16–17', 'month' => 'November 2026',  'title' => 'Verifikasi dan Validasi Metode Pengujian' ),
+      array( 'day' => 'Senin – Selasa',  'date' => '7–8',   'month' => 'Desember 2026',  'title' => 'Ketidakpastian Pengukuran Sesuai SNI ISO/IEC 17025:2017' ),
+      array( 'day' => 'Senin – Selasa',  'date' => '21–22', 'month' => 'Desember 2026',  'title' => 'Penerapan Jaminan Mutu Internal dan Pengendalian Mutu Hasil Uji' ),
+      array( 'day' => 'Rabu – Jum\'at',  'date' => '20–22', 'month' => 'Januari 2027',   'title' => 'Audit Internal Laboratorium Berdasarkan SNI ISO/IEC 17025:2017', 'time' => '09.00 - 16.00 WIB' ),
+      array( 'day' => 'Senin – Selasa',  'date' => '25–26', 'month' => 'Januari 2027',   'title' => 'Implementasi Kaji Ulang Manajemen Sesuai SNI ISO/IEC 17025:2017' ),
     );
     ?>
     <div style="margin-bottom:56px">
@@ -684,12 +684,14 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
           <div class="bt-num"><?php echo str_pad( $kp_i + 1, 2, '0', STR_PAD_LEFT ); ?></div>
           <div class="bt-dash"></div>
           <div class="bt-date">
-            <div class="bt-date-month" style="font-size:14px;margin-top:2px"><?php echo esc_html( $kp_s['month'] ); ?></div>
+            <div class="bt-date-day"><?php echo esc_html( $kp_s['day'] ); ?></div>
+            <div class="bt-date-num"><?php echo esc_html( $kp_s['date'] ); ?></div>
+            <div class="bt-date-month"><?php echo esc_html( $kp_s['month'] ); ?></div>
           </div>
           <div class="bt-card">
             <div><?php echo esc_html( $kp_s['title'] ); ?></div>
             <div style="font-size:12px;font-weight:500;color:var(--gray-500);margin-top:4px;display:flex;align-items:center;gap:5px">
-              <?php labnesia_icon( 'clock', 'var(--gray-400)', 13 ); ?> 09.00 - 12.00 WIB
+              <?php labnesia_icon( 'clock', 'var(--gray-400)', 13 ); ?> <?php echo esc_html( $kp_s['time'] ?? '09.00 - 12.00 WIB' ); ?>
             </div>
           </div>
         </div>
