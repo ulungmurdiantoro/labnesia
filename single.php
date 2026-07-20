@@ -12,7 +12,7 @@ get_header();
   .post-back{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.55);font-size:13px;font-weight:600;text-decoration:none;margin-bottom:20px}
   .post-back:hover{color:#fff}
   .post-hero-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
-  .post-hero-cat{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-light);background:rgba(77, 161, 169,0.15);border:1px solid rgba(77, 161, 169,0.3);padding:4px 12px;border-radius:100px}
+  .post-hero-cat{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-light);background:rgba(26,158,117,0.15);border:1px solid rgba(26,158,117,0.3);padding:4px 12px;border-radius:100px}
   .post-hero-date{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.5)}
   .post-hero h1{font-size:36px;font-weight:800;color:#fff;line-height:1.25;letter-spacing:-0.8px}
 
@@ -35,10 +35,10 @@ get_header();
   .daftar-input{padding:11px 14px;border:1px solid var(--gray-200);border-radius:9px;font-size:14px;font-family:inherit;outline:none;transition:border .2s}
   .daftar-input:focus{border-color:var(--teal)}
   .btn-daftar-submit{padding:12px;background:var(--teal);color:#fff;border:none;border-radius:9px;font-weight:700;font-size:14px;font-family:inherit;cursor:pointer;transition:background .2s}
-  .btn-daftar-submit:hover{background:#43939A}
+  .btn-daftar-submit:hover{background:#158a65}
   .daftar-notice{padding:12px 16px;border-radius:9px;font-size:13px;margin-bottom:14px}
-  .daftar-notice-ok{background:var(--teal-pale);color:#085041;border:1px solid rgba(77, 161, 169,0.3)}
-  .daftar-notice-err{background:var(--amber-pale);color:#6B4400;border:1px solid rgba(255, 236, 122,0.3)}
+  .daftar-notice-ok{background:var(--teal-pale);color:#085041;border:1px solid rgba(26,158,117,0.3)}
+  .daftar-notice-err{background:var(--amber-pale);color:#6B4400;border:1px solid rgba(245,166,35,0.3)}
 
   @media (max-width:768px){
     .post-hero{padding:88px 24px 40px}

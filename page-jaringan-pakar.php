@@ -33,9 +33,9 @@ $faqs = [
 <style>
   .page-hero{background:var(--navy);padding:104px 48px 72px;text-align:center;position:relative;overflow:hidden}
   .page-hero::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle at 1px 1px,white 1px,transparent 0);background-size:40px 40px}
-  .page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(77, 161, 169,0.15) 0%,transparent 60%)}
+  .page-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(26,158,117,0.15) 0%,transparent 60%)}
   .page-hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
-  .eyebrow-tag{display:inline-block;background:rgba(77, 161, 169,0.15);border:1px solid rgba(77, 161, 169,0.3);color:var(--teal-light);padding:5px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+  .eyebrow-tag{display:inline-block;background:rgba(26,158,117,0.15);border:1px solid rgba(26,158,117,0.3);color:var(--teal-light);padding:5px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
   .page-hero h1{font-size:44px;font-weight:800;color:white;line-height:1.15;letter-spacing:-1.2px;margin-bottom:16px}
   .page-hero h1 .accent{color:var(--teal-light)}
   .page-hero-sub{font-size:17px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:32px}
@@ -48,7 +48,7 @@ $faqs = [
 
   /* TRACKS (jalur pendaftaran) */
   .tracks-wrap{max-width:1000px;margin:-64px auto 0;padding:0 24px;position:relative;z-index:2}
-  .track-card{background:#fff;border-radius:18px;box-shadow:0 18px 40px rgba(46, 80, 119,0.14);overflow:hidden;border:1px solid var(--gray-200)}
+  .track-card{background:#fff;border-radius:18px;box-shadow:0 18px 40px rgba(11,31,58,0.14);overflow:hidden;border:1px solid var(--gray-200)}
   .track-tabs{display:flex}
   .track-tab{flex:1;font-weight:700;font-size:15px;padding:18px 12px;border:none;cursor:pointer;background:var(--gray-50);color:var(--gray-600);border-bottom:4px solid transparent;transition:background .15s,color .15s}
   .track-tab[aria-selected="true"]{background:#fff;color:var(--navy);border-bottom-color:var(--teal)}
@@ -59,7 +59,7 @@ $faqs = [
   .track-panel .sub{color:var(--gray-600);font-size:14px;margin-bottom:20px}
   .invite-list{list-style:none;display:grid;gap:10px;margin-bottom:0}
   .invite-list li{display:flex;align-items:center;gap:10px;background:var(--navy);color:#fff;font-weight:600;font-size:13px;border-radius:100px;padding:10px 18px;width:fit-content;max-width:100%}
-  .track-side{background:var(--teal-pale);border:1px solid rgba(77, 161, 169,0.25);border-radius:14px;padding:24px;align-self:start}
+  .track-side{background:var(--teal-pale);border:1px solid rgba(26,158,117,0.25);border-radius:14px;padding:24px;align-self:start}
   .track-side .label{font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
   .track-side .date{font-weight:800;font-size:19px;color:var(--navy);margin-bottom:14px}
   .track-side p{font-size:13px;color:var(--gray-600);line-height:1.6;margin-bottom:18px}
@@ -77,7 +77,7 @@ $faqs = [
 
   /* BENEFIT */
   .benefit-section{padding:80px 48px;background:var(--navy);color:#fff;position:relative;overflow:hidden}
-  .benefit-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(77, 161, 169,0.12) 0%,transparent 60%)}
+  .benefit-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(26,158,117,0.12) 0%,transparent 60%)}
   .benefit-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
   .benefit-section .sec-head h2{color:#fff}
   .benefit-section .sec-head p{color:rgba(255,255,255,0.6)}
@@ -91,7 +91,7 @@ $faqs = [
   .fields-section{padding:80px 48px;background:var(--gray-50)}
   .fields-inner{max-width:1000px;margin:0 auto;text-align:center}
   .fields{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-  .field-chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid rgba(77, 161, 169,0.3);color:var(--navy);font-weight:600;font-size:13px;border-radius:100px;padding:9px 18px}
+  .field-chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid rgba(26,158,117,0.3);color:var(--navy);font-weight:600;font-size:13px;border-radius:100px;padding:9px 18px}
   .field-chip::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--teal)}
 
   /* FAQ */
@@ -106,14 +106,14 @@ $faqs = [
 
   /* CTA FINAL */
   .jp-cta{padding:0 48px 80px}
-  .jp-cta-inner{max-width:1000px;margin:0 auto;background:linear-gradient(135deg,var(--teal) 0%,#43939A 100%);border-radius:22px;color:#fff;padding:56px 40px;text-align:center;box-shadow:0 18px 40px rgba(77, 161, 169,0.3)}
+  .jp-cta-inner{max-width:1000px;margin:0 auto;background:linear-gradient(135deg,var(--teal) 0%,#158a65 100%);border-radius:22px;color:#fff;padding:56px 40px;text-align:center;box-shadow:0 18px 40px rgba(26,158,117,0.3)}
   .jp-cta-inner h2{font-size:28px;font-weight:800;margin-bottom:10px}
   .jp-cta-inner p{max-width:46ch;margin:0 auto 26px;color:rgba(255,255,255,0.9);font-size:15px}
   .jp-cta-inner .btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
-  .jp-cta-inner .btn-wa{background:#fff;color:#43939A;padding:14px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;display:inline-block;transition:transform .15s}
+  .jp-cta-inner .btn-wa{background:#fff;color:#158a65;padding:14px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;display:inline-block;transition:transform .15s}
   .jp-cta-inner .btn-wa:hover{transform:translateY(-2px)}
   .jp-cta-inner .btn-primary{background:var(--navy);color:#fff}
-  .jp-cta-inner .btn-primary:hover{background:#476587}
+  .jp-cta-inner .btn-primary:hover{background:#122845}
 
   @media(max-width:768px){
     .page-hero{padding:88px 24px 56px}

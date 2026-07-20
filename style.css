@@ -4,7 +4,7 @@ Theme URI: https://labnesia.id
 Author: Padma Global Nusatama
 Author URI: https://labnesia.id
 Description: Theme resmi Labnesia.id — Pusat Kompetensi ISO/IEC 17025. Dirancang khusus untuk mendukung program pelatihan dan pendampingan akreditasi laboratorium KAN.
-Version: 1.0.8
+Version: 1.0.9
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
@@ -17,15 +17,15 @@ Tags: custom-theme, education, laboratory, one-page
    DESIGN TOKENS
    ===================================================================== */
 :root {
-  --navy:        #2E5077;
-  --navy-mid:    #476587;
-  --navy-light:  #607A98;
-  --teal:        #4DA1A9;
-  --teal-light:  #79D7BE;
-  --teal-pale:   #E2EAE7;
-  --amber:       #FFEC7A;
-  --amber-pale:  #FAF0BB;
-  --white:       #F6F4F0;
+  --navy:        #0B1F3A;
+  --navy-mid:    #122845;
+  --navy-light:  #1C3A60;
+  --teal:        #1A9E75;
+  --teal-light:  #22C28F;
+  --teal-pale:   #E8F7F2;
+  --amber:       #F5A623;
+  --amber-pale:  #FEF3DC;
+  --white:       #FFFFFF;
   --gray-50:     #F8F9FA;
   --gray-100:    #F1F3F5;
   --gray-200:    #E9ECEF;
@@ -74,7 +74,7 @@ a { text-decoration: none; }
    ===================================================================== */
 .site-header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(46, 80, 119,0.97);
+  background: rgba(11,31,58,0.97);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   height: 64px;
@@ -118,7 +118,7 @@ a { text-decoration: none; }
   position: absolute; top: calc(100% + 16px); left: 50%;
   transform: translateX(-50%) translateY(-6px);
   min-width: 220px;
-  background: #2E5077;
+  background: #0b1f3a;
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 10px;
   padding: 8px;
@@ -141,7 +141,7 @@ a { text-decoration: none; }
   font-weight: 700 !important; font-size: 14px !important;
   transition: background .2s;
 }
-.nav-cta:hover { background: #D1C264 !important; }
+.nav-cta:hover { background: #e09620 !important; }
 
 /* Mobile hamburger — morphs into an X via aria-expanded */
 .nav-toggle {
@@ -178,7 +178,7 @@ body.nav-open { overflow: hidden; }
 .hero-glow {
   position: absolute; top: -100px; right: -100px;
   width: 600px; height: 600px; border-radius: 50%; pointer-events: none;
-  background: radial-gradient(circle, rgba(77, 161, 169,0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(26,158,117,0.15) 0%, transparent 70%);
 }
 .hero-inner {
   max-width: 1200px; margin: 0 auto; width: 100%;
@@ -188,7 +188,7 @@ body.nav-open { overflow: hidden; }
 
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(77, 161, 169,0.15); border: 1px solid rgba(77, 161, 169,0.3);
+  background: rgba(26,158,117,0.15); border: 1px solid rgba(26,158,117,0.3);
   color: var(--teal-light); padding: 6px 14px; border-radius: 100px;
   font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
   margin-bottom: 24px;
@@ -240,7 +240,7 @@ body.nav-open { overflow: hidden; }
 }
 .journey-step:hover { background: rgba(255,255,255,0.06); }
 .journey-step.active {
-  background: rgba(77, 161, 169,0.15); border-color: rgba(77, 161, 169,0.3);
+  background: rgba(26,158,117,0.15); border-color: rgba(26,158,117,0.3);
 }
 .journey-dot {
   width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
@@ -256,8 +256,8 @@ body.nav-open { overflow: hidden; }
 .journey-badge {
   font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 4px;
 }
-.badge-free { background: rgba(77, 161, 169,0.2); color: var(--teal-light); }
-.badge-core { background: rgba(255, 236, 122,0.2); color: var(--amber); }
+.badge-free { background: rgba(26,158,117,0.2); color: var(--teal-light); }
+.badge-core { background: rgba(245,166,35,0.2); color: var(--amber); }
 .badge-adv  { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); }
 
 /* =====================================================================
@@ -265,14 +265,12 @@ body.nav-open { overflow: hidden; }
    ===================================================================== */
 .btn-primary {
   background: var(--amber); color: var(--navy);
-  padding: 12px 26px; border-radius: 10px;
+  padding: 14px 28px; border-radius: 10px;
   font-weight: 700; font-size: 15px; display: inline-block;
-  border: 2px solid var(--navy); cursor: pointer;
-  transition: background .2s, transform .2s, box-shadow .2s;
+  border: none; cursor: pointer; transition: background .2s, transform .2s;
   position: relative; overflow: hidden;
-  box-shadow: 0 2px 8px rgba(46,80,119,0.2);
 }
-.btn-primary:hover { background: #D1C264; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(46,80,119,0.3); }
+.btn-primary:hover { background: #e09620; transform: translateY(-1px); }
 
 .btn-ghost {
   background: rgba(255,255,255,0.08); color: #fff;
@@ -288,7 +286,7 @@ body.nav-open { overflow: hidden; }
   font-weight: 700; font-size: 14px; display: inline-block;
   transition: background .2s;
 }
-.btn-teal:hover { background: #43939A; }
+.btn-teal:hover { background: #158a65; }
 
 /* =====================================================================
    SECTION GENERIC
@@ -348,7 +346,7 @@ body.nav-open { overflow: hidden; }
 .give-header .section-sub { color: rgba(255,255,255,0.55); max-width: 620px; margin: 0 auto; }
 
 .give-philosophy {
-  background: rgba(77, 161, 169,0.12); border: 1px solid rgba(77, 161, 169,0.25);
+  background: rgba(26,158,117,0.12); border: 1px solid rgba(26,158,117,0.25);
   border-radius: 16px; padding: 24px 32px;
   max-width: 680px; margin: 32px auto 0; text-align: center;
 }
@@ -369,17 +367,17 @@ body.nav-open { overflow: hidden; }
 }
 .give-card:hover {
   background: rgba(255,255,255,0.09); transform: translateY(-3px);
-  border-color: rgba(77, 161, 169,0.4);
+  border-color: rgba(26,158,117,0.4);
 }
-.give-card.featured { background: rgba(77, 161, 169,0.12); border-color: rgba(77, 161, 169,0.4); }
+.give-card.featured { background: rgba(26,158,117,0.12); border-color: rgba(26,158,117,0.4); }
 
 .give-card-tag {
   display: inline-flex; align-items: center; gap: 6px;
   font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
   padding: 4px 10px; border-radius: 4px; margin-bottom: 20px; width: fit-content;
 }
-.tag-gratis   { background: rgba(77, 161, 169,0.2);  color: #79D7BE; }
-.tag-terbuka  { background: rgba(255, 236, 122,0.2);  color: #EBD970; }
+.tag-gratis   { background: rgba(26,158,117,0.2);  color: #4DD9A8; }
+.tag-terbuka  { background: rgba(245,166,35,0.2);  color: #F5C842; }
 .tag-eksklusif{ background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
 
 .give-card-icon  { font-size: 36px; margin-bottom: 16px; }
@@ -428,12 +426,12 @@ body.nav-open { overflow: hidden; }
 .ladder-desc  { font-size: 13px; color: var(--gray-600); }
 .ladder-badge {
   display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 3px;
-  background: var(--amber-pale); color: #736A37; margin-top: 8px;
+  background: var(--amber-pale); color: #8B6000; margin-top: 8px;
 }
 
 /* Give banner */
 .give-banner {
-  background: var(--teal-pale); border: 1px solid rgba(77, 161, 169,0.25);
+  background: var(--teal-pale); border: 1px solid rgba(26,158,117,0.25);
   border-radius: 16px; padding: 32px;
   display: flex; align-items: center; justify-content: space-between;
   gap: 24px; margin-bottom: 48px; flex-wrap: wrap;
@@ -450,10 +448,10 @@ body.nav-open { overflow: hidden; }
 }
 .product-card:hover {
   border-color: var(--teal);
-  box-shadow: 0 8px 32px rgba(77, 161, 169,0.1);
+  box-shadow: 0 8px 32px rgba(26,158,117,0.1);
   transform: translateY(-2px);
 }
-.product-card.featured { border-color: var(--teal); box-shadow: 0 8px 32px rgba(77, 161, 169,0.12); }
+.product-card.featured { border-color: var(--teal); box-shadow: 0 8px 32px rgba(26,158,117,0.12); }
 .product-card-header { padding: 24px; background: var(--navy); color: #fff; position: relative; }
 .product-card.featured .product-card-header { background: var(--teal); }
 .product-card-top {
@@ -484,7 +482,7 @@ body.nav-open { overflow: hidden; }
   margin-top: 20px; cursor: pointer; transition: background .2s, color .2s;
 }
 .cta-primary { background: var(--teal); color: #fff; border: none; }
-.cta-primary:hover { background: #43939A; }
+.cta-primary:hover { background: #158a65; }
 .cta-outline { background: transparent; color: var(--teal); border: 1.5px solid var(--teal); }
 .cta-outline:hover { background: var(--teal-pale); }
 .section-sub-title { font-size: 24px; font-weight: 800; color: var(--navy); margin-bottom: 24px; }
@@ -540,7 +538,7 @@ body.nav-open { overflow: hidden; }
 }
 .journey-section::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(ellipse at 50% 0%, rgba(77, 161, 169,0.2) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(26,158,117,0.2) 0%, transparent 60%);
 }
 .journey-section .section-inner { position: relative; }
 .journey-section .section-title { color: #fff; }
@@ -574,7 +572,7 @@ body.nav-open { overflow: hidden; }
   display: block; transition: background .2s, border-color .2s, transform .2s;
 }
 .start-option:hover {
-  background: rgba(255,255,255,0.1); border-color: rgba(77, 161, 169,0.4);
+  background: rgba(255,255,255,0.1); border-color: rgba(26,158,117,0.4);
   transform: translateY(-2px);
 }
 .start-option-tag   { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--teal-light); margin-bottom: 10px; }
@@ -617,12 +615,11 @@ body.nav-open { overflow: hidden; }
   background: var(--amber); color: var(--navy);
   padding: 12px 20px; border-radius: 100px;
   font-weight: 700; font-size: 14px;
-  border: 2px solid var(--navy);
-  box-shadow: 0 4px 20px rgba(46,80,119,0.3);
+  box-shadow: 0 4px 20px rgba(245,166,35,0.4);
   display: flex; align-items: center; gap: 8px;
   transition: transform .2s, box-shadow .2s;
 }
-.float-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(46,80,119,0.4); }
+.float-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(245,166,35,0.5); }
 
 /* =====================================================================
    WORDPRESS CORE ALIGNMENT HELPERS
@@ -649,7 +646,7 @@ body.nav-open { overflow: hidden; }
   .nav-links {
     display: flex; flex-direction: column; align-items: flex-start;
     position: fixed; top: 64px; left: 0; right: 0;
-    background: rgba(46, 80, 119,0.98); padding: 24px;
+    background: rgba(11,31,58,0.98); padding: 24px;
     gap: 20px; border-bottom: 1px solid rgba(255,255,255,0.1);
     height: calc(100vh - 64px); overflow-y: auto;
     transform: translateY(-16px);

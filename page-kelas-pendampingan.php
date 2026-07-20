@@ -112,7 +112,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   .breadcrumb a:hover{color:rgba(255,255,255,0.7)}
   .breadcrumb-sep{color:rgba(255,255,255,0.2);font-size:13px}
   .breadcrumb-cur{color:rgba(255,255,255,0.7);font-size:13px}
-  .page-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(77, 161, 169,0.15);border:1px solid rgba(77, 161, 169,0.3);color:var(--teal-light);padding:5px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+  .page-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(26,158,117,0.15);border:1px solid rgba(26,158,117,0.3);color:var(--teal-light);padding:5px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
   .page-eyebrow-dot{width:5px;height:5px;border-radius:50%;background:var(--teal-light);animation:pulse 2s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
   .page-hero h1{font-size:48px;font-weight:800;color:white;line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px;max-width:720px}
@@ -129,16 +129,16 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   .sticky-bar-left{display:flex;align-items:baseline;gap:8px}
   .sticky-price{font-size:26px;font-weight:800;color:var(--navy)}
   .sticky-unit{font-size:14px;color:var(--gray-600)}
-  .sticky-promo{background:var(--amber-pale);color:#736A37;font-size:12px;font-weight:700;padding:3px 10px;border-radius:4px}
+  .sticky-promo{background:var(--amber-pale);color:#8B6000;font-size:12px;font-weight:700;padding:3px 10px;border-radius:4px}
   .sticky-actions{display:flex;gap:10px}
   .btn-primary{background:var(--teal);color:white;padding:11px 24px;border-radius:9px;font-weight:700;font-size:14px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;display:inline-block}
-  .btn-primary:hover{background:#43939A;transform:translateY(-1px)}
-  .btn-amber{background:var(--amber);color:var(--navy);padding:9px 22px;border-radius:9px;font-weight:700;font-size:14px;text-decoration:none;border:2px solid var(--navy);cursor:pointer;transition:all .2s;display:inline-block;box-shadow:0 2px 8px rgba(46,80,119,0.2)}
-  .btn-amber:hover{background:#D1C264;box-shadow:0 4px 12px rgba(46,80,119,0.3)}
+  .btn-primary:hover{background:#158a65;transform:translateY(-1px)}
+  .btn-amber{background:var(--amber);color:var(--navy);padding:11px 24px;border-radius:9px;font-weight:700;font-size:14px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;display:inline-block}
+  .btn-amber:hover{background:#e09620}
   .btn-ghost{background:transparent;color:var(--navy);padding:11px 24px;border-radius:9px;font-weight:600;font-size:14px;text-decoration:none;border:1.5px solid var(--gray-200);cursor:pointer;transition:all .2s;display:inline-block}
   .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
-  .btn-booklet{background:linear-gradient(135deg,#FFEC7A 0%,#FFF2A2 100%);color:var(--navy);padding:9px 22px;border-radius:9px;font-weight:800;font-size:14px;text-decoration:none;border:2px solid var(--navy);cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;box-shadow:0 2px 8px rgba(46,80,119,0.2)}
-  .btn-booklet:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(46,80,119,0.3)}
+  .btn-booklet{background:linear-gradient(135deg,#F5A623 0%,#FFC24D 100%);color:var(--navy);padding:11px 24px;border-radius:9px;font-weight:800;font-size:14px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 14px rgba(245,166,35,.45)}
+  .btn-booklet:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(245,166,35,.6)}
 
   /* MAIN LAYOUT */
   .main-layout{max-width:1200px;margin:0 auto;padding:64px 48px;display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:64px;align-items:start}
@@ -161,7 +161,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   .outline-title{flex:1}
   .outline-title-main{font-size:15px;font-weight:700;color:var(--navy)}
   .outline-title-sub{font-size:13px;color:var(--gray-600);margin-top:2px}
-  .outline-badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:4px;background:var(--amber-pale);color:#736A37;white-space:nowrap}
+  .outline-badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:4px;background:var(--amber-pale);color:#8B6000;white-space:nowrap}
   .outline-body{display:none;padding:20px;border:1px solid var(--teal);border-top:none;border-radius:0 0 12px 12px;background:white;margin-top:-4px}
   .outline-body.open{display:block}
   .seri-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -209,13 +209,13 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   .price-unit{font-size:14px;color:rgba(255,255,255,0.5)}
   .price-options{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:16px}
   .price-opt{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 8px;text-align:center;cursor:pointer;transition:all .2s}
-  .price-opt:hover,.price-opt.active{background:rgba(77, 161, 169,0.2);border-color:rgba(77, 161, 169,0.5)}
+  .price-opt:hover,.price-opt.active{background:rgba(26,158,117,0.2);border-color:rgba(26,158,117,0.5)}
   .price-opt-num{font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:4px}
   .price-opt-val{font-size:15px;font-weight:800;color:white}
   .price-opt-sub{font-size:10px;color:rgba(255,255,255,0.4);margin-top:2px}
   .price-opt.active .price-opt-num,.price-opt.active .price-opt-sub{color:var(--teal-light)}
   .price-opt.best .price-opt-val{color:var(--amber)}
-  .best-badge{background:var(--amber);color:var(--navy);font-size:9px;font-weight:800;padding:1px 5px;border-radius:3px;display:block;margin-top:4px;letter-spacing:.04em;border:1px solid var(--navy)}
+  .best-badge{background:var(--amber);color:var(--navy);font-size:9px;font-weight:800;padding:2px 6px;border-radius:3px;display:block;margin-top:4px;letter-spacing:.04em}
   .price-card-body{padding:24px}
   .price-feature{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
   .pf-check{color:var(--teal);font-size:15px;flex-shrink:0;margin-top:2px;font-weight:700}
@@ -224,9 +224,9 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   .price-cta{padding:0 24px 24px}
   .price-cta .btn-amber{display:block;width:100%;text-align:center;font-size:15px;padding:14px}
   .price-cta .btn-ghost{display:block;width:100%;text-align:center;margin-top:8px;font-size:14px;padding:11px}
-  .urgency{background:var(--amber-pale);border:1px solid #FFEC7A;border-radius:8px;padding:10px 14px;text-align:center;margin:0 24px 20px}
-  .urgency-text{font-size:12px;font-weight:600;color:#736A37}
-  .guarantee{display:flex;align-items:center;gap:10px;padding:14px 24px;background:var(--teal-pale);border-top:1px solid rgba(77, 161, 169,0.2)}
+  .urgency{background:var(--amber-pale);border:1px solid #F5A623;border-radius:8px;padding:10px 14px;text-align:center;margin:0 24px 20px}
+  .urgency-text{font-size:12px;font-weight:600;color:#8B6000}
+  .guarantee{display:flex;align-items:center;gap:10px;padding:14px 24px;background:var(--teal-pale);border-top:1px solid rgba(26,158,117,0.2)}
   .guarantee-icon{font-size:22px}
   .guarantee-text{font-size:12px;color:var(--teal);font-weight:500;line-height:1.4}
 
@@ -249,14 +249,14 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   .pt-box-early2 .pt-price,.pt-box-early2 .pt-sub{color:white}
   .pt-price{font-size:19px;font-weight:800;line-height:1.2}
   .pt-sub{font-size:11px;opacity:.9;margin-top:3px}
-  .pt-active-ring{box-shadow:0 0 0 2px var(--navy)}
-  .pt-active-tag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--amber);color:var(--navy);font-size:9px;font-weight:800;padding:2px 9px;border-radius:100px;letter-spacing:.03em;white-space:nowrap;border:1.5px solid var(--navy)}
+  .pt-active-ring{box-shadow:0 0 0 3px rgba(245,166,35,.6)}
+  .pt-active-tag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--amber);color:var(--navy);font-size:9px;font-weight:800;padding:3px 10px;border-radius:100px;letter-spacing:.03em;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.15)}
   @media (max-width:860px){.price-table{border-spacing:6px 10px}.pt-row-label{width:110px}.price-table tr.pt-head-row td{font-size:11px}.pt-price{font-size:15px}}
 
   /* PAKAR GRID (matches page-tentang-kami.php) */
   .pakar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:left}
   .pakar-card{background:#fff;border:1px solid var(--gray-200);border-radius:16px;overflow:hidden;transition:box-shadow .2s,transform .2s}
-  .pakar-card:hover{box-shadow:0 12px 28px rgba(46, 80, 119,0.1);transform:translateY(-2px)}
+  .pakar-card:hover{box-shadow:0 12px 28px rgba(11,31,58,0.1);transform:translateY(-2px)}
   .pakar-photo{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:var(--gray-100)}
   .pakar-body{padding:16px 18px 18px}
   .pakar-name{font-size:14px;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:4px}
@@ -308,7 +308,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
 
   /* CTA SECTION */
   .cta-section{background:var(--navy);padding:80px 48px;text-align:center;position:relative;overflow:hidden}
-  .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(77, 161, 169,0.2) 0%,transparent 60%)}
+  .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(26,158,117,0.2) 0%,transparent 60%)}
   .cta-inner{max-width:680px;margin:0 auto;position:relative}
   .cta-title{font-size:40px;font-weight:800;color:white;line-height:1.15;letter-spacing:-1px;margin-bottom:14px}
   .cta-sub{font-size:17px;color:rgba(255,255,255,0.6);line-height:1.6;margin-bottom:36px}
@@ -317,7 +317,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
 
   /* UTILITY */
   .bg-gray{background:var(--gray-50)}
-  .tag-batch{display:inline-flex;align-items:center;gap:6px;background:rgba(255, 236, 122,0.15);border:1px solid rgba(255, 236, 122,0.3);color:#8B5800;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:700}
+  .tag-batch{display:inline-flex;align-items:center;gap:6px;background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.3);color:#8B5800;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:700}
 
   /* MITRA & LABORATORIUM */
   .mitra-label{font-size:13px;color:var(--gray-600);font-weight:600;margin-bottom:20px}
@@ -398,7 +398,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
       <span class="sticky-price"><?php echo labnesia_kp_rp( $kp_active_prices[1] ); ?></span>
       <span class="sticky-unit">/peserta · mulai dari<?php echo $kp_active_key !== 'normal' ? ' (' . esc_html( $kp_active['label'] ) . ')' : ''; ?></span>
     </div>
-    <span class="sticky-promo"><?php labnesia_icon( 'zap', '#736A37', 12 ); ?> Hemat s.d. Rp 20 juta</span>
+    <span class="sticky-promo"><?php labnesia_icon( 'zap', '#8B6000', 12 ); ?> Hemat s.d. Rp 20 juta</span>
   </div>
   <div class="sticky-actions">
     <a href="<?php echo $url_booklet; ?>" class="btn-booklet" target="_blank" rel="noopener"><?php labnesia_icon( 'download', 'var(--navy)', 14 ); ?> Unduh Booklet</a>
@@ -458,27 +458,27 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
       <h2 class="h2">Dirancang khusus untuk<br>laboratorium yang ingin bergerak.</h2>
       <p class="body" style="margin-bottom:24px">Program ini tepat untuk Anda jika laboratorium sedang menghadapi situasi berikut:</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-        <div style="display:flex;gap:10px;padding:14px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(77, 161, 169,0.2)">
+        <div style="display:flex;gap:10px;padding:14px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(26,158,117,0.2)">
           <span style="flex-shrink:0"><?php labnesia_icon( 'check', 'var(--teal)', 18 ); ?></span>
           <p style="font-size:14px;color:#085041;line-height:1.5">Lab belum punya sistem mutu sama sekali dan tidak tahu harus mulai dari mana</p>
         </div>
-        <div style="display:flex;gap:10px;padding:14px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(77, 161, 169,0.2)">
+        <div style="display:flex;gap:10px;padding:14px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(26,158,117,0.2)">
           <span style="flex-shrink:0"><?php labnesia_icon( 'check', 'var(--teal)', 18 ); ?></span>
           <p style="font-size:14px;color:#085041;line-height:1.5">Punya dokumen tapi tidak yakin apakah sudah sesuai persyaratan KAN</p>
         </div>
-        <div style="display:flex;gap:10px;padding:14px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(77, 161, 169,0.2)">
+        <div style="display:flex;gap:10px;padding:14px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(26,158,117,0.2)">
           <span style="flex-shrink:0"><?php labnesia_icon( 'check', 'var(--teal)', 18 ); ?></span>
           <p style="font-size:14px;color:#085041;line-height:1.5">Anggaran terbatas — tidak mampu konsultan in-house yang 150–200 juta</p>
         </div>
-        <div style="display:flex;gap:10px;padding:14px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(77, 161, 169,0.2)">
+        <div style="display:flex;gap:10px;padding:14px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(26,158,117,0.2)">
           <span style="flex-shrink:0"><?php labnesia_icon( 'check', 'var(--teal)', 18 ); ?></span>
           <p style="font-size:14px;color:#085041;line-height:1.5">Proses pengadaan instansi panjang — perlu mulai sebagai individu dulu</p>
         </div>
-        <div style="display:flex;gap:10px;padding:14px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(77, 161, 169,0.2)">
+        <div style="display:flex;gap:10px;padding:14px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(26,158,117,0.2)">
           <span style="flex-shrink:0"><?php labnesia_icon( 'check', 'var(--teal)', 18 ); ?></span>
           <p style="font-size:14px;color:#085041;line-height:1.5">Tim lab bergantung pada satu orang saja yang paham sistem mutu</p>
         </div>
-        <div style="display:flex;gap:10px;padding:14px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(77, 161, 169,0.2)">
+        <div style="display:flex;gap:10px;padding:14px;background:var(--teal-pale);border-radius:10px;border:1px solid rgba(26,158,117,0.2)">
           <span style="flex-shrink:0"><?php labnesia_icon( 'check', 'var(--teal)', 18 ); ?></span>
           <p style="font-size:14px;color:#085041;line-height:1.5">Lab ingin menjadi profit center & income generator untuk institusi</p>
         </div>
@@ -605,7 +605,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
         </div>
       </div>
 
-      <div style="background:var(--amber-pale);border:1px solid rgba(255, 236, 122,0.3);border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start;margin-top:16px">
+      <div style="background:var(--amber-pale);border:1px solid rgba(245,166,35,0.3);border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start;margin-top:16px">
         <span style="flex-shrink:0"><?php labnesia_icon( 'target', '#6B4400', 24 ); ?></span>
         <div>
           <p style="font-size:14px;font-weight:700;color:#6B4400;margin-bottom:4px">Setelah Tahap 4, lab Anda siap Audit Internal</p>
@@ -613,11 +613,11 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
         </div>
       </div>
 
-      <div style="background:var(--teal-pale);border:1px solid rgba(77, 161, 169,0.25);border-radius:10px;padding:16px 18px;margin-top:12px;display:flex;gap:12px;align-items:flex-start">
+      <div style="background:var(--teal-pale);border:1px solid rgba(26,158,117,0.25);border-radius:10px;padding:16px 18px;margin-top:12px;display:flex;gap:12px;align-items:flex-start">
         <span style="font-size:20px;flex-shrink:0"><?php labnesia_icon( 'refresh-cw', '#085041', 20 ); ?></span>
         <div>
           <p style="font-size:13px;font-weight:700;color:#085041;margin-bottom:3px">Setelah terakreditasi, jangan berhenti di sini.</p>
-          <p style="font-size:13px;color:#377984;line-height:1.5">Lab yang sudah terakreditasi perlu mempertahankan statusnya setiap tahun menghadapi surveillance dan menjaga kompetensi SDM yang terus berganti. <strong>Annual Partnership Labnesia</strong> hadir sebagai solusi — mulai Rp 36 jt/tahun, sudah include pelatihan premium untuk SDM, update dokumen, dan pendampingan audit internal. <a href="<?php echo $url_inhouse; ?>" style="color:var(--teal);font-weight:600">Pelajari Annual Partnership <?php labnesia_icon( 'arrow-right', 'var(--teal)', 13 ); ?></a></p>
+          <p style="font-size:13px;color:#0F6E56;line-height:1.5">Lab yang sudah terakreditasi perlu mempertahankan statusnya setiap tahun menghadapi surveillance dan menjaga kompetensi SDM yang terus berganti. <strong>Annual Partnership Labnesia</strong> hadir sebagai solusi — mulai Rp 36 jt/tahun, sudah include pelatihan premium untuk SDM, update dokumen, dan pendampingan audit internal. <a href="<?php echo $url_inhouse; ?>" style="color:var(--teal);font-weight:600">Pelajari Annual Partnership <?php labnesia_icon( 'arrow-right', 'var(--teal)', 13 ); ?></a></p>
         </div>
       </div>
     </div>
@@ -1026,12 +1026,12 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
         </div>
         <div style="background:var(--teal-pale);border-radius:8px;padding:12px;margin-top:8px;text-align:center">
           <p style="font-size:12px;color:#085041;font-weight:600">Total nilai benefit: <span style="font-size:16px;font-weight:800;color:var(--teal)">Rp 18–20 juta</span></p>
-          <p style="font-size:11px;color:#377984;margin-top:2px">Sudah termasuk dalam harga program · *Pelatihan terkait uji kompetensi bersifat independen, lihat catatan di bawah</p>
+          <p style="font-size:11px;color:#0F6E56;margin-top:2px">Sudah termasuk dalam harga program · *Pelatihan terkait uji kompetensi bersifat independen, lihat catatan di bawah</p>
         </div>
       </div>
 
       <div class="urgency">
-        <p class="urgency-text"><?php labnesia_icon( 'hourglass', '#736A37', 12 ); ?> Batch Oktober 2026 dibuka — <strong>maks. 10 instansi/batch</strong></p>
+        <p class="urgency-text"><?php labnesia_icon( 'hourglass', '#8B6000', 12 ); ?> Batch Oktober 2026 dibuka — <strong>maks. 10 instansi/batch</strong></p>
       </div>
 
       <div class="price-cta">

@@ -961,7 +961,7 @@ function labnesia_ps_static_cards_section( $schemes ) {
 	if ( empty( $schemes ) ) return;
 	?>
 	<style>
-		.btn-daftar-skema:hover { background: #43939A !important; }
+		.btn-daftar-skema:hover { background: #158a65 !important; }
 		.btn-toggle-silabus:hover { background: var(--gray-100) !important; border-color: var(--gray-400) !important; }
 	</style>
 	<div class="scheme-grid" style="margin-top: 24px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
@@ -969,7 +969,7 @@ function labnesia_ps_static_cards_section( $schemes ) {
 		<div class="scheme-card" style="display: flex; flex-direction: column; justify-content: space-between; border: 2px solid var(--gray-200); border-radius: 18px; overflow: hidden; background: white; transition: all 0.2s;">
 			<div>
 				<!-- Header (gradient) -->
-				<div class="scheme-header auditor" style="background: linear-gradient(135deg, #2E5077, #607A98); padding: 20px 24px; color: white;">
+				<div class="scheme-header auditor" style="background: linear-gradient(135deg, #0B1F3A, #1C3A60); padding: 20px 24px; color: white;">
 					<div class="scheme-tag" style="opacity: 0.85; font-size: 9px; letter-spacing: 0.08em; display: flex; justify-content: space-between; text-transform: uppercase; font-weight: 700; margin-bottom: 6px;">
 						<span><?php echo esc_html( $scheme['format'] ); ?></span>
 						<span style="color: var(--amber); font-weight: 800;"><?php echo $jp_type; ?> JP</span>
@@ -1093,7 +1093,7 @@ function labnesia_ps_static_cards_section( $schemes ) {
   .breadcrumb a{color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px}
   .breadcrumb-sep{color:rgba(255,255,255,0.2);font-size:13px}
   .breadcrumb-cur{color:rgba(255,255,255,0.7);font-size:13px}
-  .page-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255, 236, 122,0.15);border:1px solid rgba(255, 236, 122,0.3);color:var(--amber);padding:5px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+  .page-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.3);color:var(--amber);padding:5px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
   .page-eyebrow-dot{width:5px;height:5px;border-radius:50%;background:var(--amber);animation:pulse 2s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
   .page-hero h1{font-size:46px;font-weight:800;color:white;line-height:1.12;letter-spacing:-1.3px;margin-bottom:18px;max-width:680px}
@@ -1120,10 +1120,10 @@ function labnesia_ps_static_cards_section( $schemes ) {
 
   .scheme-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
   .scheme-card{border:2px solid var(--gray-200);border-radius:18px;overflow:hidden;transition:all .2s}
-  .scheme-card:hover{border-color:var(--teal);box-shadow:0 8px 28px rgba(77, 161, 169,0.1)}
+  .scheme-card:hover{border-color:var(--teal);box-shadow:0 8px 28px rgba(26,158,117,0.1)}
   .scheme-header{padding:24px;color:white}
-  .scheme-header.implementer{background:linear-gradient(135deg,#4DA1A9,#377984)}
-  .scheme-header.auditor{background:linear-gradient(135deg,#2E5077,#607A98)}
+  .scheme-header.implementer{background:linear-gradient(135deg,#1A9E75,#0F6E56)}
+  .scheme-header.auditor{background:linear-gradient(135deg,#0B1F3A,#1C3A60)}
   .scheme-tag{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-bottom:6px}
   .scheme-name{font-size:22px;font-weight:800;margin-bottom:4px}
   .scheme-sub{font-size:13px;opacity:.85}
@@ -1167,7 +1167,7 @@ function labnesia_ps_static_cards_section( $schemes ) {
   .price-tier{border:1.5px solid var(--gray-200);border-radius:14px;padding:20px;text-align:center;transition:all .2s}
   .price-tier:hover{border-color:var(--teal)}
   .price-tier.featured{border-color:var(--amber);background:var(--amber-pale);position:relative}
-  .price-tier-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--amber);color:var(--navy);font-size:10px;font-weight:800;padding:2px 11px;border-radius:100px;white-space:nowrap;border:1.5px solid var(--navy)}
+  .price-tier-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--amber);color:var(--navy);font-size:10px;font-weight:800;padding:3px 12px;border-radius:100px;white-space:nowrap}
   .price-tier-label{font-size:11px;font-weight:600;color:var(--gray-600);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
   .price-tier-val{font-size:24px;font-weight:800;color:var(--navy)}
   .price-tier-unit{font-size:11px;color:var(--gray-400)}
@@ -1183,7 +1183,7 @@ function labnesia_ps_static_cards_section( $schemes ) {
   .jadwal-section{background:var(--gray-50)}
   .jadwal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .jadwal-card{background:#fff;border:1px solid var(--gray-200);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
-  .jadwal-card:hover{box-shadow:0 12px 28px rgba(46, 80, 119,0.1);transform:translateY(-2px)}
+  .jadwal-card:hover{box-shadow:0 12px 28px rgba(11,31,58,0.1);transform:translateY(-2px)}
   .jadwal-card-thumb{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;background:var(--gray-100)}
   .jadwal-card-thumb-fallback{width:100%;aspect-ratio:16/10;background:var(--navy);display:flex;align-items:center;justify-content:center}
   .jadwal-card-body{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
@@ -1195,7 +1195,7 @@ function labnesia_ps_static_cards_section( $schemes ) {
   .jadwal-card-actions{display:flex;gap:8px;flex-wrap:wrap}
   .jadwal-card-actions a{font-size:13px;font-weight:700;padding:8px 14px;border-radius:8px;text-decoration:none}
   .jadwal-card-daftar{background:var(--teal);color:#fff}
-  .jadwal-card-daftar:hover{background:#43939A}
+  .jadwal-card-daftar:hover{background:#158a65}
   @media (max-width:1024px){.jadwal-grid{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:640px){.jadwal-grid{grid-template-columns:1fr}}
 
@@ -1226,7 +1226,7 @@ function labnesia_ps_static_cards_section( $schemes ) {
 
   /* CTA FORM */
   .cta-form-section{background:var(--navy);position:relative;overflow:hidden}
-  .cta-form-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(77, 161, 169,0.2) 0%,transparent 60%)}
+  .cta-form-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(26,158,117,0.2) 0%,transparent 60%)}
   .cta-form-inner{max-width:680px;margin:0 auto;text-align:center;position:relative}
   .cta-form-title{font-size:34px;font-weight:800;color:white;line-height:1.2;letter-spacing:-0.8px;margin-bottom:14px}
   .cta-form-sub{font-size:15px;color:rgba(255,255,255,0.6);line-height:1.6;margin-bottom:32px}
@@ -1238,7 +1238,7 @@ function labnesia_ps_static_cards_section( $schemes ) {
   .form-input:focus{border-color:var(--teal)}
   .form-select{width:100%;padding:11px 14px;border:1px solid var(--gray-200);border-radius:9px;font-size:14px;font-family:var(--font-display);outline:none;background:white}
   .btn-submit-cta{width:100%;padding:13px;background:var(--teal);color:white;border:none;border-radius:9px;font-weight:700;font-size:15px;cursor:pointer;margin-top:8px;transition:all .2s}
-  .btn-submit-cta:hover{background:#43939A}
+  .btn-submit-cta:hover{background:#158a65}
   @media (max-width:992px){
     .scheme-grid{grid-template-columns:1fr !important}
     .pricing-grid{grid-template-columns:1fr !important}
@@ -1286,8 +1286,8 @@ function labnesia_ps_static_cards_section( $schemes ) {
 
 <!-- CATATAN PENTING -->
 <div style="background:var(--gray-50);padding:24px 48px">
-  <div style="max-width:1200px;margin:0 auto;display:flex;gap:14px;align-items:flex-start;background:var(--amber-pale);border:1px solid rgba(255, 236, 122,0.35);border-left:4px solid var(--amber);border-radius:0 12px 12px 0;padding:18px 22px">
-    <span style="flex-shrink:0;margin-top:2px"><?php labnesia_icon( 'info', '#736A37', 18 ); ?></span>
+  <div style="max-width:1200px;margin:0 auto;display:flex;gap:14px;align-items:flex-start;background:var(--amber-pale);border:1px solid rgba(245,166,35,0.35);border-left:4px solid var(--amber);border-radius:0 12px 12px 0;padding:18px 22px">
+    <span style="flex-shrink:0;margin-top:2px"><?php labnesia_icon( 'info', '#8B6000', 18 ); ?></span>
     <div>
       <p style="font-size:12px;font-weight:700;color:#6B4400;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Catatan Penting</p>
       <p style="font-size:13px;color:#8B5800;line-height:1.65">Pelatihan yang kami selenggarakan bertujuan untuk meningkatkan kompetensi sumber daya manusia (SDM) di lingkungan perguruan tinggi, serta dapat digunakan sebagai salah satu bentuk pemenuhan persyaratan administratif untuk mengikuti uji kompetensi pada skema tertentu di LSP Edukia, sesuai dengan ketentuan yang berlaku. </p>
@@ -1728,7 +1728,7 @@ function showCurrScheme(scheme) {
       <button class="btn-submit-cta" type="submit" id="pf-submit-btn">Daftar Pelatihan <?php labnesia_icon( 'arrow-right', '#ffffff', 15 ); ?></button>
       <p style="font-size:11px;color:var(--gray-400);text-align:center;margin-top:10px">Tidak ada biaya di tahap ini — tim kami akan menghubungi Anda terlebih dahulu.</p>
     </form>
-    <div id="pf-success" style="display:none;margin-top:20px;background:var(--teal-pale);border:1px solid rgba(77, 161, 169,0.3);border-radius:16px;padding:24px;text-align:center">
+    <div id="pf-success" style="display:none;margin-top:20px;background:var(--teal-pale);border:1px solid rgba(26,158,117,0.3);border-radius:16px;padding:24px;text-align:center">
       <div style="font-size:16px;font-weight:800;color:#085041;margin-bottom:6px">Pendaftaran terkirim!</div>
       <p style="font-size:13px;color:#085041;line-height:1.6">Tim kami akan menghubungi Anda dalam 1×24 jam melalui WhatsApp untuk konfirmasi dan detail pembayaran.</p>
     </div>

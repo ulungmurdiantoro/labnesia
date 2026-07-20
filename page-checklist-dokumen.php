@@ -138,7 +138,7 @@ function labnesia_checklist_doc_onclick( $kategori ) {
   .container{max-width:1200px;margin:0 auto;padding:0 48px}
   .hero{background:var(--navy);padding:88px 0 48px;position:relative;overflow:hidden}
   .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;position:relative;z-index:1}
-  .hero-badge{display:inline-block;background:rgba(77, 161, 169,0.15);border:1px solid rgba(77, 161, 169,0.3);color:var(--teal-light);padding:5px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+  .hero-badge{display:inline-block;background:rgba(26,158,117,0.15);border:1px solid rgba(26,158,117,0.3);color:var(--teal-light);padding:5px 16px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
   .hero h1{font-size:38px;font-weight:800;color:#fff;line-height:1.2;letter-spacing:-0.8px;margin-bottom:16px}
   .hero h1 em,.hero h1 .gold{font-style:normal;color:var(--teal-light)}
   .hero-sub{font-size:16px;color:rgba(255,255,255,0.6);line-height:1.65;margin-bottom:28px}
@@ -157,7 +157,7 @@ function labnesia_checklist_doc_onclick( $kategori ) {
   .section-eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;text-align:center}
   .section-title{font-size:30px;font-weight:800;color:var(--navy);letter-spacing:-0.6px;text-align:center;margin-bottom:12px}
   .section-sub{color:var(--gray-600);font-size:15px;text-align:center;max-width:560px;margin:0 auto 32px}
-  .preview-note{display:flex;gap:14px;background:var(--teal-pale);border:1px solid rgba(77, 161, 169,0.2);border-radius:12px;padding:16px 20px;margin-bottom:40px}
+  .preview-note{display:flex;gap:14px;background:var(--teal-pale);border:1px solid rgba(26,158,117,0.2);border-radius:12px;padding:16px 20px;margin-bottom:40px}
   .preview-note-icon{font-size:22px;flex-shrink:0}
   .preview-note h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px}
   .preview-note p{font-size:13px;color:#085041;line-height:1.6;margin:0}
@@ -168,7 +168,7 @@ function labnesia_checklist_doc_onclick( $kategori ) {
   .klausul-count{font-size:12px;color:var(--gray-400);font-weight:600}
   .doc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
   .doc-card{background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:16px;cursor:pointer;position:relative;transition:all .2s;display:flex;gap:12px}
-  .doc-card:hover{border-color:var(--teal);box-shadow:0 8px 20px rgba(46, 80, 119,0.08)}
+  .doc-card:hover{border-color:var(--teal);box-shadow:0 8px 20px rgba(11,31,58,0.08)}
   .doc-card[hidden]{display:none}
   .doc-icon{font-size:22px;flex-shrink:0}
   .doc-name{font-size:13px;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:4px}
@@ -177,15 +177,15 @@ function labnesia_checklist_doc_onclick( $kategori ) {
   .doc-badge.open{background:var(--teal-pale);color:var(--teal)}
   .doc-badge.locked{background:var(--amber-pale);color:#8B5800}
   .doc-badge.preview{background:var(--gray-100);color:var(--gray-600)}
-  .lock-overlay{position:absolute;inset:0;background:rgba(46, 80, 119,0.9);border-radius:12px;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s}
+  .lock-overlay{position:absolute;inset:0;background:rgba(11,31,58,0.9);border-radius:12px;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s}
   .doc-card:hover .lock-overlay{opacity:1}
   .lock-cta{color:#fff;font-size:12px;font-weight:700}
   .doc-grid-action{grid-column:1/-1;text-align:center;margin-top:4px}
   .btn-outline{background:transparent;border:1.5px solid var(--gray-200);color:var(--gray-600);padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
   .btn-outline:hover{background:var(--gray-50)}
-  .btn-primary,.btn-gold{background:var(--amber);color:var(--navy);border:2px solid var(--navy);padding:11px 24px;border-radius:10px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .2s;box-shadow:0 2px 8px rgba(46,80,119,0.2)}
-  .btn-primary:hover,.btn-gold:hover{background:#D1C264;box-shadow:0 4px 14px rgba(46,80,119,0.3)}
-  .modal-overlay{display:none;position:fixed;inset:0;background:rgba(46, 80, 119,0.6);z-index:200;align-items:center;justify-content:center;padding:24px}
+  .btn-primary,.btn-gold{background:var(--amber);color:var(--navy);border:none;padding:13px 26px;border-radius:10px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:background .2s}
+  .btn-primary:hover,.btn-gold:hover{background:#e09620}
+  .modal-overlay{display:none;position:fixed;inset:0;background:rgba(11,31,58,0.6);z-index:200;align-items:center;justify-content:center;padding:24px}
   .modal-overlay.active{display:flex}
   .modal{background:#fff;border-radius:18px;padding:28px;max-width:440px;width:100%;position:relative;max-height:90vh;overflow-y:auto}
   .modal-close{position:absolute;top:16px;right:16px;background:none;border:none;font-size:18px;cursor:pointer;color:var(--gray-400)}
@@ -196,9 +196,9 @@ function labnesia_checklist_doc_onclick( $kategori ) {
   .form-group input,.form-group select{width:100%;padding:10px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:14px;font-family:inherit;outline:none}
   .form-group input:focus,.form-group select:focus{border-color:var(--teal)}
   .form-check{display:flex;gap:8px;align-items:flex-start;margin-bottom:16px;font-size:12px;color:var(--gray-600)}
-  .form-error{background:var(--amber-pale);color:#6B4400;border:1px solid rgba(255, 236, 122,0.3);border-radius:8px;padding:10px 14px;font-size:13px;margin-bottom:12px}
+  .form-error{background:var(--amber-pale);color:#6B4400;border:1px solid rgba(245,166,35,0.3);border-radius:8px;padding:10px 14px;font-size:13px;margin-bottom:12px}
   .btn-submit{width:100%;background:var(--teal);color:#fff;border:none;padding:13px;border-radius:9px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;transition:background .2s}
-  .btn-submit:hover{background:#43939A}
+  .btn-submit:hover{background:#158a65}
   .modal-success{text-align:center}
   .success-icon{font-size:36px;margin-bottom:10px}
   .modal-success h3{margin-bottom:8px}
