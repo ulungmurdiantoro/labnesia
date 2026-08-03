@@ -314,7 +314,7 @@ get_header(); ?>
         <div class="stats-row">
             <?php
             $stats = [
-                [ 'num'=>'30', 'unit'=>'+', 'label'=>'Laboratorium berhasil terakreditasi KAN bersama Labnesia' ],
+                [ 'num'=>'30', 'unit'=>'+', 'label'=>'Laboratorium berhasil terakreditasi ISO/IEC 17025 oleh Komite Akreditasi Nasional (KAN)' ],
                 [ 'num'=>'15', 'unit'=>'+', 'label'=>'Pakar aktif di 9 bidang laboratorium berbeda' ],
                 [ 'num'=>'9',  'unit'=>'',  'label'=>'Jenis lab: lingkungan, pangan, sipil, farmasi, kalibrasi, dll' ],
                 [ 'num'=>'2x', 'unit'=>'',  'label'=>'Lebih cepat dari jalur mandiri rata-rata' ],
