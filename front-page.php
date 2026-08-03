@@ -421,7 +421,7 @@ $mitra_logos = [
       <div class="hero-stats">
         <div class="hero-stat">
           <div class="hero-stat-num">30+</div>
-          <div class="hero-stat-label">Laboratorium berhasil terakreditasi KAN</div>
+          <div class="hero-stat-label">Laboratorium berhasil terakreditasi ISO/IEC 17025 oleh Komite Akreditasi Nasional (KAN)</div>
         </div>
         <div class="hero-stat">
           <div class="hero-stat-num">15</div>
