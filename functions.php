@@ -513,3 +513,28 @@ function labnesia_handle_daftar_event() {
 }
 add_action( 'admin_post_labnesia_daftar_event', 'labnesia_handle_daftar_event' );
 add_action( 'admin_post_nopriv_labnesia_daftar_event', 'labnesia_handle_daftar_event' );
+
+// ── SEO: Title tag & meta description override ────────────────────────────────
+// Hardcode title dan meta description langsung dari tema, tanpa bergantung
+// pada nilai Tagline di WordPress Admin atau konfigurasi plugin SEO.
+
+// Override <title> tag untuk setiap halaman
+add_filter( 'pre_get_document_title', function( $title ) {
+    if ( is_front_page() || is_home() ) {
+        return 'Labnesia - Pusat Pelatihan & Pendampingan Akreditasi ISO/IEC 17025';
+    }
+    // Halaman lain: "Judul Halaman - Labnesia"
+    return $title;
+}, 99 );
+
+// Inject <meta name="description"> di <head>
+add_action( 'wp_head', function() {
+    if ( is_front_page() || is_home() ) {
+        echo '<meta name="description" content="Labnesia membantu laboratorium meraih akreditasi ISO/IEC 17025 melalui pelatihan, pendampingan, dan konsultasi oleh pakar berpengalaman.">' . "\n";
+    } elseif ( is_singular() ) {
+        $excerpt = get_the_excerpt();
+        if ( $excerpt ) {
+            echo '<meta name="description" content="' . esc_attr( wp_strip_all_tags( $excerpt ) ) . '">' . "\n";
+        }
+    }
+}, 1 );
