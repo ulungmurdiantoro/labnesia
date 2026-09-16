@@ -10,7 +10,7 @@ $url_faq       = esc_url( home_url( '/faq/' ) );
 $url_inhouse   = esc_url( home_url( '/inhouse/' ) );
 $url_pelatihan = esc_url( home_url( '/pelatihan-sertifikasi/' ) );
 $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
-$url_booklet   = esc_url( 'https://labnesia.id/wp-content/uploads/2026/07/Booklet-Kelas-Pendampingan-Labnesia-1.pdf' );
+$url_booklet   = esc_url( 'https://labnesia.id/wp-content/uploads/2026/09/Booklet-Kelas-Pendampingan-Labnesia-1.pdf' );
 $url_daftar    = esc_url( 'https://docs.google.com/forms/d/e/1FAIpQLSfw8fQOZvCCAuNVrZM0vuhVFhFQHYvr6B6yORWpYz026NhvXA/viewform?embedded=true' );
 
 $pakar_dir = get_template_directory_uri() . '/assets/pakar/';
