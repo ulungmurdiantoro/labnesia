@@ -636,15 +636,15 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
       array( 'day' => 'Senin – Selasa', 'date' => '26–27', 'month' => 'Oktober 2026',   'title' => 'Implementasi Kaji Ulang Manajemen Sesuai SNI ISO/IEC 17025:2017' ),
     );
     $kp_batch2_sessions = array(
-      array( 'day' => 'Senin',           'date' => '5',     'month' => 'Oktober 2026',   'title' => 'Pemahaman SNI ISO/IEC 17025:2017' ),
-      array( 'day' => 'Selasa',          'date' => '6',     'month' => 'Oktober 2026',   'title' => 'GAP Analysis Kesiapan Akreditasi Laboratorium' ),
-      array( 'day' => 'Senin – Selasa',  'date' => '19–20', 'month' => 'Oktober 2026',   'title' => 'Penyusunan Dokumen Sistem Manajemen SNI ISO/IEC 17025:2017' ),
-      array( 'day' => 'Senin – Selasa',  'date' => '2–3',   'month' => 'November 2026',  'title' => 'Implementasi Uji Profisiensi dan Uji Banding Antar Laboratorium' ),
-      array( 'day' => 'Senin – Selasa',  'date' => '16–17', 'month' => 'November 2026',  'title' => 'Verifikasi dan Validasi Metode Pengujian' ),
-      array( 'day' => 'Senin – Selasa',  'date' => '7–8',   'month' => 'Desember 2026',  'title' => 'Ketidakpastian Pengukuran Sesuai SNI ISO/IEC 17025:2017' ),
-      array( 'day' => 'Senin – Selasa',  'date' => '21–22', 'month' => 'Desember 2026',  'title' => 'Penerapan Jaminan Mutu Internal dan Pengendalian Mutu Hasil Uji' ),
-      array( 'day' => 'Rabu – Jum\'at',  'date' => '20–22', 'month' => 'Januari 2027',   'title' => 'Audit Internal Laboratorium Berdasarkan SNI ISO/IEC 17025:2017', 'time' => '09.00 - 16.00 WIB' ),
-      array( 'day' => 'Senin – Selasa',  'date' => '25–26', 'month' => 'Januari 2027',   'title' => 'Implementasi Kaji Ulang Manajemen Sesuai SNI ISO/IEC 17025:2017' ),
+      array( 'day' => 'Senin',           'date' => '2',     'month' => 'November 2026',  'title' => 'Pemahaman SNI ISO/IEC 17025:2017' ),
+      array( 'day' => 'Selasa',          'date' => '3',     'month' => 'November 2026',  'title' => 'GAP Analysis Kesiapan Akreditasi Laboratorium' ),
+      array( 'day' => 'Senin – Selasa',  'date' => '16–17', 'month' => 'November 2026',  'title' => 'Penyusunan Dokumen Sistem Manajemen SNI ISO/IEC 17025:2017' ),
+      array( 'day' => 'Senin – Selasa',  'date' => '7–8',   'month' => 'Desember 2026',  'title' => 'Implementasi Uji Profisiensi dan Uji Banding Antar Laboratorium' ),
+      array( 'day' => 'Senin – Selasa',  'date' => '21–22', 'month' => 'Desember 2026',  'title' => 'Verifikasi dan Validasi Metode Pengujian' ),
+      array( 'day' => 'Senin – Selasa',  'date' => '11–12', 'month' => 'Januari 2027',   'title' => 'Ketidakpastian Pengukuran Sesuai SNI ISO/IEC 17025:2017' ),
+      array( 'day' => 'Senin – Selasa',  'date' => '25–26', 'month' => 'Januari 2027',   'title' => 'Penerapan Jaminan Mutu Internal dan Pengendalian Mutu Hasil Uji' ),
+      array( 'day' => 'Rabu – Jum\'at',  'date' => '17–19', 'month' => 'Februari 2027',  'title' => 'Audit Internal Laboratorium Berdasarkan SNI ISO/IEC 17025:2017', 'time' => '09.00 - 16.00 WIB' ),
+      array( 'day' => 'Senin – Selasa',  'date' => '22–23', 'month' => 'Februari 2027',  'title' => 'Implementasi Kaji Ulang Manajemen Sesuai SNI ISO/IEC 17025:2017' ),
     );
     ?>
     <div style="margin-bottom:56px">
@@ -654,7 +654,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
 
       <div class="batch-tabs">
         <button type="button" class="batch-tab" onclick="showBatch(this,'batch-1')">Batch 1 · Juni 2026 <span style="opacity:.7;font-weight:600">(Kuota Penuh)</span></button>
-        <button type="button" class="batch-tab active" onclick="showBatch(this,'batch-2')">Batch 2 · Oktober 2026</button>
+        <button type="button" class="batch-tab active" onclick="showBatch(this,'batch-2')">Batch 2 · November 2026</button>
         <button type="button" class="batch-tab" onclick="showBatch(this,'batch-3')">Batch 3</button>
       </div>
 
