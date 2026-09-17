@@ -30,6 +30,14 @@ add_action( 'after_setup_theme', 'labnesia_setup' );
 
 // ── Enqueue styles & scripts ─────────────────────────────────────────────────
 function labnesia_scripts() {
+    $theme_version      = wp_get_theme()->get( 'Version' );
+    $style_path         = get_stylesheet_directory() . '/style.css';
+    $animations_path    = get_template_directory() . '/assets/css/animations.css';
+    $main_script_path   = get_template_directory() . '/assets/js/main.js';
+    $style_version      = file_exists( $style_path ) ? filemtime( $style_path ) : $theme_version;
+    $animations_version = file_exists( $animations_path ) ? filemtime( $animations_path ) : $theme_version;
+    $script_version     = file_exists( $main_script_path ) ? filemtime( $main_script_path ) : $theme_version;
+
     // Google Fonts
     wp_enqueue_style(
         'labnesia-fonts',
@@ -51,7 +59,7 @@ function labnesia_scripts() {
         'labnesia-style',
         get_stylesheet_uri(),
         [ 'labnesia-fonts', 'labnesia-fontawesome' ],
-        wp_get_theme()->get('Version')
+        $style_version
     );
 
     // Animations
@@ -59,7 +67,7 @@ function labnesia_scripts() {
         'labnesia-animations',
         get_template_directory_uri() . '/assets/css/animations.css',
         [ 'labnesia-style' ],
-        wp_get_theme()->get('Version')
+        $animations_version
     );
 
     // Main JS
@@ -67,7 +75,7 @@ function labnesia_scripts() {
         'labnesia-main',
         get_template_directory_uri() . '/assets/js/main.js',
         [],
-        wp_get_theme()->get('Version'),
+        $script_version,
         true
     );
 
