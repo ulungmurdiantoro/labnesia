@@ -111,6 +111,36 @@
 
   const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Front-page promotional popup. It intentionally reappears on every visit.
+  const homePopup = document.getElementById('home-promo-popup');
+  if (homePopup) {
+    const closeButtons = homePopup.querySelectorAll('[data-popup-close]');
+    const closeButton = homePopup.querySelector('.home-promo-popup__close');
+    const previouslyFocused = document.activeElement;
+
+    document.body.classList.add('home-promo-popup-open');
+    if (closeButton) closeButton.focus();
+
+    function closeHomePopup() {
+      homePopup.classList.remove('is-active');
+      document.body.classList.remove('home-promo-popup-open');
+      homePopup.setAttribute('aria-hidden', 'true');
+      if (previouslyFocused && typeof previouslyFocused.focus === 'function') {
+        previouslyFocused.focus();
+      }
+    }
+
+    closeButtons.forEach(function (button) {
+      button.addEventListener('click', closeHomePopup);
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && homePopup.classList.contains('is-active')) {
+        closeHomePopup();
+      }
+    });
+  }
+
   // ── Subtle entrance animation on scroll ───────────────────────────────────
   // Broad, name-based selector so any current or future card/item component
   // gets the same fade-up treatment without per-page markup changes.

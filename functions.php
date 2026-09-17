@@ -188,8 +188,57 @@ function labnesia_customizer( $wp_customize ) {
         'section' => 'labnesia_options',
         'type'    => 'url',
     ]);
+
+    // Promotional popup shown whenever the front page is opened.
+    $wp_customize->add_setting( 'labnesia_home_popup_image', [
+        'default'           => get_template_directory_uri() . '/assets/images/home-popup-2026.jpeg',
+        'sanitize_callback' => 'esc_url_raw',
+    ]);
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'labnesia_home_popup_image',
+            [
+                'label'       => __( 'Gambar Popup Halaman Utama', 'labnesia' ),
+                'description' => __( 'Pilih gambar dari Media WordPress. Kosongkan gambar untuk menonaktifkan popup.', 'labnesia' ),
+                'section'     => 'labnesia_options',
+            ]
+        )
+    );
 }
 add_action( 'customize_register', 'labnesia_customizer' );
+
+/**
+ * Render the front-page promotional popup near the end of the document.
+ */
+function labnesia_home_popup() {
+    if ( ! is_front_page() ) {
+        return;
+    }
+
+    $image_url = get_theme_mod(
+        'labnesia_home_popup_image',
+        get_template_directory_uri() . '/assets/images/home-popup-2026.jpeg'
+    );
+
+    if ( ! $image_url ) {
+        return;
+    }
+    ?>
+    <div class="home-promo-popup is-active" id="home-promo-popup" role="dialog" aria-modal="true" aria-labelledby="home-promo-popup-title">
+        <div class="home-promo-popup__backdrop" data-popup-close></div>
+        <div class="home-promo-popup__dialog" role="document">
+            <h2 class="screen-reader-text" id="home-promo-popup-title"><?php esc_html_e( 'Program pelatihan dan sertifikasi kompetensi', 'labnesia' ); ?></h2>
+            <button class="home-promo-popup__close" type="button" data-popup-close aria-label="<?php esc_attr_e( 'Tutup popup', 'labnesia' ); ?>">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <img class="home-promo-popup__image" src="<?php echo esc_url( $image_url ); ?>" alt="<?php esc_attr_e( 'Informasi program pelatihan dan sertifikasi kompetensi SDM perguruan tinggi', 'labnesia' ); ?>">
+        </div>
+    </div>
+    <?php
+}
+// Priority 5 keeps the markup ahead of footer scripts that initialize it.
+add_action( 'wp_footer', 'labnesia_home_popup', 5 );
 
 // ── Stats helper (editable via Customizer or hard-coded) ──────────────────────
 function labnesia_hero_stats() {
