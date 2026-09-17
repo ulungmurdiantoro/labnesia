@@ -198,6 +198,17 @@ function labnesia_customizer( $wp_customize ) {
     ]);
 
     // Promotional popup shown whenever the front page is opened.
+    $wp_customize->add_setting( 'labnesia_home_popup_enabled', [
+        'default'           => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ]);
+    $wp_customize->add_control( 'labnesia_home_popup_enabled', [
+        'label'       => __( 'Aktifkan Popup Halaman Utama', 'labnesia' ),
+        'description' => __( 'Hilangkan centang untuk menonaktifkan popup tanpa menghapus gambar.', 'labnesia' ),
+        'section'     => 'labnesia_options',
+        'type'        => 'checkbox',
+    ]);
+
     $wp_customize->add_setting( 'labnesia_home_popup_image', [
         'default'           => get_template_directory_uri() . '/assets/images/home-popup-2026.jpeg',
         'sanitize_callback' => 'esc_url_raw',
@@ -220,7 +231,7 @@ add_action( 'customize_register', 'labnesia_customizer' );
  * Render the front-page promotional popup near the end of the document.
  */
 function labnesia_home_popup() {
-    if ( ! is_front_page() ) {
+    if ( ! is_front_page() || ! get_theme_mod( 'labnesia_home_popup_enabled', true ) ) {
         return;
     }
 
@@ -233,14 +244,14 @@ function labnesia_home_popup() {
         return;
     }
     ?>
-    <div class="home-promo-popup is-active" id="home-promo-popup" role="dialog" aria-modal="true" aria-labelledby="home-promo-popup-title">
-        <div class="home-promo-popup__backdrop" data-popup-close></div>
-        <div class="home-promo-popup__dialog" role="document">
-            <h2 class="screen-reader-text" id="home-promo-popup-title"><?php esc_html_e( 'Program pelatihan dan sertifikasi kompetensi', 'labnesia' ); ?></h2>
-            <button class="home-promo-popup__close" type="button" data-popup-close aria-label="<?php esc_attr_e( 'Tutup popup', 'labnesia' ); ?>">
+    <div class="labnesia-announcement is-active" id="labnesia-announcement" role="dialog" aria-modal="true" aria-labelledby="labnesia-announcement-title">
+        <div class="labnesia-announcement__backdrop" data-notice-close></div>
+        <div class="labnesia-announcement__dialog" role="document">
+            <h2 class="screen-reader-text" id="labnesia-announcement-title"><?php esc_html_e( 'Program pelatihan dan sertifikasi kompetensi', 'labnesia' ); ?></h2>
+            <button class="labnesia-announcement__close" type="button" data-notice-close aria-label="<?php esc_attr_e( 'Tutup pengumuman', 'labnesia' ); ?>">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <img class="home-promo-popup__image" src="<?php echo esc_url( $image_url ); ?>" alt="<?php esc_attr_e( 'Informasi program pelatihan dan sertifikasi kompetensi SDM perguruan tinggi', 'labnesia' ); ?>">
+            <img class="labnesia-announcement__image" src="<?php echo esc_url( $image_url ); ?>" alt="<?php esc_attr_e( 'Informasi program pelatihan dan sertifikasi kompetensi SDM perguruan tinggi', 'labnesia' ); ?>">
         </div>
     </div>
     <?php

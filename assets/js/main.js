@@ -112,18 +112,18 @@
   const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Front-page promotional popup. It intentionally reappears on every visit.
-  const homePopup = document.getElementById('home-promo-popup');
+  const homePopup = document.getElementById('labnesia-announcement');
   if (homePopup) {
-    const closeButtons = homePopup.querySelectorAll('[data-popup-close]');
-    const closeButton = homePopup.querySelector('.home-promo-popup__close');
+    const closeButtons = homePopup.querySelectorAll('[data-notice-close]');
+    const closeButton = homePopup.querySelector('.labnesia-announcement__close');
     const previouslyFocused = document.activeElement;
 
-    document.body.classList.add('home-promo-popup-open');
+    document.body.classList.add('labnesia-announcement-open');
     if (closeButton) closeButton.focus();
 
     function closeHomePopup() {
       homePopup.classList.remove('is-active');
-      document.body.classList.remove('home-promo-popup-open');
+      document.body.classList.remove('labnesia-announcement-open');
       homePopup.setAttribute('aria-hidden', 'true');
       if (previouslyFocused && typeof previouslyFocused.focus === 'function') {
         previouslyFocused.focus();
