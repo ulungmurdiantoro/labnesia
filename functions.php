@@ -244,16 +244,45 @@ function labnesia_home_popup() {
         return;
     }
     ?>
-    <div class="labnesia-announcement is-active" id="labnesia-announcement" role="dialog" aria-modal="true" aria-labelledby="labnesia-announcement-title">
-        <div class="labnesia-announcement__backdrop" data-notice-close></div>
-        <div class="labnesia-announcement__dialog" role="document">
-            <h2 class="screen-reader-text" id="labnesia-announcement-title"><?php esc_html_e( 'Program pelatihan dan sertifikasi kompetensi', 'labnesia' ); ?></h2>
-            <button class="labnesia-announcement__close" type="button" data-notice-close aria-label="<?php esc_attr_e( 'Tutup pengumuman', 'labnesia' ); ?>">
+    <style id="lbns-layer-critical">
+        body.lbns-layer-lock { overflow: hidden !important; }
+        #lbns-layer-2026 { position: fixed !important; inset: 0 !important; z-index: 2147483000 !important; display: flex !important; align-items: center; justify-content: center; padding: 24px; }
+        #lbns-layer-2026[hidden] { display: none !important; }
+        .lbns-layer-2026__shade { position: absolute; inset: 0; background: rgba(4,17,35,.82); backdrop-filter: blur(4px); }
+        .lbns-layer-2026__panel { position: relative; z-index: 1; width: min(720px,100%); max-height: calc(100vh - 48px); border-radius: 14px; background: #fff; box-shadow: 0 24px 80px rgba(0,0,0,.42); overflow: hidden; }
+        .lbns-layer-2026__visual { display: block; width: 100%; height: auto; max-height: calc(100vh - 48px); object-fit: contain; }
+        .lbns-layer-2026__close { position: absolute; top: 10px; right: 10px; z-index: 2; display: grid; place-items: center; width: 42px; height: 42px; padding: 0; border: 2px solid rgba(255,255,255,.88); border-radius: 50%; background: rgba(11,31,58,.88); color: #fff; font: 400 32px/1 Arial,sans-serif; cursor: pointer; box-shadow: 0 3px 12px rgba(0,0,0,.25); }
+        @media (max-width: 480px) { #lbns-layer-2026 { padding: 12px; } .lbns-layer-2026__panel, .lbns-layer-2026__visual { max-height: calc(100vh - 24px); } }
+    </style>
+    <div class="lbns-layer-2026 is-active" id="lbns-layer-2026" role="dialog" aria-modal="true" aria-labelledby="lbns-layer-2026-title">
+        <div class="lbns-layer-2026__shade" data-lbns-close></div>
+        <div class="lbns-layer-2026__panel" role="document">
+            <h2 class="screen-reader-text" id="lbns-layer-2026-title"><?php esc_html_e( 'Program pelatihan dan sertifikasi kompetensi', 'labnesia' ); ?></h2>
+            <button class="lbns-layer-2026__close" type="button" data-lbns-close aria-label="<?php esc_attr_e( 'Tutup pengumuman', 'labnesia' ); ?>">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <img class="labnesia-announcement__image" src="<?php echo esc_url( $image_url ); ?>" alt="<?php esc_attr_e( 'Informasi program pelatihan dan sertifikasi kompetensi SDM perguruan tinggi', 'labnesia' ); ?>">
+            <img class="lbns-layer-2026__visual" src="<?php echo esc_url( $image_url ); ?>" alt="<?php esc_attr_e( 'Informasi program pelatihan dan sertifikasi kompetensi SDM perguruan tinggi', 'labnesia' ); ?>">
         </div>
     </div>
+    <script>
+        (function () {
+            var layer = document.getElementById('lbns-layer-2026');
+            if (!layer) return;
+            document.body.classList.add('lbns-layer-lock');
+            var closeButton = layer.querySelector('.lbns-layer-2026__close');
+            if (closeButton) closeButton.focus();
+            layer.querySelectorAll('[data-lbns-close]').forEach(function (element) {
+                element.addEventListener('click', closeLayer);
+            });
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape' && !layer.hidden) closeLayer();
+            });
+            function closeLayer() {
+                layer.hidden = true;
+                document.body.classList.remove('lbns-layer-lock');
+            }
+        }());
+    </script>
     <?php
 }
 // Priority 5 keeps the markup ahead of footer scripts that initialize it.

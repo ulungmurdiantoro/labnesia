@@ -112,18 +112,18 @@
   const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Front-page promotional popup. It intentionally reappears on every visit.
-  const homePopup = document.getElementById('labnesia-announcement');
+  const homePopup = document.getElementById('lbns-layer-2026');
   if (homePopup) {
-    const closeButtons = homePopup.querySelectorAll('[data-notice-close]');
-    const closeButton = homePopup.querySelector('.labnesia-announcement__close');
+    const closeButtons = homePopup.querySelectorAll('[data-lbns-close]');
+    const closeButton = homePopup.querySelector('.lbns-layer-2026__close');
     const previouslyFocused = document.activeElement;
 
-    document.body.classList.add('labnesia-announcement-open');
+    document.body.classList.add('lbns-layer-lock');
     if (closeButton) closeButton.focus();
 
     function closeHomePopup() {
-      homePopup.classList.remove('is-active');
-      document.body.classList.remove('labnesia-announcement-open');
+      homePopup.hidden = true;
+      document.body.classList.remove('lbns-layer-lock');
       homePopup.setAttribute('aria-hidden', 'true');
       if (previouslyFocused && typeof previouslyFocused.focus === 'function') {
         previouslyFocused.focus();
@@ -135,7 +135,7 @@
     });
 
     document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape' && homePopup.classList.contains('is-active')) {
+      if (event.key === 'Escape' && !homePopup.hidden) {
         closeHomePopup();
       }
     });

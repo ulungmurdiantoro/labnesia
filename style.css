@@ -631,19 +631,19 @@ body.nav-open { overflow: hidden; }
 /* =====================================================================
    HOME PROMOTIONAL POPUP
    ===================================================================== */
-body.labnesia-announcement-open { overflow: hidden; }
-.labnesia-announcement {
+body.lbns-layer-lock { overflow: hidden; }
+.lbns-layer-2026 {
   position: fixed; inset: 0; z-index: 10000;
   display: none; align-items: center; justify-content: center;
   padding: 24px;
 }
-.labnesia-announcement.is-active { display: flex; }
-.labnesia-announcement__backdrop {
+.lbns-layer-2026.is-active { display: flex; }
+.lbns-layer-2026__shade {
   position: absolute; inset: 0;
   background: rgba(4, 17, 35, 0.82);
   backdrop-filter: blur(4px);
 }
-.labnesia-announcement__dialog {
+.lbns-layer-2026__panel {
   position: relative; z-index: 1;
   width: min(720px, 100%);
   max-height: calc(100vh - 48px);
@@ -651,15 +651,15 @@ body.labnesia-announcement-open { overflow: hidden; }
   background: #fff;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
   overflow: hidden;
-  animation: labnesia-announcement-in .28s ease-out both;
+  animation: lbns-layer-in .28s ease-out both;
 }
-.labnesia-announcement__image {
+.lbns-layer-2026__visual {
   display: block;
   width: 100%; height: auto;
   max-height: calc(100vh - 48px);
   object-fit: contain;
 }
-.labnesia-announcement__close {
+.lbns-layer-2026__close {
   position: absolute; top: 10px; right: 10px; z-index: 2;
   display: grid; place-items: center;
   width: 42px; height: 42px;
@@ -670,14 +670,14 @@ body.labnesia-announcement-open { overflow: hidden; }
   box-shadow: 0 3px 12px rgba(0,0,0,.25);
   transition: background .2s, transform .2s;
 }
-.labnesia-announcement__close:hover { background: var(--teal); transform: scale(1.05); }
-.labnesia-announcement__close:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
-@keyframes labnesia-announcement-in {
+.lbns-layer-2026__close:hover { background: var(--teal); transform: scale(1.05); }
+.lbns-layer-2026__close:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+@keyframes lbns-layer-in {
   from { opacity: 0; transform: translateY(16px) scale(.98); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .labnesia-announcement__dialog { animation: none; }
+  .lbns-layer-2026__panel { animation: none; }
 }
 
 /* =====================================================================
@@ -739,10 +739,10 @@ body.labnesia-announcement-open { overflow: hidden; }
 }
 
 @media (max-width: 480px) {
-  .labnesia-announcement { padding: 12px; }
-  .labnesia-announcement__dialog,
-  .labnesia-announcement__image { max-height: calc(100vh - 24px); }
-  .labnesia-announcement__close { top: 8px; right: 8px; width: 38px; height: 38px; font-size: 28px; }
+  .lbns-layer-2026 { padding: 12px; }
+  .lbns-layer-2026__panel,
+  .lbns-layer-2026__visual { max-height: calc(100vh - 24px); }
+  .lbns-layer-2026__close { top: 8px; right: 8px; width: 38px; height: 38px; font-size: 28px; }
   .hero { padding: 104px 20px 48px; }
   .hero h1 { font-size: 30px; }
   .hero-eyebrow { font-size: 11px; padding: 5px 12px; }
