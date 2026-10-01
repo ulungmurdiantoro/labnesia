@@ -242,11 +242,13 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   .pt-box{border-radius:12px;padding:16px 12px;text-align:center;position:relative}
   .pt-box-normal{background:white;border:1.5px solid var(--gray-200)}
   .pt-box-normal .pt-price,.pt-box-normal .pt-sub{color:var(--navy)}
-  .pt-box-struck .pt-price,.pt-box-struck .pt-sub{color:var(--gray-400);text-decoration:line-through}
   .pt-box-early1{background:var(--teal)}
   .pt-box-early1 .pt-price,.pt-box-early1 .pt-sub{color:white}
   .pt-box-early2{background:var(--navy)}
   .pt-box-early2 .pt-price,.pt-box-early2 .pt-sub{color:white}
+  .pt-box-struck .pt-price,.pt-box-struck .pt-sub{text-decoration:line-through}
+  .pt-box-normal.pt-box-struck .pt-price,.pt-box-normal.pt-box-struck .pt-sub{color:var(--gray-400)}
+  .pt-box-struck:not(.pt-box-normal){filter:saturate(.3);opacity:.7}
   .pt-price{font-size:19px;font-weight:800;line-height:1.2}
   .pt-sub{font-size:11px;opacity:.9;margin-top:3px}
   .pt-active-ring{box-shadow:0 0 0 3px rgba(245,166,35,.6)}
@@ -423,7 +425,8 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
       </tr>
       <?php foreach ( $kp_pricing_tiers as $kp_key => $kp_tier ) :
         $kp_is_active = ( $kp_key === $kp_active_key );
-        $kp_is_struck = ( 'normal' === $kp_key && 'normal' !== $kp_active_key );
+        $kp_is_expired = ( $kp_tier['end'] && $kp_now_ts > strtotime( $kp_tier['end'] ) );
+        $kp_is_struck  = $kp_is_expired || ( 'normal' === $kp_key && 'normal' !== $kp_active_key );
       ?>
       <tr class="pt-row">
         <td class="pt-row-label">
