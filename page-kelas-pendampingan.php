@@ -241,8 +241,8 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   .pt-row-label-sub{font-size:12px;color:var(--gray-600);margin-top:2px}
   .pt-box{border-radius:12px;padding:16px 12px;text-align:center;position:relative}
   .pt-box-normal{background:white;border:1.5px solid var(--gray-200)}
-  .pt-box-normal .pt-price{color:var(--gray-400);text-decoration:line-through}
-  .pt-box-normal .pt-sub{color:var(--gray-400);text-decoration:line-through}
+  .pt-box-normal .pt-price,.pt-box-normal .pt-sub{color:var(--navy)}
+  .pt-box-struck .pt-price,.pt-box-struck .pt-sub{color:var(--gray-400);text-decoration:line-through}
   .pt-box-early1{background:var(--teal)}
   .pt-box-early1 .pt-price,.pt-box-early1 .pt-sub{color:white}
   .pt-box-early2{background:var(--navy)}
@@ -423,6 +423,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
       </tr>
       <?php foreach ( $kp_pricing_tiers as $kp_key => $kp_tier ) :
         $kp_is_active = ( $kp_key === $kp_active_key );
+        $kp_is_struck = ( 'normal' === $kp_key && 'normal' !== $kp_active_key );
       ?>
       <tr class="pt-row">
         <td class="pt-row-label">
@@ -434,7 +435,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
           $kp_per_orang = floor( $kp_price / $kp_n );
         ?>
         <td>
-          <div class="pt-box pt-box-<?php echo esc_attr( $kp_key ); ?><?php echo $kp_is_active ? ' pt-active-ring' : ''; ?>">
+          <div class="pt-box pt-box-<?php echo esc_attr( $kp_key ); ?><?php echo $kp_is_active ? ' pt-active-ring' : ''; ?><?php echo $kp_is_struck ? ' pt-box-struck' : ''; ?>">
             <?php if ( $kp_is_active ) : ?><span class="pt-active-tag">Harga Saat Ini</span><?php endif; ?>
             <div class="pt-price"><?php echo labnesia_kp_rp( $kp_price ); ?></div>
             <div class="pt-sub"><?php echo ( 1 === $kp_n ) ? '/ orang' : labnesia_kp_rp( $kp_per_orang ) . '/ orang'; ?></div>
