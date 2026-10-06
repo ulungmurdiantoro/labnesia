@@ -390,6 +390,12 @@ function labnesia_icon( $name, $color = 'currentColor', $size = 20 ) {
     );
 }
 
+// Kelas Pendampingan booklet PDF — single source for the navbar button and the
+// "Unduh Booklet" button on the Kelas Pendampingan page. Update the URL here only.
+function labnesia_booklet_url() {
+    return 'https://labnesia.id/wp-content/uploads/2026/10/New-Booklet-Kelas-Pendampingan-Labnesia-17.pdf';
+}
+
 // Standard pre-filled WhatsApp message used across static contact links/buttons
 // (footer, floating CTA, Kontak cards, Inhouse CTAs, "hubungi tim" links). Not
 // used on the Gap Analysis WA link, which builds its own message from quiz results.

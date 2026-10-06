@@ -40,6 +40,10 @@
         <a href="<?php echo esc_url( home_url('/blog/') ); ?>"><?php _e('Artikel','labnesia'); ?></a>
         <a href="<?php echo esc_url( home_url('/faq/') ); ?>"><?php _e('FAQ','labnesia'); ?></a>
         <a href="<?php echo esc_url( home_url('/kontak/') ); ?>"><?php _e('Kontak','labnesia'); ?></a>
+        <a href="<?php echo esc_url( labnesia_booklet_url() ); ?>" class="nav-booklet" target="_blank" rel="noopener">
+            <?php labnesia_icon( 'download', 'currentColor', 13 ); ?>
+            <?php _e('Booklet','labnesia'); ?>
+        </a>
         <a href="<?php echo esc_url( home_url('/mulai-gratis/') ); ?>" class="nav-cta">
             <?php _e('Mulai Gratis','labnesia'); ?>
         </a>
