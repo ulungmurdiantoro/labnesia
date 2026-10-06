@@ -390,10 +390,10 @@ function labnesia_icon( $name, $color = 'currentColor', $size = 20 ) {
     );
 }
 
-// Kelas Pendampingan booklet PDF — single source for the navbar button and the
-// "Unduh Booklet" button on the Kelas Pendampingan page. Update the URL here only.
+// General Labnesia booklet PDF used by the navbar "Booklet" button.
+// The Kelas Pendampingan page links its own booklet (see page-kelas-pendampingan.php).
 function labnesia_booklet_url() {
-    return 'https://labnesia.id/wp-content/uploads/2026/10/New-Booklet-Kelas-Pendampingan-Labnesia-17.pdf';
+    return 'https://labnesia.id/wp-content/uploads/2026/10/BOOKLET-LABNESIA.pdf';
 }
 
 // Standard pre-filled WhatsApp message used across static contact links/buttons
