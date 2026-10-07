@@ -48,9 +48,9 @@ get_header();
 </style>
 
 <?php
-$is_jadwal_post = has_category( [ 'pelatihan', 'webinar' ] );
+$is_jadwal_post = has_category( [ 'pelatihan', 'bootcamp', 'webinar' ] );
 if ( $is_jadwal_post ) {
-    $jadwal_slugs = [ 'pelatihan', 'webinar' ];
+    $jadwal_slugs = [ 'pelatihan', 'bootcamp', 'webinar' ];
     $hero_cats = array_values( array_filter( get_the_category(), function( $c ) use ( $jadwal_slugs ) {
         return in_array( $c->slug, $jadwal_slugs, true );
     } ) );

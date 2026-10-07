@@ -593,7 +593,7 @@ $mitra_logos = [
         <div class="give-card-icon"><?php labnesia_icon( 'zap', '#ffffff', 36 ); ?></div>
         <div class="give-card-title">Bootcamp 1 Hari</div>
         <div class="give-card-desc">Program intensif 1 hari (online) untuk memahami alur akreditasi secara menyeluruh. Dari struktur dokumen hingga cara daftar di KANMIS 2.0. Biaya sangat terjangkau.</div>
-        <a href="<?php echo $url_jadwal; ?>?kategori=pelatihan" class="give-card-cta">Lihat jadwal bootcamp <?php labnesia_icon( 'arrow-right', 'var(--teal-light)', 13 ); ?></a>
+        <a href="<?php echo $url_jadwal; ?>?kategori=bootcamp" class="give-card-cta">Lihat jadwal bootcamp <?php labnesia_icon( 'arrow-right', 'var(--teal-light)', 13 ); ?></a>
       </div>
 
       <div class="give-card">

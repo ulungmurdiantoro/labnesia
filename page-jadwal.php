@@ -15,10 +15,11 @@ $jadwal_categories = [
     'pelatihan-40-jp'  => 'Pelatihan 40 JP',
     'pelatihan-24-jp'  => 'Pelatihan 24 JP',
     'pelatihan-16-jp'  => 'Pelatihan 16 JP',
+    'bootcamp'         => 'Bootcamp',
     'webinar'          => 'Webinar',
 ];
 $active_cat = isset( $_GET['kategori'] ) && array_key_exists( $_GET['kategori'], $jadwal_categories ) ? $_GET['kategori'] : '';
-$active_slugs = $active_cat ? [ $active_cat ] : [ 'pelatihan', 'pelatihan-40-jp', 'pelatihan-24-jp', 'pelatihan-16-jp', 'webinar' ];
+$active_slugs = $active_cat ? [ $active_cat ] : array_filter( array_keys( $jadwal_categories ) );
 
 $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 $per_page = 9;
@@ -27,7 +28,9 @@ $jadwal_query = new WP_Query( [
     'post_type'      => 'post',
     'post_status'    => 'publish',
     'posts_per_page' => -1,
-    'category__in'   => labnesia_category_ids_by_slug( $active_slugs ),
+    // [0] when none of the slugs exist yet: an empty category__in is ignored
+    // by WP_Query and would list every post on the site.
+    'category__in'   => labnesia_category_ids_by_slug( $active_slugs ) ?: [ 0 ],
 ] );
 
 // Upcoming events first (soonest to today first), past events pushed to the
@@ -112,7 +115,7 @@ $jadwal_page   = array_slice( $jadwal_posts, ( $paged - 1 ) * $per_page, $per_pa
   <div class="page-hero-inner">
     <div class="eyebrow-tag">Jadwal</div>
     <h1>Jadwal program &amp;<br><span class="accent">batch pelatihan.</span></h1>
-    <p class="page-hero-sub">Jadwal Pelatihan &amp; Sertifikasi dan Webinar terdekat dari tim Labnesia.</p>
+    <p class="page-hero-sub">Jadwal Pelatihan &amp; Sertifikasi, Bootcamp, dan Webinar terdekat dari tim Labnesia.</p>
   </div>
 </div>
 
@@ -136,11 +139,11 @@ $jadwal_page   = array_slice( $jadwal_posts, ( $paged - 1 ) * $per_page, $per_pa
             : date_i18n( 'j M Y', strtotime( $post->post_date ) );
         $daftar_url = get_post_meta( get_the_ID(), '_jadwal_link_daftar', true );
         $source_thumb = get_post_meta( get_the_ID(), '_source_featured_image', true );
-        // Only ever show Pelatihan/Webinar as the badge here, never Kegiatan
-        // (or any other category a post might also carry). The JP-tier slugs
-        // are listed first so a post tagged with both "pelatihan" and e.g.
+        // Only ever show Pelatihan/Bootcamp/Webinar as the badge here, never
+        // Kegiatan (or any other category a post might also carry). The JP-tier
+        // slugs are listed first so a post tagged with both "pelatihan" and e.g.
         // "pelatihan-24-jp" shows the more specific badge.
-        $jadwal_slugs = [ 'pelatihan-40-jp', 'pelatihan-24-jp', 'pelatihan-16-jp', 'pelatihan', 'webinar' ];
+        $jadwal_slugs = [ 'pelatihan-40-jp', 'pelatihan-24-jp', 'pelatihan-16-jp', 'pelatihan', 'bootcamp', 'webinar' ];
         $cats = array_values( array_filter( get_the_category(), function( $c ) use ( $jadwal_slugs ) {
             return in_array( $c->slug, $jadwal_slugs, true );
         } ) );
@@ -201,7 +204,7 @@ $jadwal_page   = array_slice( $jadwal_posts, ( $paged - 1 ) * $per_page, $per_pa
       <div class="jadwal-empty-inner">
         <div class="jadwal-empty-icon"><?php labnesia_icon( 'calendar', 'var(--teal)', 30 ); ?></div>
         <h2>Belum ada jadwal</h2>
-        <p>Belum ada jadwal Pelatihan atau Webinar yang dipublikasikan. Hubungi tim kami langsung untuk info batch terdekat.</p>
+        <p>Belum ada jadwal Pelatihan, Bootcamp, atau Webinar yang dipublikasikan. Hubungi tim kami langsung untuk info batch terdekat.</p>
         <div class="jadwal-empty-actions">
           <a href="<?php echo esc_url( home_url( '/kontak/' ) ); ?>" class="btn-primary">Tanya Jadwal Terdekat</a>
           <a href="<?php echo esc_url( home_url( '/mulai-gratis/' ) ); ?>" class="btn-ghost" style="color:var(--navy);border-color:var(--gray-200)">Mulai dari yang Gratis</a>
