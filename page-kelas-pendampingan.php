@@ -83,6 +83,12 @@ $kp_pricing_tiers = array(
 	),
 );
 
+/* ===== BATCH 3 PRICING (per peserta, per sesi) ===== */
+$kp_b3_normal   = 8750000;
+$kp_b3_discount = 30;
+$kp_b3_price    = 6125000;
+$kp_b3_sesi_ranges = array( '25 Jan – 23 Feb 2027', '5 Apr – 11 Mei 2027' );
+
 $kp_now_ts        = current_time( 'timestamp' );
 $kp_active_key    = 'normal';
 foreach ( array( 'early1', 'early2' ) as $kp_tier_key ) {
@@ -185,6 +191,31 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   .bt-date-num{font-size:18px;font-weight:800;color:white;line-height:1.15}
   .bt-date-month{font-size:10px;font-weight:700;color:white;text-transform:uppercase}
   .bt-card{flex:1;background:white;border:1px solid var(--gray-200);border-radius:10px;padding:12px 18px;margin-left:14px;font-size:14px;font-weight:700;color:var(--navy);line-height:1.4}
+  .batch-tab-new{background:var(--amber);color:var(--navy);font-size:9px;font-weight:800;padding:2px 6px;border-radius:3px;margin-left:4px;vertical-align:middle;letter-spacing:.04em}
+  .sesi-tabs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+  .sesi-tab{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:12px 16px;border-radius:12px;border:1.5px solid var(--gray-200);background:white;cursor:pointer;text-align:left;transition:all .2s;font-family:inherit}
+  .sesi-tab:hover{border-color:var(--teal)}
+  .sesi-tab.active{border-color:var(--teal);background:var(--teal-pale)}
+  .sesi-tab-label{font-size:15px;font-weight:800;color:var(--navy)}
+  .sesi-tab-range{font-size:12px;font-weight:600;color:var(--gray-600)}
+  .sesi-tab.active .sesi-tab-range{color:var(--teal)}
+  .sesi-panel{display:none}
+  .sesi-panel.active{display:block}
+  .sesi-price{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--navy);border-radius:14px;padding:18px 22px;margin-bottom:20px}
+  .sesi-price-eyebrow{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:4px}
+  .sesi-price-row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .sesi-price-main{font-size:28px;font-weight:800;color:var(--amber);letter-spacing:-.5px}
+  .sesi-price-normal{font-size:14px;color:rgba(255,255,255,.45);text-decoration:line-through}
+  .sesi-price-disc{background:var(--teal);color:white;font-size:11px;font-weight:800;padding:2px 8px;border-radius:100px}
+  .sesi-price-note{font-size:12px;color:var(--teal-light);margin-top:4px}
+  .bt-item-top{align-items:flex-start}
+  .bt-item-top .bt-num{margin-top:12px}
+  .bt-item-top .bt-dash{margin-top:29px}
+  .bt-date-tba{background:var(--gray-400)}
+  .bt-topics{margin:8px 0 0;padding-left:18px;font-size:13px;font-weight:500;color:var(--gray-600);line-height:1.55}
+  .bt-output{display:flex;gap:6px;align-items:flex-start;margin-top:8px;padding:8px 10px;background:var(--teal-pale);border-radius:8px;font-size:12px;font-weight:500;color:#085041;line-height:1.5}
+  .bt-output svg{flex-shrink:0;margin-top:2px}
+  @media (max-width:768px){.sesi-tabs{grid-template-columns:1fr}.bt-item-top{flex-wrap:wrap}.bt-item-top .bt-card{margin-left:0;margin-top:10px;flex-basis:100%}}
   .bt-coming-soon{background:var(--gray-50);border:1.5px dashed var(--gray-200);border-radius:16px;padding:48px 24px;text-align:center}
   .bt-coming-soon-title{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:8px}
   .bt-coming-soon-sub{font-size:14px;color:var(--gray-600);max-width:420px;margin:0 auto}
@@ -397,10 +428,10 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
 <div class="sticky-bar">
   <div style="display:flex;align-items:center;gap:20px">
     <div class="sticky-bar-left">
-      <span class="sticky-price"><?php echo labnesia_kp_rp( $kp_active_prices[1] ); ?></span>
-      <span class="sticky-unit">/peserta · mulai dari<?php echo $kp_active_key !== 'normal' ? ' (' . esc_html( $kp_active['label'] ) . ')' : ''; ?></span>
+      <span class="sticky-price"><?php echo labnesia_kp_rp( $kp_b3_price ); ?></span>
+      <span class="sticky-unit">/peserta · per sesi (Batch 3)</span>
     </div>
-    <span class="sticky-promo"><?php labnesia_icon( 'zap', '#8B6000', 12 ); ?> Hemat s.d. Rp 20 juta</span>
+    <span class="sticky-promo"><?php labnesia_icon( 'zap', '#8B6000', 12 ); ?> Diskon <?php echo (int) $kp_b3_discount; ?>% · Hemat <?php echo labnesia_kp_rp( $kp_b3_normal - $kp_b3_price ); ?></span>
   </div>
   <div class="sticky-actions">
     <a href="<?php echo $url_booklet; ?>" class="btn-booklet" target="_blank" rel="noopener"><?php labnesia_icon( 'download', 'var(--navy)', 14 ); ?> Unduh Booklet</a>
@@ -412,41 +443,43 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
 
 <!-- PRICE TABLE -->
 <div class="price-table-wrap">
-  <p class="price-table-title">Harga per Instansi / Laboratorium:</p>
+  <p class="price-table-title">Harga per Instansi / Laboratorium · Batch 3 (Januari 2027):</p>
   <div style="overflow-x:auto">
     <table class="price-table">
       <tr class="pt-head-row">
         <td></td>
-        <?php foreach ( array( 1, 2, 3 ) as $kp_n ) : ?>
-        <td>
-          <?php echo $kp_n; ?> Peserta<?php if ( 3 === $kp_n ) : ?><span class="pt-best-badge">BEST VALUE</span><?php endif; ?>
-        </td>
+        <?php foreach ( $kp_b3_sesi_ranges as $kp_si => $kp_range ) : ?>
+        <td>Sesi <?php echo $kp_si + 1; ?><div class="pt-row-label-sub" style="text-transform:none;letter-spacing:0;font-weight:600"><?php echo esc_html( $kp_range ); ?></div></td>
         <?php endforeach; ?>
       </tr>
-      <?php foreach ( $kp_pricing_tiers as $kp_key => $kp_tier ) :
-        $kp_is_active = ( $kp_key === $kp_active_key );
-        $kp_is_expired = ( $kp_tier['end'] && $kp_now_ts > strtotime( $kp_tier['end'] ) );
-        $kp_is_struck  = $kp_is_expired || ( 'normal' === $kp_key && 'normal' !== $kp_active_key );
-      ?>
       <tr class="pt-row">
         <td class="pt-row-label">
-          <div class="pt-row-label-main"><?php echo esc_html( $kp_tier['label'] ); ?></div>
-          <?php if ( $kp_tier['sub'] ) : ?><div class="pt-row-label-sub"><?php echo esc_html( $kp_tier['sub'] ); ?></div><?php endif; ?>
+          <div class="pt-row-label-main">Harga Normal</div>
         </td>
-        <?php foreach ( array( 1, 2, 3 ) as $kp_n ) :
-          $kp_price     = $kp_tier['prices'][ $kp_n ];
-          $kp_per_orang = floor( $kp_price / $kp_n );
-        ?>
+        <?php foreach ( $kp_b3_sesi_ranges as $kp_range ) : ?>
         <td>
-          <div class="pt-box pt-box-<?php echo esc_attr( $kp_key ); ?><?php echo $kp_is_active ? ' pt-active-ring' : ''; ?><?php echo $kp_is_struck ? ' pt-box-struck' : ''; ?>">
-            <?php if ( $kp_is_active ) : ?><span class="pt-active-tag">Harga Saat Ini</span><?php endif; ?>
-            <div class="pt-price"><?php echo labnesia_kp_rp( $kp_price ); ?></div>
-            <div class="pt-sub"><?php echo ( 1 === $kp_n ) ? '/ orang' : labnesia_kp_rp( $kp_per_orang ) . '/ orang'; ?></div>
+          <div class="pt-box pt-box-normal pt-box-struck">
+            <div class="pt-price"><?php echo labnesia_kp_rp( $kp_b3_normal ); ?></div>
+            <div class="pt-sub">/ peserta</div>
           </div>
         </td>
         <?php endforeach; ?>
       </tr>
-      <?php endforeach; ?>
+      <tr class="pt-row">
+        <td class="pt-row-label">
+          <div class="pt-row-label-main">Diskon <?php echo (int) $kp_b3_discount; ?>%</div>
+          <div class="pt-row-label-sub">Hemat <?php echo labnesia_kp_rp( $kp_b3_normal - $kp_b3_price ); ?>/ peserta</div>
+        </td>
+        <?php foreach ( $kp_b3_sesi_ranges as $kp_range ) : ?>
+        <td>
+          <div class="pt-box pt-box-early1 pt-active-ring">
+            <span class="pt-active-tag">Harga Saat Ini</span>
+            <div class="pt-price"><?php echo labnesia_kp_rp( $kp_b3_price ); ?></div>
+            <div class="pt-sub">/ peserta</div>
+          </div>
+        </td>
+        <?php endforeach; ?>
+      </tr>
     </table>
   </div>
 </div>
@@ -650,6 +683,54 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
       array( 'day' => 'Rabu – Jum\'at',  'date' => '17–19', 'month' => 'Februari 2027',  'title' => 'Audit Internal Laboratorium Berdasarkan SNI ISO/IEC 17025:2017', 'time' => '09.00 - 16.00 WIB' ),
       array( 'day' => 'Senin – Selasa',  'date' => '22–23', 'month' => 'Februari 2027',  'title' => 'Implementasi Kaji Ulang Manajemen Sesuai SNI ISO/IEC 17025:2017' ),
     );
+    /* Batch 3 — dibagi 2 sesi, masing-masing dibayar terpisah */
+    $kp_batch3_sesi = array(
+      array(
+        'range'    => '25 Jan – 23 Feb 2027',
+        'normal'   => $kp_b3_normal,
+        'discount' => $kp_b3_discount,
+        'price'    => $kp_b3_price,
+        'items'    => array(
+          array( 'day' => 'Senin', 'date' => '25', 'month' => 'Januari 2027', 'title' => 'Pemahaman SNI ISO/IEC 17025:2017',
+            'topics' => array( 'Pemahaman sistem mutu', 'Struktur organisasi mutu', 'Klausul standar ISO/IEC 17025', 'Pengenalan dashboard KANMIS 2.0 (Menu, registrasi LPK)', 'Tahapan pengajuan akreditasi di KANMIS 2.0', 'Tutorial pendaftaran akreditasi KANMIS' ),
+            'output' => 'Pedoman SNI ISO 17025, Daftar Induk Dokumen, daftar dokumen audit kecukupan, contoh dokumen tindakan perbaikan audit kecukupan' ),
+          array( 'day' => 'Selasa', 'date' => '28', 'month' => 'Januari 2027', 'title' => 'GAP Analysis Kesiapan Akreditasi',
+            'topics' => array( 'Case method (project based learning)', 'Identifikasi gap dokumen', 'Identifikasi gap teknis' ),
+            'output' => 'Laporan Gap Analysis, pemetaan ruang lingkup, struktur organisasi, roadmap implementasi' ),
+          array( 'day' => 'Senin – Selasa', 'date' => '1–2', 'month' => 'Februari 2027', 'title' => 'Penyusunan Dokumen Sistem Manajemen SNI ISO/IEC 17025:2017',
+            'topics' => array( 'Penyusunan dokumentasi standar ISO/IEC 17025:2017', 'Panduan Mutu (PM), Prosedur (PR), Instruksi Kerja (IK), Formulir (FM)' ),
+            'output' => 'Template Dokumen Mutu ISO/IEC 17025:2017 (Level 1, 2, 4)' ),
+          array( 'day' => 'Senin – Selasa', 'date' => '15–16', 'month' => 'Februari 2027', 'title' => 'Implementasi Uji Profisiensi dan Uji Banding Antar Laboratorium',
+            'topics' => array( 'Konsep uji profisiensi', 'Pemilihan provider', 'Analisis hasil', 'Penyusunan laporan' ),
+            'output' => 'Laporan Uji Profisiensi, Laporan Uji Banding, Draft Rencana dan Realisasi Uji Profisiensi/Uji Banding 5 tahun' ),
+          array( 'day' => 'Senin – Selasa', 'date' => '22–23', 'month' => 'Februari 2027', 'title' => 'Verifikasi dan Validasi Metode Pengujian',
+            'topics' => array( 'Konsep validasi & verifikasi metode', 'Parameter verifikasi (akurasi, presisi, linearitas, dll.)', 'Penyusunan protokol verifikasi', 'Studi kasus metode laboratorium' ),
+            'output' => 'Laporan Verifikasi dan Validasi Metode' ),
+        ),
+      ),
+      array(
+        'range'    => '5 Apr – 11 Mei 2027',
+        'normal'   => $kp_b3_normal,
+        'discount' => $kp_b3_discount,
+        'price'    => $kp_b3_price,
+        'items'    => array(
+          array( 'day' => 'Senin – Selasa', 'date' => '5–6', 'month' => 'April 2027', 'title' => 'Ketidakpastian Pengukuran Sesuai SNI ISO/IEC 17025:2017',
+            'topics' => array( 'Konsep dasar ketidakpastian pengukuran', 'Identifikasi sumber ketidakpastian', 'Tahapan perhitungan ketidakpastian (studi kasus nyata)', 'Pelaporan & evaluasi' ),
+            'output' => 'Laporan Ketidakpastian sesuai parameter lab' ),
+          array( 'day' => 'Senin – Selasa', 'date' => '12–13', 'month' => 'April 2027', 'title' => 'Penerapan Jaminan Mutu Internal dan Pengendalian Mutu Hasil Uji',
+            'topics' => array( 'Pembuatan control chart', 'Pengecekan antar alat', 'Replika pengujian', 'Uji banding antar analis' ),
+            'output' => 'Laporan Control Chart, pengecekan antar alat, replika, uji banding antar analis' ),
+          array( 'day' => 'Senin – Selasa', 'date' => '26–27', 'month' => 'April 2027', 'title' => 'Audit Internal Laboratorium Berdasarkan SNI ISO/IEC 17025:2017',
+            'topics' => array( 'Urgensi audit internal', 'ISO 19011:2018 Pedoman Audit Sistem Manajemen', 'Prinsip & tipe audit', 'Kompetensi dan evaluasi auditor', 'Pengelolaan program audit', 'Pelaksanaan audit', 'Bukti audit ISO/IEC 17025:2017', 'Pelaporan dan tindak lanjut audit' ),
+            'output' => 'Program AI, Rencana Audit, Checklist, NCR, Laporan AI, Evaluasi Auditor' ),
+          array( 'day' => 'Senin – Selasa', 'date' => '10–11', 'month' => 'Mei 2027', 'title' => 'Implementasi Kaji Ulang Manajemen Sesuai SNI ISO/IEC 17025:2017',
+            'topics' => array( 'Konsep dasar kaji ulang manajemen', 'Persyaratan klausul 8.9 ISO/IEC 17025', 'Penyusunan bahan kaji ulang manajemen', 'Pelaksanaan rapat kaji ulang manajemen', 'Tindak lanjut & monitoring hasil kaji ulang' ),
+            'output' => 'Matriks KUM, Laporan KUM' ),
+          array( 'title' => 'Tahapan Proses Pengajuan Akreditasi berdasarkan KANMIS & Pendampingan Pendaftaran',
+            'topics' => array( 'Registrasi akreditasi', 'Pengisian dokumen', 'Upload dokumen' ) ),
+        ),
+      ),
+    );
     ?>
     <div style="margin-bottom:56px">
       <p class="eyebrow">Timeline Per Batch</p>
@@ -658,8 +739,8 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
 
       <div class="batch-tabs">
         <button type="button" class="batch-tab" onclick="showBatch(this,'batch-1')">Batch 1 · Juni 2026 <span style="opacity:.7;font-weight:600">(Kuota Penuh)</span></button>
-        <button type="button" class="batch-tab active" onclick="showBatch(this,'batch-2')">Batch 2 · November 2026</button>
-        <button type="button" class="batch-tab" onclick="showBatch(this,'batch-3')">Batch 3</button>
+        <button type="button" class="batch-tab" onclick="showBatch(this,'batch-2')">Batch 2 · November 2026 <span style="opacity:.7;font-weight:600">(On Going)</span></button>
+        <button type="button" class="batch-tab active" onclick="showBatch(this,'batch-3')">Batch 3 · Januari 2027 <span class="batch-tab-new">BARU</span></button>
       </div>
 
       <div class="batch-panel" id="batch-1">
@@ -682,7 +763,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
         <?php endforeach; ?>
       </div>
 
-      <div class="batch-panel active" id="batch-2">
+      <div class="batch-panel" id="batch-2">
         <?php foreach ( $kp_batch2_sessions as $kp_i => $kp_s ) : ?>
         <div class="bt-item">
           <div class="bt-num"><?php echo str_pad( $kp_i + 1, 2, '0', STR_PAD_LEFT ); ?></div>
@@ -702,11 +783,65 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
         <?php endforeach; ?>
       </div>
 
-      <div class="batch-panel" id="batch-3">
-        <div class="bt-coming-soon">
-          <div class="bt-coming-soon-title">🚧 Jadwal Batch 3 — Coming Soon</div>
-          <p class="bt-coming-soon-sub">Jadwal lengkap Batch 3 akan segera diumumkan. Hubungi tim kami untuk mendapat info paling awal begitu jadwal dan kuota dibuka.</p>
+      <div class="batch-panel active" id="batch-3">
+        <div class="sesi-tabs">
+          <?php foreach ( $kp_batch3_sesi as $kp_si => $kp_sesi ) : ?>
+          <button type="button" class="sesi-tab<?php echo 0 === $kp_si ? ' active' : ''; ?>" onclick="showSesi(this,'b3-sesi-<?php echo $kp_si + 1; ?>')">
+            <span class="sesi-tab-label">Sesi <?php echo $kp_si + 1; ?></span>
+            <span class="sesi-tab-range"><?php echo esc_html( $kp_sesi['range'] ); ?></span>
+          </button>
+          <?php endforeach; ?>
         </div>
+
+        <?php foreach ( $kp_batch3_sesi as $kp_si => $kp_sesi ) : ?>
+        <div class="sesi-panel<?php echo 0 === $kp_si ? ' active' : ''; ?>" id="b3-sesi-<?php echo $kp_si + 1; ?>">
+          <div class="sesi-price">
+            <div>
+              <div class="sesi-price-eyebrow">Investasi Sesi <?php echo $kp_si + 1; ?> · per peserta</div>
+              <div class="sesi-price-row">
+                <span class="sesi-price-main"><?php echo labnesia_kp_rp( $kp_sesi['price'] ); ?></span>
+                <span class="sesi-price-normal"><?php echo labnesia_kp_rp( $kp_sesi['normal'] ); ?></span>
+                <span class="sesi-price-disc">Diskon <?php echo (int) $kp_sesi['discount']; ?>%</span>
+              </div>
+              <div class="sesi-price-note">Hemat <?php echo labnesia_kp_rp( $kp_sesi['normal'] - $kp_sesi['price'] ); ?> dari harga normal</div>
+            </div>
+            <a href="<?php echo $url_daftar; ?>" class="btn-amber" target="_blank" rel="noopener">Daftar Sesi <?php echo $kp_si + 1; ?></a>
+          </div>
+
+          <?php foreach ( $kp_sesi['items'] as $kp_i => $kp_s ) : ?>
+          <div class="bt-item bt-item-top">
+            <div class="bt-num"><?php echo str_pad( $kp_i + 1, 2, '0', STR_PAD_LEFT ); ?></div>
+            <div class="bt-dash"></div>
+            <div class="bt-date<?php echo empty( $kp_s['date'] ) ? ' bt-date-tba' : ''; ?>">
+              <?php if ( ! empty( $kp_s['date'] ) ) : ?>
+              <div class="bt-date-day"><?php echo esc_html( $kp_s['day'] ); ?></div>
+              <div class="bt-date-num"><?php echo esc_html( $kp_s['date'] ); ?></div>
+              <div class="bt-date-month"><?php echo esc_html( $kp_s['month'] ); ?></div>
+              <?php else : ?>
+              <div class="bt-date-num" style="font-size:13px">Jadwal</div>
+              <div class="bt-date-month">Menyusul</div>
+              <?php endif; ?>
+            </div>
+            <div class="bt-card">
+              <div><?php echo esc_html( $kp_s['title'] ); ?></div>
+              <?php if ( ! empty( $kp_s['date'] ) ) : ?>
+              <div style="font-size:12px;font-weight:500;color:var(--gray-500);margin-top:4px;display:flex;align-items:center;gap:5px">
+                <?php labnesia_icon( 'clock', 'var(--gray-400)', 13 ); ?> <?php echo esc_html( $kp_s['time'] ?? '09.00 - 12.00 WIB' ); ?>
+              </div>
+              <?php endif; ?>
+              <?php if ( ! empty( $kp_s['topics'] ) ) : ?>
+              <ul class="bt-topics">
+                <?php foreach ( $kp_s['topics'] as $kp_t ) : ?><li><?php echo esc_html( $kp_t ); ?></li><?php endforeach; ?>
+              </ul>
+              <?php endif; ?>
+              <?php if ( ! empty( $kp_s['output'] ) ) : ?>
+              <div class="bt-output"><?php labnesia_icon( 'check', 'var(--teal)', 13 ); ?> <span><strong>Output:</strong> <?php echo esc_html( $kp_s['output'] ); ?></span></div>
+              <?php endif; ?>
+            </div>
+          </div>
+          <?php endforeach; ?>
+        </div>
+        <?php endforeach; ?>
       </div>
     </div>
 
@@ -725,7 +860,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
         <div class="benefit-item">
           <div class="benefit-icon"><?php labnesia_icon( 'graduation-cap', 'var(--teal)', 20 ); ?></div>
           <div class="benefit-content">
-            <div class="benefit-title">GRATIS Pelatihan Tambahan 40 JP</div>
+            <div class="benefit-title">GRATIS Pelatihan Tambahan 24 JP</div>
             <div class="benefit-desc">Materi: Lead Implementer atau Auditor Internal ISO/IEC 17025 — bertujuan meningkatkan kompetensi peserta dalam menerapkan standar. Pelatihan ini terpisah dan independen dari proses uji kompetensi di LSP Edukia.</div>
             <div style="display:flex;gap:8px;margin-top:6px">
               <span class="benefit-value">GRATIS</span>
@@ -972,34 +1107,25 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   <div id="daftar">
     <div class="price-card">
       <?php
-      $kp_jt1    = $kp_active_prices[1] / 1000000;
-      $kp_jt2    = $kp_active_prices[2] / 1000000;
-      $kp_jt3    = $kp_active_prices[3] / 1000000;
-      $kp_hemat2 = ( $kp_active_prices[1] * 2 - $kp_active_prices[2] ) / 1000000;
+      $kp_b3_jt        = number_format( $kp_b3_price / 1000000, 3, ',', '.' );
+      $kp_b3_normal_jt = number_format( $kp_b3_normal / 1000000, 2, ',', '.' );
       ?>
       <div class="price-card-header">
-        <div class="price-card-eyebrow">Kelas Pendampingan<?php echo ( 'normal' !== $kp_active_key ) ? ' · ' . esc_html( $kp_active['label'] ) . ' Aktif' : ' · Pendaftaran Dibuka'; ?></div>
+        <div class="price-card-eyebrow">Kelas Pendampingan · Batch 3 · Diskon <?php echo (int) $kp_b3_discount; ?>%</div>
         <div class="price-card-title">Akreditasi Lab ISO/IEC 17025</div>
         <div class="price-row">
-          <span class="price-main" id="price-display">Rp <?php echo $kp_jt1; ?> jt</span>
-          <span class="price-unit">/peserta</span>
+          <span class="price-main" id="price-display">Rp <?php echo $kp_b3_jt; ?> jt</span>
+          <span class="price-unit">/peserta · per sesi</span>
         </div>
-        <div class="price-options">
-          <div class="price-opt active" onclick="selectPrice(this,'Rp <?php echo $kp_jt1; ?> jt','1 peserta')">
-            <div class="price-opt-num">1 peserta</div>
-            <div class="price-opt-val"><?php echo $kp_jt1; ?> jt</div>
-            <div class="price-opt-sub">per orang</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.5)"><span style="text-decoration:line-through">Rp <?php echo $kp_b3_normal_jt; ?> jt</span> · hemat <?php echo labnesia_kp_rp( $kp_b3_normal - $kp_b3_price ); ?></div>
+        <div class="price-options" style="grid-template-columns:1fr 1fr">
+          <?php foreach ( $kp_b3_sesi_ranges as $kp_si => $kp_range ) : ?>
+          <div class="price-opt<?php echo 0 === $kp_si ? ' active' : ''; ?>" onclick="selectPrice(this,'Rp <?php echo $kp_b3_jt; ?> jt','Sesi <?php echo $kp_si + 1; ?>')">
+            <div class="price-opt-num">Sesi <?php echo $kp_si + 1; ?></div>
+            <div class="price-opt-val"><?php echo $kp_b3_jt; ?> jt</div>
+            <div class="price-opt-sub"><?php echo esc_html( $kp_range ); ?></div>
           </div>
-          <div class="price-opt" onclick="selectPrice(this,'Rp <?php echo $kp_jt2; ?> jt','2 peserta')">
-            <div class="price-opt-num">2 peserta</div>
-            <div class="price-opt-val"><?php echo $kp_jt2; ?> jt</div>
-            <div class="price-opt-sub"><?php echo $kp_hemat2 > 0 ? 'hemat ' . $kp_hemat2 . ' jt' : 'per instansi'; ?></div>
-          </div>
-          <div class="price-opt best" onclick="selectPrice(this,'Rp <?php echo $kp_jt3; ?> jt','3 peserta')">
-            <div class="price-opt-num">3 peserta</div>
-            <div class="price-opt-val"><?php echo $kp_jt3; ?> jt</div>
-            <span class="best-badge">BEST VALUE</span>
-          </div>
+          <?php endforeach; ?>
         </div>
       </div>
 
@@ -1035,7 +1161,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
       </div>
 
       <div class="urgency">
-        <p class="urgency-text"><?php labnesia_icon( 'hourglass', '#8B6000', 12 ); ?> Batch Oktober 2026 dibuka — <strong>maks. 10 instansi/batch</strong></p>
+        <p class="urgency-text"><?php labnesia_icon( 'hourglass', '#8B6000', 12 ); ?> Batch 3 · Januari 2027 dibuka —<strong>maks. 10 instansi/batch</strong></p>
       </div>
 
       <div class="price-cta">
@@ -1118,6 +1244,13 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
 function showBatch(el,id){
   document.querySelectorAll('.batch-tab').forEach(t=>t.classList.remove('active'));
   document.querySelectorAll('.batch-panel').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById(id).classList.add('active');
+}
+function showSesi(el,id){
+  const panel=el.closest('.batch-panel');
+  panel.querySelectorAll('.sesi-tab').forEach(t=>t.classList.remove('active'));
+  panel.querySelectorAll('.sesi-panel').forEach(p=>p.classList.remove('active'));
   el.classList.add('active');
   document.getElementById(id).classList.add('active');
 }

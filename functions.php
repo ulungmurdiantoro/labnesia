@@ -481,6 +481,20 @@ function labnesia_jadwal_meta_box() {
 }
 add_action( 'add_meta_boxes', 'labnesia_jadwal_meta_box' );
 
+// Keep the Info Jadwal box in the sidebar. WordPress remembers, per user, where
+// each meta box was last moved (the ⌃/⌄ arrows can push it into the bottom
+// "Meta Box" pane) and that saved order overrides the 'side' context above.
+// Dropping our box from the saved order makes it fall back to 'side'.
+function labnesia_jadwal_meta_box_keep_side( $order ) {
+    if ( ! is_array( $order ) ) return $order;
+    foreach ( $order as $context => $ids ) {
+        if ( ! is_string( $ids ) ) continue;
+        $order[ $context ] = implode( ',', array_diff( explode( ',', $ids ), [ 'labnesia_jadwal' ] ) );
+    }
+    return $order;
+}
+add_filter( 'get_user_option_meta-box-order_post', 'labnesia_jadwal_meta_box_keep_side' );
+
 function labnesia_jadwal_meta_box_html( $post ) {
     wp_nonce_field( 'labnesia_jadwal_save', 'labnesia_jadwal_nonce' );
     $event_date     = get_post_meta( $post->ID, '_jadwal_tanggal', true );
