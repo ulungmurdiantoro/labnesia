@@ -10,7 +10,7 @@ $url_faq       = esc_url( home_url( '/faq/' ) );
 $url_inhouse   = esc_url( home_url( '/inhouse/' ) );
 $url_pelatihan = esc_url( home_url( '/pelatihan-sertifikasi/' ) );
 $url_optimasi  = esc_url( home_url( '/optimasi-alat/' ) );
-$url_booklet   = esc_url( 'https://labnesia.id/wp-content/uploads/2026/10/New-Booklet-Kelas-Pendampingan-Labnesia-17.pdf' );
+$url_booklet   = esc_url( 'https://labnesia.id/wp-content/uploads/2026/11/Booklet-2027-Kelas-Pendampingan-Labnesia.pdf' );
 $url_daftar    = esc_url( 'https://docs.google.com/forms/d/e/1FAIpQLSfw8fQOZvCCAuNVrZM0vuhVFhFQHYvr6B6yORWpYz026NhvXA/viewform?embedded=true' );
 
 $pakar_dir = get_template_directory_uri() . '/assets/pakar/';
@@ -88,6 +88,10 @@ $kp_b3_normal   = 8750000;
 $kp_b3_discount = 30;
 $kp_b3_price    = 6125000;
 $kp_b3_sesi_ranges = array( '25 Jan – 23 Feb 2027', '5 Apr – 11 Mei 2027' );
+/* Bundle Sesi 1 + 2: total harga normal kedua sesi, diskon 40% */
+$kp_b3_bundle_normal   = $kp_b3_normal * 2;   // 17.500.000
+$kp_b3_bundle_discount = 40;
+$kp_b3_bundle_price    = 10500000;
 
 $kp_now_ts        = current_time( 'timestamp' );
 $kp_active_key    = 'normal';
@@ -199,6 +203,8 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
   .sesi-tab-label{font-size:15px;font-weight:800;color:var(--navy)}
   .sesi-tab-range{font-size:12px;font-weight:600;color:var(--gray-600)}
   .sesi-tab.active .sesi-tab-range{color:var(--teal)}
+  .sesi-bundle{display:flex;gap:10px;align-items:flex-start;background:var(--amber-pale);border:1px solid rgba(245,166,35,.4);border-radius:10px;padding:12px 16px;margin-bottom:18px;font-size:14px;color:#6B4400;line-height:1.5}
+  .sesi-bundle svg{flex-shrink:0;margin-top:2px}
   .sesi-panel{display:none}
   .sesi-panel.active{display:block}
   .sesi-price{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--navy);border-radius:14px;padding:18px 22px;margin-bottom:20px}
@@ -431,7 +437,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
       <span class="sticky-price"><?php echo labnesia_kp_rp( $kp_b3_price ); ?></span>
       <span class="sticky-unit">/peserta · per sesi (Batch 3)</span>
     </div>
-    <span class="sticky-promo"><?php labnesia_icon( 'zap', '#8B6000', 12 ); ?> Diskon <?php echo (int) $kp_b3_discount; ?>% · Hemat <?php echo labnesia_kp_rp( $kp_b3_normal - $kp_b3_price ); ?></span>
+    <span class="sticky-promo"><?php labnesia_icon( 'zap', '#8B6000', 12 ); ?> Bundle 2 sesi <?php echo labnesia_kp_rp( $kp_b3_bundle_price ); ?> · Diskon <?php echo (int) $kp_b3_bundle_discount; ?>%</span>
   </div>
   <div class="sticky-actions">
     <a href="<?php echo $url_booklet; ?>" class="btn-booklet" target="_blank" rel="noopener"><?php labnesia_icon( 'download', 'var(--navy)', 14 ); ?> Unduh Booklet</a>
@@ -451,6 +457,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
         <?php foreach ( $kp_b3_sesi_ranges as $kp_si => $kp_range ) : ?>
         <td>Sesi <?php echo $kp_si + 1; ?><div class="pt-row-label-sub" style="text-transform:none;letter-spacing:0;font-weight:600"><?php echo esc_html( $kp_range ); ?></div></td>
         <?php endforeach; ?>
+        <td>Bundle Sesi 1 + 2<span class="pt-best-badge">BEST VALUE</span><div class="pt-row-label-sub" style="text-transform:none;letter-spacing:0;font-weight:600">25 Jan – 11 Mei 2027</div></td>
       </tr>
       <tr class="pt-row">
         <td class="pt-row-label">
@@ -464,21 +471,34 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
           </div>
         </td>
         <?php endforeach; ?>
+        <td>
+          <div class="pt-box pt-box-normal pt-box-struck">
+            <div class="pt-price"><?php echo labnesia_kp_rp( $kp_b3_bundle_normal ); ?></div>
+            <div class="pt-sub">/ peserta</div>
+          </div>
+        </td>
       </tr>
       <tr class="pt-row">
         <td class="pt-row-label">
-          <div class="pt-row-label-main">Diskon <?php echo (int) $kp_b3_discount; ?>%</div>
-          <div class="pt-row-label-sub">Hemat <?php echo labnesia_kp_rp( $kp_b3_normal - $kp_b3_price ); ?>/ peserta</div>
+          <div class="pt-row-label-main">Harga Diskon</div>
+          <div class="pt-row-label-sub">Per sesi <?php echo (int) $kp_b3_discount; ?>% · Bundle <?php echo (int) $kp_b3_bundle_discount; ?>%</div>
         </td>
         <?php foreach ( $kp_b3_sesi_ranges as $kp_range ) : ?>
         <td>
           <div class="pt-box pt-box-early1 pt-active-ring">
-            <span class="pt-active-tag">Harga Saat Ini</span>
+            <span class="pt-active-tag">Diskon <?php echo (int) $kp_b3_discount; ?>%</span>
             <div class="pt-price"><?php echo labnesia_kp_rp( $kp_b3_price ); ?></div>
-            <div class="pt-sub">/ peserta</div>
+            <div class="pt-sub">/ peserta · hemat <?php echo labnesia_kp_rp( $kp_b3_normal - $kp_b3_price ); ?></div>
           </div>
         </td>
         <?php endforeach; ?>
+        <td>
+          <div class="pt-box pt-box-early2 pt-active-ring">
+            <span class="pt-active-tag">Diskon <?php echo (int) $kp_b3_bundle_discount; ?>%</span>
+            <div class="pt-price"><?php echo labnesia_kp_rp( $kp_b3_bundle_price ); ?></div>
+            <div class="pt-sub">/ peserta · hemat <?php echo labnesia_kp_rp( $kp_b3_bundle_normal - $kp_b3_bundle_price ); ?></div>
+          </div>
+        </td>
       </tr>
     </table>
   </div>
@@ -791,6 +811,11 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
             <span class="sesi-tab-range"><?php echo esc_html( $kp_sesi['range'] ); ?></span>
           </button>
           <?php endforeach; ?>
+        </div>
+
+        <div class="sesi-bundle">
+          <?php labnesia_icon( 'zap', '#8B6000', 16 ); ?>
+          <span>Ambil <strong>Sesi 1 + 2 sekaligus</strong> hanya <strong><?php echo labnesia_kp_rp( $kp_b3_bundle_price ); ?></strong>/peserta <span style="text-decoration:line-through;opacity:.7"><?php echo labnesia_kp_rp( $kp_b3_bundle_normal ); ?></span> — diskon <?php echo (int) $kp_b3_bundle_discount; ?>%</span>
         </div>
 
         <?php foreach ( $kp_batch3_sesi as $kp_si => $kp_sesi ) : ?>
@@ -1115,10 +1140,10 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
         <div class="price-card-title">Akreditasi Lab ISO/IEC 17025</div>
         <div class="price-row">
           <span class="price-main" id="price-display">Rp <?php echo $kp_b3_jt; ?> jt</span>
-          <span class="price-unit">/peserta · per sesi</span>
+          <span class="price-unit">/peserta</span>
         </div>
-        <div style="font-size:13px;color:rgba(255,255,255,0.5)"><span style="text-decoration:line-through">Rp <?php echo $kp_b3_normal_jt; ?> jt</span> · hemat <?php echo labnesia_kp_rp( $kp_b3_normal - $kp_b3_price ); ?></div>
-        <div class="price-options" style="grid-template-columns:1fr 1fr">
+        <div style="font-size:13px;color:rgba(255,255,255,0.5)" id="price-normal-note"><span style="text-decoration:line-through">Rp <?php echo $kp_b3_normal_jt; ?> jt</span> · per sesi, diskon <?php echo (int) $kp_b3_discount; ?>%</div>
+        <div class="price-options">
           <?php foreach ( $kp_b3_sesi_ranges as $kp_si => $kp_range ) : ?>
           <div class="price-opt<?php echo 0 === $kp_si ? ' active' : ''; ?>" onclick="selectPrice(this,'Rp <?php echo $kp_b3_jt; ?> jt','Sesi <?php echo $kp_si + 1; ?>')">
             <div class="price-opt-num">Sesi <?php echo $kp_si + 1; ?></div>
@@ -1126,6 +1151,11 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
             <div class="price-opt-sub"><?php echo esc_html( $kp_range ); ?></div>
           </div>
           <?php endforeach; ?>
+          <div class="price-opt best" onclick="selectPrice(this,'Rp <?php echo number_format( $kp_b3_bundle_price / 1000000, 1, ',', '.' ); ?> jt','Bundle')">
+            <div class="price-opt-num">Sesi 1 + 2</div>
+            <div class="price-opt-val"><?php echo number_format( $kp_b3_bundle_price / 1000000, 1, ',', '.' ); ?> jt</div>
+            <span class="best-badge">HEMAT <?php echo (int) $kp_b3_bundle_discount; ?>%</span>
+          </div>
         </div>
       </div>
 
@@ -1136,7 +1166,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
         </div>
         <div class="price-feature">
           <div class="pf-check"><?php labnesia_icon( 'check', 'var(--teal)', 15 ); ?></div>
-          <div class="pf-text">Pelatihan tambahan 40 JP — Lead Implementer atau Auditor Internal ISO/IEC 17025*<span class="pf-free">GRATIS · termasuk dalam paket pelatihan</span></div>
+          <div class="pf-text">Pelatihan tambahan 24 JP — Lead Implementer atau Auditor Internal ISO/IEC 17025*<span class="pf-free">GRATIS · termasuk dalam paket pelatihan</span></div>
         </div>
         <div class="price-feature">
           <div class="pf-check"><?php labnesia_icon( 'check', 'var(--teal)', 15 ); ?></div>
@@ -1265,6 +1295,12 @@ function selectPrice(el,price,label){
   document.querySelectorAll('.price-opt').forEach(o=>o.classList.remove('active'));
   el.classList.add('active');
   document.getElementById('price-display').textContent=price;
+  const note=document.getElementById('price-normal-note');
+  if(note){
+    note.innerHTML = label==='Bundle'
+      ? '<span style="text-decoration:line-through">Rp <?php echo number_format( $kp_b3_bundle_normal / 1000000, 1, ',', '.' ); ?> jt</span> · bundle 2 sesi, diskon <?php echo (int) $kp_b3_bundle_discount; ?>%'
+      : '<span style="text-decoration:line-through">Rp <?php echo $kp_b3_normal_jt; ?> jt</span> · per sesi, diskon <?php echo (int) $kp_b3_discount; ?>%';
+  }
 }
 document.querySelectorAll('.faq-q').forEach(q=>{
   q.addEventListener('click',()=>{
