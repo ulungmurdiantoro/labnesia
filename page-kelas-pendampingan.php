@@ -886,7 +886,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
           <div class="benefit-icon"><?php labnesia_icon( 'graduation-cap', 'var(--teal)', 20 ); ?></div>
           <div class="benefit-content">
             <div class="benefit-title">GRATIS Pelatihan Tambahan 24 JP</div>
-            <div class="benefit-desc">Materi: Lead Implementer atau Auditor Internal ISO/IEC 17025 — bertujuan meningkatkan kompetensi peserta dalam menerapkan standar. Pelatihan ini terpisah dan independen dari proses uji kompetensi di LSP Edukia.</div>
+            <div class="benefit-desc">Materi: Pelatihan Laboratory Quality System Officer ISO/IEC 17025 - Petugas Sistem Mutu Laboratorium ISO/IEC 17025 — bertujuan meningkatkan kompetensi peserta dalam menerapkan standar. Pelatihan ini terpisah dan independen dari proses uji kompetensi di LSP Edukia.</div>
             <div style="display:flex;gap:8px;margin-top:6px">
               <span class="benefit-value">GRATIS</span>
               <span class="benefit-saving">Rp 6.500.000</span>
@@ -1166,7 +1166,7 @@ if ( ! function_exists( 'labnesia_kp_rp' ) ) {
         </div>
         <div class="price-feature">
           <div class="pf-check"><?php labnesia_icon( 'check', 'var(--teal)', 15 ); ?></div>
-          <div class="pf-text">Pelatihan tambahan 24 JP — Lead Implementer atau Auditor Internal ISO/IEC 17025*<span class="pf-free">GRATIS · termasuk dalam paket pelatihan</span></div>
+          <div class="pf-text">Pelatihan tambahan 24 JP — Pelatihan Laboratory Quality System Officer ISO/IEC 17025 - Petugas Sistem Mutu Laboratorium ISO/IEC 17025*<span class="pf-free">GRATIS · termasuk dalam paket pelatihan</span></div>
         </div>
         <div class="price-feature">
           <div class="pf-check"><?php labnesia_icon( 'check', 'var(--teal)', 15 ); ?></div>
